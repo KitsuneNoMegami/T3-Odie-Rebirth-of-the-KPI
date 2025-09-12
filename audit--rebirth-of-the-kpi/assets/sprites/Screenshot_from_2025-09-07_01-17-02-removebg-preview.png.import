@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dmipd21qtpb0e"
-path="res://.godot/imported/Secretaire-removebg-preview.png-dfcccbd1ac399109bf5d3ff1e5e02807.ctex"
+uid="uid://dju5o8oybm26u"
+path="res://.godot/imported/Screenshot_from_2025-09-07_01-17-02-removebg-preview.png-50ffe42a8e5e3de1d355333dca0902b1.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/Secretaire-removebg-preview.png"
-dest_files=["res://.godot/imported/Secretaire-removebg-preview.png-dfcccbd1ac399109bf5d3ff1e5e02807.ctex"]
+source_file="res://assets/sprites/Screenshot_from_2025-09-07_01-17-02-removebg-preview.png"
+dest_files=["res://.godot/imported/Screenshot_from_2025-09-07_01-17-02-removebg-preview.png-50ffe42a8e5e3de1d355333dca0902b1.ctex"]
 
 [params]
 

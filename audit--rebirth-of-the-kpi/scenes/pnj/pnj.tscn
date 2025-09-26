@@ -1,18 +1,31 @@
-[gd_scene load_steps=4 format=3 uid="uid://bmegaasqhjghc"]
+[gd_scene load_steps=5 format=3 uid="uid://bmegaasqhjghc"]
 
 [ext_resource type="Texture2D" uid="uid://b5qjbwpsr4k06" path="res://blobsprite.png" id="1_cno4e"]
 [ext_resource type="Script" uid="uid://bjfngxo28q0dm" path="res://scenes/pnj/pnj.gd" id="1_tpmle"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_tpmle"]
-radius = 43.0
+radius = 14.0357
 
-[node name="pnj" type="Area2D"]
+[sub_resource type="CircleShape2D" id="CircleShape2D_v0gl5"]
+radius = 74.108
+
+[node name="pnj" type="StaticBody2D"]
 script = ExtResource("1_tpmle")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(322, 188)
+position = Vector2(285, 216.25)
+scale = Vector2(0.27451, 0.319277)
 texture = ExtResource("1_cno4e")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(313, 186)
+[node name="Collison" type="CollisionShape2D" parent="."]
+position = Vector2(287, 217)
 shape = SubResource("CircleShape2D_tpmle")
+
+[node name="Talknode" type="Area2D" parent="."]
+
+[node name="TalkZone" type="CollisionShape2D" parent="Talknode"]
+position = Vector2(286, 219)
+shape = SubResource("CircleShape2D_v0gl5")
+
+[connection signal="body_entered" from="Talknode" to="." method="_on_talknode_body_entered"]
+[connection signal="body_exited" from="Talknode" to="." method="_on_talknode_body_exited"]

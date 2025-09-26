@@ -1,0 +1,17 @@
+[gd_scene load_steps=5 format=3 uid="uid://peogveooslf"]
+
+[ext_resource type="Script" uid="uid://c1w1yhewnho6n" path="res://scenes/board.gd" id="1_nglv8"]
+[ext_resource type="PackedScene" uid="uid://ce7gk84oa0efc" path="res://scenes/player/player.tscn" id="1_tx6nw"]
+[ext_resource type="PackedScene" uid="uid://bmegaasqhjghc" path="res://scenes/pnj/pnj.tscn" id="2_nglv8"]
+[ext_resource type="PackedScene" uid="uid://cikd4735iv0yg" path="res://scenes/dialogue_box.tscn" id="4_fv4ni"]
+
+[node name="Node2D" type="TileMapLayer"]
+script = ExtResource("1_nglv8")
+
+[node name="player" parent="." instance=ExtResource("1_tx6nw")]
+position = Vector2(44, 28)
+
+[node name="pnj" parent="." instance=ExtResource("2_nglv8")]
+position = Vector2(459, 259)
+
+[node name="dialogueBox" parent="." instance=ExtResource("4_fv4ni")]

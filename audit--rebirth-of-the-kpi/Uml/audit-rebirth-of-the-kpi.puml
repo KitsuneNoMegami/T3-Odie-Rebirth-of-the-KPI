@@ -1,15 +1,66 @@
 @startuml
-'https://plantuml.com/sequence-diagram
+skinparam style strictuml
+skinparam classAttributeIconSize 0
+skinparam classFontStyle Bold
+skinparam linetype ortho
+skinparam roundcorner 20
+skinparam shadowing true
 
-autonumber
+hide enum methods
 
-== Initialization ==
+package exploration{
+    class Player{
+        -_speed: Integer
+        +<<create>>_ready()
+        +move()
+    }
 
-Alice -> Bob: Authentication Request
-Bob --> Alice: Authentication Response
 
-== Repetition ==
+    package pnj{
+        class Dialogue{
+            -_texts* : String
+            +<<create>>_ready()
+            +start_dialogue()
+            -show_line()
+            +next_line()
+            -end_dialogue()
+        }
+        class Pnj{
+            -_player_in_range: Boolean
+            +<<create>>_ready()
+            +_input_event(event:InputEvent)
+            +_on_talknode_body_entered(body: Node2D)
+            +_on_talknode_body_exited(body: Node2D)
+        }
+    }
 
-Alice -> Bob: Another authentication Request
-Alice <-- Bob: another authentication Response
+
+    class Board{
+        +<<create>>_ready()
+    }
+
+    Board *-->"1\n_player" Player
+    Board *-->"*\n_pnj" Pnj
+}
+
+package fight{
+    abstract class Fighter <<abstract>>{
+        -_life: Integer
+        +<<create>>_ready()
+    }
+
+    class Enemy implements Fighter{
+        +<<create>>_ready()
+    }
+
+    class Player implements Fighter{
+        +<<create>>_ready()
+    }
+
+    class Attack{
+    }
+
+}
+
+
 @enduml

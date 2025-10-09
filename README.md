@@ -1,93 +1,103 @@
-# T3-2025
+ ## Cahier des charges
 
+**Ce cahier des charges est inspiré de celui du projet T4 de l'année dernière**
 
+### Objectifs pédagogiques
 
-## Getting started
+Ce projet a pour objectif de permettre au joueur d’acquérir une compréhension claire des notions suivantes :
 
-To make it easy for you to get started with GitLab, here's a list of recommended next steps.
+- **La planification d’un audit**
+  Le joueur apprend à organiser méthodiquement l’ordre de passage dans les différents pôles de l’entreprise, afin de garantir l’exhaustivité et la qualité du rapport d’audit final.
 
-Already a pro? Just edit this README.md and make it your own. Want to make it easy? [Use the template at the bottom](#editing-this-readme)!
+#### Objectifs pédagogiques avancés
 
-## Add your files
+- **Comprendre l’importance de l’image de l’auditeur au sein d’une entreprise**
 
-- [ ] [Create](https://docs.gitlab.com/ee/user/project/repository/web_editor.html#create-a-file) or [upload](https://docs.gitlab.com/ee/user/project/repository/web_editor.html#upload-a-file) files
-- [ ] [Add files using the command line](https://docs.gitlab.com/ee/gitlab-basics/add-file.html#add-a-file-using-the-command-line) or push an existing Git repository with the following command:
+Lors d’un audit dans une grande organisation, un nouvel auditeur ne peut pas se permettre de solliciter des informations de manière désordonnée ou auprès de n’importe quel interlocuteur, au risque d’obtenir des données erronées et de compromettre la qualité du rapport final.
+Il est donc essentiel de construire une image professionnelle, inspirant confiance et compétence, afin de faciliter les échanges avec les collaborateurs des différents pôles. Cette posture favorise un climat de coopération, permettant d’obtenir des informations fiables et pertinentes pour produire un rapport d’audit de qualité.
 
-```
-cd existing_repo
-git remote add origin https://git.unistra.fr/commit-ou-creve/t3-2025.git
-git branch -M main
-git push -uf origin main
-```
+#### Références
 
-## Integrate with your tools
+- Monsieur Romain Boully, responsable du service audit interne de l'Unistra
 
-- [ ] [Set up project integrations](https://git.unistra.fr/commit-ou-creve/t3-2025/-/settings/integrations)
+### Description des fonctionnalités
 
-## Collaborate with your team
+#### Concept du jeu
 
-- [ ] [Invite team members and collaborators](https://docs.gitlab.com/ee/user/project/members/)
-- [ ] [Create a new merge request](https://docs.gitlab.com/ee/user/project/merge_requests/creating_merge_requests.html)
-- [ ] [Automatically close issues from merge requests](https://docs.gitlab.com/ee/user/project/issues/managing_issues.html#closing-issues-automatically)
-- [ ] [Enable merge request approvals](https://docs.gitlab.com/ee/user/project/merge_requests/approvals/)
-- [ ] [Set auto-merge](https://docs.gitlab.com/ee/user/project/merge_requests/merge_when_pipeline_succeeds.html)
+Le joueur incarne un **auditeur débutant** au sein d’une grande organisation. Sa mission est de réaliser un audit complet de l’entreprise, tout en gérant sa progression personnelle.
 
-## Test and Deploy
+Deux indicateurs majeurs définissent sa progression :
 
-Use the built-in continuous integration in GitLab.
+- **Points de compétence** qui lui permetteront dans le futur de débloquer des compétences d'expert audit
+- **Points de crédibilité** au sein de l’organisation
 
-- [ ] [Get started with GitLab CI/CD](https://docs.gitlab.com/ee/ci/quick_start/index.html)
-- [ ] [Analyze your code for known vulnerabilities with Static Application Security Testing (SAST)](https://docs.gitlab.com/ee/user/application_security/sast/)
-- [ ] [Deploy to Kubernetes, Amazon EC2, or Amazon ECS using Auto Deploy](https://docs.gitlab.com/ee/topics/autodevops/requirements.html)
-- [ ] [Use pull-based deployments for improved Kubernetes management](https://docs.gitlab.com/ee/user/clusters/agent/)
-- [ ] [Set up protected environments](https://docs.gitlab.com/ee/ci/environments/protected_environments.html)
+##### Objectif principal
 
-***
+Atteindre les meilleurs scores possibles en compétences et en crédibilité, tout en ayant audité l’ensemble des pôles de l’entreprise.
 
-# Editing this README
+Chaque pôle audité peut :
 
-When you're ready to make this README your own, just edit this file and use the handy template below (or feel free to structure it however you want - this is just a starting point!). Thanks to [makeareadme.com](https://www.makeareadme.com/) for this template.
+- **Récompenser** le joueur (gain de points et information claire et précise pour le rapport final) si l’audit est réussi
+- **Pénaliser** le joueur (perte de points et information erronées pour le rapport final) si l’audit est échoué
 
-## Suggestions for a good README
+##### Réussir un audit
 
-Every project is different, so consider which of these sections apply to yours. The sections used in the template are suggestions for most open source projects. Also keep in mind that while a README can be too long and detailed, too long is better than too short. If you think your README is too long, consider utilizing another form of documentation rather than cutting out information.
+Un audit est reussi quand le joueur auras battu le chef de service grâce à ses compétences et son équipe
 
-## Name
-Choose a self-explaining name for your project.
+##### Échouer un audit
 
-## Description
-Let people know what your project can do specifically. Provide context and add a link to any reference visitors might be unfamiliar with. A list of Features or a Background subsection can also be added here. If there are alternatives to your project, this is a good place to list differentiating factors.
+Un audit est échoué quand l'audit et son équipe perdent leur PV
 
-## Badges
-On some READMEs, you may see small images that convey metadata, such as whether or not all the tests are passing for the project. You can use Shields to add some to your README. Many services also have instructions for adding a badge.
+##### Mécanique d’exploration stratégique
 
-## Visuals
-Depending on what you are making, it can be a good idea to include screenshots or even a video (you'll frequently see GIFs rather than actual videos). Tools like ttygif can help, but check out Asciinema for a more sophisticated method.
+Auditer un pôle permet, selon son état, de révéler des **indices** sur l’état de santé des pôles adjacents.  
+Le joueur peut ainsi déduire quelles zones sont critiques… mais devra s’assurer d’avoir accumulé suffisamment de points pour y accéder.  
+Ce systèsme fonctionne comme une mécanique de type “boss fight” où il faut monter en niveau pour débloquer certaines zones.
 
-## Installation
-Within a particular ecosystem, there may be a common way of installing things, such as using Yarn, NuGet, or Homebrew. However, consider the possibility that whoever is reading your README is a novice and would like more guidance. Listing specific steps helps remove ambiguity and gets people to using your project as quickly as possible. If it only runs in a specific context like a particular programming language version or operating system or has dependencies that have to be installed manually, also add a Requirements subsection.
+##### Interface
 
-## Usage
-Use examples liberally, and show the expected output if you can. It's helpful to have inline the smallest example of usage that you can demonstrate, while providing links to more sophisticated examples if they are too long to reasonably include in the README.
+- Un écran de fin de jeu et un écran de début de jeu
 
-## Support
-Tell people where they can go to for help. It can be any combination of an issue tracker, a chat room, an email address, etc.
+---
 
-## Roadmap
-If you have ideas for releases in the future, it is a good idea to list them in the README.
+### Scénarios de gameplay
 
-## Contributing
-State if you are open to contributions and what your requirements are for accepting them.
+Voici quelques situations types prévues dans le jeu :
 
-For people who want to make changes to your project, it's helpful to have some documentation on how to get started. Perhaps there is a script that they should run or some environment variables that they need to set. Make these steps explicit. These instructions could also be useful to your future self.
+1. **Organisation saine**  
+   L’entreprise générée possède un bon état général (santé élevée des pôles). Le joueur peine à faire monter ses stats car les récompenses sont faibles. Il termine alors avec peu de compétences et de crédibilité, incarnant un auditeur peu performant.
 
-You can also document commands to lint the code or run tests. These steps help to ensure high code quality and reduce the likelihood that the changes inadvertently break something. Having instructions for running tests is especially helpful if it requires external setup, such as starting a Selenium server for testing in a browser.
+2. **Organisation en crise**  
+   L’entreprise générée est en mauvais état (santé faible partout). Le joueur, incapable d’auditer les pôles sans perdre des points, est contraint de falsifier des rapports. Il finit par être sanctionné ou renvoyé.
 
-## Authors and acknowledgment
-Show your appreciation to those who have contributed to the project.
+> Vous êtes libres d’imaginer d’autres scénarios originaux afin d’enrichir l’expérience de jeu.
 
-## License
-For open source projects, say how it is licensed.
+---
 
-## Project status
-If you have run out of energy or time for your project, put a note at the top of the README saying that development has slowed down or stopped completely. Someone may choose to fork your project or volunteer to step in as a maintainer or owner, allowing your project to keep going. You can also make an explicit request for maintainers.
+### Actions du joueur
+
+> **À définir librement par l’équipe de développement.**
+
+Cependant, voici des idées que nous pouvons vous fournir :
+
+- Déplacement (dans un jeu en 3D ou 2D)
+- Intéraction avec des PNJ/objets
+
+---
+
+### Contraintes de développement
+
+> **À définir librement par l’équipe de développement.**
+
+Cependant, si vous souhaitez poursuivre notre projet, il est fait en Web avec React et Typescript.
+
+---
+
+### Fonctionnalités et scénarios avancés
+
+**Fonctionnalités prévues :**
+
+- **Compétence spéciale “Pré-audit”** : permet au joueur de connaître à l’avance la santé d’un pôle
+- **Système de difficulté** : plusieurs niveaux (Facile, Moyen, Difficile)
+- **Interface de statistiques** : affichage des points de compétence et de crédibilité à l’aide de jauges visuelles
+- Possibilité de choix du nombre de service à la génération de l'entreprise dans laquelle nous allons opérer

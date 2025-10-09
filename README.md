@@ -28,7 +28,7 @@ Ce projet a pour objectif de permettre au joueur d’acquérir une compréhensio
 
 #### Concept du jeux
 
-Le joueur incarne un **auditeur débutant** au sein d’une grande organisation. Il auras à ses cotés une **équipe d'audits débutants**, avec chacun une **spécialité** et des compétences qui leur sont propre.
+Le joueur incarne un **auditeur débutant** au sein d’une grande organisation dans un jeu style JRPG. Il auras à ses cotés une **équipe d'audits débutants**, avec chacun une **spécialité** et des compétences qui leur sont propre.
 La récolte d'information se fait par des **combats de compétences d'audit**.
 A la manière d'un jeu Pokémon, le joueurs enverra le membre de son équipe le plus adapté combattre le chef du service à auditer.
 

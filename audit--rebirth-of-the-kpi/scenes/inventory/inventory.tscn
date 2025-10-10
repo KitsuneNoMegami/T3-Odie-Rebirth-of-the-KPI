@@ -1,0 +1,31 @@
+[gd_scene load_steps=2 format=3 uid="uid://c4710q2ydrkks"]
+
+[ext_resource type="Script" uid="uid://p8ed4b63404f" path="res://scenes/inventory/inventory.gd" id="1_msrby"]
+
+[node name="Inventory" type="CanvasLayer"]
+process_mode = 3
+script = ExtResource("1_msrby")
+
+[node name="Title" type="Label" parent="."]
+offset_left = 710.0
+offset_top = 43.0
+offset_right = 943.0
+offset_bottom = 112.0
+theme_override_font_sizes/font_size = 50
+text = "Inventory"
+
+[node name="Team" type="Label" parent="."]
+offset_left = 238.0
+offset_top = 37.0
+offset_right = 372.0
+offset_bottom = 106.0
+theme_override_font_sizes/font_size = 50
+text = "Team"
+horizontal_alignment = 1
+
+[node name="GridContainer" type="GridContainer" parent="."]
+offset_left = -2.0
+offset_top = -3.0
+offset_right = 1150.0
+offset_bottom = 645.0
+columns = 4

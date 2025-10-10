@@ -5,7 +5,7 @@ signal dialogue_requested #Signal pour le dialogue
 var player_in_range = false
 
 func _process(delta: float) -> void:
-	if player_in_range and Input.is_action_just_pressed("ui_accept"):
+	if player_in_range and (Input.is_action_just_pressed("ui_accept") or InputEventMouseButton.button_index==MOUSE_BUTTON_LEFT):
 		emit_signal("dialogue_requested")
 
 func _input_event(viewport: Viewport, event: InputEvent, shape_idx: int) -> void:

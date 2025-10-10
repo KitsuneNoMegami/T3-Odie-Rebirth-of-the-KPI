@@ -39,7 +39,7 @@ func _on_label_hovered(i: int) -> void:
 func _trigger_action(i: int) -> void:
 	match i:
 		0:
-			get_tree().change_scene_to_file("res://home.tscn")
+			get_tree().change_scene_to_file("res://scenes/exploration/board/board.tscn")
 		1:
 			print("Settings !")
 		2:

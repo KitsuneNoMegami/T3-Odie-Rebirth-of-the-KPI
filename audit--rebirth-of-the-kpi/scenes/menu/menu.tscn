@@ -15,12 +15,14 @@ offset_left = 359.0
 offset_top = 79.0
 offset_right = 594.0
 offset_bottom = 216.0
+mouse_filter = 1
 
 [node name="settings" parent="." instance=ExtResource("1_klgdb")]
 offset_left = 362.0
 offset_top = 250.0
 offset_right = 743.0
 offset_bottom = 387.0
+mouse_filter = 1
 text = "settings"
 
 [node name="exit" parent="." instance=ExtResource("1_klgdb")]
@@ -28,5 +30,6 @@ offset_left = 359.0
 offset_top = 429.0
 offset_right = 556.0
 offset_bottom = 566.0
+mouse_filter = 1
 text = "exit"
 script = ExtResource("3_e0arn")

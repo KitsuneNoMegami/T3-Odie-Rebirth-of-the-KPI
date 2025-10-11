@@ -4,7 +4,7 @@
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_m5tv2"]
 
-[node name="Teammate_slot" type="Control"]
+[node name="teammate_slot" type="Control"]
 material = SubResource("CanvasItemMaterial_m5tv2")
 custom_minimum_size = Vector2(100, 120)
 layout_mode = 3
@@ -13,12 +13,12 @@ offset_top = 3.0
 offset_right = 463.0
 offset_bottom = 125.0
 
-[node name="Panel" type="Panel" parent="."]
+[node name="zone" type="Panel" parent="."]
 layout_mode = 0
 offset_right = 465.0
 offset_bottom = 123.0
 
-[node name="Teammate_sprite" type="TextureRect" parent="Panel"]
+[node name="teammate_sprite" type="TextureRect" parent="zone"]
 layout_mode = 1
 anchors_preset = 9
 anchor_bottom = 1.0
@@ -31,14 +31,14 @@ texture = ExtResource("1_sl02v")
 expand_mode = 3
 stretch_mode = 5
 
-[node name="Description" type="Label" parent="Panel"]
+[node name="description" type="Label" parent="zone"]
 layout_mode = 0
 offset_left = 126.0
 offset_top = 37.0
 offset_right = 453.0
 offset_bottom = 110.0
 
-[node name="Teammate_name" type="Label" parent="Panel"]
+[node name="teammate_name" type="Label" parent="zone"]
 layout_mode = 0
 offset_left = 133.0
 offset_top = 7.0

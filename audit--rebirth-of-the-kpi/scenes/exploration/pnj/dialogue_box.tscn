@@ -2,15 +2,15 @@
 
 [ext_resource type="Script" uid="uid://6deqvxp6cvug" path="res://scenes/exploration/pnj/dialogue_box.gd" id="1_rc1id"]
 
-[node name="dialogueBox" type="CanvasLayer"]
+[node name="dialogue_box" type="CanvasLayer"]
 script = ExtResource("1_rc1id")
 
-[node name="dialogueBg" type="Panel" parent="."]
+[node name="dialogue_bg" type="Panel" parent="."]
 offset_top = 501.0
 offset_right = 1153.0
 offset_bottom = 646.0
 
-[node name="text" type="Label" parent="dialogueBg"]
+[node name="text" type="Label" parent="dialogue_bg"]
 layout_mode = 0
 offset_left = -1.0
 offset_top = 1.0

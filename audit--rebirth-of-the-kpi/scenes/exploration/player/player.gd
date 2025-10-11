@@ -3,6 +3,7 @@ extends CharacterBody2D
 
 var _speed: int= 500
 var _inventory
+@onready var sprite = $player_sprite
 var vanessa = {
 	"name"="Vanessa",
 	"desc"="Directrice des ressources humaines",
@@ -25,9 +26,31 @@ func _ready() -> void:
 
 func _process(delta: float) -> void:
 	move()
-	
+	sprite_modification()
 
 func move() -> void:
 	var direction = Input.get_vector("left", "right", "up", "down")
 	velocity = direction * _speed
 	move_and_slide()
+	
+func sprite_modification():
+	if Input.is_action_pressed("down"):
+		if Input.is_action_pressed("left"):
+			sprite.play("down_left")
+		elif Input.is_action_pressed("right"):
+			sprite.play("down_right")
+		else:
+			sprite.play("down")
+	elif Input.is_action_pressed("up"):
+		if Input.is_action_pressed("left"):
+			sprite.play("up_left")
+		elif Input.is_action_pressed("right"):
+			sprite.play("up_right")
+		else:
+			sprite.play("up")
+	elif Input.is_action_pressed("left"):
+		sprite.play("left")
+	elif Input.is_action_pressed("right"):
+		sprite.play("right")
+	else:
+		sprite.play("idle")

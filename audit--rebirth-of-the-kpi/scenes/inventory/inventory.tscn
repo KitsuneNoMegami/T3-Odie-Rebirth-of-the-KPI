@@ -2,11 +2,11 @@
 
 [ext_resource type="Script" uid="uid://p8ed4b63404f" path="res://scenes/inventory/inventory.gd" id="1_msrby"]
 
-[node name="Inventory" type="CanvasLayer"]
+[node name="inventory" type="CanvasLayer"]
 process_mode = 3
 script = ExtResource("1_msrby")
 
-[node name="Title" type="Label" parent="."]
+[node name="title" type="Label" parent="."]
 offset_left = 710.0
 offset_top = 43.0
 offset_right = 943.0
@@ -14,7 +14,7 @@ offset_bottom = 112.0
 theme_override_font_sizes/font_size = 50
 text = "Inventory"
 
-[node name="Team" type="Label" parent="."]
+[node name="team" type="Label" parent="."]
 offset_left = 238.0
 offset_top = 37.0
 offset_right = 372.0
@@ -23,7 +23,7 @@ theme_override_font_sizes/font_size = 50
 text = "Team"
 horizontal_alignment = 1
 
-[node name="Team_container" type="VBoxContainer" parent="."]
+[node name="team_container" type="VBoxContainer" parent="."]
 custom_minimum_size = Vector2(64, 64)
 layout_direction = 1
 offset_left = -2.0
@@ -31,7 +31,7 @@ offset_top = 120.0
 offset_right = 565.0
 offset_bottom = 648.0
 
-[node name="Objects_container" type="VBoxContainer" parent="."]
+[node name="objects_container" type="VBoxContainer" parent="."]
 custom_minimum_size = Vector2(64, 64)
 layout_direction = 1
 offset_left = 577.0

@@ -5,7 +5,7 @@ func _ready() -> void:
 	$pnj.connect("dialogue_requested", Callable(self,"on_dialogue_requested"))
 
 func on_dialogue_requested() -> void:
-	if ($dialogueBox.get_panel_visible()==true):
-		$dialogueBox.next_line()
+	if ($dialogue_box.get_panel_visible()==true):
+		$dialogue_box.next_line()
 	else:
-		$dialogueBox.start_dialogue()
+		$dialogue_box.start_dialogue()

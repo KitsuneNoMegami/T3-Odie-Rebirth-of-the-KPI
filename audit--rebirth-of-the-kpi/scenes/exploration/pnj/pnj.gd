@@ -3,14 +3,13 @@ extends  StaticBody2D
 
 signal dialogue_requested #Signal pour le dialogue 
 var player_in_range = false
+@onready var sprite = $pnj_sprite
+
+func _ready():
+	sprite.play("idle")
 
 func _process(delta: float) -> void:
-	if player_in_range and (Input.is_action_just_pressed("ui_accept") or Input.is_action_just_pressed("mouse_left")):
-		emit_signal("dialogue_requested")
-
-
-func _input(event: InputEvent) -> void:
-	if (player_in_range and (event is InputEventMouseButton and event.pressed and event.button_index == MOUSE_BUTTON_LEFT)):
+	if player_in_range and (Input.is_action_just_pressed("accept")):
 		emit_signal("dialogue_requested")
 
 func _on_talknode_body_entered(body: Node2D) -> void:

@@ -6,12 +6,12 @@
 
 [node name="Teammate_slot" type="Control"]
 material = SubResource("CanvasItemMaterial_m5tv2")
+custom_minimum_size = Vector2(100, 120)
 layout_mode = 3
 anchors_preset = 0
-offset_left = -2.0
 offset_top = 3.0
-offset_right = 461.0
-offset_bottom = 126.0
+offset_right = 463.0
+offset_bottom = 125.0
 
 [node name="Panel" type="Panel" parent="."]
 layout_mode = 0

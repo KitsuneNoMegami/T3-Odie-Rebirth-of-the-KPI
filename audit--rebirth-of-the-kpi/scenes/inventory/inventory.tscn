@@ -23,9 +23,18 @@ theme_override_font_sizes/font_size = 50
 text = "Team"
 horizontal_alignment = 1
 
-[node name="GridContainer" type="GridContainer" parent="."]
+[node name="Team_container" type="VBoxContainer" parent="."]
+custom_minimum_size = Vector2(64, 64)
+layout_direction = 1
 offset_left = -2.0
-offset_top = -3.0
-offset_right = 1150.0
-offset_bottom = 645.0
-columns = 4
+offset_top = 120.0
+offset_right = 565.0
+offset_bottom = 648.0
+
+[node name="Objects_container" type="VBoxContainer" parent="."]
+custom_minimum_size = Vector2(64, 64)
+layout_direction = 1
+offset_left = 577.0
+offset_top = 129.0
+offset_right = 1144.0
+offset_bottom = 649.0

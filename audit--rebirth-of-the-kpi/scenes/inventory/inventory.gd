@@ -2,18 +2,23 @@ class_name Inventory
 extends CanvasLayer
 
 var pause=false
-@onready var grid = $Grid
+@onready var grid = $Team_container
 var team = []  # liste des objets dans l’inventaire
 
+func _ready():
+	pass
+	
+	
 func add_mate(mate):
 	team.append(mate)
 	refresh_team()
 
 func refresh_team():
-	grid.clear()  # retire tout
+	for child in grid.get_children(): # retire tout
+		child.queue_free()  
 	for mate in team:
 		var slot = preload("res://scenes/inventory/teammate_slot.tscn").instantiate()
-		slot.get_node("Panel/Teammate_sprite").texture = mate.sprite
+		slot.get_node("Panel/Teammate_sprite").texture = load(mate.sprite)
 		slot.get_node("Panel/Description").text=mate.desc
 		slot.get_node("Panel/Teammate_name").text = mate.name
 		grid.add_child(slot)

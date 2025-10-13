@@ -197,17 +197,16 @@ script = ExtResource("1_dovo2")
 
 [node name="player_sprite" type="AnimatedSprite2D" parent="."]
 position = Vector2(16, 21)
-scale = Vector2(2.24726, 2.25755)
 sprite_frames = SubResource("SpriteFrames_7tli6")
 animation = &"idle"
 
 [node name="player_collisions" type="CollisionPolygon2D" parent="."]
-position = Vector2(-30, -25)
-scale = Vector2(0.167197, 0.151432)
-polygon = PackedVector2Array(245.22, 191.505, 305.029, 191.505, 334.934, 217.92, 352.877, 244.334, 346.896, 283.956, 316.991, 330.181, 352.877, 369.803, 346.896, 389.614, 328.953, 429.236, 227.277, 429.236, 209.334, 409.425, 197.372, 376.407, 239.239, 330.181, 197.372, 290.559, 209.334, 231.127)
+position = Vector2(-6.1154, -0.215242)
+scale = Vector2(0.0803832, 0.0683546)
+polygon = PackedVector2Array(337.327, 295.741, 316.991, 330.181, 352.877, 369.803, 346.896, 389.614, 328.953, 429.236, 227.277, 429.236, 209.334, 409.425, 197.372, 376.407, 239.239, 330.181, 225.363, 295.741)
 
 [node name="camera_2D" type="Camera2D" parent="."]
-position = Vector2(25, 57)
-zoom = Vector2(2, 2)
+position = Vector2(16, 18)
+zoom = Vector2(2.2, 2.2)
 
 [connection signal="input_event" from="." to="." method="_on_input_event"]

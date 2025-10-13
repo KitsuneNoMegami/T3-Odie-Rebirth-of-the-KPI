@@ -19,25 +19,25 @@ animations = [{
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_v0gl5"]
-radius = 50.01
+radius = 15.0333
 
 [node name="pnj" type="StaticBody2D"]
 script = ExtResource("1_tpmle")
 
 [node name="pnj_sprite" type="AnimatedSprite2D" parent="."]
-position = Vector2(14, 23)
-scale = Vector2(2.247, 2.258)
+position = Vector2(5.5, 8)
 sprite_frames = SubResource("SpriteFrames_d24va")
 animation = &"idle"
 
 [node name="collison" type="CollisionPolygon2D" parent="."]
-position = Vector2(134, 152)
-polygon = PackedVector2Array(-116, -148, -109, -142, -106, -136, -107, -132, -114, -126, -107, -120, -108, -117, -114, -109, -127, -109, -132, -115, -132, -120, -126, -125, -133, -132, -133, -135, -131, -142, -126, -147)
+position = Vector2(58.3358, 69.8104)
+scale = Vector2(0.442654, 0.478323)
+polygon = PackedVector2Array(-115.379, -147.071, -109, -142, -106, -136, -107, -132, -114, -126, -107, -120, -107.718, -115.018, -114, -109, -125.009, -108.317, -132, -115, -132, -120, -126, -125, -133, -132, -133, -135, -131, -142, -126, -147)
 
 [node name="talk_node" type="Area2D" parent="."]
 
 [node name="talk_zone" type="CollisionShape2D" parent="talk_node"]
-position = Vector2(13, 23)
+position = Vector2(6, 9)
 shape = SubResource("CircleShape2D_v0gl5")
 
 [connection signal="body_entered" from="talk_node" to="." method="_on_talknode_body_entered"]

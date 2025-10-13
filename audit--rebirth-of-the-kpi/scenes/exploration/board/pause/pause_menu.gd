@@ -1,23 +1,31 @@
 extends CanvasLayer
 var pause=false
+var text: Array[Label]
+var nb := 0
 
 @onready var start: Label = $start
-@onready var settings: Label = $settings
+@onready var son: HScrollBar = $son
 @onready var exit: Label = $exit
 
 func _ready() -> void:
-	text = [start, settings, exit]
+	text = [start, exit]
+	_setup_volume_bar()
 
 	for i in range(text.size()):
-		text[i].set_process_mode(Node.PROCESS_MODE_ALWAYS)  # Labels actifs pendant la pause
 		text[i].mouse_filter = Control.MOUSE_FILTER_STOP    # pour bien capter le survol
 		text[i].connect("mouse_entered", Callable(self, "_on_label_hovered").bind(i))
-
+		text[i].connect("mouse_exited",Callable(self,"_on_label_hovered").bind(4))
 	_update_selection()
-	_update_selection()
 
-var text: Array[Label]
-var nb := 0
+func _setup_volume_bar() -> void:
+	# Initialise la barre selon le volume actuel du bus Master
+	var current_db := AudioServer.get_bus_volume_db(0)
+	son.value = db_to_linear(current_db)
+	son.mouse_filter = Control.MOUSE_FILTER_STOP
+	son.connect("value_changed", Callable(self, "_on_volume_changed"))
+
+func _on_volume_changed(value: float) -> void:
+	AudioServer.set_bus_volume_db(0, linear_to_db(value))
 
 func pauseunpause():
 	pause=!pause
@@ -58,8 +66,6 @@ func _trigger_action(i: int) -> void:
 			get_tree().paused=false
 			pause=!pause
 		1:
-			print("Settings !")
-		2:
 			print("Exit !")
 			get_tree().quit()
 

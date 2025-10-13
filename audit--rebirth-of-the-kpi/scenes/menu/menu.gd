@@ -13,7 +13,7 @@ func _ready() -> void:
 	# Connexion du survol de la souris
 	for i in range(text.size()):
 		text[i].connect("mouse_entered", Callable(self, "_on_label_hovered").bind(i))
-
+		text[i].connect("mouse_exited",Callable(self,"_on_label_hovered").bind(4))
 	_update_selection()
 
 func _input(event: InputEvent) -> void:

@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://c1l537l6qsm3u"]
+[gd_scene load_steps=5 format=3 uid="uid://c1l537l6qsm3u"]
 
 [ext_resource type="Script" uid="uid://cpju2hxr56t7x" path="res://panel.gd" id="1_hdmo1"]
-[ext_resource type="Script" uid="uid://cqja0kpunq20a" path="res://scenes/exploration/board/pause_menu.gd" id="1_nwcfo"]
+[ext_resource type="Script" uid="uid://cqja0kpunq20a" path="res://scenes/exploration/board/pause/pause_menu.gd" id="1_nwcfo"]
 [ext_resource type="PackedScene" uid="uid://bjicvafn3yb6j" path="res://scenes/menu/textemodele.tscn" id="3_81a2n"]
+[ext_resource type="Script" uid="uid://dm0g8k30nrk5n" path="res://scenes/exploration/board/pause/h_scroll_bar.gd" id="3_mexsl"]
 
 [node name="CanvasLayer" type="CanvasLayer"]
 process_mode = 3
@@ -17,20 +18,26 @@ grow_vertical = 2
 script = ExtResource("1_hdmo1")
 
 [node name="start" parent="." instance=ExtResource("3_81a2n")]
+process_mode = 3
 offset_left = 345.0
 offset_top = 32.0
 offset_right = 771.0
 offset_bottom = 169.0
 text = "continue"
 
-[node name="settings" parent="." instance=ExtResource("3_81a2n")]
-offset_left = 391.0
-offset_top = 226.0
-offset_right = 772.0
-offset_bottom = 363.0
-text = "settings"
+[node name="son" type="HScrollBar" parent="."]
+process_mode = 3
+offset_left = 300.0
+offset_top = 240.0
+offset_right = 857.0
+offset_bottom = 348.0
+max_value = 1.0
+step = 0.01
+value = 1.0
+script = ExtResource("3_mexsl")
 
 [node name="exit" parent="." instance=ExtResource("3_81a2n")]
+process_mode = 3
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
@@ -43,4 +50,6 @@ offset_bottom = 213.0
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 8
-text = "exit"
+text = "close game"
+
+[connection signal="value_changed" from="son" to="." method="_on_son_value_changed"]

@@ -7,8 +7,8 @@ var _texts = [
 	"Moi non plus"
 ]
 var index=0
-@onready var _panel = $dialogueBg
-@onready var _label = $dialogueBg/text
+@onready var _panel = $dialogue_bg
+@onready var _label = $dialogue_bg/text
 
 func _ready() -> void:
 	_panel.visible=false

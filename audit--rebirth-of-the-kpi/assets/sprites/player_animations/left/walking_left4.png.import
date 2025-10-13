@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b5qjbwpsr4k06"
-path="res://.godot/imported/blobsprite.png-e0ad640e2f4def5bedb483829903f1e9.ctex"
+uid="uid://dm7tbdfujuwfa"
+path="res://.godot/imported/walking_left4.png-24695d25f2e62174e4b88f7a8bc97934.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://blobsprite.png"
-dest_files=["res://.godot/imported/blobsprite.png-e0ad640e2f4def5bedb483829903f1e9.ctex"]
+source_file="res://assets/sprites/player_animations/left/walking_left4.png"
+dest_files=["res://.godot/imported/walking_left4.png-24695d25f2e62174e4b88f7a8bc97934.ctex"]
 
 [params]
 

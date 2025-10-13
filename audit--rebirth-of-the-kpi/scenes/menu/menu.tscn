@@ -5,6 +5,7 @@
 [ext_resource type="Script" uid="uid://b4ow1apiqci4c" path="res://scenes/menu/exit.gd" id="3_e0arn"]
 
 [node name="menu" type="Node2D"]
+scale = Vector2(0.7, 0.7)
 script = ExtResource("1_mcvr8")
 
 [node name="Camera2D" type="Camera2D" parent="."]

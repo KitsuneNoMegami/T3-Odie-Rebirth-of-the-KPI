@@ -12,14 +12,14 @@ func _ready() -> void:
 	_setup_volume_bar()
 
 	for i in range(text.size()):
-		text[i].mouse_filter = Control.MOUSE_FILTER_STOP    # pour bien capter le survol
+		text[i].mouse_filter = Control.MOUSE_FILTER_STOP    # pour bien capter le survol avec la souris
 		text[i].connect("mouse_entered", Callable(self, "_on_label_hovered").bind(i))
 		text[i].connect("mouse_exited",Callable(self,"_on_label_hovered").bind(4))
 	_update_selection()
 
 func _setup_volume_bar() -> void:
-	# Initialise la barre selon le volume actuel du bus Master
 	var current_db := AudioServer.get_bus_volume_db(0)
+
 	son.value = db_to_linear(current_db)
 	son.mouse_filter = Control.MOUSE_FILTER_STOP
 	son.connect("value_changed", Callable(self, "_on_volume_changed"))
@@ -27,7 +27,7 @@ func _setup_volume_bar() -> void:
 func _on_volume_changed(value: float) -> void:
 	AudioServer.set_bus_volume_db(0, linear_to_db(value))
 
-func pauseunpause():
+func pause_unpause():
 	pause=!pause
 	if (pause):
 		show()
@@ -38,7 +38,7 @@ func pauseunpause():
 
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("pause"):
-		pauseunpause()
+		pause_unpause()
 	
 	# Flèche bas
 	if event.is_action_pressed("down"):
@@ -50,7 +50,6 @@ func _input(event: InputEvent) -> void:
 		nb = (nb - 1 + text.size()) % text.size()
 		_update_selection()
 
-	# Entrée ou clic gauche (car accept contient les deux)
 	elif event.is_action_pressed("accept"):
 		_trigger_action(nb)
 

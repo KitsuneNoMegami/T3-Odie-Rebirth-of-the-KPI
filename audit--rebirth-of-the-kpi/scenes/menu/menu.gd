@@ -14,29 +14,29 @@ func _ready() -> void:
 	for i in range(text.size()):
 		text[i].connect("mouse_entered", Callable(self, "_on_label_hovered").bind(i))
 		text[i].connect("mouse_exited",Callable(self,"_on_label_hovered").bind(4))
-	_update_selection()
+	update_selection()
 
 func _input(event: InputEvent) -> void:
 	# Flèche bas
 	if event.is_action_pressed("down"):
 		nb = (nb + 1) % text.size()
-		_update_selection()
+		update_selection()
 
 	# Flèche haut
 	elif event.is_action_pressed("up"):
 		nb = (nb - 1 + text.size()) % text.size()
-		_update_selection()
+		update_selection()
 
 	# Entrée ou clic gauche (car accept contient les deux)
 	elif event.is_action_pressed("accept"):
-		_trigger_action(nb)
+		trigger_action(nb)
 
 func _on_label_hovered(i: int) -> void:
 	nb = i
-	_update_selection()
+	update_selection()
 
 #reagis à la l'input accept 
-func _trigger_action(i: int) -> void:
+func trigger_action(i: int) -> void:
 	match i:
 		0:
 			get_tree().change_scene_to_file("res://scenes/exploration/board/board.tscn")
@@ -47,7 +47,7 @@ func _trigger_action(i: int) -> void:
 			get_tree().quit()
 
 #met a jour la taille de chaque label quand nécéssaire
-func _update_selection() -> void:
+func update_selection() -> void:
 	for i in range(text.size()):
 		if i == nb:
 			text[i].add_theme_font_size_override("font_size", 125)

@@ -1,7 +1,7 @@
 extends CanvasLayer
 var pause=false
 var text: Array[Label]
-var nb := 0
+var nb := 4
 
 @onready var start: Label = $start
 @onready var son: HScrollBar = $son

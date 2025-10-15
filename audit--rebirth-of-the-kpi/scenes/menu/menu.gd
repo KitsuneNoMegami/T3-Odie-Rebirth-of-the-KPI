@@ -5,7 +5,7 @@ extends Node
 @onready var exit: Label = $exit
 
 var text: Array[Label]
-var nb := 0
+var nb := 4
 
 func _ready() -> void:
 	text = [start, settings, exit]

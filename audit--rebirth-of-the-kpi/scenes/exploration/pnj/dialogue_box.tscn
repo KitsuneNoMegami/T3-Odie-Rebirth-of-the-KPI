@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://6deqvxp6cvug" path="res://scenes/exploration/pnj/dialogue_box.gd" id="1_rc1id"]
 
 [node name="dialogue_box" type="CanvasLayer"]
+follow_viewport_enabled = true
 script = ExtResource("1_rc1id")
 
 [node name="dialogue_bg" type="Panel" parent="."]

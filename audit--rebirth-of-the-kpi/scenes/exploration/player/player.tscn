@@ -1,7 +1,8 @@
-[gd_scene load_steps=38 format=3 uid="uid://ce7gk84oa0efc"]
+[gd_scene load_steps=40 format=3 uid="uid://ce7gk84oa0efc"]
 
 [ext_resource type="Script" uid="uid://cufw67qqw227h" path="res://scenes/exploration/player/player.gd" id="1_dovo2"]
 [ext_resource type="Texture2D" uid="uid://i0nnb6d5oecr" path="res://assets/sprites/player_animations/down/walking_front1.png" id="2_4lw7v"]
+[ext_resource type="Script" uid="uid://co3usloo00wub" path="res://scenes/exploration/player/GameState.gd" id="2_griyc"]
 [ext_resource type="Texture2D" uid="uid://b4sp4s44nxw1y" path="res://assets/sprites/player_animations/down/walking_front2.png" id="3_iqqem"]
 [ext_resource type="Texture2D" uid="uid://cybo26s2hbtuf" path="res://assets/sprites/player_animations/down/walking_front3.png" id="4_j2s5l"]
 [ext_resource type="Texture2D" uid="uid://uha2hy2hidyd" path="res://assets/sprites/player_animations/down/walking_front4.png" id="5_mxc8l"]
@@ -192,8 +193,12 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_qwx4k"]
+radius = 16.0
+
 [node name="player" type="CharacterBody2D"]
 script = ExtResource("1_dovo2")
+gameState = ExtResource("2_griyc")
 
 [node name="player_sprite" type="AnimatedSprite2D" parent="."]
 position = Vector2(16, 21)
@@ -207,6 +212,14 @@ polygon = PackedVector2Array(337.327, 295.741, 316.991, 330.181, 352.877, 369.80
 
 [node name="camera_2D" type="Camera2D" parent="."]
 position = Vector2(16, 18)
-zoom = Vector2(2.2, 2.2)
+zoom = Vector2(4, 4)
+
+[node name="talknode" type="Area2D" parent="."]
+
+[node name="talknode_area" type="CollisionShape2D" parent="talknode"]
+position = Vector2(16, 20)
+shape = SubResource("CircleShape2D_qwx4k")
 
 [connection signal="input_event" from="." to="." method="_on_input_event"]
+[connection signal="body_entered" from="talknode" to="." method="_on_talknode_body_entered"]
+[connection signal="body_exited" from="talknode" to="." method="_on_talknode_body_exited"]

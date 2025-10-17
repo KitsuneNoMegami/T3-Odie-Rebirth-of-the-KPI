@@ -1,8 +1,15 @@
 class_name Player 
 extends CharacterBody2D
 
-var _speed: int= 500
+var _speed: int= 250
 var _inventory
+var pnj_in_range = false
+var dialogue_ressource = load("res://Rh.dialogue")
+@export var gameState: Script
+
+signal dialogue_requested #Signal pour le dialogue 
+signal no_player_in_range
+
 @onready var sprite = $player_sprite
 var vanessa = {
 	"name"="Vanessa",
@@ -25,11 +32,13 @@ func _ready() -> void:
 	_inventory.add_mate(bob)
 
 func _process(delta: float) -> void:
-	move()
-	sprite_modification()
+	if !GameState.get_pause():
+		move()
+		sprite_modification()
 
 func move() -> void:
 	var direction = Input.get_vector("left", "right", "up", "down")
+
 	velocity = direction * _speed
 	move_and_slide()
 	
@@ -54,3 +63,20 @@ func sprite_modification():
 		sprite.play("right")
 	else:
 		sprite.play("idle")
+
+func _on_talknode_body_entered(body: Node2D) -> void:
+	if body.name == "pnj":
+		pnj_in_range = true
+
+func _on_talknode_body_exited(body: Node2D) -> void:
+	if body.name == "pnj":
+		pnj_in_range = false
+		emit_signal("no_player_in_range")
+
+
+func _unhandled_input(event: InputEvent) -> void:
+	if pnj_in_range and (Input.is_action_just_pressed("accept")):
+	
+		GameState.set_pause(true)
+		if (GameState.get_pause()):
+			DialogueManager.show_example_dialogue_balloon(dialogue_ressource,"start")

@@ -1,0 +1,7 @@
+~ start
+Madame: Vous venez pour faire un audit?
+- Oui 
+	Madame: Tres alors commencons
+- Fuire
+do GameState.set_pause(false)
+=> END

@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://bjicvafn3yb6j"]
 
-[ext_resource type="Script" uid="uid://dobcobllap42" path="res://text.gd" id="1_rl5v5"]
+[ext_resource type="Script" uid="uid://dobcobllap42" path="res://scenes/menu/text.gd" id="1_rl5v5"]
 
 [node name="start" type="Label"]
 texture_filter = 1

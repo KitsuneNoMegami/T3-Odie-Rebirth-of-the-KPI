@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="38399cb1-0ea1-409f-82d1-51916d4d0067" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/audit--rebirth-of-the-kpi/assets/map/BD001.png" beforeDir="false" afterPath="$PROJECT_DIR$/audit--rebirth-of-the-kpi/assets/map/BD001.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/audit--rebirth-of-the-kpi/scenes/exploration/board/board.gd" beforeDir="false" afterPath="$PROJECT_DIR$/audit--rebirth-of-the-kpi/scenes/exploration/board/board.gd" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/audit--rebirth-of-the-kpi/scenes/exploration/board/board.tscn" beforeDir="false" afterPath="$PROJECT_DIR$/audit--rebirth-of-the-kpi/scenes/exploration/board/board.tscn" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/audit--rebirth-of-the-kpi/scenes/exploration/player/player.gd" beforeDir="false" afterPath="$PROJECT_DIR$/audit--rebirth-of-the-kpi/scenes/exploration/player/player.gd" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/audit--rebirth-of-the-kpi/scenes/exploration/pnj/dialogue_box.gd" beforeDir="false" afterPath="$PROJECT_DIR$/audit--rebirth-of-the-kpi/scenes/exploration/pnj/dialogue_box.gd" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/audit--rebirth-of-the-kpi/scenes/exploration/pnj/dialogue_box.tscn" beforeDir="false" afterPath="$PROJECT_DIR$/audit--rebirth-of-the-kpi/scenes/exploration/pnj/dialogue_box.tscn" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/audit--rebirth-of-the-kpi/scenes/exploration/pnj/pnj.gd" beforeDir="false" afterPath="$PROJECT_DIR$/audit--rebirth-of-the-kpi/scenes/exploration/pnj/pnj.gd" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectColorInfo"><![CDATA[{
+  "customColor": "",
+  "associatedIndex": 4
+}]]></component>
+  <component name="ProjectId" id="34BS3BupLJ3wFQiXzLaU785zPTL" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "git-widget-placeholder": "fadingceiling",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "/home/beth/Documents/A2/a31"
+  }
+}]]></component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="38399cb1-0ea1-409f-82d1-51916d4d0067" name="Changes" comment="" />
+      <created>1760685276972</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1760685276972</updated>
+    </task>
+    <servers />
+  </component>
+</project>

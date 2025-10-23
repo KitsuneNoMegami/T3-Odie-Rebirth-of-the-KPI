@@ -1,11 +1,21 @@
 class_name Board
 extends TileMapLayer
 
-func _ready() -> void:	
-	$pnj.connect("dialogue_requested", Callable(self,"on_dialogue_requested"))
+var map_open : bool = false
+@onready var map_camera : Camera2D = $map_camera
+@onready var player_camera : Camera2D= $player.get_node("player_view")
 
-func on_dialogue_requested() -> void:
-	if ($dialogueBox.get_panel_visible()==true):
-		$dialogueBox.next_line()
+func _ready() -> void:
+	pass
+	
+func _input(event: InputEvent) -> void:
+	if event.is_action_pressed("toggle_map"):
+		_toggle_map()
+
+func _toggle_map()->void:
+	map_open=!map_open
+	if map_open:
+		map_camera.make_current()
 	else:
-		$dialogueBox.start_dialogue()
+		# Return to the player's camera
+		player_camera.make_current()

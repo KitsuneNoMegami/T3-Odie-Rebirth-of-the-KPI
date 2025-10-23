@@ -1,52 +1,75 @@
-extends Node
-
-@onready var start: Label = $start
-@onready var settings: Label = $settings
-@onready var exit: Label = $exit
-
+extends CanvasLayer
+var pause=false
 var text: Array[Label]
 var nb := 4
 
+@onready var start: Label = $start
+@onready var son: HScrollBar = $son
+@onready var exit: Label = $exit
+
 func _ready() -> void:
-	text = [start, settings, exit]
-	# Connexion du survol de la souris
+	text = [start, exit]
+	_setup_volume_bar()
+
 	for i in range(text.size()):
+		text[i].mouse_filter = Control.MOUSE_FILTER_STOP    # pour bien capter le survol avec la souris
 		text[i].connect("mouse_entered", Callable(self, "_on_label_hovered").bind(i))
 		text[i].connect("mouse_exited",Callable(self,"_on_label_hovered").bind(4))
-	update_selection()
+	_update_selection()
+
+func _setup_volume_bar() -> void:
+	var current_db := AudioServer.get_bus_volume_db(0)
+
+	son.value = db_to_linear(current_db)
+	son.mouse_filter = Control.MOUSE_FILTER_STOP
+	son.connect("value_changed", Callable(self, "_on_volume_changed"))
+
+func _on_volume_changed(value: float) -> void:
+	AudioServer.set_bus_volume_db(0, linear_to_db(value))
+
+func pause_unpause():
+	pause=!pause
+	if (pause):
+		show()
+		get_tree().paused=true
+	else:
+		hide()
+		get_tree().paused=false
 
 func _input(event: InputEvent) -> void:
+	if event.is_action_pressed("pause"):
+		pause_unpause()
+	
 	# Flèche bas
 	if event.is_action_pressed("down"):
 		nb = (nb + 1) % text.size()
-		update_selection()
+		_update_selection()
 
 	# Flèche haut
 	elif event.is_action_pressed("up"):
 		nb = (nb - 1 + text.size()) % text.size()
-		update_selection()
+		_update_selection()
 
-	# Entrée ou clic gauche (car accept contient les deux)
 	elif event.is_action_pressed("accept"):
-		trigger_action(nb)
+		_trigger_action(nb)
 
 func _on_label_hovered(i: int) -> void:
 	nb = i
-	update_selection()
+	_update_selection()
 
 #reagis à la l'input accept 
-func trigger_action(i: int) -> void:
+func _trigger_action(i: int) -> void:
 	match i:
 		0:
-			get_tree().change_scene_to_file("res://scenes/exploration/board/board.tscn")
+			hide()
+			get_tree().paused=false
+			pause=!pause
 		1:
-			print("Settings !")
-		2:
 			print("Exit !")
 			get_tree().quit()
 
 #met a jour la taille de chaque label quand nécéssaire
-func update_selection() -> void:
+func _update_selection() -> void:
 	for i in range(text.size()):
 		if i == nb:
 			text[i].add_theme_font_size_override("font_size", 125)

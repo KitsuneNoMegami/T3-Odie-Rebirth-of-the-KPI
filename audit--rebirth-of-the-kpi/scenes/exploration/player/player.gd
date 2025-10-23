@@ -3,7 +3,7 @@ extends CharacterBody2D
 
 var _speed: int= 250
 var _inventory
-var pnj_in_range = false
+var pnj_in_range = false # si un pnj est aux alentours
 var dialogue_ressource = load("res://Rh.dialogue")
 @export var gameState: Script
 
@@ -11,6 +11,8 @@ signal dialogue_requested #Signal pour le dialogue
 signal no_player_in_range
 
 @onready var sprite = $player_sprite
+
+#Pour l'instant les personnages de l'equipe 
 var vanessa = {
 	"name"="Vanessa",
 	"desc"="Directrice des ressources humaines",
@@ -22,7 +24,8 @@ var bob = {
 	"desc"="Bob",
 	"sprite"="res://assets/sprites/logistics-manager.png"
 }
-# Called when the node enters the scene tree for the first time.
+
+# Charge l'inventaire manuellement et ajouter les personnages a l'equipe
 func _ready() -> void:
 	var inventory_scene = preload("res://scenes/inventory/inventory.tscn")
 	_inventory = inventory_scene.instantiate()
@@ -32,16 +35,17 @@ func _ready() -> void:
 	_inventory.add_mate(bob)
 
 func _process(delta: float) -> void:
-	if !GameState.get_pause():
+	if !GameState.get_pause(): # Tant que le jeu n'est pas en pause on peut bouger le perso
 		move()
 		sprite_modification()
 
+# Deplace le joueur avec les fleches
 func move() -> void:
 	var direction = Input.get_vector("left", "right", "up", "down")
-
 	velocity = direction * _speed
 	move_and_slide()
 	
+# Modifie le sprite du joueur en fonction du deplacement
 func sprite_modification():
 	if Input.is_action_pressed("down"):
 		if Input.is_action_pressed("left"):
@@ -64,19 +68,23 @@ func sprite_modification():
 	else:
 		sprite.play("idle")
 
+# Detecte si le joueur arrive pres d'un pnj
 func _on_talknode_body_entered(body: Node2D) -> void:
 	if body.name == "pnj":
 		pnj_in_range = true
 
+# Detecte si le pnj sort de la zone de contact du joueur
 func _on_talknode_body_exited(body: Node2D) -> void:
 	if body.name == "pnj":
 		pnj_in_range = false
 		emit_signal("no_player_in_range")
 
-
+# Gere les dialogues 
 func _unhandled_input(event: InputEvent) -> void:
 	if pnj_in_range and (Input.is_action_just_pressed("accept")):
-	
 		GameState.set_pause(true)
 		if (GameState.get_pause()):
-			DialogueManager.show_example_dialogue_balloon(dialogue_ressource,"start")
+			DialogueManager.show_dialogue_balloon(dialogue_ressource,"start")
+
+func get_map()->Camera2D:
+	return $player_view

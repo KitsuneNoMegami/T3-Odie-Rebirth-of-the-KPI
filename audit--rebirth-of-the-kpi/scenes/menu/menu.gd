@@ -9,7 +9,6 @@ var nb := 0
 
 func _ready() -> void:
 	text = [start, settings, exit]
-
 	# Connexion du survol de la souris
 	for i in range(text.size()):
 		text[i].connect("mouse_entered", Callable(self, "_on_label_hovered").bind(i))

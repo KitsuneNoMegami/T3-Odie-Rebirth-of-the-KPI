@@ -210,7 +210,7 @@ position = Vector2(-6.1154, -0.215242)
 scale = Vector2(0.0803832, 0.0683546)
 polygon = PackedVector2Array(337.327, 295.741, 316.991, 330.181, 352.877, 369.803, 346.896, 389.614, 328.953, 429.236, 227.277, 429.236, 209.334, 409.425, 197.372, 376.407, 239.239, 330.181, 225.363, 295.741)
 
-[node name="camera_2D" type="Camera2D" parent="."]
+[node name="player_view" type="Camera2D" parent="."]
 position = Vector2(16, 18)
 zoom = Vector2(4, 4)
 

@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=4 uid="uid://peogveooslf"]
+[gd_scene load_steps=21 format=4 uid="uid://peogveooslf"]
 
 [ext_resource type="Texture2D" uid="uid://6jd7tmch2k1g" path="res://assets/map/Sample.png" id="1_ci4ar"]
 [ext_resource type="Texture2D" uid="uid://bo4bcdbhblcbh" path="res://assets/map/tilemap.png" id="2_exf0g"]
@@ -8,7 +8,6 @@
 [ext_resource type="PackedScene" uid="uid://ce7gk84oa0efc" path="res://scenes/exploration/player/player.tscn" id="4_rpdi3"]
 [ext_resource type="PackedScene" uid="uid://bmegaasqhjghc" path="res://scenes/exploration/pnj/pnj.tscn" id="5_c6wwm"]
 [ext_resource type="PackedScene" uid="uid://ydccewm1wdcr" path="res://scenes/exploration/board/fade_cieiling.tscn" id="5_qp7b3"]
-[ext_resource type="PackedScene" uid="uid://cikd4735iv0yg" path="res://scenes/exploration/pnj/dialogue_box.tscn" id="6_k8r4w"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_dun80"]
 texture = ExtResource("1_ci4ar")
@@ -7361,9 +7360,6 @@ light_mask = 2
 visibility_layer = 2
 position = Vector2(500, 228)
 
-[node name="dialogue_box" parent="." instance=ExtResource("6_k8r4w")]
-layer = 0
-
 [node name="ceiling_big_building_left" type="TileMapLayer" parent="."]
 tile_map_data = PackedByteArray("AAAkABEAAAARADAAAAAfAA4AAAAOADEAAAAfAA8AAAAOADIAAAAgAA4AAAAPADEAAAAgAA8AAAAPADIAAAAgABAAAAAPADMAAAAhAA4AAAAQADEAAAAhAA8AAAAQADIAAAAhABAAAAAQADMAAAAdAA4AAAAMADEAAAAdAA8AAAAMADIAAAAdABAAAAAMADMAAAAeAA4AAAANADEAAAAeAA8AAAANADIAAAAeABAAAAANADMAAAAfABAAAAAOADMAAAAiAA4AAAARADEAAAAiAA8AAAARADIAAAAiABAAAAARADMAAAA=")
 tile_set = SubResource("TileSet_2bov5")
@@ -7387,3 +7383,7 @@ visible = false
 [node name="2nd_layer_no_collisions" type="TileMapLayer" parent="."]
 tile_map_data = PackedByteArray("AAAiAA0AAgAKADoAAAAjAA0AAgALADoAAAAkAA0AAgAMADoAAAA=")
 tile_set = SubResource("TileSet_ar2e0")
+
+[node name="map_camera" type="Camera2D" parent="."]
+position = Vector2(882, 509)
+scale = Vector2(6.40277, -37.275)

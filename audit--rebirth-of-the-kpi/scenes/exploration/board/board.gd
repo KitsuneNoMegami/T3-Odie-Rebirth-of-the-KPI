@@ -1,16 +1,21 @@
 class_name Board
 extends TileMapLayer
 
-@onready var dialogue_box = $dialogue_box
-func _ready() -> void:	
-	$player.connect("dialogue_requested", Callable(self,"on_dialogue_requested"))
-	$player.connect("no_player_in_range",Callable(self,"on_no_player_in_range"))
+var map_open : bool = false
+@onready var map_camera : Camera2D = $map_camera
+@onready var player_camera : Camera2D= $player.get_node("player_view")
 
-func on_dialogue_requested() -> void:
-	if (dialogue_box.get_panel_visible()==true):
-		dialogue_box.next_line()
-	else:
-		dialogue_box.start_dialogue()
+func _ready() -> void:
+	pass
 	
-func on_no_player_in_range()->void:
-	dialogue_box.set_panel_visible(false)
+func _input(event: InputEvent) -> void:
+	if event.is_action_pressed("toggle_map"):
+		_toggle_map()
+
+func _toggle_map()->void:
+	map_open=!map_open
+	if map_open:
+		map_camera.make_current()
+	else:
+		# Return to the player's camera
+		player_camera.make_current()

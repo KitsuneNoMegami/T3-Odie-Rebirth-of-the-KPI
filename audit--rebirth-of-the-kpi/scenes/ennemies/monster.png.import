@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cn3iq2oxc1tbt"
-path="res://.godot/imported/Screenshot_from_2025-09-07_01-17-02-removebg-preview.png-50ffe42a8e5e3de1d355333dca0902b1.ctex"
+uid="uid://x0dpej23ojh"
+path="res://.godot/imported/monster.png-46d0794885ef149f8799ea92219fad77.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/Screenshot_from_2025-09-07_01-17-02-removebg-preview.png"
-dest_files=["res://.godot/imported/Screenshot_from_2025-09-07_01-17-02-removebg-preview.png-50ffe42a8e5e3de1d355333dca0902b1.ctex"]
+source_file="res://scenes/ennemies/monster.png"
+dest_files=["res://.godot/imported/monster.png-46d0794885ef149f8799ea92219fad77.ctex"]
 
 [params]
 

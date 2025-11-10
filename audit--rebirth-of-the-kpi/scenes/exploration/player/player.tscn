@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://cufw67qqw227h" path="res://scenes/exploration/player/player.gd" id="1_dovo2"]
 [ext_resource type="Texture2D" uid="uid://i0nnb6d5oecr" path="res://assets/sprites/player_animations/down/walking_front1.png" id="2_4lw7v"]
-[ext_resource type="Script" uid="uid://co3usloo00wub" path="res://scenes/exploration/player/GameState.gd" id="2_griyc"]
+[ext_resource type="Script" path="res://scenes/exploration/player/GameState.gd" id="2_griyc"]
 [ext_resource type="Texture2D" uid="uid://b4sp4s44nxw1y" path="res://assets/sprites/player_animations/down/walking_front2.png" id="3_iqqem"]
 [ext_resource type="Texture2D" uid="uid://cybo26s2hbtuf" path="res://assets/sprites/player_animations/down/walking_front3.png" id="4_j2s5l"]
 [ext_resource type="Texture2D" uid="uid://uha2hy2hidyd" path="res://assets/sprites/player_animations/down/walking_front4.png" id="5_mxc8l"]

@@ -36,14 +36,15 @@ func _on_label_hovered(i: int) -> void:
 
 #reagis à la l'input accept 
 func trigger_action(i: int) -> void:
-	match i:
-		0:
-			get_tree().change_scene_to_file("res://scenes/exploration/board/board.tscn")
-		1:
-			print("Settings !")
-		2:
-			print("Exit !")
-			get_tree().quit()
+	if get_tree().current_scene.scene_file_path=="res://scenes/menu/menu.tscn" :
+		match i:
+			0:
+				get_tree().change_scene_to_file("res://scenes/exploration/board/board.tscn")
+			1:
+				print("Settings !")
+			2:
+				print("Exit !")
+				get_tree().quit()
 
 #met a jour la taille de chaque label quand nécéssaire
 func update_selection() -> void:

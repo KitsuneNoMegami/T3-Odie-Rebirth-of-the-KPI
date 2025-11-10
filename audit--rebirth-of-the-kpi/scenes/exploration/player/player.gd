@@ -12,7 +12,7 @@ signal no_player_in_range
 
 @onready var sprite = $player_sprite
 
-#Pour l'instant les personnages de l'equipe 
+#Pour l'instant les personnages de l'equipe x	
 var vanessa = {
 	"name"="Vanessa",
 	"desc"="Directrice des ressources humaines",

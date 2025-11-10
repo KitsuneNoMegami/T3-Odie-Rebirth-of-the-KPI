@@ -52,7 +52,7 @@ func _move()->void:
 		sound_handler.play_cancel()
 		_menu_input(5)
 	
-	if Input.is_action_just_pressed("validate"):
+	if Input.is_action_just_pressed("accept"):
 		match _slot:
 			0:
 				_on_menu_option_1_pressed();

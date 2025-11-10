@@ -9,3 +9,7 @@ func set_pause(value: bool):
 	
 func get_pause():
 	return pause
+
+func start_fight():
+	const fight_scene=preload("res://scenes/fight/fight.tscn")
+	get_tree().change_scene_to_packed(fight_scene)

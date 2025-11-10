@@ -15,6 +15,7 @@ func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("pause"):
 		pause.pause_unpause()
 
+
 func _toggle_map()->void:
 	map_open=!map_open
 	if map_open:

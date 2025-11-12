@@ -6,8 +6,11 @@ var _slot = 0;
 @export var button3: Button
 @export var button4: Button
 @export var sound_handler: AudioStreamPlayer
+
 var _fighters
 var _player
+var _is_win
+var _everyone_alive=true
 
 var _current_menu = "main";																# id menu
 var _menu_options =[["main", "Attaque" ,"Compétences" ,"Objets","Fuite", 1,2,3,4 ], 	# 0
@@ -78,36 +81,79 @@ func _move()->void:
 	pass
 
 func _menu_input(slot)->void:
-	var i = 0
-	if slot == 5:
-		_current_menu = "main";
-		button1.text = _menu_options[0][1];
-		button2.text = _menu_options[0][2];
-		button3.text = _menu_options[0][3];
-		button4.text = _menu_options[0][4];
-	else:
-		while (_current_menu!=_menu_options[i][0]):
-			i += 1
-			pass
-		if i == 0:
-			if slot == 4: 
+	if(_continue()):
+		var i = 0
+		if slot == 5:
+			_current_menu = "main";
+			button1.text = _menu_options[0][1];
+			button2.text = _menu_options[0][2];
+			button3.text = _menu_options[0][3];
+			button4.text = _menu_options[0][4];
+		else:
+			while (_current_menu!=_menu_options[i][0]):
+				i += 1
+				pass
+			if i == 0:
+				if slot == 4: 
+					print(_menu_options[i][slot])
+				else:
+					button1.text = _menu_options[_menu_options[i][4+slot]][1];
+					button2.text = _menu_options[_menu_options[i][4+slot]][2];
+					button3.text = _menu_options[_menu_options[i][4+slot]][3];
+					button4.text = _menu_options[_menu_options[i][4+slot]][4];
+					_current_menu = _menu_options[i][slot];
+					pass
+				pass
+			if i > 0 && i < 4:
 				print(_menu_options[i][slot])
-			else:
-				button1.text = _menu_options[_menu_options[i][4+slot]][1];
-				button2.text = _menu_options[_menu_options[i][4+slot]][2];
-				button3.text = _menu_options[_menu_options[i][4+slot]][3];
-				button4.text = _menu_options[_menu_options[i][4+slot]][4];
-				_current_menu = _menu_options[i][slot];
+				do_action(_menu_options[i][slot],_current_menu)
+				do_action(_player.get_fname(),_current_menu)
 				pass
 			pass
-		if i > 0 && i < 4:
-			print(_menu_options[i][slot])
-			if(_current_menu=="Attaque"):
-				var action= action_script.new() 
-				action.attack(_find_fighter(_menu_options[i][slot]),_player.get_attacks())
-			pass
 		pass
+	else:
+		for fighter in _fighters:
+			print(fighter.get_fname()," a ",fighter.get_pv())
+		print(_player.get_fname()," a ",_player.get_pv())
+		if(is_win()):
+			pass
+
+
+func do_action(name,action_menu):
+	var action= action_script.new()
+	match action_menu:
+		"Attaque":
+			if name==_player.get_fname():
+				var nb_fighter=fighter_number()
+				print(_fighters[nb_fighter].get_fname()," lance une attaque")
+				action.attack(_player,_fighters[fighter_number()].get_attacks())
+				return
+			print(_player.get_fname(), "lance une attaque")
+			if action.attack(_find_fighter(name),_player.get_attacks()):
+				_player.add_credibility(10)
+				_player.add_skill(10)
 	pass
+
+func fighter_number():
+	var nb=0
+	for fighter in _fighters:
+		nb+=1
+	return randi()%nb
+	
+func _continue():
+	if _player.get_pv()<=0:
+		return false
+		
+	for fighter in _fighters:
+		if fighter.get_pv()>0:
+			return true
+	return false
+	
+func is_win():
+	if _player.get_pv()==0:
+		return false
+	return true
+
 
 func _on_menu_option_1_mouse_entered() -> void:
 	sound_handler.play_switch()
@@ -144,7 +190,6 @@ func _on_menu_option_3_pressed() -> void:
 	sound_handler.play_click()
 	_menu_input(3)
 	pass # Replace with function body.
-
 
 func _on_menu_option_4_pressed() -> void:
 	sound_handler.play_click()

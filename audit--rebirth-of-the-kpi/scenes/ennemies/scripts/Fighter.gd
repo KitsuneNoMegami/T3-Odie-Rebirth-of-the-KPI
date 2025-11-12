@@ -17,13 +17,11 @@ func _ready():
 	#var main = MainScript.new()
 	#main._ready()
 
-func _init(pv=null,name=null):
+func _init(pv=null,name=null,attack=null):
 	_pv=pv
 	_pv_max=pv
 	_description="test"
 	_name=name
-	print("attack_script =", attack_script)
-	var attack=Attack.new("Turbo Feur",10)
 	_attacks=attack
 	#faire liste des attaques
 	
@@ -32,7 +30,13 @@ func delete_pv(pv):
 	_pv-=pv
 	print(_name,": il me reste ",str(_pv),"/",str(_pv_max))
 	
-
+func add_credibility(nb):
+	_levelCredibility+=nb
+	pass
+func add_skill(nb):
+	_levelSkill+=nb
+	pass
+	
 func get_fname():
 	return _name
 	
@@ -40,4 +44,3 @@ func get_attacks():
 	return _attacks
 func get_pv():
 	return _pv
-	

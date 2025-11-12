@@ -128,6 +128,8 @@ func _menu_input(slot)->void:
 	else:
 		print(_player.get_fname()," a ",_player.get_pv())
 		if(is_win()):
+			const exploration_scene=preload("res://scenes/exploration/board/board.tscn")
+			get_tree().change_scene_to_packed(exploration_scene)
 			pass
 
 

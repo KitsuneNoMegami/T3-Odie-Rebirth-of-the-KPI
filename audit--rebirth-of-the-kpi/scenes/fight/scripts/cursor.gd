@@ -30,13 +30,7 @@ func _ready() -> void:
 	var _player_object=player_script.new()
 	_player=_player_object.get_player()
 	
-	var _i=1
-	for fighter in _fighters:
-		_menu_options[1].append(fighter.get_fname())
-		_i+=1
-	var size=_fighters.size()
-	for j in range(4-size):
-		_menu_options[1].append(" ")
+	_show_ennemies()
 	pass # Replace with function body.
 
 func _process(_delta: float) -> void:
@@ -44,6 +38,25 @@ func _process(_delta: float) -> void:
 	_move();
 	pass
 
+func _show_ennemies():
+	# On reconstruit la liste des ennemis dans le menu "Attaque"
+	_menu_options[1] = ["Attaque"]
+
+	for fighter in _fighters:
+		# On n'affiche que les vivants
+		if fighter.get_pv() > 0:
+			_menu_options[1].append(fighter.get_fname())
+
+	# On complète jusqu’à 4 entrées pour éviter les erreurs d’affichage
+	while _menu_options[1].size() < 5:
+		_menu_options[1].append(" ")
+
+	# Met à jour les boutons du menu
+	button1.text = _menu_options[1][1]
+	button2.text = _menu_options[1][2]
+	button3.text = _menu_options[1][3]
+	button4.text = _menu_options[1][4]
+	return
 func _find_fighter(name_fighter):
 	for fighter in _fighters:
 		if fighter.get_fname()==name_fighter:
@@ -107,13 +120,12 @@ func _menu_input(slot)->void:
 			if i > 0 && i < 4:
 				print(_menu_options[i][slot])
 				do_action(_menu_options[i][slot],_current_menu)
-				do_action(_player.get_fname(),_current_menu)
+				if(_continue()):
+					do_action(_player.get_fname(),_current_menu)
 				pass
 			pass
 		pass
 	else:
-		for fighter in _fighters:
-			print(fighter.get_fname()," a ",fighter.get_pv())
 		print(_player.get_fname()," a ",_player.get_pv())
 		if(is_win()):
 			pass
@@ -128,10 +140,14 @@ func do_action(name,action_menu):
 				print(_fighters[nb_fighter].get_fname()," lance une attaque")
 				action.attack(_player,_fighters[fighter_number()].get_attacks())
 				return
-			print(_player.get_fname(), "lance une attaque")
+			print(_player.get_fname(), " lance une attaque")
+			
 			if action.attack(_find_fighter(name),_player.get_attacks()):
 				_player.add_credibility(10)
 				_player.add_skill(10)
+				
+				_fighters.erase(_find_fighter(name))
+				_show_ennemies()
 	pass
 
 func fighter_number():

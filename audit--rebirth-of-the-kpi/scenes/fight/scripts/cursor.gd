@@ -14,8 +14,8 @@ var _everyone_alive=true
 
 var _current_menu = "main";																# id menu
 var _menu_options =[["main", "Attaque" ,"Compétences" ,"Objets","Fuite", 1,2,3,4 ], 	# 0
-					["Attaque"],					# 1
-					["Compétences","mentir","pression","débunk","sympathiser"],				# 2
+					["Attaque"],														# 1
+					["Compétences","mentir","pression","débunk","sympathiser"],			# 2
 					["Objets","café","excel","powerpoint","dossier perdu"],				# 3
 					["Fuite"]];															# 4
 
@@ -29,7 +29,6 @@ func _ready() -> void:
 	
 	var _player_object=player_script.new()
 	_player=_player_object.get_player()
-	
 	_show_ennemies()
 	pass # Replace with function body.
 
@@ -40,23 +39,21 @@ func _process(_delta: float) -> void:
 
 func _show_ennemies():
 	# On reconstruit la liste des ennemis dans le menu "Attaque"
-	_menu_options[1] = ["Attaque"]
-
+	_menu_options[1]=["Attaque"]
 	for fighter in _fighters:
 		# On n'affiche que les vivants
 		if fighter.get_pv() > 0:
 			_menu_options[1].append(fighter.get_fname())
 
-	# On complète jusqu’à 4 entrées pour éviter les erreurs d’affichage
 	while _menu_options[1].size() < 5:
 		_menu_options[1].append(" ")
-
-	# Met à jour les boutons du menu
-	button1.text = _menu_options[1][1]
-	button2.text = _menu_options[1][2]
-	button3.text = _menu_options[1][3]
-	button4.text = _menu_options[1][4]
+	if _current_menu == "Attaque":
+		button1.text = _menu_options[1][1]
+		button2.text = _menu_options[1][2]
+		button3.text = _menu_options[1][3]
+		button4.text = _menu_options[1][4]
 	return
+
 func _find_fighter(name_fighter):
 	for fighter in _fighters:
 		if fighter.get_fname()==name_fighter:
@@ -120,7 +117,7 @@ func _menu_input(slot)->void:
 			if i > 0 && i < 4:
 				print(_menu_options[i][slot])
 				do_action(_menu_options[i][slot],_current_menu)
-				if(_continue()):
+				if(_continue() && _current_menu=="Attaque"):
 					do_action(_player.get_fname(),_current_menu)
 				pass
 			pass

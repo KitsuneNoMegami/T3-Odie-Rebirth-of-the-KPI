@@ -3,6 +3,7 @@
 extends Node
 
 var pause= false
+var fight_scene
 	
 func set_pause(value: bool):
 	pause = value
@@ -10,6 +11,8 @@ func set_pause(value: bool):
 func get_pause():
 	return pause
 
-func start_fight():
-	const fight_scene=preload("res://scenes/fight/fight.tscn")
-	get_tree().change_scene_to_packed(fight_scene)
+func start_fight(path):
+	fight_scene.fight_unfight(path)
+
+func set_fight(fight):
+	fight_scene=fight

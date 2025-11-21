@@ -5,8 +5,10 @@ var map_open : bool = false
 @onready var pause : CanvasLayer = $pause
 @onready var map_camera : Camera2D = $map_camera
 @onready var player_camera : Camera2D= $player.get_node("player_view")
+@onready var fight_scene : CanvasLayer = $fight
 
 func _ready() -> void:
+	GameState.set_fight(fight_scene)
 	pass
 	
 func _input(event: InputEvent) -> void:

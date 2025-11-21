@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=4 uid="uid://peogveooslf"]
+[gd_scene load_steps=23 format=4 uid="uid://peogveooslf"]
 
 [ext_resource type="Texture2D" uid="uid://6jd7tmch2k1g" path="res://assets/map/Sample.png" id="1_ci4ar"]
 [ext_resource type="Texture2D" uid="uid://bo4bcdbhblcbh" path="res://assets/map/tilemap.png" id="2_exf0g"]
@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://bmegaasqhjghc" path="res://scenes/exploration/pnj/pnj.tscn" id="5_c6wwm"]
 [ext_resource type="PackedScene" uid="uid://ydccewm1wdcr" path="res://scenes/exploration/board/fade_cieiling.tscn" id="5_qp7b3"]
 [ext_resource type="PackedScene" uid="uid://c1l537l6qsm3u" path="res://scenes/exploration/board/pause/pause_menu.tscn" id="9_qp7b3"]
+[ext_resource type="PackedScene" uid="uid://h3ng52t7vgb3" path="res://scenes/fight/fight.tscn" id="10_8xkmt"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_dun80"]
 texture = ExtResource("1_ci4ar")
@@ -7390,4 +7391,8 @@ position = Vector2(882, 509)
 scale = Vector2(6.40277, -37.275)
 
 [node name="pause" parent="." instance=ExtResource("9_qp7b3")]
+visible = false
+
+[node name="fight" parent="." instance=ExtResource("10_8xkmt")]
+process_mode = 2
 visible = false

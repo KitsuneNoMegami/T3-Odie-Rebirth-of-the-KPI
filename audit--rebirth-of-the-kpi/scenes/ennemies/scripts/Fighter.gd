@@ -9,13 +9,10 @@ var _levelSkill=0
 var _capacities #liste des attaques
 var _attacks
 
-@onready var MainScript = preload("res://scenes/global_scripts/main.gd")
 @onready var attack_script = preload("res://scenes/global_scripts/Attack.gd")
 
 func _ready():
 	pass
-	#var main = MainScript.new()
-	#main._ready()
 
 func _init(pv=null,name=null,attack=null):
 	_pv=pv
@@ -37,7 +34,7 @@ func add_skill(nb):
 	_levelSkill+=nb
 	pass
 	
-func get_fname():
+func get_fname()->String:
 	return _name
 	
 func get_attacks():

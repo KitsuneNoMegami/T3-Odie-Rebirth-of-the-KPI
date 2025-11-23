@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://bmegaasqhjghc" path="res://scenes/exploration/pnj/pnj.tscn" id="5_c6wwm"]
 [ext_resource type="PackedScene" uid="uid://ydccewm1wdcr" path="res://scenes/exploration/board/fade_cieiling.tscn" id="5_qp7b3"]
 [ext_resource type="PackedScene" uid="uid://c1l537l6qsm3u" path="res://scenes/exploration/board/pause/pause_menu.tscn" id="9_qp7b3"]
+[ext_resource type="PackedScene" uid="uid://h3ng52t7vgb3" path="res://scenes/fight/fight.tscn" id="10_8xkmt"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_dun80"]
 texture = ExtResource("1_ci4ar")
@@ -8224,4 +8225,8 @@ position = Vector2(882, 509)
 scale = Vector2(6.40277, -37.275)
 
 [node name="pause" parent="." instance=ExtResource("9_qp7b3")]
+visible = false
+
+[node name="fight" parent="." instance=ExtResource("10_8xkmt")]
+process_mode = 2
 visible = false

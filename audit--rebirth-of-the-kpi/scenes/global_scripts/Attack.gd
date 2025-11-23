@@ -13,7 +13,7 @@ func _init(name = null, damage = null):
 func get_damage():
 	return _damage
 	
-func get_aname():
+func get_aname()->String:
 	return _name
 		
 

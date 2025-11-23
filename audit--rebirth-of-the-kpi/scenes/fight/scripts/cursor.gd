@@ -147,6 +147,7 @@ func _menu_input(slot)->void:
 					button4.text = _menu_options[_menu_options[i][4+slot]][4];
 					_current_menu = _menu_options[i][slot];
 					pass
+					
 				pass
 			if i > 0 && i < 4:
 				print(_menu_options[i][slot])

@@ -1,4 +1,12 @@
+<<<<<<< HEAD
 [gd_scene load_steps=24 format=4 uid="uid://peogveooslf"]
+=======
+<<<<<<< Updated upstream
+[gd_scene load_steps=23 format=4 uid="uid://peogveooslf"]
+=======
+[gd_scene load_steps=25 format=4 uid="uid://peogveooslf"]
+>>>>>>> Stashed changes
+>>>>>>> e0c6bbc (fix panel message fight)
 
 [ext_resource type="Texture2D" uid="uid://6jd7tmch2k1g" path="res://assets/map/Sample.png" id="1_ci4ar"]
 [ext_resource type="Texture2D" uid="uid://bo4bcdbhblcbh" path="res://assets/map/tilemap.png" id="2_exf0g"]

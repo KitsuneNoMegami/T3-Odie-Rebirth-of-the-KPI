@@ -1,7 +1,7 @@
 ~ start
 Madame: Vous venez pour faire un audit?
 - Oui 
-	Madame: Tres alors commencons
+	Madame: Tres bien alors commencons
 	do GameState.start_fight("res://scenes/fight/scripts/creation_fighter.gd")
 - Fuire
 do GameState.set_pause(false)

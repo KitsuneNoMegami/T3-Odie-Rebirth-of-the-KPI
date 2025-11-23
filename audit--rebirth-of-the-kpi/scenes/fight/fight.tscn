@@ -169,6 +169,7 @@ script = ExtResource("5_8og4d")
 switch = ExtResource("6_inaet")
 
 [node name="message_panel" type="Panel" parent="."]
+visible = false
 offset_left = 250.0
 offset_top = 449.0
 offset_right = 1010.0

@@ -118,7 +118,6 @@ func _move()->void:
 	pass
 
 func _menu_input(slot)->void:
-	print(visible)
 	if not visible :
 		return
 	if(!fight.get_pause()):
@@ -147,15 +146,18 @@ func _menu_input(slot)->void:
 					button4.text = _menu_options[_menu_options[i][4+slot]][4];
 					_current_menu = _menu_options[i][slot];
 					pass
+					
 				pass
 			if i > 0 && i < 4:
 				print(_menu_options[i][slot])
+				if(_menu_options[i][slot]==" "):
+					return
 				match(_current_menu):
 					"Attaque":
 						if(fight._continue()):
-							fight.do_action(_menu_options[i][slot],_current_menu)
+							await fight.do_action(_menu_options[i][slot],_current_menu)
 						if(fight._continue()):
-							fight.do_action(fight.get_player().get_fname(),_current_menu)
+							await fight.do_action(fight.get_player().get_fname(),_current_menu)
 						_show_ennemies()
 				pass
 			pass

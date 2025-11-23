@@ -46,13 +46,13 @@ func fight_unfight(path):
 
 func attack(target,_attack):
 	if(target.get_pv()<=0):
-		message.show_message(target.get_fname()+" est mort")
+		await message.show_message(target.get_fname()+" est mort")
 		return false
 	else:
-		message.show_message(_attack.get_aname()+ " est lancé sur "+target.get_fname()+" et lui inflige "+str(_attack.get_damage())+" dégats")
+		await message.show_message(_attack.get_aname()+ " est lancé sur "+target.get_fname()+" et lui inflige "+str(_attack.get_damage())+" dégats")
 		target.delete_pv(_attack.get_damage())
 		if(target.get_pv()<=0):
-			message.show_message(target.get_fname()+ " est mort")
+			await message.show_message(target.get_fname()+ " est mort")
 			return true
 	pass
 func _find_fighter(name_fighter):
@@ -66,12 +66,12 @@ func do_action(name,action_menu):
 		"Attaque":
 			if name==_player.get_fname():
 				var nb_fighter=fighter_number()
-				message.show_message(_fighters[nb_fighter].get_fname()+" lance une attaque")
-				attack(_player,_fighters[fighter_number()].get_attacks())
+				await message.show_message(_fighters[nb_fighter].get_fname()+" lance une attaque")
+				await attack(_player,_fighters[fighter_number()].get_attacks())
 				return
-			message.show_message(_player.get_fname()+" lance une attaque")
+			await message.show_message(_player.get_fname()+" lance une attaque")
 			
-			if attack(_find_fighter(name),_player.get_attacks()):
+			if await attack(_find_fighter(name),_player.get_attacks()):
 				_player.add_credibility(20)
 				_player.add_skill(20)
 				

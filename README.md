@@ -100,3 +100,25 @@ Un audit est échoué quand l'audit et son équipe perdent tous leur PV
 ---
 
 ### Fonctionnalités et scénarios avancés
+
+---
+### Crédit
+
+Développement
+Jeu créé avec Godot Engine
+© Godot Engine — sous licence MIT
+godotengine.org/license
+
+Code source
+Sous licence Apache 2.0
+Utilisation, modification et distribution autorisées avec mention du copyright d’origine.
+
+Graphismes
+Personnages — @ErisEsra (utilisation libre, crédit apprécié)
+Bâtiments — @nyk_nck (attribution requise)
+Sol / textures — KenneyNL (CC0 1.0 Universal)
+
+Musique
+Compositions par Floraphonic, via Pixabay
+Licence Pixabay Content License (usage libre, attribution recommandée)
+pixabay.com/service/license-summary/

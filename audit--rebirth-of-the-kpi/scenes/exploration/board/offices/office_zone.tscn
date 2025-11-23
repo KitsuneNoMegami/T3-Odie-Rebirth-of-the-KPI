@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://h1db0cc8k0i3"]
+
+[ext_resource type="Script" uid="uid://b1uno0knwjqts" path="res://scenes/exploration/board/offices/office_zone.gd" id="1_pyx2q"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wpknl"]
+size = Vector2(333, 137)
+
+[node name="office_zone" type="Area2D"]
+script = ExtResource("1_pyx2q")
+
+[node name="zone" type="CollisionShape2D" parent="."]
+position = Vector2(166, 69)
+shape = SubResource("RectangleShape2D_wpknl")
+
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]

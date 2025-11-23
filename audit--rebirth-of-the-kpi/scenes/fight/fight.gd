@@ -52,7 +52,7 @@ func attack(target,_attack):
 		message.show_message(_attack.get_aname()+ " est lancé sur "+target.get_fname()+" et lui inflige "+str(_attack.get_damage())+" dégats")
 		target.delete_pv(_attack.get_damage())
 		if(target.get_pv()<=0):
-			message.show_message(target.get_fname(), " est mort")
+			message.show_message(target.get_fname()+ " est mort")
 			return true
 	pass
 func _find_fighter(name_fighter):

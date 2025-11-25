@@ -8,7 +8,7 @@ var _slot = 0;
 @export var sound_handler: AudioStreamPlayer
 
 @onready var fight: CanvasLayer=get_parent()
-@onready var message=get_node("../message_panel")
+@onready var message=get_node("../NinePatchRect2/message_panel")
 
 
 var _current_menu = "main";																# id menu

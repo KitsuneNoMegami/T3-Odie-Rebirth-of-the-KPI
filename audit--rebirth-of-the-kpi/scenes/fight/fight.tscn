@@ -1,14 +1,14 @@
 [gd_scene load_steps=25 format=4 uid="uid://h3ng52t7vgb3"]
 
-[ext_resource type="Texture2D" uid="uid://bijxomnonhujp" path="res://assets/sprites/arrowsheet.png" id="1_3a20j"]
+[ext_resource type="Texture2D" uid="uid://bxqp2q4d3p2mx" path="res://assets/sprites/arrowsheet.png" id="1_3a20j"]
 [ext_resource type="Script" uid="uid://dxvo8bjih7hia" path="res://scenes/fight/fight.gd" id="1_4qaks"]
 [ext_resource type="Script" uid="uid://cjmp1ry5rcpqi" path="res://scenes/fight/scripts/cursor.gd" id="2_3si2p"]
 [ext_resource type="Script" uid="uid://ixu8kfeykfxc" path="res://scenes/fight/message_panel.gd" id="2_vpnpn"]
-[ext_resource type="Texture2D" uid="uid://7qxvrbflrgti" path="res://assets/sprites/fight_menu_background.png" id="3_3si2p"]
+[ext_resource type="Texture2D" uid="uid://cxs35iqcds7g2" path="res://assets/sprites/fight_menu_background.png" id="3_3si2p"]
 [ext_resource type="Script" uid="uid://iinc6u6qxjwe" path="res://scenes/fight/scripts/audio_stream_player.gd" id="5_8og4d"]
-[ext_resource type="Texture2D" uid="uid://yk7o4k6eje0" path="res://assets/sprites/IT-engineer.png" id="6_4qaks"]
+[ext_resource type="Texture2D" uid="uid://cynew74m01uy4" path="res://assets/sprites/IT-engineer.png" id="6_4qaks"]
 [ext_resource type="AudioStream" uid="uid://bgs6awcbdtryr" path="res://assets/sound/button_switch.mp3" id="6_inaet"]
-[ext_resource type="Texture2D" uid="uid://gwjr6xymh7vg" path="res://assets/sprites/compliance-officer.png" id="7_vpnpn"]
+[ext_resource type="Texture2D" uid="uid://owhk0ruiudy1" path="res://assets/sprites/compliance-officer.png" id="7_vpnpn"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_3si2p"]
 
@@ -210,7 +210,7 @@ offset_right = 1005.0
 offset_bottom = 631.0
 
 [node name="It-engineer" type="Sprite2D" parent="."]
-position = Vector2(358.8375, 476.5625)
+position = Vector2(213.74997, 253.12502)
 scale = Vector2(0.69049, 0.55161494)
 texture = ExtResource("6_4qaks")
 

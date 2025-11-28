@@ -1,12 +1,14 @@
-[gd_scene load_steps=10 format=4 uid="uid://cwdyfb0po75a7"]
+[gd_scene load_steps=12 format=4 uid="uid://cwdyfb0po75a7"]
 
 [ext_resource type="Texture2D" uid="uid://bifjlv4dykjpv" path="res://assets/map/BD001.png" id="1_h2fh7"]
+[ext_resource type="Script" uid="uid://tr1enu2wa4dn" path="res://scenes/exploration/board/offices/it_office.gd" id="2_2ga57"]
 [ext_resource type="PackedScene" uid="uid://bmegaasqhjghc" path="res://scenes/exploration/pnj/pnj.tscn" id="2_cmeqv"]
 [ext_resource type="Script" uid="uid://dagkd1tyrn1no" path="res://scenes/exploration/pnj/it.gd" id="3_b73ca"]
 [ext_resource type="PackedScene" uid="uid://ce7gk84oa0efc" path="res://scenes/exploration/player/player.tscn" id="3_trv6a"]
 [ext_resource type="PackedScene" uid="uid://c4710q2ydrkks" path="res://scenes/inventory/inventory.tscn" id="4_sc3we"]
 [ext_resource type="PackedScene" uid="uid://c1l537l6qsm3u" path="res://scenes/exploration/board/pause/pause_menu.tscn" id="5_y8mxx"]
 [ext_resource type="PackedScene" uid="uid://h1db0cc8k0i3" path="res://scenes/exploration/board/offices/office_zone.tscn" id="6_ba3ig"]
+[ext_resource type="PackedScene" uid="uid://h3ng52t7vgb3" path="res://scenes/fight/fight.tscn" id="8_a7b86"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_x33iy"]
 texture = ExtResource("1_h2fh7")
@@ -747,6 +749,7 @@ sources/0 = SubResource("TileSetAtlasSource_x33iy")
 texture_filter = 1
 tile_map_data = PackedByteArray("AAAcAA0AAAAEADsAAAAcAA4AAAAEADwAAAAcAA8AAAAEAD0AAAAdAA0AAAAFADsAAAAdAA4AAAAFADwAAAAdAA8AAAAFAD0AAAAeAA0AAAAGADsAAAAeAA4AAAAGADwAAAAeAA8AAAAGAD0AAAAfAA0AAAAHADsAAAAfAA4AAAAHADwAAAAfAA8AAAAHAD0AAAAgAA0AAAAIADsAAAAgAA4AAAAIADwAAAAgAA8AAAAIAD0AAAAhAA0AAAAJADsAAAAhAA4AAAAJADwAAAAhAA8AAAAJAD0AAAAiAA0AAAAKADsAAAAiAA4AAAAKADwAAAAiAA8AAAAKAD0AAAAcAAwAAAAEADoAAAAdAAwAAAAFADoAAAAeAAwAAAAGADoAAAAfAAwAAAAHADoAAAAgAAwAAAAIADoAAAAhAAwAAAAJADoAAAAiAAwAAAAKADoAAAA=")
 tile_set = SubResource("TileSet_awgst")
+script = ExtResource("2_2ga57")
 
 [node name="pnj" parent="." instance=ExtResource("2_cmeqv")]
 light_mask = 2
@@ -766,3 +769,7 @@ visible = false
 [node name="office_zone" parent="." instance=ExtResource("6_ba3ig")]
 position = Vector2(447, 191)
 scale = Vector2(0.354461, 0.482336)
+
+[node name="fight" parent="." instance=ExtResource("8_a7b86")]
+process_mode = 2
+visible = false

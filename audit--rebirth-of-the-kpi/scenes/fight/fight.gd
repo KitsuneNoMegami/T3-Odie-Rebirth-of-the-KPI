@@ -9,7 +9,7 @@ var _player
 
 @onready var fighters_script
 @onready var player_script= load("res://scenes/fight/scripts/creation_player.gd")
-@onready var message=get_node("message_panel")
+@onready var message=get_node("NinePatchRect2/message_panel")
 
 
 @onready var cursor: AnimatedSprite2D=$AnimatedSprite2D

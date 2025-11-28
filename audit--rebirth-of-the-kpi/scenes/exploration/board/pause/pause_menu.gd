@@ -29,6 +29,7 @@ func _on_volume_changed(value: float) -> void:
 
 func pause_unpause():
 	pause=!pause
+	print('aabbbbbaaa')
 	if (pause):
 		show()
 		get_tree().paused=true
@@ -37,13 +38,9 @@ func pause_unpause():
 		get_tree().paused=false
 
 func _input(event: InputEvent) -> void:
-	if not visible :
-		return
 	if event.is_action_pressed("pause"):
-		await get_tree().create_timer(0.1).timeout
-		hide()
-		get_tree().paused=false
-		pause=!pause
+		print('aaaaa')
+		pause_unpause()
 	
 	# Flèche bas
 	if event.is_action_pressed("down"):

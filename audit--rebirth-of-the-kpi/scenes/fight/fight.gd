@@ -1,8 +1,6 @@
 extends CanvasLayer
 
 var _pause=false
-var _everyone_alive=true
-var _is_win
 
 var _fighters
 var _player
@@ -61,21 +59,21 @@ func _find_fighter(name_fighter):
 			return fighter
 	return null
 	
-func do_action(name,action_menu):
+func do_action(fname,action_menu):
 	match action_menu:
 		"Attaque":
-			if name==_player.get_fname():
+			if fname==_player.get_fname():
 				var nb_fighter=fighter_number()
 				await message.show_message(_fighters[nb_fighter].get_fname()+" lance une attaque")
 				await attack(_player,_fighters[fighter_number()].get_attacks())
 				return
 			await message.show_message(_player.get_fname()+" lance une attaque")
 			
-			if await attack(_find_fighter(name),_player.get_attacks()):
+			if await attack(_find_fighter(fname),_player.get_attacks()):
 				_player.add_credibility(20)
 				_player.add_skill(20)
 				
-				_fighters.erase(_find_fighter(name))
+				_fighters.erase(_find_fighter(fname))
 				
 	pass
 

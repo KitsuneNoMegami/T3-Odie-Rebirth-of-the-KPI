@@ -89,7 +89,7 @@ data = PackedByteArray("//vQZAAABzd+UK0/AAJwTlpfoJwAX8HhXdmsAAI2Nyx/ELAAMAAF94pT
 content_margin_left = 3.0
 content_margin_top = 3.0
 content_margin_right = 3.0
-content_margin_bottom = 20.0
+content_margin_bottom = 3.0
 
 [node name="fight" type="CanvasLayer"]
 scale = Vector2(1.6, 1.6)
@@ -183,10 +183,10 @@ switch = ExtResource("6_inaet")
 visible = false
 clip_children = 2
 texture_filter = 1
-offset_left = 250.0
-offset_top = 449.0
-offset_right = 708.0
-offset_bottom = 632.0
+offset_left = 191.25
+offset_top = 448.75
+offset_right = 686.75
+offset_bottom = 631.75
 texture = ExtResource("3_3si2p")
 patch_margin_left = 3
 patch_margin_top = 3
@@ -194,9 +194,8 @@ patch_margin_right = 3
 patch_margin_bottom = 3
 
 [node name="message_panel" type="Panel" parent="NinePatchRect2"]
-visible = false
 layout_mode = 0
-offset_right = 760.0
+offset_right = 492.49994
 offset_bottom = 187.0
 theme_override_styles/panel = SubResource("StyleBoxEmpty_vpnpn")
 script = ExtResource("2_vpnpn")
@@ -204,10 +203,11 @@ script = ExtResource("2_vpnpn")
 [node name="Label" type="Label" parent="NinePatchRect2/message_panel"]
 top_level = true
 layout_mode = 0
-offset_left = 253.0
-offset_top = 453.0
-offset_right = 1005.0
-offset_bottom = 631.0
+offset_left = 193.125
+offset_top = 453.125
+offset_right = 682.49994
+offset_bottom = 631.125
+autowrap_mode = 1
 
 [node name="It-engineer" type="Sprite2D" parent="."]
 position = Vector2(213.74997, 253.12502)

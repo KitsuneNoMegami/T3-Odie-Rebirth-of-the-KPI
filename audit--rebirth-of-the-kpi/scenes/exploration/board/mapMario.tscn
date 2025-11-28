@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=4 uid="uid://d1ina3ja7hqpa"]
+[gd_scene load_steps=34 format=4 uid="uid://d1ina3ja7hqpa"]
 
 [ext_resource type="Texture2D" uid="uid://bo4bcdbhblcbh" path="res://assets/map/tilemap.png" id="1_lrwju"]
 [ext_resource type="Texture2D" uid="uid://dj6wyfg5kdfjh" path="res://assets/map/Home.png" id="2_cydq1"]
@@ -18,6 +18,7 @@
 [ext_resource type="Texture2D" uid="uid://c4qdp404i48a4" path="res://assets/map/CommunicationHover.png" id="14_34ie6"]
 [ext_resource type="Script" uid="uid://cnp663hbiqlp6" path="res://scenes/exploration/board/commercialBuilding.gd" id="15_mians"]
 [ext_resource type="Script" uid="uid://doxvy8ki16jsk" path="res://scenes/exploration/board/communicationBuilding.gd" id="18_3ir1f"]
+[ext_resource type="PackedScene" uid="uid://c1l537l6qsm3u" path="res://scenes/exploration/board/pause/pause_menu.tscn" id="19_yh65k"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_vs5oo"]
 texture = ExtResource("1_lrwju")
@@ -655,6 +656,9 @@ scale = Vector2(0.75, 0.75)
 texture_normal = SubResource("AtlasTexture_olxho")
 texture_hover = SubResource("AtlasTexture_ir2cg")
 script = ExtResource("18_3ir1f")
+
+[node name="pause" parent="." instance=ExtResource("19_yh65k")]
+visible = false
 
 [connection signal="pressed" from="rh" to="rh" method="_on_pressed"]
 [connection signal="pressed" from="finances" to="finances" method="_on_pressed"]

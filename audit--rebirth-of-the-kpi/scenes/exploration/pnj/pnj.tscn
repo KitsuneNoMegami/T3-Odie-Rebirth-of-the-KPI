@@ -1,8 +1,59 @@
-[gd_scene load_steps=5 format=3 uid="uid://bmegaasqhjghc"]
+[gd_scene load_steps=20 format=3 uid="uid://bmegaasqhjghc"]
 
 [ext_resource type="Script" uid="uid://bjfngxo28q0dm" path="res://scenes/exploration/pnj/pnj.gd" id="1_tpmle"]
 [ext_resource type="Texture2D" uid="uid://dvhjq6hyvent3" path="res://assets/sprites/pnj_animations/pnj_idle2.png" id="2_mm3ov"]
 [ext_resource type="Texture2D" uid="uid://cs7cbxwrvyijw" path="res://assets/sprites/pnj_animations/pnj_idle1.png" id="3_e1l5l"]
+[ext_resource type="Texture2D" uid="uid://8ucj882e2gym" path="res://assets/sprites/pnj_animations/smoliga_jeff.png" id="4_kq0vh"]
+[ext_resource type="Texture2D" uid="uid://crhexl6dorvkx" path="res://assets/sprites/pnj_animations/roy_isabelle.png" id="5_kq0vh"]
+[ext_resource type="Texture2D" uid="uid://bde8jqnf5cgmr" path="res://assets/sprites/pnj_animations/wemmert_cedric.png" id="6_6afk0"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ug0y5"]
+atlas = ExtResource("4_kq0vh")
+region = Rect2(20, 0, 20, 20)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ade85"]
+atlas = ExtResource("4_kq0vh")
+region = Rect2(40, 0, 20, 20)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_761q2"]
+atlas = ExtResource("4_kq0vh")
+region = Rect2(60, 0, 20, 20)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_iiffe"]
+atlas = ExtResource("4_kq0vh")
+region = Rect2(80, 0, 20, 20)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kpv4r"]
+atlas = ExtResource("5_kq0vh")
+region = Rect2(0, 0, 20, 20)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6afk0"]
+atlas = ExtResource("5_kq0vh")
+region = Rect2(20, 0, 20, 20)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hjnq4"]
+atlas = ExtResource("5_kq0vh")
+region = Rect2(40, 0, 20, 20)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5m2j0"]
+atlas = ExtResource("5_kq0vh")
+region = Rect2(60, 0, 20, 20)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_shgh7"]
+atlas = ExtResource("6_6afk0")
+region = Rect2(0, 0, 20, 20)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3l2ma"]
+atlas = ExtResource("6_6afk0")
+region = Rect2(20, 0, 20, 20)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x0dpn"]
+atlas = ExtResource("6_6afk0")
+region = Rect2(40, 0, 20, 20)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_23gfo"]
+atlas = ExtResource("6_6afk0")
+region = Rect2(60, 0, 20, 20)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_d24va"]
 animations = [{
@@ -16,6 +67,57 @@ animations = [{
 "loop": true,
 "name": &"idle",
 "speed": 2.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ug0y5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ade85")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_761q2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_iiffe")
+}],
+"loop": true,
+"name": &"jeff",
+"speed": 2.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kpv4r")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6afk0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hjnq4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5m2j0")
+}],
+"loop": true,
+"name": &"roy",
+"speed": 2.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_shgh7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3l2ma")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_x0dpn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_23gfo")
+}],
+"loop": true,
+"name": &"wemmert",
+"speed": 2.0
 }]
 
 [node name="pnj" type="StaticBody2D"]
@@ -24,9 +126,9 @@ script = ExtResource("1_tpmle")
 [node name="pnj_sprite" type="AnimatedSprite2D" parent="."]
 position = Vector2(5.5, 8)
 sprite_frames = SubResource("SpriteFrames_d24va")
-animation = &"idle"
+animation = &"wemmert"
 
 [node name="collison" type="CollisionPolygon2D" parent="."]
-position = Vector2(58.3358, 69.8104)
+position = Vector2(58.999996, 71)
 scale = Vector2(0.442654, 0.478323)
 polygon = PackedVector2Array(-115.379, -147.071, -109, -142, -106, -136, -107, -132, -114, -126, -107, -120, -107.718, -115.018, -114, -109, -125.009, -108.317, -132, -115, -132, -120, -126, -125, -133, -132, -133, -135, -131, -142, -126, -147)

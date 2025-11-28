@@ -92,17 +92,21 @@ content_margin_right = 3.0
 content_margin_bottom = 20.0
 
 [node name="fight" type="CanvasLayer"]
+scale = Vector2(1.6, 1.6)
+transform = Transform2D(1.6, 0, 0, 1.6, 0, 0)
 script = ExtResource("1_4qaks")
 
 [node name="Panel" type="Panel" parent="."]
-offset_right = 1213.0
-offset_bottom = 788.0
+offset_right = 1462.7976
+offset_bottom = 803.19995
+scale = Vector2(0.84000003, 0.83333343)
 
 [node name="NinePatchRect" type="NinePatchRect" parent="."]
-offset_left = 718.0
-offset_top = 450.0
-offset_right = 1003.0
-offset_bottom = 630.0
+offset_left = 726.87494
+offset_top = 445.33337
+offset_right = 1228.138
+offset_bottom = 685.7334
+scale = Vector2(0.84000003, 0.83333343)
 texture = ExtResource("3_3si2p")
 patch_margin_left = 3
 patch_margin_top = 3
@@ -126,6 +130,7 @@ theme_override_constants/separation = 12
 [node name="MenuOption1" type="Button" parent="NinePatchRect/MarginContainer/VBoxContainer"]
 layout_mode = 2
 focus_mode = 0
+theme_override_font_sizes/font_size = 25
 theme_override_styles/focus = SubResource("StyleBoxEmpty_3si2p")
 text = "Attaque"
 flat = true
@@ -133,6 +138,7 @@ flat = true
 [node name="MenuOption2" type="Button" parent="NinePatchRect/MarginContainer/VBoxContainer"]
 layout_mode = 2
 focus_mode = 0
+theme_override_font_sizes/font_size = 25
 theme_override_styles/focus = SubResource("StyleBoxEmpty_1sl5h")
 text = "Compétences"
 flat = true
@@ -140,6 +146,7 @@ flat = true
 [node name="MenuOption3" type="Button" parent="NinePatchRect/MarginContainer/VBoxContainer"]
 layout_mode = 2
 focus_mode = 0
+theme_override_font_sizes/font_size = 25
 theme_override_styles/focus = SubResource("StyleBoxEmpty_nsrxv")
 text = "Objets"
 flat = true
@@ -147,6 +154,7 @@ flat = true
 [node name="MenuOption4" type="Button" parent="NinePatchRect/MarginContainer/VBoxContainer"]
 layout_mode = 2
 focus_mode = 0
+theme_override_font_sizes/font_size = 25
 theme_override_styles/focus = SubResource("StyleBoxEmpty_8og4d")
 text = "Fuite"
 flat = true
@@ -154,8 +162,8 @@ flat = true
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." node_paths=PackedStringArray("button1", "button2", "button3", "button4", "sound_handler")]
 process_mode = 2
 texture_filter = 1
-position = Vector2(757, 446)
-scale = Vector2(4, 4)
+position = Vector2(838.125, 453.74994)
+scale = Vector2(3.3600001, 3.3333337)
 sprite_frames = SubResource("SpriteFrames_inaet")
 autoplay = "default"
 centered = false
@@ -202,13 +210,13 @@ offset_right = 1005.0
 offset_bottom = 631.0
 
 [node name="It-engineer" type="Sprite2D" parent="."]
-position = Vector2(172, 480)
-scale = Vector2(0.432271, 0.369379)
+position = Vector2(358.8375, 476.5625)
+scale = Vector2(0.69049, 0.55161494)
 texture = ExtResource("6_4qaks")
 
 [node name="Compliance-officer" type="Sprite2D" parent="."]
-position = Vector2(759.5, 293.125)
-scale = Vector2(0.308, 0.279934)
+position = Vector2(718.6666, 201.99997)
+scale = Vector2(0.4868638, 0.40488753)
 texture = ExtResource("7_vpnpn")
 
 [connection signal="mouse_entered" from="NinePatchRect/MarginContainer/VBoxContainer/MenuOption1" to="AnimatedSprite2D" method="_on_menu_option_1_mouse_entered"]

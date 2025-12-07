@@ -186,10 +186,11 @@ switch = ExtResource("6_inaet")
 [node name="NinePatchRect2" type="NinePatchRect" parent="."]
 clip_children = 2
 texture_filter = 1
-offset_left = 572.5
-offset_top = 424.37497
-offset_right = 1063.125
-offset_bottom = 626.875
+offset_left = 523.75006
+offset_top = 426.25
+offset_right = 1014.37506
+offset_bottom = 628.75
+scale = Vector2(1.0945194, 0.9739752)
 texture = ExtResource("3_3si2p")
 patch_margin_left = 3
 patch_margin_top = 3
@@ -197,6 +198,7 @@ patch_margin_right = 3
 patch_margin_bottom = 3
 
 [node name="message_panel" type="Panel" parent="NinePatchRect2"]
+visible = false
 layout_mode = 0
 offset_top = 10.6249695
 offset_right = 492.4999
@@ -207,10 +209,10 @@ script = ExtResource("2_vpnpn")
 [node name="Label" type="Label" parent="NinePatchRect2/message_panel"]
 top_level = true
 layout_mode = 0
-offset_left = 574.375
-offset_top = 443.75
-offset_right = 1063.75
-offset_bottom = 621.75
+offset_left = 527.5
+offset_top = 440.625
+offset_right = 1060.625
+offset_bottom = 618.625
 autowrap_mode = 1
 
 [node name="It-engineer" type="Sprite2D" parent="."]

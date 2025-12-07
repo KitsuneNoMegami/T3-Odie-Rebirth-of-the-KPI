@@ -10,8 +10,6 @@ var _attacks
 var _defenses
 var _pts_defense =0
 
-@onready var attack_script = preload("res://scenes/global_scripts/Attack.gd")
-
 func _ready():
 	pass
 

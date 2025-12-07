@@ -9,7 +9,6 @@ var _player
 var _turn := "player"
 
 @onready var fighters_script
-@onready var player_script = load("res://scenes/fight/scripts/creation_player.gd")
 @onready var message = get_node("NinePatchRect2/message_panel")
 
 @onready var cursor: AnimatedSprite2D = $AnimatedSprite2D
@@ -26,15 +25,14 @@ func get_player():
 func is_player_turn() -> bool:
 	return _turn == "player"
 
-func fight_unfight(path):
+func fight_unfight(path,player):
 	_pause = !_pause
+	_player=player
 	if _pause:
 		# Prépare d’abord les données
 		fighters_script = load(path)
 		var _fighters_object = fighters_script.new()
 		_fighters = _fighters_object.get_fighters()
-		var _player_object = player_script.new()
-		_player = _player_object.get_player()
 
 		# Affiche l’UI et le curseur
 		show()

@@ -25,7 +25,7 @@ var _pending_action = "" # "Attaque" ou "Défense"
 
 func _ready() -> void:
 	randomize()
-	position.x = 150
+	position.x = 100
 	pass
 	
 func _process(_delta: float) -> void:

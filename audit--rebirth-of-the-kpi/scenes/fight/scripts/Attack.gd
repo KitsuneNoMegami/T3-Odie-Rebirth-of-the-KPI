@@ -54,13 +54,14 @@ func _init(aname = null):
 			
 			
 	
-
-
 func get_damage():
 	return _damage
 	
 func get_aname()->String:
 	return _name
+	
+func get_description():
+	return _description
 		
 
 	

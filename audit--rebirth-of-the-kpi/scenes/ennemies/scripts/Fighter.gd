@@ -48,6 +48,8 @@ func get_defenses():
 	return _defenses
 func get_attacks():
 	return _attacks
+func get_description():
+	return _description
 	
 func get_pv():
 	return _pv

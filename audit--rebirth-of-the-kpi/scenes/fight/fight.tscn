@@ -184,6 +184,7 @@ script = ExtResource("5_8og4d")
 switch = ExtResource("6_inaet")
 
 [node name="NinePatchRect2" type="NinePatchRect" parent="."]
+visible = false
 clip_children = 2
 texture_filter = 1
 offset_left = 523.75006

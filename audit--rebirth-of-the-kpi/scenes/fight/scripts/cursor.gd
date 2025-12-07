@@ -23,17 +23,17 @@ var _selected_attack = null
 var _selected_defense = null
 var _pending_action = "" # "Attaque" ou "Défense"
 
+# Flag pour empêcher les doubles clics pendant une action bloquante
+var _is_action_running := false
+
 func _ready() -> void:
 	randomize()
 	position.x = 100
-	pass
-	
+
 func _process(_delta: float) -> void:
 	if not visible:
 		return
-	#position.y = 446 + (43 * _slot)
 	position.y = 430 + (43 * _slot)
-	pass
 
 func initialisation():
 	show()
@@ -42,7 +42,9 @@ func initialisation():
 	_selected_attack = null
 	_selected_defense = null
 	_pending_action = ""
+	_is_action_running = false
 	_menu_input(5) # affiche le menu principal
+	_update_description()
 
 func actualize():
 	# Assure 4 lignes
@@ -74,6 +76,7 @@ func actualize():
 			button2.text = _menu_options[0][2]
 			button3.text = _menu_options[0][3]
 			button4.text = _menu_options[0][4]
+	_update_description()
 
 func _show_attacks():
 	_menu_options[1] = ["Attaque"]
@@ -135,16 +138,72 @@ func _resolve_defense_name_to_object(dname):
 					return skill
 	return null
 
+# Met à jour le panneau de description selon le menu et le slot courant
+func _update_description():
+	if not message:
+		return
+	var txt := ""
+	match _current_menu:
+		"main":
+			var label = _menu_options[0][1 + _slot] # 1..4
+			match label:
+				"Attaque":
+					txt = "Choix de l'attaque"
+				"Défense":
+					txt = "Choix de la défense"
+				"Objets":
+					txt = "Choix d'un objet"
+				"Fuite":
+					txt = "Tenter de fuir le combat"
+				_:
+					txt = ""
+		"Attaque":
+			var name = _menu_options[1][1 + _slot]
+			if name != " ":
+				var atk = _resolve_attack_name_to_object(name)
+				if atk and atk.has_method("get_description"):
+					txt = atk.get_description()
+				else:
+					txt = "Attaque: " + name
+			else:
+				txt = "Choix de l'attaque"
+		"Défense":
+			var name = _menu_options[2][1 + _slot]
+			if name != " ":
+				var def = _resolve_defense_name_to_object(name)
+				if def and def.has_method("get_description"):
+					txt = def.get_description()
+				else:
+					txt = "Défense: " + name
+			else:
+				txt = "Choix de la défense"
+		"Ennemis":
+			var name = _menu_options[3][1 + _slot]
+			if name != " ":
+				var enemy = null
+				for f in fight.get_fighters():
+					if f.get_fname() == name:
+						enemy = f
+						break
+				if enemy and enemy.has_method("get_description"):
+					txt = enemy.get_description()
+				else:
+					txt = "Cible: " + name
+			else:
+				txt = "Choix de la cible"
+		_:
+			txt = ""
+	if txt == "":
+		message.hide_description()
+	else:
+		message.show_description(txt)
+
 func _input(event: InputEvent) -> void:
 	if not visible:
 		return
 
-	# Toujours permettre de fermer le message
-	if event.is_action_pressed("accept") and message.get_visible():
-		message.close_message()
-		return
-	if event.is_action_pressed("cancel") and message.get_visible():
-		message.close_message()
+	# Bloque toute interaction pendant une action bloquante en cours
+	if _is_action_running:
 		return
 
 	# Navigation uniquement au tour du joueur
@@ -154,6 +213,7 @@ func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("cancel"):
 		sound_handler.play_cancel()
 		_menu_input(5)
+		_update_description()
 
 	if event.is_action_pressed("accept"):
 		match _slot:
@@ -172,12 +232,14 @@ func _input(event: InputEvent) -> void:
 			_slot -= 1
 		else:
 			_slot = 3
+		_update_description()
 	if event.is_action_pressed("down"):
 		sound_handler.play_switch()
 		if _slot < 3:
 			_slot += 1
 		else:
 			_slot = 0
+		_update_description()
 
 func _menu_input(slot) -> void:
 	if not visible:
@@ -185,6 +247,9 @@ func _menu_input(slot) -> void:
 	if not fight.get_pause():
 		return
 	if not fight.is_player_turn():
+		return
+	# Bloque la navigation pendant une action bloquante
+	if _is_action_running:
 		return
 
 	if fight._continue():
@@ -195,6 +260,7 @@ func _menu_input(slot) -> void:
 			button2.text = _menu_options[0][2]
 			button3.text = _menu_options[0][3]
 			button4.text = _menu_options[0][4]
+			_update_description()
 		else:
 			while (_current_menu != _menu_options[i][0] and i < _menu_options.size()):
 				i += 1
@@ -206,7 +272,6 @@ func _menu_input(slot) -> void:
 			if i == 0:
 				# Menu principal
 				if slot == 4:
-					# Fuite
 					fight.fight_unfight(null)
 				else:
 					var chosen = _menu_options[i][slot]
@@ -222,6 +287,7 @@ func _menu_input(slot) -> void:
 							_show_defenses()
 						"Objets":
 							pass
+					_update_description()
 			elif i == 1:
 				# Sélection d'une attaque
 				var chosen_attack_name = _menu_options[i][slot]
@@ -229,15 +295,23 @@ func _menu_input(slot) -> void:
 					return
 				_selected_attack = _resolve_attack_name_to_object(chosen_attack_name)
 				_show_ennemies()
+				_update_description()
 			elif i == 2:
 				# Sélection d'une défense (appliquée directement sur le joueur)
 				var chosen_defense_name = _menu_options[i][slot]
 				if chosen_defense_name == " ":
 					return
 				_selected_defense = _resolve_defense_name_to_object(chosen_defense_name)
+				_update_description()
 				if _pending_action == "Défense" and _selected_defense != null:
+					# Empêcher double clics jusqu'à la fin de l'action
+					_is_action_running = true
+					message.hide_description()
 					await fight.do_action(fight.get_player().get_fname(), "Défense", _selected_defense)
-				# Fin du tour du joueur -> tour ennemi, puis retour au menu
+					_is_action_running = false
+					# Revenir au menu principal après l'action
+					_current_menu = "main"
+					_menu_input(5)
 				if fight._continue():
 					await fight.end_player_turn()
 			elif i == 3:
@@ -245,46 +319,55 @@ func _menu_input(slot) -> void:
 				var enemy_name = _menu_options[i][slot]
 				if enemy_name == " ":
 					return
+				_update_description()
 				if _pending_action == "Attaque" and _selected_attack != null:
+					# Empêcher double clics jusqu'à la fin de l'action
+					_is_action_running = true
+					message.hide_description()
 					await fight.do_action(enemy_name, "Attaque", _selected_attack)
-				# Fin du tour du joueur -> tour ennemi, puis retour au menu
+					_is_action_running = false
+					# Revenir au menu principal après l'action
+					_current_menu = "main"
+					_menu_input(5)
 				if fight._continue():
 					await fight.end_player_turn()
-	else:
-		if fight.is_win():
-			fight.fight_unfight(null)
-
-func choose_rand_action():
-	return ["Attaque", "Défense"][randi() % 2]
 
 func _on_menu_option_1_mouse_entered() -> void:
+	if _is_action_running:
+		return
 	sound_handler.play_switch()
 	_slot = 0
+	_update_description()
 
 func _on_menu_option_2_mouse_entered() -> void:
+	if _is_action_running:
+		return
 	sound_handler.play_switch()
 	_slot = 1
+	_update_description()
 
 func _on_menu_option_3_mouse_entered() -> void:
+	if _is_action_running:
+		return
 	sound_handler.play_switch()
 	_slot = 2
+	_update_description()
 
 func _on_menu_option_4_mouse_entered() -> void:
+	if _is_action_running:
+		return
 	sound_handler.play_switch()
 	_slot = 3
+	_update_description()
 
 func _on_menu_option_1_pressed() -> void:
-	sound_handler.play_click()
 	_menu_input(1)
 
 func _on_menu_option_2_pressed() -> void:
-	sound_handler.play_click()
 	_menu_input(2)
 
 func _on_menu_option_3_pressed() -> void:
-	sound_handler.play_click()
 	_menu_input(3)
 
 func _on_menu_option_4_pressed() -> void:
-	sound_handler.play_click()
 	_menu_input(4)

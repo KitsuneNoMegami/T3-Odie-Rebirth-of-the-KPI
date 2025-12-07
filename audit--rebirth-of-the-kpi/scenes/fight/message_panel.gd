@@ -2,6 +2,7 @@ extends Panel
 
 func show_message(message):
 	show()
+	await get_tree().create_timer(0.05).timeout
 	get_parent().show()
 	$Label.text = message
 	# On attend de façon non bloquante que le joueur appuie sur "accept"

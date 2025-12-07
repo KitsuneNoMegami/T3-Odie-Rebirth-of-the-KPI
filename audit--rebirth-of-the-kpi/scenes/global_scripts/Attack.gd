@@ -5,8 +5,8 @@ var _name
 var _damage
 var _description
 
-func _init(name = null, damage = null):
-	_name = name
+func _init(aname = null, damage = null):
+	_name = aname
 	_damage = damage
 	_description = "test"
 

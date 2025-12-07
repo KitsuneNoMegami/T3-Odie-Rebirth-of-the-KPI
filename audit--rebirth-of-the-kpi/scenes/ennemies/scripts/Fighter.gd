@@ -6,26 +6,26 @@ var _pv_max
 var _description
 var _levelCredibility=0
 var _levelSkill=0
-var _capacities #liste des attaques
 var _attacks
+var _defenses
+var _pts_defense =0
 
 @onready var attack_script = preload("res://scenes/global_scripts/Attack.gd")
 
 func _ready():
 	pass
 
-func _init(pv=null,name=null,attack=null):
+func _init(pv=null,fname=null,attacks=null,defenses=null):
 	_pv=pv
 	_pv_max=pv
 	_description="test"
-	_name=name
-	_attacks=attack
-	#faire liste des attaques
+	_name=fname
+	_attacks=attacks
+	_defenses=defenses
+	
 	
 func delete_pv(pv):
-	print(_name,": j'ai perdu ",str(pv))
 	_pv-=pv
-	print(_name,": il me reste ",str(_pv),"/",str(_pv_max))
 	
 func add_credibility(nb):
 	_levelCredibility+=nb
@@ -34,10 +34,22 @@ func add_skill(nb):
 	_levelSkill+=nb
 	pass
 	
+func add_pts_defense(nb):
+	_pts_defense+=nb
+	
+func del_defense(nb=null):
+	if nb==null:
+		_pts_defense=0
+	else:
+		_pts_defense-=nb
+	return 0-_pts_defense
 func get_fname()->String:
 	return _name
 	
+func get_defenses():
+	return _defenses
 func get_attacks():
 	return _attacks
+	
 func get_pv():
 	return _pv

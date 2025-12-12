@@ -40,6 +40,8 @@ func pause_unpause():
 func _input(event: InputEvent) -> void:
 	if not visible :
 		return
+	if not visible :
+		return
 	if event.is_action_pressed("pause"):
 		await get_tree().create_timer(0.1).timeout
 		hide()

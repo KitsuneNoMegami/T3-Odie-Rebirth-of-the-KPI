@@ -3,13 +3,13 @@
 importer="dialogue_manager"
 importer_version=15
 type="Resource"
-uid="uid://iucy53acomoy"
-path="res://.godot/imported/RH.dialogue-29612680ba7da5f07acb67b3b88b6eb9.tres"
+uid="uid://bt1re1qju1rj2"
+path="res://.godot/imported/Rh.dialogue-67f17a9cbeea1c3216b18f889f862d8a.tres"
 
 [deps]
 
-source_file="res://RH.dialogue"
-dest_files=["res://.godot/imported/RH.dialogue-29612680ba7da5f07acb67b3b88b6eb9.tres"]
+source_file="res://Rh.dialogue"
+dest_files=["res://.godot/imported/Rh.dialogue-67f17a9cbeea1c3216b18f889f862d8a.tres"]
 
 [params]
 

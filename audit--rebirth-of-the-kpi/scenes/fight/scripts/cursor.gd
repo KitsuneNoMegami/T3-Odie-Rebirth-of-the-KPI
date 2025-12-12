@@ -12,8 +12,9 @@ var _slot = 0
 
 var _current_menu = "main"
 
+# Menus: uniquement Attaque, Défense, Fuite
 var _menu_options = [
-	["main", "Attaque", "Défense", "Objets", "Fuite", 1, 2, 3, 4], # 0
+	["main", "Attaque", "Défense", "Fuite", 1, 2, 3], # 0
 	["Attaque"],   # 1: rempli dynamiquement
 	["Défense"],   # 2: rempli dynamiquement
 	["Ennemis"]    # 3: rempli dynamiquement
@@ -47,7 +48,7 @@ func initialisation():
 	_update_description()
 
 func actualize():
-	# Assure 4 lignes
+	# Assure 4 lignes pour les sous-menus
 	while _menu_options[1].size() < 5:
 		_menu_options[1].append(" ")
 	while _menu_options[2].size() < 5:
@@ -72,10 +73,11 @@ func actualize():
 			button3.text = _menu_options[3][3]
 			button4.text = _menu_options[3][4]
 		"main":
+			# Seulement 3 options: Attaque, Défense, Fuite; le 4e bouton est vide
 			button1.text = _menu_options[0][1]
 			button2.text = _menu_options[0][2]
 			button3.text = _menu_options[0][3]
-			button4.text = _menu_options[0][4]
+			button4.text = " "
 	_update_description()
 
 func _show_attacks():
@@ -145,18 +147,15 @@ func _update_description():
 	var txt := ""
 	match _current_menu:
 		"main":
-			var label = _menu_options[0][1 + _slot] # 1..4
+			# Mapper les 3 boutons visibles
+			var label = ["Attaque", "Défense", "Fuite"][min(_slot, 2)]
 			match label:
 				"Attaque":
 					txt = "Choix de l'attaque"
 				"Défense":
 					txt = "Choix de la défense"
-				"Objets":
-					txt = "Choix d'un objet"
 				"Fuite":
 					txt = "Tenter de fuir le combat"
-				_:
-					txt = ""
 		"Attaque":
 			var name = _menu_options[1][1 + _slot]
 			if name != " ":
@@ -256,10 +255,10 @@ func _menu_input(slot) -> void:
 		var i = 0
 		if slot == 5:
 			_current_menu = "main"
-			button1.text = _menu_options[0][1]
-			button2.text = _menu_options[0][2]
-			button3.text = _menu_options[0][3]
-			button4.text = _menu_options[0][4]
+			button1.text = _menu_options[0][1] # Attaque
+			button2.text = _menu_options[0][2] # Défense
+			button3.text = _menu_options[0][3] # Fuite
+			button4.text = " "
 			_update_description()
 		else:
 			while (_current_menu != _menu_options[i][0] and i < _menu_options.size()):
@@ -271,10 +270,11 @@ func _menu_input(slot) -> void:
 
 			if i == 0:
 				# Menu principal
-				if slot == 4:
-					fight.fight_unfight(null)
+				# Fuite sur le bouton 3 désormais
+				if slot == 3:
+					fight.fight_unfight(null, null)
 				else:
-					var chosen = _menu_options[i][slot]
+					var chosen = _menu_options[0][slot] # 1=Attaque, 2=Défense
 					_current_menu = chosen
 					match chosen:
 						"Attaque":
@@ -285,8 +285,6 @@ func _menu_input(slot) -> void:
 							_pending_action = "Défense"
 							_selected_defense = null
 							_show_defenses()
-						"Objets":
-							pass
 					_update_description()
 			elif i == 1:
 				# Sélection d'une attaque
@@ -331,6 +329,12 @@ func _menu_input(slot) -> void:
 					_menu_input(5)
 				if fight._continue():
 					await fight.end_player_turn()
+	else:
+		if(fight.is_win()):
+			fight.end_fight()
+			fight.fight_unfight(null, null)
+			pass
+
 
 func _on_menu_option_1_mouse_entered() -> void:
 	if _is_action_running:

@@ -9,6 +9,9 @@ func _init(aname = null):
 	_name = aname
 	match aname:
 		#Compétence d'attaques
+		"Turbo puissance":
+			_damage=50
+			_description="attaque pour faire bcp de dégat en mode je suis trop puissant "
 		"Collecte d'information":
 			_damage=2
 			_description="Pose une question"

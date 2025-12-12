@@ -1,77 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="38399cb1-0ea1-409f-82d1-51916d4d0067" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/t3-2025.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/LICENSE" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/audit--rebirth-of-the-kpi/assets/map/Finance.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/audit--rebirth-of-the-kpi/assets/map/Finance.png.import" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/audit--rebirth-of-the-kpi/assets/map/RH.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/audit--rebirth-of-the-kpi/assets/map/RH.png.import" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/audit--rebirth-of-the-kpi/assets/sound/button_switch.mp3" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/audit--rebirth-of-the-kpi/assets/sound/button_switch.mp3.import" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/audit--rebirth-of-the-kpi/assets/sprites/arrowsheet.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/audit--rebirth-of-the-kpi/assets/sprites/arrowsheet.png.import" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/audit--rebirth-of-the-kpi/assets/sprites/fight_menu_background.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/audit--rebirth-of-the-kpi/assets/sprites/fight_menu_background.png.import" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/audit--rebirth-of-the-kpi/assets/sprites/objects/cafetiere.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/audit--rebirth-of-the-kpi/assets/sprites/objects/cafetiere.png.import" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/audit--rebirth-of-the-kpi/assets/sprites/objects/ciseaux.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/audit--rebirth-of-the-kpi/assets/sprites/objects/ciseaux.png.import" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/audit--rebirth-of-the-kpi/assets/sprites/objects/coffee.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/audit--rebirth-of-the-kpi/assets/sprites/objects/coffee.png.import" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/audit--rebirth-of-the-kpi/assets/sprites/objects/empty_coffee.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/audit--rebirth-of-the-kpi/assets/sprites/objects/empty_coffee.png.import" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/audit--rebirth-of-the-kpi/assets/sprites/objects/meuble.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/audit--rebirth-of-the-kpi/assets/sprites/objects/meuble.png.import" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/audit--rebirth-of-the-kpi/assets/sprites/objects/sac_croissant.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/audit--rebirth-of-the-kpi/assets/sprites/objects/sac_croissant.png.import" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/audit--rebirth-of-the-kpi/assets/sprites/objects/sandwich.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/audit--rebirth-of-the-kpi/assets/sprites/objects/sandwich.png.import" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/audit--rebirth-of-the-kpi/scenes/ennemies/204-2046310_2d-enemy-sprite.png.import" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/audit--rebirth-of-the-kpi/scenes/ennemies/Fighter.tscn" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/audit--rebirth-of-the-kpi/scenes/ennemies/monster.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/audit--rebirth-of-the-kpi/scenes/ennemies/monster.png.import" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/audit--rebirth-of-the-kpi/scenes/ennemies/scripts/Fighter.gd" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/audit--rebirth-of-the-kpi/scenes/ennemies/scripts/Fighter.gd.uid" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/audit--rebirth-of-the-kpi/scenes/fight/fight.tscn" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/audit--rebirth-of-the-kpi/scenes/fight/scripts/audio_stream_player.gd" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/audit--rebirth-of-the-kpi/scenes/fight/scripts/audio_stream_player.gd.uid" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/audit--rebirth-of-the-kpi/scenes/fight/scripts/creation_fighter.gd" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/audit--rebirth-of-the-kpi/scenes/fight/scripts/creation_fighter.gd.uid" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/audit--rebirth-of-the-kpi/scenes/fight/scripts/creation_player.gd" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/audit--rebirth-of-the-kpi/scenes/fight/scripts/creation_player.gd.uid" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/audit--rebirth-of-the-kpi/scenes/fight/scripts/cursor.gd" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/audit--rebirth-of-the-kpi/scenes/fight/scripts/cursor.gd.uid" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/audit--rebirth-of-the-kpi/scenes/global_scripts/Actions.gd" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/audit--rebirth-of-the-kpi/scenes/global_scripts/Actions.gd.uid" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/audit--rebirth-of-the-kpi/scenes/global_scripts/Attack.gd" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/audit--rebirth-of-the-kpi/scenes/global_scripts/Attack.gd.uid" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/audit--rebirth-of-the-kpi/scenes/global_scripts/FactoryAttack.gd" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/audit--rebirth-of-the-kpi/scenes/global_scripts/FactoryAttack.gd.uid" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/audit--rebirth-of-the-kpi/scenes/global_scripts/main.gd" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/audit--rebirth-of-the-kpi/scenes/global_scripts/main.gd.uid" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/audit--rebirth-of-the-kpi/Rh.dialogue" beforeDir="false" afterPath="$PROJECT_DIR$/audit--rebirth-of-the-kpi/Rh.dialogue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/audit--rebirth-of-the-kpi/assets/map/BD001.png" beforeDir="false" afterPath="$PROJECT_DIR$/audit--rebirth-of-the-kpi/assets/map/BD001.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/audit--rebirth-of-the-kpi/assets/sprites/Screenshot_from_2025-09-07_01-17-02-removebg-preview.png.import" beforeDir="false" afterPath="$PROJECT_DIR$/audit--rebirth-of-the-kpi/assets/sprites/Screenshot_from_2025-09-07_01-17-02-removebg-preview.png.import" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/audit--rebirth-of-the-kpi/assets/sprites/Screenshot_from_2025-09-07_01-17-08-removebg-preview.png.import" beforeDir="false" afterPath="$PROJECT_DIR$/audit--rebirth-of-the-kpi/assets/sprites/Screenshot_from_2025-09-07_01-17-08-removebg-preview.png.import" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/audit--rebirth-of-the-kpi/assets/sprites/Screenshot_from_2025-09-07_01-17-12-removebg-preview.png.import" beforeDir="false" afterPath="$PROJECT_DIR$/audit--rebirth-of-the-kpi/assets/sprites/Screenshot_from_2025-09-07_01-17-12-removebg-preview.png.import" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/audit--rebirth-of-the-kpi/assets/sprites/Screenshot_from_2025-09-07_01-18-04-removebg-preview.png.import" beforeDir="false" afterPath="$PROJECT_DIR$/audit--rebirth-of-the-kpi/assets/sprites/Screenshot_from_2025-09-07_01-18-04-removebg-preview.png.import" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/audit--rebirth-of-the-kpi/assets/sprites/Secretaire-removebg-preview.png.import" beforeDir="false" afterPath="$PROJECT_DIR$/audit--rebirth-of-the-kpi/assets/sprites/Secretaire-removebg-preview.png.import" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/audit--rebirth-of-the-kpi/project.godot" beforeDir="false" afterPath="$PROJECT_DIR$/audit--rebirth-of-the-kpi/project.godot" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/audit--rebirth-of-the-kpi/scenes/exploration/board/board.gd" beforeDir="false" afterPath="$PROJECT_DIR$/audit--rebirth-of-the-kpi/scenes/exploration/board/board.gd" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/audit--rebirth-of-the-kpi/scenes/exploration/board/board.tscn" beforeDir="false" afterPath="$PROJECT_DIR$/audit--rebirth-of-the-kpi/scenes/exploration/board/board.tscn" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/audit--rebirth-of-the-kpi/scenes/exploration/board/pause/pause_menu.gd" beforeDir="false" afterPath="$PROJECT_DIR$/audit--rebirth-of-the-kpi/scenes/exploration/board/pause/pause_menu.gd" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/audit--rebirth-of-the-kpi/scenes/exploration/board/pause/pause_menu.tscn" beforeDir="false" afterPath="$PROJECT_DIR$/audit--rebirth-of-the-kpi/scenes/exploration/board/pause/pause_menu.tscn" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/audit--rebirth-of-the-kpi/scenes/exploration/player/GameState.gd" beforeDir="false" afterPath="$PROJECT_DIR$/audit--rebirth-of-the-kpi/scenes/exploration/player/GameState.gd" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/audit--rebirth-of-the-kpi/scenes/exploration/player/player.gd" beforeDir="false" afterPath="$PROJECT_DIR$/audit--rebirth-of-the-kpi/scenes/exploration/player/player.gd" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/audit--rebirth-of-the-kpi/scenes/menu/menu.gd" beforeDir="false" afterPath="$PROJECT_DIR$/audit--rebirth-of-the-kpi/scenes/menu/menu.gd" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/audit--rebirth-of-the-kpi/scenes/menu/menu.tscn" beforeDir="false" afterPath="$PROJECT_DIR$/audit--rebirth-of-the-kpi/scenes/menu/menu.tscn" afterDir="false" />
-    </list>
+    <list default="true" id="38399cb1-0ea1-409f-82d1-51916d4d0067" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -80,6 +10,22 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="GitLabMergeRequestFiltersHistory"><![CDATA[{
+  "lastFilter": {
+    "state": "OPENED",
+    "assignee": {
+      "type": "org.jetbrains.plugins.gitlab.mergerequest.ui.filters.GitLabMergeRequestsFiltersValue.MergeRequestsMemberFilterValue.MergeRequestsAssigneeFilterValue",
+      "username": "jcuiller",
+      "fullname": "CUILLER JOSEPH"
+    }
+  }
+}]]></component>
+  <component name="GitLabMergeRequestsSettings"><![CDATA[{
+  "selectedUrlAndAccountId": {
+    "first": "git@git.unistra.fr:commit-ou-creve/t3-2025.git",
+    "second": "670b911c-8825-491b-b539-eb815a4e9858"
+  }
+}]]></component>
   <component name="ProjectColorInfo">{
   &quot;customColor&quot;: &quot;&quot;,
   &quot;associatedIndex&quot;: 4
@@ -94,11 +40,18 @@
     "ModuleVcsDetector.initialDetectionPerformed": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "Merging menu",
+    "git-widget-placeholder": "combatV2",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "/home/beth/Documents/TP-TD/A2/t3-2025"
+    "last_opened_file_path": "/home/joseph/Documents/BUT2/T3/t3-2025"
   }
 }]]></component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-jdk-9823dce3aa75-bf35d07a577b-intellij.indexing.shared.core-IU-252.27397.103" />
+      </set>
+    </attachedChunks>
+  </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
       <changelist id="38399cb1-0ea1-409f-82d1-51916d4d0067" name="Changes" comment="" />

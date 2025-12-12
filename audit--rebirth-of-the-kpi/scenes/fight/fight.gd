@@ -24,14 +24,14 @@ func get_player():
 func is_player_turn() -> bool:
 	return _turn == "player"
 
-func fight_unfight(path, player):
+func fight_unfight(path,pole, player):
 	_pause = !_pause
 	_player = player
 	if _pause:
 		# Prépare les ennemis
 		fighters_script = load(path)
 		var _fighters_object = fighters_script.new()
-		_fighters = _fighters_object.get_fighters()
+		_fighters = _fighters_object.get_fighters(pole)
 
 		# Affiche l’UI et le curseur
 		show()
@@ -196,4 +196,4 @@ func _attack_name(a) -> String:
 	return a.get_aname()
 
 func _attack_damage(a) -> int:
-	return a.get_damage() 
+	return a.get_damage()

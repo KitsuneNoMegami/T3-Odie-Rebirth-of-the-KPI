@@ -12,8 +12,8 @@ func set_pause(value: bool):
 func get_pause():
 	return pause
 
-func start_fight(path):
-	fight_scene.fight_unfight(path,_player)
+func start_fight(path,pole):
+	fight_scene.fight_unfight(path,pole,_player)
 
 func set_fight(fight):
 	fight_scene=fight

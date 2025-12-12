@@ -29,7 +29,6 @@ func _on_volume_changed(value: float) -> void:
 
 func pause_unpause():
 	pause=!pause
-	print('aabbbbbaaa')
 	if (pause):
 		show()
 		get_tree().paused=true

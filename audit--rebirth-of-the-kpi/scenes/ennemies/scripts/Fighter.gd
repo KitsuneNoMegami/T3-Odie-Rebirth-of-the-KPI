@@ -16,7 +16,7 @@ func _ready():
 func _init(pv=null,fname=null,attacks=null,defenses=null):
 	_pv=pv
 	_pv_max=pv
-	_description="test"
+	_description="Ceci est la description du personnage du pole"
 	_name=fname
 	_attacks=attacks
 	_defenses=defenses
@@ -53,3 +53,6 @@ func get_description():
 	
 func get_pv():
 	return _pv
+
+func set_sprite(sprite):
+	$sprite.play(sprite)

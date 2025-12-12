@@ -272,7 +272,7 @@ func _menu_input(slot) -> void:
 			if i == 0:
 				# Menu principal
 				if slot == 4:
-					fight.fight_unfight(null,null)
+					fight.fight_unfight(null,null,null)
 				else:
 					var chosen = _menu_options[i][slot]
 					_current_menu = chosen
@@ -333,7 +333,7 @@ func _menu_input(slot) -> void:
 					await fight.end_player_turn()
 	else:
 		if(fight.is_win()):
-			fight.fight_unfight(null,null)
+			fight.fight_unfight(null,null,null)
 			pass
 
 

@@ -23,7 +23,11 @@ func get_player():
 
 func is_player_turn() -> bool:
 	return _turn == "player"
-
+	
+func end_fight():
+	GameState.change_state_pole(GameState.get_pole())
+	return
+	
 func fight_unfight(path,pole, player):
 	_pause = !_pause
 	_player = player

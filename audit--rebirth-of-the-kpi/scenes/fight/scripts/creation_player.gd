@@ -4,7 +4,7 @@ func _ready():
 	pass
 	
 func get_player():
-	var attacks=[Attack.new("Collecte d'information")]
+	var attacks=[Attack.new("Collecte d'information"),Attack.new("Turbo puissance")]
 	var defenses=[Attack.new("Reformulation protectrice")]
 	var player = Fighter.new(50, "Joseph",attacks,defenses)
 	return player

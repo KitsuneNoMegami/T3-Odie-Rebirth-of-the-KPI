@@ -1,8 +1,12 @@
 ~ start
-Madame: Vous venez pour faire un audit?
-- Oui 
-	Madame: Tres bien alors commencons
-	do GameState.start_fight("res://scenes/fight/scripts/creation_fighter.gd")
-- Fuire
+Z le maudit : L'équipe d'audit ! Vous arrivez juste au moment parfait. Le planning de la semaine est… hmm… complexe.
+- Expliquez moi le planning nous allons voir cela ensemble maintenant(Lance l'affrontement)
+	Blindau : ce combat est diffile êtes vous sûr de vouloir le lancer ?
+- Je pourrais attendre un moment pour mieux comprendre le context et revenir plus tard(Fuite)
+do GameState.set_pause(false)
+- Engager la rencontre tout de même?
+	Z le maudit : Le vendredi prend feu !! Le T5 arrive...
+	do GameState.start_fight("res://scenes/fight/scripts/creation_fighter.gd","rh")
+- Je pourrais attendre un moment pour mieux comprendre le context et revenir plus tard(Fuite)
 do GameState.set_pause(false)
 => END

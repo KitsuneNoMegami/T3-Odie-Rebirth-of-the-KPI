@@ -4,7 +4,6 @@ extends CharacterBody2D
 var _speed: int= 250
 var _inventory
 var pnj_in_range = false # si un pnj est aux alentours
-var dialogue_ressource = load("res://Rh.dialogue")
 @export var gameState: Script
 
 signal dialogue_requested #Signal pour le dialogue 
@@ -84,7 +83,9 @@ func _unhandled_input(event: InputEvent) -> void:
 	if pnj_in_range and (Input.is_action_just_pressed("accept")):
 		GameState.set_pause(true)
 		if (GameState.get_pause()):
-			DialogueManager.show_dialogue_balloon(dialogue_ressource,"start")
+			DialogueManager.show_dialogue_balloon("start")
 
 func get_map()->Camera2D:
 	return $player_view
+
+	

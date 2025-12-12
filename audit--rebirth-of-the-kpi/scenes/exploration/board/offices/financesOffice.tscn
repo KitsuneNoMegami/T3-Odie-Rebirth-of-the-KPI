@@ -4,7 +4,7 @@
 [ext_resource type="Script" uid="uid://ckkruwmgpfohk" path="res://scenes/exploration/board/offices/finances_office.gd" id="2_bup5o"]
 [ext_resource type="PackedScene" uid="uid://bmegaasqhjghc" path="res://scenes/exploration/pnj/pnj.tscn" id="2_vf85f"]
 [ext_resource type="PackedScene" uid="uid://ce7gk84oa0efc" path="res://scenes/exploration/player/player.tscn" id="3_b6g77"]
-[ext_resource type="Script" uid="uid://dhnmloq2ihea4" path="res://scenes/exploration/pnj/banquier.gd" id="3_vf85f"]
+[ext_resource type="Script" path="res://scenes/exploration/pnj/banquier.gd" id="3_vf85f"]
 [ext_resource type="PackedScene" uid="uid://c4710q2ydrkks" path="res://scenes/inventory/inventory.tscn" id="4_bup5o"]
 [ext_resource type="PackedScene" uid="uid://c1l537l6qsm3u" path="res://scenes/exploration/board/pause/pause_menu.tscn" id="5_2eagd"]
 [ext_resource type="PackedScene" uid="uid://h1db0cc8k0i3" path="res://scenes/exploration/board/offices/office_zone.tscn" id="6_kasll"]

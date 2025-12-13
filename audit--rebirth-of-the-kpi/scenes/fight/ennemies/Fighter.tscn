@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://i0fjly4h008r" path="res://scenes/fight/scripts/ennemies/scripts/Fighter.gd" id="1_7quk1"]
 [ext_resource type="Texture2D" uid="uid://b3kkttuqskjqv" path="res://assets/sprites/wemmert_cedric.png" id="2_usnn0"]
 
+
 [sub_resource type="SpriteFrames" id="SpriteFrames_7quk1"]
 animations = [{
 "frames": [{

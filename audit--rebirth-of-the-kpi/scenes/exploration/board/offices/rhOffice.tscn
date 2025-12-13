@@ -766,7 +766,7 @@ visible = false
 
 [node name="office_zone" parent="." instance=ExtResource("6_t3yd0")]
 position = Vector2(399, 161)
-scale = Vector2(0.6364108, 0.92355055)
+scale = Vector2(0.636411, 0.923551)
 
 [node name="fight" parent="." instance=ExtResource("8_4aelf")]
 process_mode = 2

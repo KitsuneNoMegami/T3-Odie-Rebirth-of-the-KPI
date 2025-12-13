@@ -37,7 +37,7 @@ signal bridge_dialogue_started(resource: DialogueResource)
 ## Used inernally
 signal bridge_mutated()
 
-
+var  dialogue_path : DialogueResource
 ## The list of globals that dialogue can query
 var game_states: Array = []
 
@@ -424,12 +424,14 @@ func create_resource_from_text(text: String) -> Resource:
 
 
 ## Show the configured dialogue balloon
-func show_dialogue_balloon(resource: DialogueResource, title: String = "", extra_game_states: Array = []) -> Node:
+func show_dialogue_balloon(title: String = "", extra_game_states: Array = []) -> Node:
 	var balloon_path: String = DMSettings.get_setting(DMSettings.BALLOON_PATH, _get_example_balloon_path())
 	if not ResourceLoader.exists(balloon_path):
 		balloon_path = _get_example_balloon_path()
-	return show_dialogue_balloon_scene(balloon_path, resource, title, extra_game_states)
+	return show_dialogue_balloon_scene(balloon_path, dialogue_path, title, extra_game_states)
 
+func set_dialogue_manager(chemin :DialogueResource)->void:
+	dialogue_path=chemin
 
 ## Show a given balloon scene
 func show_dialogue_balloon_scene(balloon_scene, resource: DialogueResource, title: String = "", extra_game_states: Array = []) -> Node:

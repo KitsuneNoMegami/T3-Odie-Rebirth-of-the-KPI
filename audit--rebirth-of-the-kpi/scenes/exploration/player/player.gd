@@ -4,7 +4,6 @@ extends CharacterBody2D
 var _speed: int= 250
 var _inventory
 var pnj_in_range = false # si un pnj est aux alentours
-var dialogue_ressource = load("res://Rh.dialogue")
 @export var gameState: Script
 
 signal dialogue_requested #Signal pour le dialogue 
@@ -13,17 +12,6 @@ signal no_player_in_range
 @onready var sprite = $player_sprite
 
 #Pour l'instant les personnages de l'equipe x	
-var vanessa = {
-	"name"="Vanessa",
-	"desc"="Directrice des ressources humaines",
-	"sprite"="res://.godot/imported/head-human resources.png-fae06a33f7bf5e87b6a37c8e1012847e.ctex"
-}
-
-var bob = {
-	"name"="Bob",
-	"desc"="Bob",
-	"sprite"="res://assets/sprites/logistics-manager.png"
-}
 
 # Charge l'inventaire manuellement et ajouter les personnages a l'equipe
 func _ready() -> void:
@@ -31,8 +19,6 @@ func _ready() -> void:
 	_inventory = inventory_scene.instantiate()
 	_inventory.visible=false
 	add_child(_inventory)
-	_inventory.add_mate(vanessa)
-	_inventory.add_mate(bob)
 
 func _process(delta: float) -> void:
 	if !GameState.get_pause(): # Tant que le jeu n'est pas en pause on peut bouger le perso
@@ -84,7 +70,9 @@ func _unhandled_input(event: InputEvent) -> void:
 	if pnj_in_range and (Input.is_action_just_pressed("accept")):
 		GameState.set_pause(true)
 		if (GameState.get_pause()):
-			DialogueManager.show_dialogue_balloon(dialogue_ressource,"start")
+			DialogueManager.show_dialogue_balloon("start")
 
 func get_map()->Camera2D:
 	return $player_view
+
+	

@@ -6,7 +6,7 @@
 [ext_resource type="Script" uid="uid://dm0g8k30nrk5n" path="res://scenes/exploration/board/pause/sound_bar.gd" id="3_mexsl"]
 
 [node name="CanvasLayer" type="CanvasLayer"]
-process_mode = 3
+process_mode = 4
 script = ExtResource("1_nwcfo")
 
 [node name="Panel" type="Panel" parent="."]

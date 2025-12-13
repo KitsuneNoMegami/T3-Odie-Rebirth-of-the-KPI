@@ -89,7 +89,7 @@ data = PackedByteArray("//vQZAAABzd+UK0/AAJwTlpfoJwAX8HhXdmsAAI2Nyx/ELAAMAAF94pT
 content_margin_left = 3.0
 content_margin_top = 3.0
 content_margin_right = 3.0
-content_margin_bottom = 20.0
+content_margin_bottom = 3.0
 
 [node name="fight" type="CanvasLayer"]
 scale = Vector2(1.6, 1.6)
@@ -102,10 +102,10 @@ offset_bottom = 803.19995
 scale = Vector2(0.84000003, 0.83333343)
 
 [node name="NinePatchRect" type="NinePatchRect" parent="."]
-offset_left = 726.87494
-offset_top = 445.33337
-offset_right = 1228.138
-offset_bottom = 685.7334
+offset_left = 70.625
+offset_top = 422.5
+offset_right = 579.32837
+offset_bottom = 667.05005
 scale = Vector2(0.84000003, 0.83333343)
 texture = ExtResource("3_3si2p")
 patch_margin_left = 3
@@ -118,6 +118,10 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = 2.2321427
+offset_top = -1.5
+offset_right = 2.2321472
+offset_bottom = -1.5
 grow_horizontal = 2
 grow_vertical = 2
 
@@ -162,7 +166,7 @@ flat = true
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." node_paths=PackedStringArray("button1", "button2", "button3", "button4", "sound_handler")]
 process_mode = 2
 texture_filter = 1
-position = Vector2(838.125, 453.74994)
+position = Vector2(116.87494, 437.49997)
 scale = Vector2(3.3600001, 3.3333337)
 sprite_frames = SubResource("SpriteFrames_inaet")
 autoplay = "default"
@@ -183,10 +187,11 @@ switch = ExtResource("6_inaet")
 visible = false
 clip_children = 2
 texture_filter = 1
-offset_left = 250.0
-offset_top = 449.0
-offset_right = 708.0
-offset_bottom = 632.0
+offset_left = 523.75006
+offset_top = 426.25
+offset_right = 1014.37506
+offset_bottom = 628.75
+scale = Vector2(1.0945194, 0.9739752)
 texture = ExtResource("3_3si2p")
 patch_margin_left = 3
 patch_margin_top = 3
@@ -196,18 +201,20 @@ patch_margin_bottom = 3
 [node name="message_panel" type="Panel" parent="NinePatchRect2"]
 visible = false
 layout_mode = 0
-offset_right = 760.0
-offset_bottom = 187.0
+offset_top = 10.6249695
+offset_right = 492.4999
+offset_bottom = 197.62497
 theme_override_styles/panel = SubResource("StyleBoxEmpty_vpnpn")
 script = ExtResource("2_vpnpn")
 
 [node name="Label" type="Label" parent="NinePatchRect2/message_panel"]
 top_level = true
 layout_mode = 0
-offset_left = 253.0
-offset_top = 453.0
-offset_right = 1005.0
-offset_bottom = 631.0
+offset_left = 527.5
+offset_top = 440.625
+offset_right = 1060.625
+offset_bottom = 618.625
+autowrap_mode = 1
 
 [node name="It-engineer" type="Sprite2D" parent="."]
 position = Vector2(213.74997, 253.12502)

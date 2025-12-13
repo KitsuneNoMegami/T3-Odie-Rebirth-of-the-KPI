@@ -1,0 +1,9 @@
+~ start
+Wessler: Bonjour équipe. Bienvenue au Pôle Financier, où les tableaux ressemblent parfois à des listes de courses et où chaque café a sa petite annotation.
+- Commençons l’audit(Lance l'affrontement)
+	Wessler: Très bien. Passons à l’action et explorons tous ces chiffres.
+	do GameState.start_fight("res://scenes/fight/scripts/creation_fighter.gd","finance")
+- Faire une pause
+    Wessler: Une pause ? D’accord… mais chaque détail attend votre attention.
+do GameState.set_pause(false)
+=> END

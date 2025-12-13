@@ -3,12 +3,25 @@ extends Node
 func _ready():
 	pass
 	
-func get_fighters():
-	var attack=Attack.new("Turbo Feur",2)
-	var Fighters=[];
-	var fighter1 = Fighter.new(20, "Mathieu",attack)
-	var fighter2 = Fighter.new(20, "Kilian",attack)
-	var fighter3 = Fighter.new(20, "Lucas",attack)
+func get_fighters(pole):
+	var attacks=[Attack.new("Analyse comportementale"),Attack.new("Gestion relationnelle")]
+	var Fighters=[]
+	var fighter1
+	var fighter2
+	var fighter3
+	match pole:
+		"rh":
+			fighter1=Fighter.new(10, "Mathieu",attacks)
+			#fighter1.set_sprite("default")
+			fighter2 = Fighter.new(10, "Kilian",attacks)
+			fighter3 = Fighter.new(10, "Lucas",attacks)
+		"it":
+			fighter1=Fighter.new(10, "Watheo",attacks)
+			fighter2 = Fighter.new(10, "Wemmert",attacks)
+			fighter3 = Fighter.new(10, "Ali",attacks)
+	fighter1=Fighter.new(10, "Watheo",attacks)
+	fighter2 = Fighter.new(10, "Wemmert",attacks)
+	fighter3 = Fighter.new(10, "Ali",attacks)
 	Fighters.append(fighter1)
 	Fighters.append(fighter2)
 	Fighters.append(fighter3)

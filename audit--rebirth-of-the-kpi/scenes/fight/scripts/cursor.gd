@@ -157,37 +157,37 @@ func _update_description():
 				"Fuite":
 					txt = "Tenter de fuir le combat"
 		"Attaque":
-			var name = _menu_options[1][1 + _slot]
-			if name != " ":
-				var atk = _resolve_attack_name_to_object(name)
+			var aname = _menu_options[1][1 + _slot]
+			if aname != " ":
+				var atk = _resolve_attack_name_to_object(aname)
 				if atk and atk.has_method("get_description"):
 					txt = atk.get_description()
 				else:
-					txt = "Attaque: " + name
+					txt = "Attaque: " + aname
 			else:
 				txt = "Choix de l'attaque"
 		"Défense":
-			var name = _menu_options[2][1 + _slot]
-			if name != " ":
-				var def = _resolve_defense_name_to_object(name)
+			var aname = _menu_options[2][1 + _slot]
+			if aname != " ":
+				var def = _resolve_defense_name_to_object(aname)
 				if def and def.has_method("get_description"):
 					txt = def.get_description()
 				else:
-					txt = "Défense: " + name
+					txt = "Défense: " + aname
 			else:
 				txt = "Choix de la défense"
 		"Ennemis":
-			var name = _menu_options[3][1 + _slot]
-			if name != " ":
+			var aname = _menu_options[3][1 + _slot]
+			if aname != " ":
 				var enemy = null
 				for f in fight.get_fighters():
-					if f.get_fname() == name:
+					if f.get_fname() == aname:
 						enemy = f
 						break
 				if enemy and enemy.has_method("get_description"):
 					txt = enemy.get_description()
 				else:
-					txt = "Cible: " + name
+					txt = "Cible: " + aname
 			else:
 				txt = "Choix de la cible"
 		_:

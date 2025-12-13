@@ -146,7 +146,7 @@ func do_action(fname, action_menu, action_use = null):
 			var target = _find_fighter(fname)
 			if await attack(target, action_use):
 				_player.add_credibility(20)
-				_player.add_skill(20)
+				_player.add_skill(25)
 				_fighters.erase(target)
 		"Défense":
 			if _player == null:

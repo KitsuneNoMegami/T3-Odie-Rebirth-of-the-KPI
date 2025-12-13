@@ -12,7 +12,7 @@ func get_fighters(pole):
 	match pole:
 		"rh":
 			fighter1=Fighter.new(10, "Mathieu",attacks)
-			#fighter1.set_sprite("wemmert")
+			#fighter1.set_sprite("default")
 			fighter2 = Fighter.new(10, "Kilian",attacks)
 			fighter3 = Fighter.new(10, "Lucas",attacks)
 		"it":

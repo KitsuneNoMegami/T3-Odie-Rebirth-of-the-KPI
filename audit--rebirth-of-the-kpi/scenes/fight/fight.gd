@@ -1,33 +1,59 @@
+## Node/Script : Gestionnaire principal du système de combat
+## Contrôle l'interface de combat, les tours de jeu, et les interactions entre joueur et ennemis
+##
+## Signaux : Aucun
+##
+## Variables principales :
+## - _pause : Indique si le combat est actif
+## - _fighters : Liste des ennemis dans le combat
+## - _player : Référence au joueur
+## - _turn : Tour actuel ("player" ou "enemy")
+
 extends CanvasLayer
 
+## Indique si le combat est actif (met le jeu en pause)
 var _pause = false
 
+## Liste des combattants ennemis
 var _fighters
+## Référence au joueur
 var _player
 
 # Gestion du tour: "player" ou "enemy"
+## Tour actuel dans le combat
 var _turn := "player"
 
 @onready var fighters_script
+## Référence au panneau de messages
 @onready var message = get_node("NinePatchRect2/message_panel")
+## Référence au curseur de sélection
 @onready var cursor: AnimatedSprite2D = $AnimatedSprite2D
 
+## Initialisation du système de combat (callback Godot)
 func _ready() -> void:
 	randomize()
 
+## Retourne la liste des combattants ennemis
 func get_fighters():
 	return _fighters
 
+## Retourne la référence au joueur
 func get_player():
 	return _player
 
+## Vérifie si c'est le tour du joueur
 func is_player_turn() -> bool:
 	return _turn == "player"
-	
+
+## Termine le combat et retourne à l'exploration
 func end_fight():
 	GameState.change_state_pole(GameState.get_pole())
 	return
-	
+
+## Active ou désactive le mode combat
+## path:String - Chemin vers le script des ennemis
+## pole:String - Pôle du combat (détermine les ennemis)
+## player:Fighter - Instance du joueur
 func fight_unfight(path,pole, player):
 	_pause = !_pause
 	_player = player
@@ -51,6 +77,10 @@ func fight_unfight(path,pole, player):
 		cursor.hide()
 		get_tree().paused = false
 
+## Exécute une attaque sur une cible
+## target:Fighter - Cible de l'attaque
+## _attack:Attack - Compétence d'attaque à utiliser
+## Retourne:bool - true si la cible est morte, false sinon
 func attack(target, _attack):
 	if target == null:
 		return false
@@ -73,6 +103,10 @@ func attack(target, _attack):
 		return true
 	return false
 
+## Applique une défense sur une cible
+## target:Fighter - Combattant qui se défend
+## _defense:Attack - Compétence de défense à utiliser
+## Retourne:bool - true si la cible est morte, false sinon
 func defenses(target, _defense):
 	var dname := _attack_name(_defense)
 	var pts_defense := _attack_damage(_defense)
@@ -84,6 +118,9 @@ func defenses(target, _defense):
 		return true
 	return false
 
+## Recherche un ennemi par son nom
+## name_fighter:String - Nom du combattant à trouver
+## Retourne:Fighter - Le combattant trouvé ou null
 func _find_fighter(name_fighter):
 	for fighter in _fighters:
 		if fighter.get_fname() == name_fighter:
@@ -91,6 +128,7 @@ func _find_fighter(name_fighter):
 	return null
 
 # Tour de l'ennemi: attaque aléatoire sur le joueur
+## Exécute automatiquement l'attaque d'un ennemi aléatoire vivant
 func enemy_auto_reply() -> void:
 	var idx := _random_alive_fighter_index()
 	if idx == -1:
@@ -105,6 +143,7 @@ func enemy_auto_reply() -> void:
 	await attack(_player, enemy_attack)
 
 # Fin du tour du joueur -> lance le tour ennemi puis rend la main au joueur
+## Termine le tour du joueur et déclenche le tour de l'ennemi
 func end_player_turn() -> void:
 	if not _continue():
 		return
@@ -118,6 +157,10 @@ func end_player_turn() -> void:
 
 # action_menu: "Attaque" ou "Défense"
 # action_use: objet d'attaque/défense sélectionné (peut être null)
+## Exécute une action (attaque ou défense) pour un combattant
+## fname:String - Nom du combattant qui agit
+## action_menu:String - Type d'action ("Attaque" ou "Défense")
+## action_use:Attack - Compétence à utiliser (null pour une attaque aléatoire)
 func do_action(fname, action_menu, action_use = null):
 	match action_menu:
 		"Attaque":
@@ -152,6 +195,7 @@ func do_action(fname, action_menu, action_use = null):
 		_:
 			pass
 
+## Réinitialise tous les points de défense (fin de tour)
 func del_all_defense():
 	if _player and _player.has_method("del_defense"):
 		_player.del_defense()
@@ -161,12 +205,15 @@ func del_all_defense():
 			if fighter and fighter.has_method("del_defense"):
 				fighter.del_defense()
 
+## Retourne un nombre aléatoire de combattants (legacy, à vérifier usage)
 func fighter_number():
 	var nb = 0
 	for fighter in _fighters:
 		nb += 1
 	return randi() % nb
 
+## Retourne l'index d'un ennemi vivant aléatoire
+## Retourne:int - Index dans le tableau _fighters, ou -1 si aucun ennemi vivant
 func _random_alive_fighter_index() -> int:
 	if _fighters == null:
 		return -1
@@ -178,9 +225,11 @@ func _random_alive_fighter_index() -> int:
 		return -1
 	return alive_indices[randi() % alive_indices.size()]
 
+## Retourne l'état de pause (combat actif ou non)
 func get_pause():
 	return _pause
 
+## Vérifie si le combat peut continuer (joueur et ennemis encore en vie)
 func _continue():
 	if not _pause:
 		return false
@@ -193,11 +242,18 @@ func _continue():
 			return true
 	return false
 
+## Vérifie si le joueur a gagné le combat
 func is_win():
 	return _player != null and _player.get_pv() > 0
 
+## Retourne le nom d'une attaque
+## a:Attack - Objet attaque
+## Retourne:String - Nom de l'attaque
 func _attack_name(a) -> String:
 	return a.get_aname()
 
+## Retourne les dégâts d'une attaque
+## a:Attack - Objet attaque
+## Retourne:int - Points de dégâts
 func _attack_damage(a) -> int:
 	return a.get_damage()

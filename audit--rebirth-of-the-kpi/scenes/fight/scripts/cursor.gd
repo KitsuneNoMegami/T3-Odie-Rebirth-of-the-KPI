@@ -1,18 +1,33 @@
+## Node/Script : Gestionnaire du curseur de sélection dans le menu de combat
+## Contrôle la navigation dans les menus et l'exécution des actions de combat
+##
+## Signaux : Aucun
+##
+## Variables exportées :
+## - button1, button2, button3, button4 : Boutons des options de menu
+## - sound_handler : Gestionnaire des effets sonores du menu
+
 extends AnimatedSprite2D
 
+## Position actuelle du curseur (0-3)
 var _slot = 0
+
+## Boutons des options de menu
 @export var button1: Button
 @export var button2: Button
 @export var button3: Button
 @export var button4: Button
+## Gestionnaire des sons du menu
 @export var sound_handler: AudioStreamPlayer
 
 @onready var fight: CanvasLayer = get_parent()
 @onready var message = get_node("../NinePatchRect2/message_panel")
 
+## Menu actuel affiché
 var _current_menu = "main"
 
 # Menus: uniquement Attaque, Défense, Fuite
+## Structure des menus disponibles (main, Attaque, Défense, Ennemis)
 var _menu_options = [
 	["main", "Attaque", "Défense", "Fuite", 1, 2, 3], # 0
 	["Attaque"],   # 1: rempli dynamiquement
@@ -20,22 +35,30 @@ var _menu_options = [
 	["Ennemis"]    # 3: rempli dynamiquement
 ]
 
+## Attaque sélectionnée par le joueur
 var _selected_attack = null
+## Défense sélectionnée par le joueur
 var _selected_defense = null
+## Action en attente d'exécution ("Attaque" ou "Défense")
 var _pending_action = "" # "Attaque" ou "Défense"
 
 # Flag pour empêcher les doubles clics pendant une action bloquante
+## Empêche les actions multiples pendant l'exécution d'une action
 var _is_action_running := false
 
+## Initialisation du curseur (callback Godot)
 func _ready() -> void:
 	randomize()
 	position.x = 100
 
+## Mise à jour de la position du curseur (callback Godot)
+## _delta:float - Temps écoulé depuis la dernière frame
 func _process(_delta: float) -> void:
 	if not visible:
 		return
 	position.y = 430 + (43 * _slot)
 
+## Réinitialise le curseur et affiche le menu principal
 func initialisation():
 	show()
 	position.y = 430
@@ -47,6 +70,7 @@ func initialisation():
 	_menu_input(5) # affiche le menu principal
 	_update_description()
 
+## Met à jour les textes des boutons selon le menu actuel
 func actualize():
 	# Assure 4 lignes pour les sous-menus
 	while _menu_options[1].size() < 5:
@@ -80,6 +104,7 @@ func actualize():
 			button4.text = " "
 	_update_description()
 
+## Affiche le menu des attaques disponibles
 func _show_attacks():
 	_menu_options[1] = ["Attaque"]
 	var attacks = []
@@ -95,6 +120,7 @@ func _show_attacks():
 	_current_menu = "Attaque"
 	actualize()
 
+## Affiche le menu des défenses disponibles
 func _show_defenses():
 	_menu_options[2] = ["Défense"]
 	var defenses = []
@@ -110,6 +136,7 @@ func _show_defenses():
 	_current_menu = "Défense"
 	actualize()
 
+## Affiche la liste des ennemis ciblables
 func _show_ennemies():
 	_menu_options[3] = ["Ennemis"]
 	for fighter in fight.get_fighters():
@@ -120,6 +147,9 @@ func _show_ennemies():
 	_current_menu = "Ennemis"
 	actualize()
 
+## Convertit un nom d'attaque en objet Attack
+## aname:String - Nom de l'attaque
+## Retourne:Attack - Objet attaque correspondant ou null
 func _resolve_attack_name_to_object(aname):
 	if not fight.get_player() or not fight.get_player().has_method("get_attacks"):
 		return null
@@ -128,6 +158,9 @@ func _resolve_attack_name_to_object(aname):
 			return attack
 	return null
 
+## Convertit un nom de défense en objet Attack
+## dname:String - Nom de la défense
+## Retourne:Attack - Objet défense correspondant ou null
 func _resolve_defense_name_to_object(dname):
 	if fight.get_player():
 		if fight.get_player().has_method("get_defenses"):
@@ -141,6 +174,7 @@ func _resolve_defense_name_to_object(dname):
 	return null
 
 # Met à jour le panneau de description selon le menu et le slot courant
+## Met à jour le texte de description de l'option sélectionnée
 func _update_description():
 	if not message:
 		return
@@ -197,6 +231,8 @@ func _update_description():
 	else:
 		message.show_description(txt)
 
+## Gère les entrées clavier et souris (callback Godot)
+## event:InputEvent - Événement d'entrée
 func _input(event: InputEvent) -> void:
 	if not visible:
 		return
@@ -240,6 +276,8 @@ func _input(event: InputEvent) -> void:
 			_slot = 0
 		_update_description()
 
+## Gère la navigation et les actions dans les menus
+## slot:int - Position du menu (1-4 pour les boutons, 5 pour retour au menu principal)
 func _menu_input(slot) -> void:
 	if not visible:
 		return

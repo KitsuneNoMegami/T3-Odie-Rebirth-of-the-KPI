@@ -1,10 +1,25 @@
+## Node/Script : Classe Attack représentant une compétence d'attaque ou de défense
+## Gère les différentes compétences utilisables pendant les combats d'audit
+##
+## Signaux : Aucun
+##
+## Variables principales :
+## - _name : Nom de la compétence
+## - _damage : Points de dégâts infligés (ou points de défense pour les compétences défensives)
+## - _description : Description détaillée de la compétence
+
 class_name Attack
 extends Node
 
+## Nom de la compétence
 var _name
+## Points de dégâts (ou défense) de la compétence
 var _damage
+## Description détaillée de la compétence
 var _description
 
+## Constructeur de l'attaque/défense
+## aname:String - Nom de la compétence à créer
 func _init(aname = null):
 	_name = aname
 	match aname:
@@ -55,14 +70,16 @@ func _init(aname = null):
 			_description="Résistance à la pression et au stress causé par l'interlocuteur. Mode Suisse activé"
 			pass
 			
-			
 	
+## Retourne les points de dégâts de la compétence
 func get_damage():
 	return _damage
-	
+
+## Retourne le nom de la compétence
 func get_aname()->String:
 	return _name
-	
+
+## Retourne la description de la compétence
 func get_description():
 	return _description
 		

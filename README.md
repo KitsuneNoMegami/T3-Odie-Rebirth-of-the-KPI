@@ -64,6 +64,7 @@ Permettre à des apprenants de comprendre et pratiquer, de façon ludique, les �
 - Développement sous contrainte de temps.
 - Moteur : Godot Engine.
 - Langage principal : GDScript
+- Documentation du code : Commentaires en français avec syntaxe Godot (##)
 
 ## Crédits
 

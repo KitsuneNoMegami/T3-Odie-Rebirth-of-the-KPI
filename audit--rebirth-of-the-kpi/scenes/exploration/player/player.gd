@@ -1,8 +1,8 @@
 class_name Player 
 extends CharacterBody2D
+## Le joueur qui joue daaah
 
 var _speed: int= 250
-var _inventory
 var pnj_in_range = false # si un pnj est aux alentours
 @export var gameState: Script
 
@@ -11,15 +11,8 @@ signal no_player_in_range
 
 @onready var sprite = $player_sprite
 
-#Pour l'instant les personnages de l'equipe x	
-
-# Charge l'inventaire manuellement et ajouter les personnages a l'equipe
 func _ready() -> void:
-	var inventory_scene = preload("res://scenes/inventory/inventory.tscn")
-	_inventory = inventory_scene.instantiate()
-	_inventory.visible=false
-	add_child(_inventory)
-
+	pass
 func _process(delta: float) -> void:
 	if !GameState.get_pause(): # Tant que le jeu n'est pas en pause on peut bouger le perso
 		move()

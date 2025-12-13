@@ -38,6 +38,7 @@ func _process(_delta: float) -> void:
 
 func initialisation():
 	show()
+	fight.animation_initialisation()
 	position.y = 430
 	_current_menu = "main"
 	_selected_attack = null
@@ -46,6 +47,9 @@ func initialisation():
 	_is_action_running = false
 	_menu_input(5) # affiche le menu principal
 	_update_description()
+	
+	
+	
 
 func actualize():
 	# Assure 4 lignes pour les sous-menus

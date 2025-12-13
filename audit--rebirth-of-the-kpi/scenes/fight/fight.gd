@@ -24,6 +24,14 @@ func get_player():
 func is_player_turn() -> bool:
 	return _turn == "player"
 	
+func animation_initialisation():
+	add_child(_player)
+	get_child(4)._play()
+	var i=4
+	for fighter in _fighters:
+		add_child(fighter)
+		get_child(i)._play()
+	return
 func end_fight(win):
 	if(win):
 		GameState.change_state_pole(GameState.get_pole(),true)

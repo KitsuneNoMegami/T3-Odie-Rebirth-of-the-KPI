@@ -12,7 +12,7 @@ config_version=5
 
 config/name="Audit: Rebirth of the KPI"
 run/main_scene="uid://c554wiam448rr"
-config/features=PackedStringArray("4.4", "Forward Plus")
+config/features=PackedStringArray("4.5", "Forward Plus")
 config/icon="res://icon.svg"
 
 [autoload]

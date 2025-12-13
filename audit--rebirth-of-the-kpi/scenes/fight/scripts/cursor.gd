@@ -332,7 +332,6 @@ func _menu_input(slot) -> void:
 	else:
 		if(fight.is_win()):
 			fight.end_fight()
-			fight.fight_unfight(null, null)
 			pass
 
 

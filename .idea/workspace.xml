@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="38399cb1-0ea1-409f-82d1-51916d4d0067" name="Changes" comment="" />
+    <list default="true" id="38399cb1-0ea1-409f-82d1-51916d4d0067" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/audit--rebirth-of-the-kpi/scenes/fight/fight.gd" beforeDir="false" afterPath="$PROJECT_DIR$/audit--rebirth-of-the-kpi/scenes/fight/fight.gd" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/audit--rebirth-of-the-kpi/scenes/fight/scripts/cursor.gd" beforeDir="false" afterPath="$PROJECT_DIR$/audit--rebirth-of-the-kpi/scenes/fight/scripts/cursor.gd" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -10,22 +13,22 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="GitLabMergeRequestFiltersHistory"><![CDATA[{
-  "lastFilter": {
-    "state": "OPENED",
-    "assignee": {
-      "type": "org.jetbrains.plugins.gitlab.mergerequest.ui.filters.GitLabMergeRequestsFiltersValue.MergeRequestsMemberFilterValue.MergeRequestsAssigneeFilterValue",
-      "username": "jcuiller",
-      "fullname": "CUILLER JOSEPH"
+  <component name="GitLabMergeRequestFiltersHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPENED&quot;,
+    &quot;assignee&quot;: {
+      &quot;type&quot;: &quot;org.jetbrains.plugins.gitlab.mergerequest.ui.filters.GitLabMergeRequestsFiltersValue.MergeRequestsMemberFilterValue.MergeRequestsAssigneeFilterValue&quot;,
+      &quot;username&quot;: &quot;jcuiller&quot;,
+      &quot;fullname&quot;: &quot;CUILLER JOSEPH&quot;
     }
   }
-}]]></component>
-  <component name="GitLabMergeRequestsSettings"><![CDATA[{
-  "selectedUrlAndAccountId": {
-    "first": "git@git.unistra.fr:commit-ou-creve/t3-2025.git",
-    "second": "670b911c-8825-491b-b539-eb815a4e9858"
+}</component>
+  <component name="GitLabMergeRequestsSettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;first&quot;: &quot;git@git.unistra.fr:commit-ou-creve/t3-2025.git&quot;,
+    &quot;second&quot;: &quot;670b911c-8825-491b-b539-eb815a4e9858&quot;
   }
-}]]></component>
+}</component>
   <component name="ProjectColorInfo">{
   &quot;customColor&quot;: &quot;&quot;,
   &quot;associatedIndex&quot;: 4
@@ -42,7 +45,7 @@
     "RunOnceActivity.git.unshallow": "true",
     "git-widget-placeholder": "combatV2",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "/home/joseph/Documents/BUT2/T3/t3-2025"
+    "last_opened_file_path": "/home/joseph/Documents/BUT2/a31-bataille-navale"
   }
 }]]></component>
   <component name="SharedIndexes">

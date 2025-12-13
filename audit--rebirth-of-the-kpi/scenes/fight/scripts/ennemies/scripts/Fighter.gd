@@ -1,4 +1,4 @@
-class_name Fighter extends Node2D
+class_name Fighter extends AnimatedSprite2D
 
 var _name
 var _pv
@@ -9,6 +9,7 @@ var _levelSkill=0
 var _attacks
 var _defenses
 var _pts_defense =0
+var _sprite=null
 
 func _ready():
 	pass
@@ -18,6 +19,7 @@ func _init(pv=null,fname=null,attacks=null,defenses=null):
 	_pv_max=pv
 	_description="Ceci est la description du personnage du pole"
 	_name=fname
+	_sprite=fname
 	_attacks=attacks
 	_defenses=defenses
 	
@@ -54,5 +56,5 @@ func get_description():
 func get_pv():
 	return _pv
 
-func set_sprite(sprite):
-	$sprite.play(sprite)
+func _play():
+	$sprite.play(_sprite)

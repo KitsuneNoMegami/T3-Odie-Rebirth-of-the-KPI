@@ -6,11 +6,11 @@ var pause= false
 var fight_scene
 var _pole
 @onready var _player =load("res://scenes/fight/scripts/creation_player.gd").new().get_player()
-var marketing_win=false;
-var rh_win=false;
-var informatique_win=false;
-var communcation_win=false;
-var finance_win=false;
+var marketing_win=null;
+var rh_win=null;
+var informatique_win=null;
+var communcation_win=null;
+var finance_win=null;
 	
 func set_pause(value: bool):
 	pause = value
@@ -42,20 +42,20 @@ func get_win(pole):
 		"finance":
 			return finance_win
 
-func change_state_pole(pole):
+func change_state_pole(pole,state):
 	match pole:
 		"informatique":
-			informatique_win=true
+			informatique_win=state
 			return
 		"rh":
-			rh_win=true
+			rh_win=state
 			return
 		"marketing":
-			marketing_win=true
+			marketing_win=state
 			return
 		"communication":
-			communcation_win=true
+			communcation_win=state
 			return
 		"finance":
-			finance_win=true
+			finance_win=state
 			return

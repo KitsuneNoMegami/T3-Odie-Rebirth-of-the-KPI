@@ -26,7 +26,9 @@ func is_player_turn() -> bool:
 	
 func end_fight(win):
 	if(win):
-		GameState.change_state_pole(GameState.get_pole())
+		GameState.change_state_pole(GameState.get_pole(),true)
+	else:
+		GameState.change_state_pole(GameState.get_pole(),false)
 	fight_unfight(null, null,null)
 	return
 	

@@ -1,16 +1,26 @@
+## Node/Script : Zone de sortie des bureaux
+## Détecte la sortie du joueur et retourne à la carte principale
+##
+## Signaux : Aucun
+
 extends Area2D
 
 
 # Called when the node enters the scene tree for the first time.
+## Initialisation de la zone (callback Godot)
 func _ready() -> void:
 	pass # Replace with function body.
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
+## Mise à jour de la zone (callback Godot)
+## delta:float - Temps écoulé depuis la dernière frame en secondes
 func _process(delta: float) -> void:
 	pass
 
 
+## Détecte la sortie du joueur de la zone (callback Godot)
+## body:Node2D - Corps sortant de la zone
 func _on_body_exited(body: Node2D) -> void:
 	if body is Player:
 		var scene_path := "res://scenes/exploration/board/mapMario.tscn"

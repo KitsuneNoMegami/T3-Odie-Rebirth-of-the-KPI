@@ -457,7 +457,7 @@ func static_id_to_line_ids(resource: DialogueResource, static_id: String) -> Pac
 	return resource.lines.values().filter(func(l): return l.get(&"translation_key", "") == static_id).map(func(l): return l.id)
 
 
-# Call "start" on the given balloon.
+## Call "start" on the given balloon.
 func _start_balloon(balloon: Node, resource: DialogueResource, title: String, extra_game_states: Array) -> void:
 	get_current_scene.call().add_child(balloon)
 
@@ -472,7 +472,7 @@ func _start_balloon(balloon: Node, resource: DialogueResource, title: String, ex
 	bridge_dialogue_started.emit(resource)
 
 
-# Get the path to the example balloon
+## Get the path to the example balloon
 func _get_example_balloon_path() -> String:
 	var is_small_window: bool = ProjectSettings.get_setting("display/window/size/viewport_width") < 400
 	var balloon_path: String = "/example_balloon/small_example_balloon.tscn" if is_small_window else "/example_balloon/example_balloon.tscn"

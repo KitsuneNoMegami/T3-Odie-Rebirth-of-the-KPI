@@ -1,10 +1,20 @@
+## Node/Script : Script de test pour un personnage platformer (non utilisé)
+## Ce script semble être un template de base pour un personnage de plateforme
+## mais n'est pas utilisé dans le jeu d'audit actuel
+##
+## Signaux : Aucun
+
 extends CharacterBody2D
 
 
+## Vitesse de déplacement horizontal en pixels/seconde
 const SPEED = 300.0
+## Vélocité du saut en pixels/seconde
 const JUMP_VELOCITY = -400.0
 
 
+## Traite la physique du personnage (callback Godot)
+## delta:float - Temps écoulé depuis la dernière frame en secondes
 func _physics_process(delta: float) -> void:
 	# Add the gravity.
 	if not is_on_floor():

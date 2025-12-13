@@ -1,8 +1,17 @@
+## Node/Script : Création des ennemis de combat
+## Factory pour générer les groupes d'ennemis selon le pôle affronté
+##
+## Signaux : Aucun
+
 extends Node
 
+## Initialisation (callback Godot)
 func _ready():
 	pass
-	
+
+## Crée et retourne un groupe d'ennemis pour un pôle donné
+## pole:String - Nom du pôle ("rh", "it", etc.)
+## Retourne:Array - Liste de 3 combattants ennemis
 func get_fighters(pole):
 	var attacks=[Attack.new("Analyse comportementale"),Attack.new("Gestion relationnelle")]
 	var Fighters=[]

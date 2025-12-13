@@ -1,5 +1,11 @@
+## Node/Script : Barre de contrôle du volume
+## Contrôle le volume global du jeu via une barre de défilement
+##
+## Signaux : Aucun
+
 extends HScrollBar
 
+## Initialisation de la barre de volume (callback Godot)
 func _ready() -> void:
 	# Initialise la position de la barre selon le volume actuel du jeu
 	var current_db = AudioServer.get_bus_volume_db(0)
@@ -8,6 +14,8 @@ func _ready() -> void:
 	# Connecte le signal quand la valeur change
 	connect("value_changed", Callable(self, "_on_value_changed"))
 
+## Callback du changement de valeur de la barre
+## value:float - Nouvelle valeur (0-1)
 func _on_value_changed(value: float) -> void:
 	# Convertit la valeur (0 → 1) en décibels (-80 → 0)
 	var db_value = linear_to_db(value)

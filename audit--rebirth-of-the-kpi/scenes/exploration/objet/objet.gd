@@ -44,7 +44,7 @@ func _init(nom):
 			
 			
 #/////////////////////////////////////////////////////////////
-#fonction a mettre dans le joueur car elles le concerne
+#fonctions à mettre dans le joueur car elles le concernent
 ## Liste des objets consommables du joueur (devrait être dans Player)
 var consommable=[]
 

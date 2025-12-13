@@ -46,7 +46,7 @@ func _on_label_hovered(i: int) -> void:
 	nb = i
 	update_selection()
 
-#reagis à la l'input accept
+#reagis à l'input accept
 ## Exécute l'action du menu sélectionné
 ## i:int - Index de l'action à exécuter (0=Start, 1=Settings, 2=Exit)
 func trigger_action(i: int) -> void:

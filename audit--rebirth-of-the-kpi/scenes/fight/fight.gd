@@ -25,10 +25,14 @@ func is_player_turn() -> bool:
 	return _turn == "player"
 	
 func animation_initialisation():
-	get_node("Fighter")._play()
+	var fighter_node = get_node_or_null("Fighter")
+	if fighter_node and fighter_node.has_method("_play"):
+		fighter_node._play()
 	var i=2
 	for fighter in _fighters:
-		get_node("Fighter"+str(i))._play()
+		var enemy_node = get_node_or_null("Fighter"+str(i))
+		if enemy_node and enemy_node.has_method("_play"):
+			enemy_node._play()
 		i+=1
 	return
 	

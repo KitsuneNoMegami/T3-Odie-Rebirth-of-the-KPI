@@ -5,13 +5,13 @@ const FighterScene = preload("res://scenes/fight/scripts/ennemies/Fighter.tscn")
 func _ready():
 	pass
 
-func create_fighter(pv: int, fname: String, attacks: Array):
+func create_fighter(pv: int, fname: String, attacks: Array, defenses: Array = []):
 	var fighter = FighterScene.instantiate()
 	fighter._pv = pv
 	fighter._pv_max = pv
 	fighter._name = fname
 	fighter._attacks = attacks
-	fighter._description = "Ceci est la description du personnage du pole"
+	fighter._defenses = defenses
 	return fighter
 	
 func get_fighters(pole):

@@ -14,5 +14,4 @@ func get_player():
 	player._name = "Odie"
 	player._attacks = attacks
 	player._defenses = defenses
-	player._description = "Ceci est la description du personnage du pole"
 	return player

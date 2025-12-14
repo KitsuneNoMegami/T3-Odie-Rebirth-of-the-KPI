@@ -1,23 +1,18 @@
-[gd_scene load_steps=34 format=4 uid="uid://d1ina3ja7hqpa"]
+[gd_scene load_steps=24 format=4 uid="uid://d1ina3ja7hqpa"]
 
 [ext_resource type="Texture2D" uid="uid://bo4bcdbhblcbh" path="res://assets/map/tilemap.png" id="1_lrwju"]
 [ext_resource type="Texture2D" uid="uid://dj6wyfg5kdfjh" path="res://assets/map/Home.png" id="2_cydq1"]
-[ext_resource type="Texture2D" uid="uid://ul0gd8e30gu3" path="res://assets/map/HomeHover.png" id="3_burnk"]
 [ext_resource type="Texture2D" uid="uid://kl5eyss4skgu" path="res://assets/map/RH.png" id="4_lb0w3"]
-[ext_resource type="Texture2D" uid="uid://btqc2irjh1wu0" path="res://assets/map/RHHover.png" id="5_qba66"]
 [ext_resource type="Script" uid="uid://clwkghmw28sq6" path="res://scenes/exploration/board/rhBuilding.gd" id="6_yh65k"]
 [ext_resource type="Texture2D" uid="uid://bol1xxo8vw1vh" path="res://assets/map/Finance.png" id="7_mians"]
-[ext_resource type="Texture2D" uid="uid://dcijbrm8xwbyn" path="res://assets/map/FinancesHover.png" id="8_3ir1f"]
 [ext_resource type="Texture2D" uid="uid://blm8t2dewvbif" path="res://assets/map/It.png" id="9_pjyna"]
 [ext_resource type="Script" uid="uid://qqddro1ayb27" path="res://scenes/exploration/board/financesBuilding.gd" id="9_qba66"]
-[ext_resource type="Texture2D" uid="uid://b3flisbip1id" path="res://assets/map/ItHover.png" id="10_rlmv1"]
 [ext_resource type="Texture2D" uid="uid://doc3j8n2jict7" path="res://assets/map/Commercial.png" id="11_v4jje"]
-[ext_resource type="Texture2D" uid="uid://bu58k6uhanlo6" path="res://assets/map/CommercialHover.png" id="12_o8n4m"]
 [ext_resource type="Script" uid="uid://tn7g6lpobc1f" path="res://scenes/exploration/board/itBuilding.gd" id="12_yh65k"]
 [ext_resource type="Texture2D" uid="uid://b617qla2ddrym" path="res://assets/map/Communication.png" id="13_hflr0"]
-[ext_resource type="Texture2D" uid="uid://c4qdp404i48a4" path="res://assets/map/CommunicationHover.png" id="14_34ie6"]
 [ext_resource type="Script" uid="uid://cnp663hbiqlp6" path="res://scenes/exploration/board/commercialBuilding.gd" id="15_mians"]
 [ext_resource type="Script" uid="uid://doxvy8ki16jsk" path="res://scenes/exploration/board/communicationBuilding.gd" id="18_3ir1f"]
+[ext_resource type="Texture2D" uid="uid://cxs35iqcds7g2" path="res://assets/sprites/fight_menu_background.png" id="19_mians"]
 [ext_resource type="PackedScene" uid="uid://c1l537l6qsm3u" path="res://scenes/exploration/board/pause/pause_menu.tscn" id="19_yh65k"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_vs5oo"]
@@ -562,38 +557,22 @@ sources/0 = SubResource("TileSetAtlasSource_vs5oo")
 [sub_resource type="AtlasTexture" id="AtlasTexture_t28m3"]
 atlas = ExtResource("2_cydq1")
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_uhfkl"]
-atlas = ExtResource("3_burnk")
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_yh65k"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_vs5oo"]
 atlas = ExtResource("4_lb0w3")
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_8yvfk"]
-atlas = ExtResource("5_qba66")
-
 [sub_resource type="AtlasTexture" id="AtlasTexture_1wkfm"]
 atlas = ExtResource("7_mians")
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_8cobi"]
-atlas = ExtResource("8_3ir1f")
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_40kxt"]
 atlas = ExtResource("9_pjyna")
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_4jwc8"]
-atlas = ExtResource("10_rlmv1")
-
 [sub_resource type="AtlasTexture" id="AtlasTexture_3sfn6"]
 atlas = ExtResource("11_v4jje")
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_uudxr"]
-atlas = ExtResource("12_o8n4m")
-
 [sub_resource type="AtlasTexture" id="AtlasTexture_olxho"]
 atlas = ExtResource("13_hflr0")
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_ir2cg"]
-atlas = ExtResource("14_34ie6")
 
 [node name="TileMapLayer" type="TileMapLayer"]
 scale = Vector2(1.1, 1.1)
@@ -607,7 +586,46 @@ offset_right = 1107.0
 offset_bottom = 1050.0
 scale = Vector2(0.6, 0.6)
 texture_normal = SubResource("AtlasTexture_t28m3")
-texture_hover = SubResource("AtlasTexture_uhfkl")
+
+[node name="txt_box_home" type="NinePatchRect" parent="."]
+visible = false
+texture_filter = 1
+offset_left = 733.63635
+offset_top = 704.5454
+offset_right = 1010.00006
+offset_bottom = 918.18176
+texture = ExtResource("19_mians")
+patch_margin_left = 3
+patch_margin_top = 3
+patch_margin_right = 3
+patch_margin_bottom = 3
+
+[node name="Panel" type="Panel" parent="txt_box_home"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 5.0
+offset_right = -5.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_yh65k")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="txt_box_home/Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+bbcode_enabled = true
+text = "[b]Pole commercial[/b]
+Niveau du pole: 2
+
+[i]Vous y trouverez  de grands scammeur tel que [b]Prof, [insérez lore + indice sur strat a adopter[/b]
+"
 
 [node name="rh" type="TextureButton" parent="."]
 offset_left = 622.72723
@@ -616,8 +634,47 @@ offset_right = 974.72723
 offset_bottom = 566.4545
 scale = Vector2(1.4825568, 1.4990257)
 texture_normal = SubResource("AtlasTexture_vs5oo")
-texture_hover = SubResource("AtlasTexture_8yvfk")
 script = ExtResource("6_yh65k")
+
+[node name="txt_box_rh" type="NinePatchRect" parent="."]
+visible = false
+texture_filter = 1
+offset_left = 615.4545
+offset_top = 281.81818
+offset_right = 1141.8181
+offset_bottom = 668.1818
+texture = ExtResource("19_mians")
+patch_margin_left = 3
+patch_margin_top = 3
+patch_margin_right = 3
+patch_margin_bottom = 3
+
+[node name="Panel" type="Panel" parent="txt_box_rh"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 5.0
+offset_right = -5.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_yh65k")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="txt_box_rh/Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+bbcode_enabled = true
+text = "[b]Pole ressources humaines[/b]
+Niveau du pole: 4
+
+[i]Vous y trouverez le maléfique [shake][pulse][b]Z[/b][/pulse][/shake], responsable en chef des RH, il vous apparaît comme méfiant et plein d'expérience, obtenir des informations auprès de lui n'est probablement pas une tâche aisé.
+"
 
 [node name="finances" type="TextureButton" parent="."]
 offset_left = 1281.818
@@ -626,8 +683,47 @@ offset_right = 1623.818
 offset_bottom = 318.27274
 scale = Vector2(0.89682806, 1.0170963)
 texture_normal = SubResource("AtlasTexture_1wkfm")
-texture_hover = SubResource("AtlasTexture_8cobi")
 script = ExtResource("9_qba66")
+
+[node name="txt_box_finance" type="NinePatchRect" parent="."]
+visible = false
+texture_filter = 1
+offset_left = 1272.7272
+offset_top = 34.545456
+offset_right = 1600.909
+offset_bottom = 316.36365
+texture = ExtResource("19_mians")
+patch_margin_left = 3
+patch_margin_top = 3
+patch_margin_right = 3
+patch_margin_bottom = 3
+
+[node name="Panel" type="Panel" parent="txt_box_finance"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 5.0
+offset_right = -5.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_yh65k")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="txt_box_finance/Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+bbcode_enabled = true
+text = "[b]Pole finance[/b]
+Niveau du pole: 3
+
+[i]Vous y trouverez [b]Roy, [insérez lore + indice sur strat a adopter][/b]
+"
 
 [node name="It" type="TextureButton" parent="."]
 offset_left = 1381.8182
@@ -636,8 +732,46 @@ offset_right = 2282.8184
 offset_bottom = 1536.0911
 scale = Vector2(0.19491038, 0.19651835)
 texture_normal = SubResource("AtlasTexture_40kxt")
-texture_hover = SubResource("AtlasTexture_4jwc8")
 script = ExtResource("12_yh65k")
+
+[node name="txt_box_it" type="NinePatchRect" parent="."]
+visible = false
+texture_filter = 1
+offset_left = 1328.1819
+offset_top = 680.90906
+offset_right = 1607.2727
+offset_bottom = 917.2727
+texture = ExtResource("19_mians")
+patch_margin_left = 3
+patch_margin_top = 3
+patch_margin_right = 3
+patch_margin_bottom = 3
+
+[node name="Panel" type="Panel" parent="txt_box_it"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 5.0
+offset_right = -5.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_yh65k")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="txt_box_it/Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+bbcode_enabled = true
+text = "[b]Pole commercial[/b]
+Niveau du pole: 2
+
+[i]Vous y trouverez [b]W[/b] ou [b] Watman[/b] , l'un des deux responsables du pôle, bien qu'apparemment personne ne les aurait vu en même temps dans la même pièce [b][insérez lore + indice sur strat a adopter][/b]"
 
 [node name="commercial" type="TextureButton" parent="."]
 offset_left = 272.72726
@@ -646,24 +780,114 @@ offset_right = 624.7273
 offset_bottom = 775.8182
 scale = Vector2(0.5093292, 0.40412062)
 texture_normal = SubResource("AtlasTexture_3sfn6")
-texture_hover = SubResource("AtlasTexture_uudxr")
 script = ExtResource("15_mians")
 
+[node name="txt_box_scam" type="NinePatchRect" parent="."]
+visible = false
+texture_filter = 1
+offset_left = 230.90909
+offset_top = 23.636353
+offset_right = 473.63635
+offset_bottom = 349.09088
+texture = ExtResource("19_mians")
+patch_margin_left = 3
+patch_margin_top = 3
+patch_margin_right = 3
+patch_margin_bottom = 3
+
+[node name="Panel" type="Panel" parent="txt_box_scam"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 5.0
+offset_right = -5.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_yh65k")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="txt_box_scam/Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+bbcode_enabled = true
+text = "[b]Pole commercial[/b]
+Niveau du pole: 2
+
+[i]Vous y trouverez [b]Prof, [insérez lore + indice sur strat a adopter[/b]
+"
+
 [node name="communication" type="TextureButton" parent="."]
-offset_left = 270.0
-offset_top = 711.8181
-offset_right = 854.0
-offset_bottom = 1138.8181
+offset_left = 260.90912
+offset_top = 706.3635
+offset_right = 916.7619
+offset_bottom = 1133.3635
 scale = Vector2(0.25227392, 0.27680343)
+size_flags_horizontal = 0
 texture_normal = SubResource("AtlasTexture_olxho")
-texture_hover = SubResource("AtlasTexture_ir2cg")
+stretch_mode = 3
 script = ExtResource("18_3ir1f")
+
+[node name="txt_box_com" type="NinePatchRect" parent="."]
+visible = false
+texture_filter = 1
+offset_left = 230.90909
+offset_top = 645.4545
+offset_right = 473.63635
+offset_bottom = 842.72723
+texture = ExtResource("19_mians")
+patch_margin_left = 3
+patch_margin_top = 3
+patch_margin_right = 3
+patch_margin_bottom = 3
+
+[node name="Panel" type="Panel" parent="txt_box_com"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 5.0
+offset_right = -5.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_yh65k")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="txt_box_com/Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+bbcode_enabled = true
+text = "[b]Pole communication[/b]
+Niveau du pole: 1
+
+[i]Vous y trouverez [b]Prof, [insérez lore + indice sur strat a adopter[/b]
+"
 
 [node name="pause" parent="." instance=ExtResource("19_yh65k")]
 visible = false
 
+[connection signal="mouse_entered" from="rh" to="rh" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="rh" to="rh" method="_on_mouse_exited"]
 [connection signal="pressed" from="rh" to="rh" method="_on_pressed"]
+[connection signal="mouse_entered" from="finances" to="finances" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="finances" to="finances" method="_on_mouse_exited"]
 [connection signal="pressed" from="finances" to="finances" method="_on_pressed"]
+[connection signal="mouse_entered" from="It" to="It" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="It" to="It" method="_on_mouse_exited"]
 [connection signal="pressed" from="It" to="It" method="_on_pressed"]
+[connection signal="mouse_entered" from="commercial" to="commercial" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="commercial" to="commercial" method="_on_mouse_exited"]
 [connection signal="pressed" from="commercial" to="commercial" method="_on_pressed"]
+[connection signal="mouse_entered" from="communication" to="communication" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="communication" to="communication" method="_on_mouse_exited"]
 [connection signal="pressed" from="communication" to="communication" method="_on_pressed"]

@@ -27,20 +27,25 @@ func _init(pv=null,fname=null,attacks=null,defenses=null):
 func set_positions(x,y):
 	position.x=x
 	position.y=y
+	
 func set_size(size):
 	sprite.scale=Vector2(size,size)
+	
 func delete_pv(pv):
 	_pv-=pv
 	
 func add_credibility(nb):
 	_levelCredibility+=nb
-	pass
+	return add_random_defense()
+	
 func add_skill(nb):
 	_levelSkill+=nb
-	pass
+	return add_random_attack()
 
 func add_pts_defense(nb):
 	_pts_defense+=nb
+	pass
+	
 	
 func del_defense(nb=null):
 	if nb==null:
@@ -48,32 +53,50 @@ func del_defense(nb=null):
 	else:
 		_pts_defense-=nb
 	return 0-_pts_defense
+	
+func add_random_attack():
+	var skills
+	if _levelCredibility > 20 and _levelSkill > 5 and _attacks.size()==1:
+		skills=["","","",""]
+		
+	if _levelCredibility > 20 and _levelSkill > 5 and _attacks.size()==2:
+		skills=["","","",""]
+		
+	if _levelCredibility > 20 and _levelSkill > 5 and _attacks.size()==3:
+		skills=["","","",""]
+		
+	_attacks.append(skills[randi() % 4])
+	return true
+		
+func add_random_defense():
+	var defense
+	if _levelCredibility > 20 and _levelSkill > 5 and _attacks.size()==1:
+		defense=["","","",""]
+		
+	if _levelCredibility > 20 and _levelSkill > 5 and _attacks.size()==2:
+		defense=["","","",""]
+		
+	if _levelCredibility > 20 and _levelSkill > 5 and _attacks.size()==3:
+		defense=["","","",""]
+		
+	_defenses.append(defense[randi() % 4])
+	return true
+		
+func _play():
+	if sprite and _name:
+		sprite.play(_name)
+		
 func get_fname()->String:
 	return _name
-	
 func get_defenses():
 	return _defenses
 func get_attacks():
 	return _attacks
 func get_description():
 	return _description
-	
 func get_pv():
 	return _pv
-
-func add_random_skill():
-	var skills
-	#faire du + grand nombre au plus petit comme ca, on a pas de doublon
-	#a revoir
-	if _levelCredibility > 50 and _levelSkill > 20:
-		skills=["","","",""]
-		_attacks.append(skills[randi() % 4])
-		return
-		
-	if _levelCredibility > 20 and _levelSkill > 5:
-		skills=["","","",""]
-		_attacks.append(skills[randi() % 4])
-		return
-func _play():
-	if sprite and _name:
-		sprite.play(_name)
+func get_skill():
+	return _levelSkill
+func get_credibility():
+	return _levelCredibility

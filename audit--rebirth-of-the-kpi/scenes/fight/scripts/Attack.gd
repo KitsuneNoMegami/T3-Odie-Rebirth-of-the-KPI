@@ -5,7 +5,7 @@ var _name
 var _damage
 var _description
 
-func _init(aname = null):
+func _init(aname = null,buff=1):
 	_name = aname
 	match aname:
 		#Compétence d'attaques
@@ -54,6 +54,7 @@ func _init(aname = null):
 			_damage=3
 			_description="Résistance à la pression et au stress causé par l'interlocuteur. Mode Suisse activé"
 			pass
+	_damage=_damage*buff
 			
 			
 	

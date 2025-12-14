@@ -58,7 +58,7 @@ func fight_unfight(path,pole, player):
 		# Prépare les ennemis
 		fighters_script = load(path)
 		var _fighters_object = fighters_script.new()
-		_fighters = _fighters_object.get_fighters(pole)
+		_fighters = _fighters_object.get_fighters(pole,player.get_skill(),player.get_credibility())
 
 		# Replace Fighter placeholder node with actual player instance
 		var old_fighter_node = get_node_or_null("Fighter")
@@ -183,8 +183,10 @@ func do_action(fname, action_menu, action_use = null):
 			await message.show_message_blocking(_player.get_fname() + " lance une attaque")
 			var target = _find_fighter(fname)
 			if await attack(target, action_use):
-				_player.add_credibility(20)
-				_player.add_skill(25)
+				if _player.add_credibility(20):
+					await message.show_message_blocking("Vous avez débloqué une nouvelle compétence de défense grâce à votre crédibilité")
+				if _player.add_skill(25):
+					await message.show_message_blocking("Vous avez débloqué une nouvelle compétence d'attaque grâce à votre niveau de compétence")
 				_fighters.erase(target)
 		"Défense":
 			if _player == null:

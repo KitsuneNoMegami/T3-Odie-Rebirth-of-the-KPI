@@ -1,11 +1,9 @@
-
-[gd_scene load_steps=27 format=3 uid="uid://bkutgi5e3cayd"]
+[gd_scene load_steps=23 format=3 uid="uid://bkutgi5e3cayd"]
 
 [ext_resource type="Script" uid="uid://i0fjly4h008r" path="res://scenes/fight/scripts/ennemies/scripts/Fighter.gd" id="1_7quk1"]
 [ext_resource type="Texture2D" uid="uid://bovv5vyi0r0su" path="res://assets/sprites/player_animations/16x32_Walk.png" id="2_7snke"]
 [ext_resource type="Texture2D" uid="uid://b3uhbbwmoc8e" path="res://assets/sprites/pnj_animations/kraemer_pierre.png" id="2_k56wu"]
 [ext_resource type="Texture2D" uid="uid://cjwiln6lxht85" path="res://assets/sprites/pnj_animations/roy_isabelle.png" id="4_emdx7"]
-[ext_resource type="Texture2D" uid="uid://0jwx2pautp84" path="res://assets/sprites/pnj_animations/wemmert_cedric.png" id="5_rs8q4"]
 [ext_resource type="Texture2D" uid="uid://3irf1whjx38b" path="res://assets/sprites/pnj_animations/smoliga_jeff.png" id="6_emdx7"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_5q5an"]
@@ -52,18 +50,6 @@ region = Rect2(40, 0, 20, 20)
 atlas = ExtResource("4_emdx7")
 region = Rect2(60, 0, 20, 20)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_7a1gc"]
-atlas = ExtResource("5_rs8q4")
-region = Rect2(20, 0, 20, 20)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_83yru"]
-atlas = ExtResource("5_rs8q4")
-region = Rect2(40, 0, 20, 20)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_kwgjd"]
-atlas = ExtResource("5_rs8q4")
-region = Rect2(60, 0, 20, 20)
-
 [sub_resource type="AtlasTexture" id="AtlasTexture_rs8q4"]
 atlas = ExtResource("6_emdx7")
 region = Rect2(0, 0, 20, 20)
@@ -84,12 +70,10 @@ region = Rect2(60, 0, 20, 20)
 atlas = ExtResource("6_emdx7")
 region = Rect2(80, 0, 20, 20)
 
-
 [sub_resource type="SpriteFrames" id="SpriteFrames_7quk1"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-
 "texture": SubResource("AtlasTexture_5q5an")
 }, {
 "duration": 1.0,
@@ -138,21 +122,6 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_7a1gc")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_83yru")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_kwgjd")
-
-}],
-"loop": true,
-"name": &"default",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
 "texture": SubResource("AtlasTexture_rs8q4")
 }, {
 "duration": 1.0,
@@ -179,6 +148,4 @@ script = ExtResource("1_7quk1")
 texture_filter = 1
 position = Vector2(48.5, 53.5)
 scale = Vector2(0.267241, 0.295977)
-
 sprite_frames = SubResource("SpriteFrames_7quk1")
-

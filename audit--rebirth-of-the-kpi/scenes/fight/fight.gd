@@ -28,11 +28,15 @@ func animation_initialisation():
 	var fighter_node = get_node_or_null("Fighter")
 	if fighter_node and fighter_node.has_method("_play"):
 		fighter_node._play()
+		fighter_node.set_positions(100,200)
+		fighter_node.set_size(10)
 	var i=2
 	for fighter in _fighters:
 		var enemy_node = get_node_or_null("Fighter"+str(i))
 		if enemy_node and enemy_node.has_method("_play"):
 			enemy_node._play()
+			enemy_node.set_positions(380+i*130,150)
+			enemy_node.set_size(10)
 		i+=1
 	return
 	

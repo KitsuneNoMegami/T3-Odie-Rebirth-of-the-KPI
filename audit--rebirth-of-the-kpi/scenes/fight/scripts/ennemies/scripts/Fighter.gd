@@ -23,7 +23,12 @@ func _init(pv=null,fname=null,attacks=null,defenses=null):
 	_attacks=attacks
 	_defenses=defenses
 	
-	
+
+func set_positions(x,y):
+	position.x=x
+	position.y=y
+func set_size(size):
+	sprite.scale=Vector2(size,size)
 func delete_pv(pv):
 	_pv-=pv
 	

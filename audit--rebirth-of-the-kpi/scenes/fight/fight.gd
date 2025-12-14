@@ -25,10 +25,14 @@ func is_player_turn() -> bool:
 	return _turn == "player"
 	
 func animation_initialisation():
-	get_node("Fighter")._play()
+	var fighter_node = get_node_or_null("Fighter")
+	if fighter_node and fighter_node.has_method("_play"):
+		fighter_node._play()
 	var i=2
 	for fighter in _fighters:
-		get_node("Fighter"+str(i))._play()
+		var enemy_node = get_node_or_null("Fighter"+str(i))
+		if enemy_node and enemy_node.has_method("_play"):
+			enemy_node._play()
 		i+=1
 	return
 	
@@ -51,6 +55,25 @@ func fight_unfight(path,pole, player):
 		fighters_script = load(path)
 		var _fighters_object = fighters_script.new()
 		_fighters = _fighters_object.get_fighters(pole)
+
+		# Replace Fighter placeholder node with actual player instance
+		var old_fighter_node = get_node_or_null("Fighter")
+		if old_fighter_node:
+			old_fighter_node.queue_free()
+		if _player:
+			_player.name = "Fighter"
+			add_child(_player)
+
+		# Replace Fighter2, Fighter3, Fighter4 placeholder nodes with actual enemy instances
+		var i = 2
+		for fighter in _fighters:
+			var old_enemy_node = get_node_or_null("Fighter" + str(i))
+			if old_enemy_node:
+				old_enemy_node.queue_free()
+			if fighter:
+				fighter.name = "Fighter" + str(i)
+				add_child(fighter)
+			i += 1
 
 		# Affiche l’UI et le curseur
 		show()

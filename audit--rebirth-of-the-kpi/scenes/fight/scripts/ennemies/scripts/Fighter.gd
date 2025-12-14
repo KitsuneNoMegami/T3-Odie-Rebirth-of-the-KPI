@@ -13,7 +13,7 @@ var _pts_defense =0
 @onready var sprite= $sprite
 
 func _ready():
-	sprite.play(_name)
+	pass
 
 func _init(pv=null,fname=null,attacks=null,defenses=null):
 	_pv=pv
@@ -33,7 +33,7 @@ func add_credibility(nb):
 func add_skill(nb):
 	_levelSkill+=nb
 	pass
-	
+
 func add_pts_defense(nb):
 	_pts_defense+=nb
 	
@@ -69,3 +69,6 @@ func add_random_skill():
 		skills=["","","",""]
 		_attacks.append(skills[randi() % 4])
 		return
+func _play():
+	if sprite and _name:
+		sprite.play(_name)

@@ -13,7 +13,8 @@ var _pts_defense =0
 @onready var sprite= $sprite
 
 func _ready():
-	sprite.play(_name)
+	if sprite and _name:
+		sprite.play(_name)
 
 func _init(pv=null,fname=null,attacks=null,defenses=null):
 	_pv=pv

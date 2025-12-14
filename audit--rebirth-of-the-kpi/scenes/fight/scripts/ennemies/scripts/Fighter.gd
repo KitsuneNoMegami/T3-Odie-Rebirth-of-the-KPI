@@ -16,6 +16,10 @@ func _ready():
 	if sprite and _name:
 		sprite.play(_name)
 
+func _play():
+	if sprite and _name:
+		sprite.play(_name)
+
 func _init(pv=null,fname=null,attacks=null,defenses=null):
 	_pv=pv
 	_pv_max=pv

@@ -52,6 +52,29 @@ func fight_unfight(path,pole, player):
 		var _fighters_object = fighters_script.new()
 		_fighters = _fighters_object.get_fighters(pole)
 
+		# Add player to Fighter node
+		var fighter_node = get_node("Fighter")
+		if fighter_node and _player:
+			fighter_node._pv = _player._pv
+			fighter_node._pv_max = _player._pv_max
+			fighter_node._name = _player._name
+			fighter_node._attacks = _player._attacks
+			fighter_node._defenses = _player._defenses
+			fighter_node._description = _player._description
+
+		# Add enemies to Fighter2, Fighter3, Fighter4 nodes
+		var i = 2
+		for fighter in _fighters:
+			var enemy_node = get_node_or_null("Fighter" + str(i))
+			if enemy_node and fighter:
+				enemy_node._pv = fighter._pv
+				enemy_node._pv_max = fighter._pv_max
+				enemy_node._name = fighter._name
+				enemy_node._attacks = fighter._attacks
+				enemy_node._defenses = fighter._defenses
+				enemy_node._description = fighter._description
+			i += 1
+
 		# Affiche l’UI et le curseur
 		show()
 		cursor.show()

@@ -276,7 +276,7 @@ func _menu_input(slot) -> void:
 				# Menu principal
 				# Fuite sur le bouton 3 désormais
 				if slot == 3:
-					fight.fight_unfight(null, null)
+					fight.end_fight(null)
 				else:
 					var chosen = _menu_options[0][slot] # 1=Attaque, 2=Défense
 					_current_menu = chosen
@@ -334,9 +334,8 @@ func _menu_input(slot) -> void:
 				if fight._continue():
 					await fight.end_player_turn()
 	else:
-		if(fight.is_win()):
-			fight.end_fight()
-			pass
+		fight.end_fight(fight.is_win())
+	pass
 
 
 func _on_menu_option_1_mouse_entered() -> void:

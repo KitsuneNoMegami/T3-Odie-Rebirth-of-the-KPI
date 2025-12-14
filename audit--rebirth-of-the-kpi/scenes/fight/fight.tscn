@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=4 uid="uid://h3ng52t7vgb3"]
+[gd_scene load_steps=24 format=4 uid="uid://h3ng52t7vgb3"]
 
 [ext_resource type="Texture2D" uid="uid://bxqp2q4d3p2mx" path="res://assets/sprites/arrowsheet.png" id="1_3a20j"]
 [ext_resource type="Script" uid="uid://dxvo8bjih7hia" path="res://scenes/fight/fight.gd" id="1_4qaks"]
@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://cxs35iqcds7g2" path="res://assets/sprites/fight_menu_background.png" id="3_3si2p"]
 [ext_resource type="Script" uid="uid://iinc6u6qxjwe" path="res://scenes/fight/scripts/audio_stream_player.gd" id="5_8og4d"]
 [ext_resource type="AudioStream" uid="uid://bgs6awcbdtryr" path="res://assets/sound/button_switch.mp3" id="6_inaet"]
+[ext_resource type="Script" uid="uid://i0fjly4h008r" path="res://scenes/fight/scripts/ennemies/scripts/Fighter.gd" id="8_4qaks"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_3si2p"]
 
@@ -213,6 +214,22 @@ offset_top = 440.625
 offset_right = 1060.625
 offset_bottom = 618.625
 autowrap_mode = 1
+
+[node name="Fighter" type="Node2D" parent="."]
+script = ExtResource("8_4qaks")
+metadata/_custom_type_script = "uid://i0fjly4h008r"
+
+[node name="Fighter2" type="Node2D" parent="."]
+script = ExtResource("8_4qaks")
+metadata/_custom_type_script = "uid://i0fjly4h008r"
+
+[node name="Fighter3" type="Node2D" parent="."]
+script = ExtResource("8_4qaks")
+metadata/_custom_type_script = "uid://i0fjly4h008r"
+
+[node name="Fighter4" type="Node2D" parent="."]
+script = ExtResource("8_4qaks")
+metadata/_custom_type_script = "uid://i0fjly4h008r"
 
 [connection signal="mouse_entered" from="NinePatchRect/MarginContainer/VBoxContainer/MenuOption1" to="AnimatedSprite2D" method="_on_menu_option_1_mouse_entered"]
 [connection signal="pressed" from="NinePatchRect/MarginContainer/VBoxContainer/MenuOption1" to="AnimatedSprite2D" method="_on_menu_option_1_pressed"]

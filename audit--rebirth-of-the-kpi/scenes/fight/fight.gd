@@ -25,18 +25,21 @@ func is_player_turn() -> bool:
 	return _turn == "player"
 	
 func animation_initialisation():
-	add_child(_player)
-	get_child(4)._play()
-	var i=4
+	get_node("Fighter")._play()
+	var i=2
 	for fighter in _fighters:
-		add_child(fighter)
-		get_child(i)._play()
+		get_node("Fighter"+str(i))._play()
+		i+=1
 	return
+	
 func end_fight(win):
-	if(win):
-		GameState.change_state_pole(GameState.get_pole(),true)
-	else:
-		GameState.change_state_pole(GameState.get_pole(),false)
+	if win!=null:
+		if(win):
+			GameState.change_state_pole(GameState.get_pole(),true)
+		else:
+			GameState.change_state_pole(GameState.get_pole(),false)
+			_player.add_credibility(-20)
+			_player.add_skill(-20)
 	fight_unfight(null, null,null)
 	return
 	

@@ -1,4 +1,4 @@
-class_name Fighter extends AnimatedSprite2D
+class_name Fighter extends Node2D
 
 var _name
 var _pv
@@ -9,17 +9,17 @@ var _levelSkill=0
 var _attacks
 var _defenses
 var _pts_defense =0
-var _sprite=null
+
+@onready var sprite= $sprite
 
 func _ready():
-	pass
+	sprite.play(_name)
 
 func _init(pv=null,fname=null,attacks=null,defenses=null):
 	_pv=pv
 	_pv_max=pv
 	_description="Ceci est la description du personnage du pole"
 	_name=fname
-	_sprite=fname
 	_attacks=attacks
 	_defenses=defenses
 	
@@ -56,5 +56,16 @@ func get_description():
 func get_pv():
 	return _pv
 
-func _play():
-	$sprite.play(_sprite)
+func add_random_skill():
+	var skills
+	#faire du + grand nombre au plus petit comme ca, on a pas de doublon
+	#a revoir
+	if _levelCredibility > 50 and _levelSkill > 20:
+		skills=["","","",""]
+		_attacks.append(skills[randi() % 4])
+		return
+		
+	if _levelCredibility > 20 and _levelSkill > 5:
+		skills=["","","",""]
+		_attacks.append(skills[randi() % 4])
+		return

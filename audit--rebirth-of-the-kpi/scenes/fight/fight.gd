@@ -12,6 +12,13 @@ var _turn := "player"
 @onready var message = get_node("NinePatchRect2/message_panel")
 @onready var cursor: AnimatedSprite2D = $Cursor
 
+# --- AJOUTS: sauvegarde/restauration du joueur et suivi des ennemis spawnés ---
+var _player_original_parent: Node = null
+var _player_original_index: int = -1
+var _player_original_xform: Transform2D
+var _spawned_enemies: Array = []
+# ------------------------------------------------------------------------------
+
 func _ready() -> void:
 	randomize()
 
@@ -26,18 +33,18 @@ func is_player_turn() -> bool:
 	
 func animation_initialisation():
 	var fighter_node = get_node_or_null("Fighter")
-	if fighter_node and fighter_node.has_method("_play"):
-		fighter_node._play()
-		fighter_node.set_positions(100,200)
-		fighter_node.set_size(10)
+	fighter_node._play()
+	fighter_node.set_positions(100,200)
+	fighter_node.set_size(10)
+	
 	var i=2
 	for fighter in _fighters:
 		var enemy_node = get_node_or_null("Fighter"+str(i))
-		if enemy_node and enemy_node.has_method("_play"):
-			enemy_node._play()
-			enemy_node.set_positions(380+i*130,150)
-			enemy_node.set_size(10)
+		enemy_node._play()
+		enemy_node.set_positions(380+i*130,150)
+		enemy_node.set_size(10)
 		i+=1
+	print("test2")
 	return
 	
 func end_fight(win):
@@ -53,12 +60,23 @@ func end_fight(win):
 	
 func fight_unfight(path,pole, player):
 	_pause = !_pause
-	_player = player
 	if _pause:
+		_player = player
 		# Prépare les ennemis
 		fighters_script = load(path)
 		var _fighters_object = fighters_script.new()
 		_fighters = _fighters_object.get_fighters(pole,player.get_skill(),player.get_credibility())
+
+		# --- AJOUT: préparer le reparenting propre du joueur ---
+		_player_original_parent = null
+		_player_original_index = -1
+		if _player:
+			_player_original_parent = _player.get_parent()
+			if _player_original_parent:
+				_player_original_index = _player.get_index()
+				_player_original_xform = _player.global_transform
+				_player_original_parent.remove_child(_player)
+		# ------------------------------------------------------
 
 		# Replace Fighter placeholder node with actual player instance
 		var old_fighter_node = get_node_or_null("Fighter")
@@ -69,6 +87,7 @@ func fight_unfight(path,pole, player):
 			add_child(_player)
 
 		# Replace Fighter2, Fighter3, Fighter4 placeholder nodes with actual enemy instances
+		_spawned_enemies.clear() # --- AJOUT: on suit ce qu'on spawne pour cleanup ---
 		var i = 2
 		for fighter in _fighters:
 			var old_enemy_node = get_node_or_null("Fighter" + str(i))
@@ -77,18 +96,40 @@ func fight_unfight(path,pole, player):
 			if fighter:
 				fighter.name = "Fighter" + str(i)
 				add_child(fighter)
+				_spawned_enemies.append(fighter) # --- AJOUT ---
 			i += 1
 
 		# Affiche l’UI et le curseur
+		cursor.initialisation()
 		show()
 		cursor.show()
-		cursor.initialisation()
 
 		# Démarre au tour du joueur
 		_turn = "player"
 
 		get_tree().paused = true
 	else:
+		# --- AJOUT: restauration à la sortie du combat ---
+		# 1) Supprimer les ennemis instanciés pour le combat
+		for e in _spawned_enemies:
+			if is_instance_valid(e):
+				e.queue_free()
+		_spawned_enemies.clear()
+
+		# 2) Rapatrier le joueur chez son parent d'origine et restaurer son transform
+		if _player and is_instance_valid(_player):
+			# Le joueur est actuellement enfant de cette scène (fight)
+			if _player.get_parent() == self:
+				remove_child(_player)
+			if _player_original_parent and is_instance_valid(_player_original_parent):
+				_player_original_parent.add_child(_player)
+				# Restituer l'ordre d'enfant si on l'a
+				if _player_original_index >= 0:
+					_player_original_parent.move_child(_player, _player_original_index)
+				# Restaurer sa transform (taille/position/rotation)
+				_player.global_transform = _player_original_xform
+		# -------------------------------------------------
+
 		hide()
 		cursor.hide()
 		get_tree().paused = false

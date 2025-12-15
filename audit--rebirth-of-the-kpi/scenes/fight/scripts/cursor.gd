@@ -47,8 +47,8 @@ func initialisation():
 	_is_action_running = false
 	_menu_input(5) # affiche le menu principal
 	_update_description()
-	
-	
+	print("test")
+	pass
 	
 
 func actualize():

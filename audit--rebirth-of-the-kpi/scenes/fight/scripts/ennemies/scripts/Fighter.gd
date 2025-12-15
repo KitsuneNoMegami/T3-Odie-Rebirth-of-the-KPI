@@ -64,10 +64,10 @@ func add_random_attack():
 		
 	if _levelCredibility > 20 and _levelSkill > 5 and _attacks.size()==3:
 		skills=["","","",""]
-		
-	_attacks.append(skills[randi() % 4])
-	return true
-		
+	if skills!=null:
+		_attacks.append(skills[randi() % 4])
+		return true
+	return false
 func add_random_defense():
 	var defense
 	if _levelCredibility > 20 and _levelSkill > 5 and _attacks.size()==1:
@@ -78,9 +78,11 @@ func add_random_defense():
 		
 	if _levelCredibility > 20 and _levelSkill > 5 and _attacks.size()==3:
 		defense=["","","",""]
-		
-	_defenses.append(defense[randi() % 4])
-	return true
+	
+	if defense!=null:
+		_defenses.append(defense[randi() % 4])
+		return true
+	return false
 		
 func _play():
 	if sprite and _name:

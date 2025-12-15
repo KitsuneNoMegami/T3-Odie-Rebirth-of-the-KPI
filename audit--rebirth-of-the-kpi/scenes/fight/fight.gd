@@ -10,7 +10,7 @@ var _turn := "player"
 
 @onready var fighters_script
 @onready var message = get_node("NinePatchRect2/message_panel")
-@onready var cursor: AnimatedSprite2D = $AnimatedSprite2D
+@onready var cursor: AnimatedSprite2D = $Cursor
 
 func _ready() -> void:
 	randomize()
@@ -182,7 +182,7 @@ func do_action(fname, action_menu, action_use = null):
 			# Attaque du joueur vers l'ennemi
 			await message.show_message_blocking(_player.get_fname() + " lance une attaque")
 			var target = _find_fighter(fname)
-			if await attack(target, action_use):
+			if await attack(target, action_use) and target.get_fname()!="enemy":
 				if _player.add_credibility(20):
 					await message.show_message_blocking("Vous avez débloqué une nouvelle compétence de défense grâce à votre crédibilité")
 				if _player.add_skill(25):

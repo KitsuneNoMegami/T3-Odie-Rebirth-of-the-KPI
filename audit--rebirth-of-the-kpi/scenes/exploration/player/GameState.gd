@@ -18,7 +18,8 @@ func set_pause(value: bool):
 
 func start_fight(path,pole):
 	_pole=pole
-	fight_scene.fight_unfight(path,pole,_player)
+	if get_win(pole)==null:
+		fight_scene.fight_unfight(path,pole,_player)
 
 func set_fight(fight):
 	fight_scene=fight

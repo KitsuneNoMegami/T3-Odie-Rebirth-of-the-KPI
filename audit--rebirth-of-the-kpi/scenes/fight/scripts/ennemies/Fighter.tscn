@@ -149,3 +149,4 @@ texture_filter = 1
 position = Vector2(48.5, 53.5)
 scale = Vector2(0.267241, 0.295977)
 sprite_frames = SubResource("SpriteFrames_7quk1")
+animation = &"Kreamer"

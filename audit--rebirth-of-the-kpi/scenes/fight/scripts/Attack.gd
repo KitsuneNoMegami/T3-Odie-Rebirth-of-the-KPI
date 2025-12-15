@@ -12,6 +12,9 @@ func _init(aname = null,buff=1):
 		"Turbo puissance":
 			_damage=50
 			_description="attaque pour faire bcp de dégat en mode je suis trop puissant "
+		"Turbo fraude":
+			_damage=0
+			_description="Tu es là, voilà"
 		"Collecte d'information":
 			_damage=2
 			_description="Pose une question"

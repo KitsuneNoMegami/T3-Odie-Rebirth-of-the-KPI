@@ -161,7 +161,7 @@ theme_override_styles/focus = SubResource("StyleBoxEmpty_8og4d")
 text = "Fuite"
 flat = true
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." node_paths=PackedStringArray("button1", "button2", "button3", "button4", "sound_handler")]
+[node name="Cursor" type="AnimatedSprite2D" parent="." node_paths=PackedStringArray("button1", "button2", "button3", "button4", "sound_handler")]
 process_mode = 2
 texture_filter = 1
 position = Vector2(116.87494, 437.49997)
@@ -176,13 +176,12 @@ button3 = NodePath("../NinePatchRect/MarginContainer/VBoxContainer/MenuOption3")
 button4 = NodePath("../NinePatchRect/MarginContainer/VBoxContainer/MenuOption4")
 sound_handler = NodePath("AudioStreamPlayer")
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="AnimatedSprite2D"]
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Cursor"]
 stream = SubResource("AudioStreamMP3_nsrxv")
 script = ExtResource("5_8og4d")
 switch = ExtResource("6_inaet")
 
 [node name="NinePatchRect2" type="NinePatchRect" parent="."]
-visible = false
 clip_children = 2
 texture_filter = 1
 offset_left = 523.75006
@@ -214,11 +213,11 @@ offset_right = 1060.625
 offset_bottom = 618.625
 autowrap_mode = 1
 
-[connection signal="mouse_entered" from="NinePatchRect/MarginContainer/VBoxContainer/MenuOption1" to="AnimatedSprite2D" method="_on_menu_option_1_mouse_entered"]
-[connection signal="pressed" from="NinePatchRect/MarginContainer/VBoxContainer/MenuOption1" to="AnimatedSprite2D" method="_on_menu_option_1_pressed"]
-[connection signal="mouse_entered" from="NinePatchRect/MarginContainer/VBoxContainer/MenuOption2" to="AnimatedSprite2D" method="_on_menu_option_2_mouse_entered"]
-[connection signal="pressed" from="NinePatchRect/MarginContainer/VBoxContainer/MenuOption2" to="AnimatedSprite2D" method="_on_menu_option_2_pressed"]
-[connection signal="mouse_entered" from="NinePatchRect/MarginContainer/VBoxContainer/MenuOption3" to="AnimatedSprite2D" method="_on_menu_option_3_mouse_entered"]
-[connection signal="pressed" from="NinePatchRect/MarginContainer/VBoxContainer/MenuOption3" to="AnimatedSprite2D" method="_on_menu_option_3_pressed"]
-[connection signal="mouse_entered" from="NinePatchRect/MarginContainer/VBoxContainer/MenuOption4" to="AnimatedSprite2D" method="_on_menu_option_4_mouse_entered"]
-[connection signal="pressed" from="NinePatchRect/MarginContainer/VBoxContainer/MenuOption4" to="AnimatedSprite2D" method="_on_menu_option_4_pressed"]
+[connection signal="mouse_entered" from="NinePatchRect/MarginContainer/VBoxContainer/MenuOption1" to="Cursor" method="_on_menu_option_1_mouse_entered"]
+[connection signal="pressed" from="NinePatchRect/MarginContainer/VBoxContainer/MenuOption1" to="Cursor" method="_on_menu_option_1_pressed"]
+[connection signal="mouse_entered" from="NinePatchRect/MarginContainer/VBoxContainer/MenuOption2" to="Cursor" method="_on_menu_option_2_mouse_entered"]
+[connection signal="pressed" from="NinePatchRect/MarginContainer/VBoxContainer/MenuOption2" to="Cursor" method="_on_menu_option_2_pressed"]
+[connection signal="mouse_entered" from="NinePatchRect/MarginContainer/VBoxContainer/MenuOption3" to="Cursor" method="_on_menu_option_3_mouse_entered"]
+[connection signal="pressed" from="NinePatchRect/MarginContainer/VBoxContainer/MenuOption3" to="Cursor" method="_on_menu_option_3_pressed"]
+[connection signal="mouse_entered" from="NinePatchRect/MarginContainer/VBoxContainer/MenuOption4" to="Cursor" method="_on_menu_option_4_mouse_entered"]
+[connection signal="pressed" from="NinePatchRect/MarginContainer/VBoxContainer/MenuOption4" to="Cursor" method="_on_menu_option_4_pressed"]

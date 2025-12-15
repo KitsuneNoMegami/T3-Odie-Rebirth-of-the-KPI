@@ -15,6 +15,8 @@ var finance_win=false;
 func set_pause(value: bool):
 	pause = value
 
+func get_player():
+	return _player
 
 func start_fight(path,pole):
 	_pole=pole

@@ -56,3 +56,8 @@ func get_pv():
 
 func set_sprite(sprite):
 	$sprite.play(sprite)
+
+func get_skill():
+	return _levelSkill
+func get_credibility():
+	return _levelCredibility

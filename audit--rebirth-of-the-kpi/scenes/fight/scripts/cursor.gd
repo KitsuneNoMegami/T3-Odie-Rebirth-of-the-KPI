@@ -106,6 +106,7 @@ func actualize():
 			button3.text = _menu_options[0][3]
 			button4.text = " "
 	_update_description()
+	_slot=0
 
 ## Affiche le menu des attaques disponibles
 func _show_attacks():

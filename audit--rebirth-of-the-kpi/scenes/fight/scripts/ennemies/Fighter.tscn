@@ -1,9 +1,10 @@
-[gd_scene load_steps=74 format=3 uid="uid://bkutgi5e3cayd"]
+[gd_scene load_steps=79 format=3 uid="uid://bkutgi5e3cayd"]
 
 [ext_resource type="Script" uid="uid://i0fjly4h008r" path="res://scenes/fight/scripts/ennemies/scripts/Fighter.gd" id="1_7quk1"]
 [ext_resource type="Texture2D" uid="uid://bovv5vyi0r0su" path="res://assets/sprites/player_animations/16x32_Walk.png" id="2_7snke"]
 [ext_resource type="Texture2D" uid="uid://b3uhbbwmoc8e" path="res://assets/sprites/pnj_animations/kraemer_pierre.png" id="2_k56wu"]
 [ext_resource type="Texture2D" uid="uid://bkrciwwqxpipd" path="res://assets/sprites/pnj_animations/ali.png" id="2_wj7bc"]
+[ext_resource type="Texture2D" uid="uid://hd8xkmd7o87m" path="res://assets/sprites/pnj_animations/batman.png" id="3_21wl8"]
 [ext_resource type="Texture2D" uid="uid://ccas6fh5ptm2u" path="res://assets/sprites/pnj_animations/blindauer.png" id="3_pdos2"]
 [ext_resource type="Texture2D" uid="uid://cyyitwwxrhvgo" path="res://assets/sprites/pnj_animations/rmouque_ilias.png" id="4_21wl8"]
 [ext_resource type="Texture2D" uid="uid://cjwiln6lxht85" path="res://assets/sprites/pnj_animations/roy_isabelle.png" id="4_emdx7"]
@@ -29,6 +30,22 @@ region = Rect2(40, 0, 20, 20)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_1f3s5"]
 atlas = ExtResource("2_wj7bc")
+region = Rect2(60, 0, 20, 20)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7a1gc"]
+atlas = ExtResource("3_21wl8")
+region = Rect2(0, 0, 20, 20)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_83yru"]
+atlas = ExtResource("3_21wl8")
+region = Rect2(20, 0, 20, 20)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kwgjd"]
+atlas = ExtResource("3_21wl8")
+region = Rect2(40, 0, 20, 20)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_oam16"]
+atlas = ExtResource("3_21wl8")
 region = Rect2(60, 0, 20, 20)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_gkc0k"]
@@ -268,6 +285,23 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
+"texture": SubResource("AtlasTexture_7a1gc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_83yru")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kwgjd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_oam16")
+}],
+"loop": true,
+"name": &"Batman",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_gkc0k")
 }, {
 "duration": 1.0,
@@ -502,4 +536,4 @@ texture_filter = 1
 position = Vector2(48.5, 53.5)
 scale = Vector2(0.267241, 0.295977)
 sprite_frames = SubResource("SpriteFrames_7quk1")
-animation = &"Z"
+animation = &"Batman"

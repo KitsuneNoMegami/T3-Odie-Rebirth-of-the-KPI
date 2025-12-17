@@ -45,6 +45,8 @@ func get_fighters(pole,lvl_skill,lvl_credibility):
 			fighter2=create_fighter(10*buff,"Kreamer",attacks)
 			fighter3=create_fighter(10*buff,"Roy",attacks)
 		"it":
+			buff=generate_buff(10,10,lvl_skill,lvl_credibility)
+			attacks=[Attack.new("Analyse comportementale",buff),Attack.new("Gestion relationnelle",buff)]
 			fighter1=create_fighter(10*buff, "Watheo",attacks)
 			fighter2=create_fighter(10*buff, "Wemmert",attacks)
 			fighter3=create_fighter(10*buff, "Ali",attacks)

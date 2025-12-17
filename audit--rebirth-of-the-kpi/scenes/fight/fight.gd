@@ -128,8 +128,10 @@ func fight_unfight(path,pole, player):
 				remove_child(old_enemy_node)
 				old_enemy_node.queue_free()
 		
-		# Attendre une frame pour s'assurer que tous les nodes sont bien supprimés
+		# Attendre que tous les nodes soient effectivement supprimés
+		# On attend la prochaine frame idle pour s'assurer que queue_free() a pris effet
 		await get_tree().process_frame
+		await get_tree().process_frame  # Double await pour garantir la suppression complète
 		
 		# Maintenant, ajouter le joueur
 		if _player:

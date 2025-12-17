@@ -174,10 +174,6 @@ func _init(aname = null,buff=1):
 			_damage=2
 			_description="Justification d’une pratique par son ancienneté plutôt que par une règle formelle."
 
-		"Interprétation souple du référentiel":
-			_damage=2
-			_description="Application subjective ou adaptée des exigences normatives."
-
 		"Absence de preuve disponible":
 			_damage=4
 			_description="Impossibilité de produire un élément attestant de la réalisation d’un contrôle."
@@ -253,7 +249,7 @@ func _init(aname = null,buff=1):
 		"Risque accepté implicitement":
 			_damage=40
 			_description="Exposition connue mais non formalisée ni validée."
-
+	x
 		"Plan d’action non priorisé":
 			_damage=30
 			_description="Actions identifiées sans échéance ni responsable clair."

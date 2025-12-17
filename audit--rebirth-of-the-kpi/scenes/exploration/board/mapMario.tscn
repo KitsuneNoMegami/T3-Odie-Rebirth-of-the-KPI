@@ -3,7 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://bo4bcdbhblcbh" path="res://assets/map/tilemap.png" id="1_lrwju"]
 [ext_resource type="Texture2D" uid="uid://dj6wyfg5kdfjh" path="res://assets/map/Home.png" id="2_cydq1"]
 [ext_resource type="Texture2D" uid="uid://kl5eyss4skgu" path="res://assets/map/RH.png" id="4_lb0w3"]
-[ext_resource type="Script" uid="uid://i31wxmpxxkf5" path="res://scenes/exploration/board/HomeBuilding.gd" id="5_mians"]
+[ext_resource type="Script" path="res://scenes/exploration/board/HomeBuilding.gd" id="5_mians"]
 [ext_resource type="Script" uid="uid://clwkghmw28sq6" path="res://scenes/exploration/board/rhBuilding.gd" id="6_yh65k"]
 [ext_resource type="Texture2D" uid="uid://bol1xxo8vw1vh" path="res://assets/map/Finance.png" id="7_mians"]
 [ext_resource type="Texture2D" uid="uid://blm8t2dewvbif" path="res://assets/map/It.png" id="9_pjyna"]
@@ -14,7 +14,7 @@
 [ext_resource type="Script" uid="uid://ddrm53ai7ssc7" path="res://scenes/exploration/board/player_lvl.gd" id="15_cydq1"]
 [ext_resource type="Script" uid="uid://cnp663hbiqlp6" path="res://scenes/exploration/board/commercialBuilding.gd" id="15_mians"]
 [ext_resource type="Script" uid="uid://co3usloo00wub" path="res://scenes/exploration/player/GameState.gd" id="16_burnk"]
-[ext_resource type="Texture2D" uid="uid://cb3n1agqkl81q" path="res://assets/sprites/tuto_speech.png" id="17_lb0w3"]
+[ext_resource type="Texture2D" uid="uid://2v3kqovvstvn" path="res://assets/sprites/tuto_speech.png" id="17_lb0w3"]
 [ext_resource type="Texture2D" uid="uid://cp4wibkybmky2" path="res://assets/sprites/player_animations/down_right/walking_downright4.png" id="17_qba66"]
 [ext_resource type="Script" uid="uid://dvrbbeab3smtt" path="res://scenes/exploration/board/Tuto.gd" id="17_yh65k"]
 [ext_resource type="Script" uid="uid://doxvy8ki16jsk" path="res://scenes/exploration/board/communicationBuilding.gd" id="18_3ir1f"]
@@ -940,9 +940,9 @@ offset_bottom = 19.2909
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_shadow_color = Color(0.694118, 0.694118, 0.694118, 1)
-theme_override_constants/shadow_offset_y = 0
-theme_override_constants/shadow_offset_x = 0
 theme_override_constants/shadow_outline_size = 5
+theme_override_constants/shadow_offset_x = 0
+theme_override_constants/shadow_offset_y = 0
 theme_override_font_sizes/normal_font_size = 48
 theme_override_styles/focus = SubResource("StyleBoxEmpty_lb0w3")
 bbcode_enabled = true

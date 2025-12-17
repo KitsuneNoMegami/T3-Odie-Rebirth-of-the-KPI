@@ -91,13 +91,13 @@ content_margin_right = 3.0
 content_margin_bottom = 3.0
 
 [node name="fight" type="CanvasLayer"]
-scale = Vector2(1.6, 1.6)
-transform = Transform2D(1.6, 0, 0, 1.6, 0, 0)
+scale = Vector2(1.45, 1.45)
+transform = Transform2D(1.45, 0, 0, 1.45, 0, 0)
 script = ExtResource("1_4qaks")
 
 [node name="Panel" type="Panel" parent="."]
 offset_right = 1462.8
-offset_bottom = 803.2
+offset_bottom = 858.2072
 scale = Vector2(0.84, 0.833333)
 
 [node name="NinePatchRect" type="NinePatchRect" parent="."]

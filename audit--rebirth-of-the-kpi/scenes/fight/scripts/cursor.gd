@@ -49,7 +49,7 @@ var _is_action_running := false
 ## Initialisation du curseur (callback Godot)
 func _ready() -> void:
 	randomize()
-	position.x = 64
+	position.x = 55
 
 ## Mise à jour de la position du curseur (callback Godot)
 ## _delta:float - Temps écoulé depuis la dernière frame
@@ -303,7 +303,6 @@ func _menu_input(slot) -> void:
 			button4.text = " "
 			_update_description()
 		else:
-
 			while (_current_menu != _menu_options[i][0] and i < _menu_options.size()):
 				i += 1
 			if i >= _menu_options.size():
@@ -317,6 +316,8 @@ func _menu_input(slot) -> void:
 				if slot == 3:
 					await get_tree().create_timer(0.1).timeout
 					fight.end_fight(null)
+				if slot == 4:
+					return
 				else:
 					var chosen = _menu_options[0][slot] # 1=Attaque, 2=Défense
 					_current_menu = chosen
@@ -373,6 +374,7 @@ func _menu_input(slot) -> void:
 					_menu_input(5)
 				if fight._continue():
 					await fight.end_player_turn()
+		_slot=0
 	else:
 		fight.end_fight(fight.is_win())
 	pass

@@ -23,13 +23,15 @@ var _description
 func _init(aname = null,buff=1):
 	_name = aname
 	match aname:
-		#Compétence d'attaques
+		#Compétence d'attaques de test
 		"Turbo puissance":
 			_damage=50
-			_description="attaque pour faire bcp de dégat en mode je suis trop puissant "
+			_description="Attaque pour faire bcp de dégat en mode je suis trop puissant "
 		"Turbo fraude":
 			_damage=0
 			_description="Tu es là, voilà"
+			
+		#Compétence d'attaques
 		"Collecte d'information":
 			_damage=2
 			_description="Pose une question"

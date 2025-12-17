@@ -78,8 +78,8 @@ func end_fight(win):
 			print("gagné")
 		else:
 			GameState.change_state_pole(GameState.get_pole(),false)
-			_player.add_credibility(-1)
-			_player.add_skill(-1)
+			_player.add_credibility(-10)
+			_player.add_skill(-20)
 			print("perdu")
 	fight_unfight(null, null,null)
 	return
@@ -222,19 +222,16 @@ func _find_fighter(name_fighter):
 # Tour de l'ennemi: attaque aléatoire sur le joueur
 ## Exécute automatiquement l'attaque d'un ennemi aléatoire vivant
 func enemy_auto_reply() -> void:
-	var idx := _random_alive_fighter_index()
-	if idx == -1:
-		return
-	var enemy = _fighters[idx]
-	await message.show_message_blocking(enemy.get_fname() + " lance une attaque")
-	_log.addLog(enemy.get_fname()+"("+str(enemy.get_pv())+"/"+str(enemy.get_pvmax())+")"+"->")
-	var enemy_attack = null
-	if enemy.has_method("get_attacks"):
-		var e_attacks = enemy.get_attacks()
-		if e_attacks.size() > 0:
-			enemy_attack = e_attacks[randi() % e_attacks.size()]
-	#await attack(_player, enemy_attack,enemy.get_fname())
-	await attack(_player, enemy_attack)
+	for enemy in _fighters:
+		if enemy.get_pv()>0:
+			await message.show_message_blocking(enemy.get_fname() + " lance une attaque")
+			_log.addLog(enemy.get_fname()+"("+str(enemy.get_pv())+"/"+str(enemy.get_pvmax())+")"+"->")
+			var enemy_attack = null
+			if enemy.has_method("get_attacks"):
+				var e_attacks = enemy.get_attacks()
+				if e_attacks.size() > 0:
+					enemy_attack = e_attacks[randi() % e_attacks.size()]
+			await attack(_player, enemy_attack)
 
 # Fin du tour du joueur -> lance le tour ennemi puis rend la main au joueur
 ## Termine le tour du joueur et déclenche le tour de l'ennemi
@@ -265,9 +262,9 @@ func do_action(fname, action_menu, action_use = null):
 			var target = _find_fighter(fname)
 			_log.addLog(_player.get_fname()+"("+str(_player.get_pv())+"/"+str(_player.get_pvmax())+")"+"->")
 			if await attack(target, action_use) and target.get_fname()!="enemy":
-				if _player.add_credibility(20):
+				if _player.add_credibility(10):
 					await message.show_message_blocking("Vous avez débloqué une nouvelle compétence de défense grâce à votre crédibilité")
-				if _player.add_skill(25):
+				if _player.add_skill(20):
 					await message.show_message_blocking("Vous avez débloqué une nouvelle compétence d'attaque grâce à votre niveau de compétence")
 				_fighters.erase(target)
 			#qui attaqui qui, les degats, les pv

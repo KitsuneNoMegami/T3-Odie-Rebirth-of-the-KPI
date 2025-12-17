@@ -15,10 +15,10 @@ var _pts_defense =0
 func _ready():
 	pass
 
-func _init(pv=null,fname=null,attacks=null,defenses=null):
+func _init(pv=null,fname=null,attacks=null,defenses=null,description="Si vous voyez ceci, c'est de la faute de jonathan"):
 	_pv=pv
 	_pv_max=pv
-	_description="Ceci est la description du personnage du pole"
+	_description=description
 	_name=fname
 	_attacks=attacks
 	_defenses=defenses
@@ -48,7 +48,6 @@ func add_pts_defense(nb):
 	_pts_defense+=nb
 	pass
 	
-	
 func del_defense(nb=null):
 	if nb==null:
 		_pts_defense=0
@@ -58,13 +57,20 @@ func del_defense(nb=null):
 	
 func add_random_attack():
 	var skills
-	if _levelCredibility > 20 and _levelSkill > 5 and _attacks.size()==1:
+	if _levelCredibility > 20 and _attacks.size()==1:
+		_pv_max+=25
 		skills=["","","",""]
 		
-	if _levelCredibility > 20 and _levelSkill > 5 and _attacks.size()==2:
+	if _levelCredibility > 60 and _attacks.size()==2:
+		_pv_max+=15
 		skills=["","","",""]
 		
-	if _levelCredibility > 20 and _levelSkill > 5 and _attacks.size()==3:
+	if _levelCredibility > 100 and _attacks.size()==3:
+		_pv_max+=30
+		skills=["","","",""]
+		
+	if _levelCredibility > 130 and _levelSkill > 5 and _attacks.size()==3:
+		_pv_max+=30
 		skills=["","","",""]
 	if skills!=null:
 		_attacks.append(skills[randi() % 4])
@@ -72,13 +78,13 @@ func add_random_attack():
 	return false
 func add_random_defense():
 	var defense
-	if _levelCredibility > 20 and _levelSkill > 5 and _attacks.size()==1:
+	if _levelSkill > 5 and _attacks.size()==1:
 		defense=["","","",""]
 		
-	if _levelCredibility > 20 and _levelSkill > 5 and _attacks.size()==2:
+	if _levelSkill > 5 and _attacks.size()==2:
 		defense=["","","",""]
 		
-	if _levelCredibility > 20 and _levelSkill > 5 and _attacks.size()==3:
+	if _levelSkill > 5 and _attacks.size()==3:
 		defense=["","","",""]
 	
 	if defense!=null:

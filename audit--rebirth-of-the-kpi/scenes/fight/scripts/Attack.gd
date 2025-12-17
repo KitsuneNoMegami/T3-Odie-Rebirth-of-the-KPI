@@ -249,18 +249,18 @@ func _init(aname = null,buff=1):
 		"Risque accepté implicitement":
 			_damage=40
 			_description="Exposition connue mais non formalisée ni validée."
-	x
+	
 		"Plan d’action non priorisé":
 			_damage=30
 			_description="Actions identifiées sans échéance ni responsable clair."
 		
 		#Compétence de défense
 		"Reformulation protectrice":
-			_damage=5
+			_damage=17
 			_description="Reprend calmement les propos de l'audité pour désamorcer un conflit/éviter de mauvaises interprétations"
 			pass
 		"Cadre de l'entretien":
-			_damage=5
+			_damage=20
 			_description="Rappelle les règles du dialogue (respect,objectif,...)"
 			pass
 		"Ecoute active":
@@ -268,11 +268,11 @@ func _init(aname = null,buff=1):
 			_description="Diminue l'hostilité de l'audité et améliore la qualité des informations"
 			pass
 		"Clarification":
-			_damage=3
+			_damage=14
 			_description="Demande une clarification des informations afin d'éviter le plus d'ambiguïtés possible"
 			pass
 		"Posture neutre":
-			_damage=3
+			_damage=10
 			_description="Résistance à la pression et au stress causé par l'interlocuteur. Mode Suisse activé"
 			pass
 	_damage=_damage*buff

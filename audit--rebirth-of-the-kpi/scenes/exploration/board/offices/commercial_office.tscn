@@ -1,15 +1,16 @@
-[gd_scene load_steps=10 format=4 uid="uid://ck1i6okntm4bt"]
+[gd_scene load_steps=11 format=4 uid="uid://ck1i6okntm4bt"]
 
-[ext_resource type="Texture2D" uid="uid://bifjlv4dykjpv" path="res://assets/map/BD001.png" id="1_1i4yl"]
-[ext_resource type="Script" uid="uid://tye7syx6q8sn" path="res://scenes/exploration/board/offices/marketing_office.gd" id="2_63vah"]
-[ext_resource type="PackedScene" uid="uid://bmegaasqhjghc" path="res://scenes/exploration/pnj/pnj.tscn" id="2_sansf"]
-[ext_resource type="PackedScene" uid="uid://ce7gk84oa0efc" path="res://scenes/exploration/player/player.tscn" id="3_63vah"]
-[ext_resource type="PackedScene" uid="uid://c1l537l6qsm3u" path="res://scenes/exploration/board/pause/pause_menu.tscn" id="5_gqqqj"]
-[ext_resource type="PackedScene" uid="uid://h1db0cc8k0i3" path="res://scenes/exploration/board/offices/office_zone.tscn" id="6_vj5ey"]
-[ext_resource type="PackedScene" uid="uid://h3ng52t7vgb3" path="res://scenes/fight/fight.tscn" id="7_sansf"]
+[ext_resource type="Texture2D" uid="uid://bifjlv4dykjpv" path="res://assets/map/BD001.png" id="1_k46p1"]
+[ext_resource type="Script" uid="uid://tye7syx6q8sn" path="res://scenes/exploration/board/offices/commercial_office.gd" id="2_dhkjq"]
+[ext_resource type="PackedScene" uid="uid://bmegaasqhjghc" path="res://scenes/exploration/pnj/pnj.tscn" id="3_q5v57"]
+[ext_resource type="PackedScene" uid="uid://ce7gk84oa0efc" path="res://scenes/exploration/player/player.tscn" id="4_3fdfd"]
+[ext_resource type="Script" uid="uid://dbqli6s42dh70" path="res://scenes/exploration/pnj/commercial.gd" id="4_dhkjq"]
+[ext_resource type="PackedScene" uid="uid://h1db0cc8k0i3" path="res://scenes/exploration/board/offices/office_zone.tscn" id="5_ryx6n"]
+[ext_resource type="PackedScene" uid="uid://h3ng52t7vgb3" path="res://scenes/fight/fight.tscn" id="6_f5fdn"]
+[ext_resource type="PackedScene" uid="uid://c1l537l6qsm3u" path="res://scenes/exploration/board/pause/pause_menu.tscn" id="7_htrn2"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_x33iy"]
-texture = ExtResource("1_1i4yl")
+texture = ExtResource("1_k46p1")
 2:1/0 = 0
 3:1/0 = 0
 4:1/0 = 0
@@ -747,24 +748,24 @@ sources/0 = SubResource("TileSetAtlasSource_x33iy")
 texture_filter = 1
 tile_map_data = PackedByteArray("AAAcAA0AAAAEADsAAAAcAA4AAAAEADwAAAAcAA8AAAAEAD0AAAAdAA0AAAAFADsAAAAdAA4AAAAFADwAAAAdAA8AAAAFAD0AAAAeAA0AAAAGADsAAAAeAA4AAAAGADwAAAAeAA8AAAAGAD0AAAAfAA0AAAAHADsAAAAfAA4AAAAHADwAAAAfAA8AAAAHAD0AAAAgAA0AAAAIADsAAAAgAA4AAAAIADwAAAAgAA8AAAAIAD0AAAAhAA0AAAAJADsAAAAhAA4AAAAJADwAAAAhAA8AAAAJAD0AAAAiAA0AAAAKADsAAAAiAA4AAAAKADwAAAAiAA8AAAAKAD0AAAAcAAwAAAAEADoAAAAdAAwAAAAFADoAAAAeAAwAAAAGADoAAAAfAAwAAAAHADoAAAAgAAwAAAAIADoAAAAhAAwAAAAJADoAAAAiAAwAAAAKADoAAAA=")
 tile_set = SubResource("TileSet_awgst")
-script = ExtResource("2_63vah")
+script = ExtResource("2_dhkjq")
 
-[node name="pnj" parent="." instance=ExtResource("2_sansf")]
+[node name="pnj" parent="." instance=ExtResource("3_q5v57")]
 light_mask = 2
 visibility_layer = 2
 position = Vector2(501, 214)
+script = ExtResource("4_dhkjq")
 
-[node name="player" parent="." instance=ExtResource("3_63vah")]
+[node name="player" parent="." instance=ExtResource("4_3fdfd")]
 position = Vector2(491, 223)
 
-[node name="office_zone" parent="." instance=ExtResource("6_vj5ey")]
+[node name="office_zone" parent="." instance=ExtResource("5_ryx6n")]
 position = Vector2(447, 191)
 scale = Vector2(0.354461, 0.482336)
 
-[node name="fight" parent="." instance=ExtResource("7_sansf")]
+[node name="fight" parent="." instance=ExtResource("6_f5fdn")]
 process_mode = 2
 visible = false
 
-[node name="pause" parent="." instance=ExtResource("5_gqqqj")]
-process_mode = 3
+[node name="pause" parent="." instance=ExtResource("7_htrn2")]
 visible = false

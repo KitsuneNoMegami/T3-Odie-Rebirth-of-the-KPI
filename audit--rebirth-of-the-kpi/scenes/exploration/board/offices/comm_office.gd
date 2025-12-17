@@ -14,6 +14,7 @@ class_name Comm_office extends TileMapLayer
 func _ready() -> void:
 	GameState.set_fight(fight_scene)
 	DialogueManager.set_dialogue_manager(load("res://dialogue/texte/Communication.dialogue"))
-func _input(event: InputEvent) -> void:
+
+func _input(_event: InputEvent) -> void:
 	if Input.is_action_pressed("pause"):
 		pause.pause_unpause()

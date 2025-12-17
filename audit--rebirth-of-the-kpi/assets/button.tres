@@ -1,6 +1,6 @@
 [gd_resource type="Theme" load_steps=7 format=3 uid="uid://d1pqsukdxg0s4"]
 
-[ext_resource type="Texture2D" uid="uid://e7sjm8frlbth" path="res://assets/[7] Wood.png" id="1_2jg6l"]
+[ext_resource type="Texture2D" uid="uid://2i41plejc87d" path="res://assets/[7] Wood.png" id="1_2jg6l"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rdr5y"]
 content_margin_left = 4.0

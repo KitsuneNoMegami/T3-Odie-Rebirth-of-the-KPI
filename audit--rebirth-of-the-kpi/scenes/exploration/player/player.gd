@@ -86,9 +86,4 @@ func _unhandled_input(_event: InputEvent) -> void:
 		if (GameState.get_pause()):
 			DialogueManager.show_dialogue_balloon("start")
 
-## Retourne la caméra du joueur
-## Retourne:Camera2D - Node de la caméra du joueur
-func get_map()->Camera2D:
-	return $player_view
-
 	

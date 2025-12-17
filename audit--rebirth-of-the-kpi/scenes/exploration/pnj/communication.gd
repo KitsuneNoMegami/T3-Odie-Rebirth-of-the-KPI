@@ -1,16 +1,16 @@
-## Node/Script : Classe de base pour les PNJ (Personnages Non-Joueurs)
-## Contrôle l'apparence et le comportement de base des PNJ
+## Node/Script : PNJ Banquier
+## Représente le personnage du banquier (Roy) dans le jeu
 ##
 ## Signaux : Aucun
 
-class_name PNJ
-extends  StaticBody2D
+class_name Communication_pnj
+extends StaticBody2D
 
 @onready var sprite = $pnj_sprite
 
-## Initialisation du PNJ (callback Godot)
+## Initialisation du PNJ Banquier (callback Godot)
 func _ready():
-	sprite.play("z")
+	sprite.play("wessler")
 
 ## Mise à jour du PNJ (callback Godot)
 ## delta:float - Temps écoulé depuis la dernière frame en secondes

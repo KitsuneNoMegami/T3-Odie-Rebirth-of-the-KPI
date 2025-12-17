@@ -96,16 +96,16 @@ transform = Transform2D(1.6, 0, 0, 1.6, 0, 0)
 script = ExtResource("1_4qaks")
 
 [node name="Panel" type="Panel" parent="."]
-offset_right = 1462.7976
-offset_bottom = 803.19995
-scale = Vector2(0.84000003, 0.83333343)
+offset_right = 1462.8
+offset_bottom = 803.2
+scale = Vector2(0.84, 0.833333)
 
 [node name="NinePatchRect" type="NinePatchRect" parent="."]
 offset_left = 10.0
 offset_top = 423.0
 offset_right = 519.0
 offset_bottom = 668.0
-scale = Vector2(0.84000003, 0.83333343)
+scale = Vector2(0.84, 0.833333)
 texture = ExtResource("3_3si2p")
 patch_margin_left = 3
 patch_margin_top = 3
@@ -117,9 +117,9 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 2.2321427
+offset_left = 2.23214
 offset_top = -1.5
-offset_right = 2.2321472
+offset_right = 2.23215
 offset_bottom = -1.5
 grow_horizontal = 2
 grow_vertical = 2
@@ -165,8 +165,8 @@ flat = true
 [node name="Cursor" type="AnimatedSprite2D" parent="." node_paths=PackedStringArray("button1", "button2", "button3", "button4", "sound_handler")]
 process_mode = 2
 texture_filter = 1
-position = Vector2(116.87494, 437.49997)
-scale = Vector2(3.3600001, 3.3333337)
+position = Vector2(116.875, 437.5)
+scale = Vector2(3.36, 3.33333)
 sprite_frames = SubResource("SpriteFrames_inaet")
 autoplay = "default"
 centered = false
@@ -189,7 +189,7 @@ offset_left = 450.0
 offset_top = 423.0
 offset_right = 790.0
 offset_bottom = 633.0
-scale = Vector2(1.0945194, 0.9739752)
+scale = Vector2(1.09452, 0.973975)
 texture = ExtResource("3_3si2p")
 patch_margin_left = 3
 patch_margin_top = 3
@@ -199,9 +199,9 @@ patch_margin_bottom = 3
 [node name="message_panel" type="Panel" parent="NinePatchRect2"]
 visible = false
 layout_mode = 0
-offset_top = 10.6249695
-offset_right = 492.4999
-offset_bottom = 197.62497
+offset_top = 10.625
+offset_right = 492.5
+offset_bottom = 197.625
 theme_override_styles/panel = SubResource("StyleBoxEmpty_vpnpn")
 script = ExtResource("2_vpnpn")
 

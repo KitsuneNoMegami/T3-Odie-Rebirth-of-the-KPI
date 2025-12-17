@@ -3,7 +3,7 @@ Kraemer: Bonjour bienvenue au pôle informatique.
 	Avant de commencer, pouvez-vous participer au rituel sacré du Pôle Informatique ?
 - Je suis auditeur, pas prêtre-système.(Lance l'affrontement)
 	Kraemer: Cache de patience à 0%. Combat lancé.
-	do GameState.start_fight("res://scenes/fight/scripts/creation_fighter.gd","finance")
+	do GameState.start_fight("res://scenes/fight/scripts/creation_fighter.gd","it")
 - 01001010 01100101 00100000 01110011 01110101 01101001 01110011.(Fuite)
 do GameState.set_pause(false)
 => END

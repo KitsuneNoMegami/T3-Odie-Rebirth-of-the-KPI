@@ -3,7 +3,7 @@
 ##
 ## Signaux : Aucun
 
-extends Label
+extends Button
 
 
 # Called when the node enters the scene tree for the first time.
@@ -19,5 +19,5 @@ func _process(_delta: float) -> void:
 	pass
 
 ## Quitte le jeu
-func exit() -> void :
+func _on_pressed() -> void:
 	get_tree().quit()

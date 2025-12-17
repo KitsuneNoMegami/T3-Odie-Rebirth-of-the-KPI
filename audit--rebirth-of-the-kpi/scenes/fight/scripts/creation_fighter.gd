@@ -48,6 +48,24 @@ func get_fighters(pole,lvl_skill,lvl_credibility):
 			fighter1=create_fighter(10*buff, "Watheo",attacks)
 			fighter2=create_fighter(10*buff, "Wemmert",attacks)
 			fighter3=create_fighter(10*buff, "Ali",attacks)
+		"communication":
+			buff=generate_buff(10,10,lvl_skill,lvl_credibility)
+			attacks=[Attack.new("Analyse comportementale",buff),Attack.new("Gestion relationnelle",buff)]
+			fighter1=create_fighter(10*buff,"Wemmert",attacks)
+			fighter2=create_fighter(10*buff,"Kreamer",attacks)
+			fighter3=create_fighter(10*buff,"Roy",attacks)
+		"finance":
+			buff=generate_buff(10,10,lvl_skill,lvl_credibility)
+			attacks=[Attack.new("Analyse comportementale",buff),Attack.new("Gestion relationnelle",buff)]
+			fighter1=create_fighter(10*buff,"Wemmert",attacks)
+			fighter2=create_fighter(10*buff,"Kreamer",attacks)
+			fighter3=create_fighter(10*buff,"Roy",attacks)
+		"commercial":
+			buff=generate_buff(10,10,lvl_skill,lvl_credibility)
+			attacks=[Attack.new("Analyse comportementale",buff),Attack.new("Gestion relationnelle",buff)]
+			fighter1=create_fighter(10*buff,"Wemmert",attacks)
+			fighter2=create_fighter(10*buff,"Kreamer",attacks)
+			fighter3=create_fighter(10*buff,"Roy",attacks)
 	#fighter1=Fighter.new(10, "Watheo",attacks)
 	#fighter2 = Fighter.new(10, "Wemmert",attacks)
 	#fighter3 = Fighter.new(10, "Ali",attacks)

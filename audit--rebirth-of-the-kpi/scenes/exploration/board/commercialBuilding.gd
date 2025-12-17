@@ -18,3 +18,17 @@ func _process(_delta: float) -> void:
 func _on_pressed() -> void:
 	const office_scene=preload("res://scenes/exploration/board/offices/marketingOffice.tscn")
 	get_tree().change_scene_to_packed(office_scene)
+
+
+func _on_mouse_entered() -> void:
+	var txt_box = get_parent().get_node("txt_box_scam")
+	txt_box.show()
+	pass # Replace with function body.
+
+
+
+
+func _on_mouse_exited() -> void:
+	var txt_box = get_parent().get_node("txt_box_scam")
+	txt_box.hide()
+	pass # Replace with function body.

@@ -20,6 +20,17 @@ var pause = false
 var fight_scene
 ## Pôle actuellement en combat
 var _pole
+
+## Tuto vu ? 
+var tuto_watched=false;
+
+func get_tuto_state():
+	return tuto_watched
+	
+func watch_tuto():
+	tuto_watched = true
+	pass
+	
 ## Instance du joueur de combat (chargée dynamiquement)
 @onready var _player = load("res://scenes/fight/scripts/creation_player.gd").new().get_player()
 
@@ -36,9 +47,12 @@ var finance_win = false;
 
 ## Définit l'état de pause du jeu
 ## value:bool - Nouvel état de pause
+
 func set_pause(value: bool):
 	pause = value
 
+func get_player():
+	return _player
 
 ## Démarre un combat avec un pôle spécifique
 ## path:String - Chemin vers le script des ennemis

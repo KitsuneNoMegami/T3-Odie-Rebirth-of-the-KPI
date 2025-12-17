@@ -10,8 +10,11 @@ var _attacks
 var _defenses
 var _pts_defense =0
 
+@onready var sprite= $sprite
+
 func _ready():
-	pass
+	if sprite and _name:
+		sprite.play(_name)
 
 func _init(pv=null,fname=null,attacks=null,defenses=null):
 	_pv=pv
@@ -54,10 +57,16 @@ func get_description():
 func get_pv():
 	return _pv
 
-func set_sprite(sprite):
-	$sprite.play(sprite)
-
-func get_skill():
-	return _levelSkill
-func get_credibility():
-	return _levelCredibility
+func add_random_skill():
+	var skills
+	#faire du + grand nombre au plus petit comme ca, on a pas de doublon
+	#a revoir
+	if _levelCredibility > 50 and _levelSkill > 20:
+		skills=["","","",""]
+		_attacks.append(skills[randi() % 4])
+		return
+		
+	if _levelCredibility > 20 and _levelSkill > 5:
+		skills=["","","",""]
+		_attacks.append(skills[randi() % 4])
+		return

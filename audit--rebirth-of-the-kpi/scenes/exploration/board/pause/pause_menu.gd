@@ -1,12 +1,22 @@
-extends CanvasLayer
+## Node/Script : Menu de pause du jeu
+## Gère l'affichage du menu de pause, les réglages de volume et les options
+##
+## Signaux : Aucun
+
+class_name Pause_menu extends CanvasLayer
+
+## État de pause
 var pause=false
+## Liste des labels du menu
 var text: Array[Label]
-var nb := 4
+## Index de l'élément sélectionné (4 = aucune sélection)
+var nb := 4 
 
 @onready var start: Label = $start
 @onready var son: HScrollBar = $son
 @onready var exit: Label = $exit
 
+## Initialisation du menu de pause (callback Godot)
 func _ready() -> void:
 	text = [start, exit]
 	_setup_volume_bar()
@@ -17,6 +27,7 @@ func _ready() -> void:
 		text[i].connect("mouse_exited",Callable(self,"_on_label_hovered").bind(4))
 	_update_selection()
 
+## Configure la barre de volume
 func _setup_volume_bar() -> void:
 	var current_db := AudioServer.get_bus_volume_db(0)
 
@@ -24,9 +35,12 @@ func _setup_volume_bar() -> void:
 	son.mouse_filter = Control.MOUSE_FILTER_STOP
 	son.connect("value_changed", Callable(self, "_on_volume_changed"))
 
+## Callback du changement de volume
+## value:float - Nouvelle valeur linéaire du volume (0-1)
 func _on_volume_changed(value: float) -> void:
 	AudioServer.set_bus_volume_db(0, linear_to_db(value))
 
+## Bascule entre pause et reprise du jeu
 func pause_unpause():
 	pause=!pause
 	if (pause):
@@ -36,6 +50,8 @@ func pause_unpause():
 		hide()
 		get_tree().paused=false
 
+## Gère les entrées dans le menu de pause (callback Godot)
+## event:InputEvent - Événement d'entrée
 func _input(event: InputEvent) -> void:
 	if not visible :
 		return
@@ -59,11 +75,15 @@ func _input(event: InputEvent) -> void:
 	elif event.is_action_pressed("accept"):
 		_trigger_action(nb)
 
+## Callback de survol des labels par la souris
+## i:int - Index du label survolé
 func _on_label_hovered(i: int) -> void:
 	nb = i
 	_update_selection()
 
-#reagis à la l'input accept 
+#reagis à l'input accept
+## Exécute l'action du menu sélectionné
+## i:int - Index de l'action (0=Reprendre, 1=Quitter)
 func _trigger_action(i: int) -> void:
 	match i:
 		0:
@@ -75,6 +95,7 @@ func _trigger_action(i: int) -> void:
 			get_tree().quit()
 
 #met a jour la taille de chaque label quand nécéssaire
+## Met à jour l'apparence des labels selon la sélection
 func _update_selection() -> void:
 	for i in range(text.size()):
 		if i == nb:

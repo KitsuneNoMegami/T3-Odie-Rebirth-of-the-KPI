@@ -1,34 +1,68 @@
+## Node/Script : Singleton de gestion de l'état global du jeu
+## Stocke les données persistantes et l'état de progression des combats
+##
+## Signaux : Aucun
+##
+## Variables principales :
+## - pause : État de pause du jeu
+## - fight_scene : Référence à la scène de combat
+## - _pole : Pôle actuellement en combat
+## - _player : Instance du joueur de combat
+## - marketing_win, rh_win, etc. : État de victoire de chaque pôle
+
 # Ce fichier sert a stocker des donnees du jeu h24
 # Permet aussi de les transmettre au dialogue
 extends Node
 
-var pause= false
+## État de pause du jeu
+var pause = false
+## Référence à la scène de combat
 var fight_scene
+## Pôle actuellement en combat
 var _pole
-@onready var _player =load("res://scenes/fight/scripts/creation_player.gd").new().get_player()
-var marketing_win=false;
-var rh_win=false;
-var informatique_win=false;
-var communcation_win=false;
-var finance_win=false;
-	
+## Instance du joueur de combat (chargée dynamiquement)
+@onready var _player = load("res://scenes/fight/scripts/creation_player.gd").new().get_player()
+
+## Indique si le pôle Marketing a été vaincu
+var marketing_win = false;
+## Indique si le pôle RH a été vaincu
+var rh_win = false;
+## Indique si le pôle Informatique a été vaincu
+var informatique_win = false;
+## Indique si le pôle Communication a été vaincu
+var communcation_win = false;
+## Indique si le pôle Finance a été vaincu
+var finance_win = false;
+
+## Définit l'état de pause du jeu
+## value:bool - Nouvel état de pause
 func set_pause(value: bool):
 	pause = value
 
 
-func start_fight(path,pole):
-	_pole=pole
-	fight_scene.fight_unfight(path,pole,_player)
+## Démarre un combat avec un pôle spécifique
+## path:String - Chemin vers le script des ennemis
+## pole:String - Nom du pôle à combattre
+func start_fight(path, pole):
+	_pole = pole
+	fight_scene.fight_unfight(path, pole, _player)
 
+## Définit la référence à la scène de combat
+## fight:CanvasLayer - Référence à la scène de combat
 func set_fight(fight):
-	fight_scene=fight
-	
+	fight_scene = fight
+
+## Retourne l'état de pause actuel
 func get_pause():
 	return pause
-	
+
+## Retourne le pôle actuellement en combat
 func get_pole():
 	return _pole
 
+## Vérifie si un pôle a été vaincu
+## pole:String - Nom du pôle à vérifier
+## Retourne:bool - true si le pôle a été vaincu
 func get_win(pole):
 	match pole:
 		"informatique":
@@ -42,20 +76,22 @@ func get_win(pole):
 		"finance":
 			return finance_win
 
+## Marque un pôle comme vaincu
+## pole:String - Nom du pôle à marquer comme vaincu
 func change_state_pole(pole):
 	match pole:
 		"informatique":
-			informatique_win=true
+			informatique_win = true
 			return
 		"rh":
-			rh_win=true
+			rh_win = true
 			return
 		"marketing":
-			marketing_win=true
+			marketing_win = true
 			return
 		"communication":
-			communcation_win=true
+			communcation_win = true
 			return
 		"finance":
-			finance_win=true
+			finance_win = true
 			return

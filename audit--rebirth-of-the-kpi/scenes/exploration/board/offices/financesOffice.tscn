@@ -757,13 +757,14 @@ position = Vector2(501, 214)
 [node name="player" parent="." instance=ExtResource("3_b6g77")]
 position = Vector2(491, 223)
 
-[node name="pause" parent="." instance=ExtResource("5_2eagd")]
-visible = false
-
 [node name="office_zone" parent="." instance=ExtResource("6_kasll")]
 position = Vector2(447, 191)
 scale = Vector2(0.354461, 0.482336)
 
 [node name="fight" parent="." instance=ExtResource("8_b6g77")]
 process_mode = 2
+visible = false
+
+[node name="pause" parent="." instance=ExtResource("5_2eagd")]
+process_mode = 3
 visible = false

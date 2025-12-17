@@ -19,6 +19,7 @@ var nb := 4
 ## Initialisation du menu de pause (callback Godot)
 func _ready() -> void:
 	text = [start, exit]
+	pause=false
 	_setup_volume_bar()
 
 	for i in range(text.size()):
@@ -55,8 +56,6 @@ func pause_unpause():
 func _input(event: InputEvent) -> void:
 	if not visible :
 		return
-	if not visible :
-		return
 	if event.is_action_pressed("pause"):
 		await get_tree().create_timer(0.1).timeout
 		hide()
@@ -73,6 +72,7 @@ func _input(event: InputEvent) -> void:
 		_update_selection()
 
 	elif event.is_action_pressed("accept"):
+		await get_tree().create_timer(0.1).timeout
 		_trigger_action(nb)
 
 ## Callback de survol des labels par la souris

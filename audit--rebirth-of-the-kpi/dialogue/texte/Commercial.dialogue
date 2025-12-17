@@ -5,7 +5,7 @@ Gossa: Chaque analyse marketing est illustrée par des canards.
 	Gossa: Oui ! La couleur et la position des canards font sens. Enfin… en théorie.
 	- Vous êtes sûr que vos supérieurs valident ça ?(Lance l'affrontement)
 		Gossa : Ah… non, ils sont partis en voyage d’études des canards. 
-		Avant que vous accédiez aux rapports finaux, il faut qu’on clarifie certaines priorités, valider les segmentations et… tester votre capacité à naviguer dans notre méthode de travail.
+		Avant que vous accédiez aux bilan financier, il faut qu’on clarifie certaines priorités, valider les segmentations et… tester votre capacité à naviguer dans notre méthode de travail.
 		do GameState.start_fight("res://scenes/fight/scripts/creation_fighter.gd","commercial")
 	- Peut-être qu’on ferait mieux d'éviter ça pour l’instant…(Fuite)
 	do GameState.set_pause(false)

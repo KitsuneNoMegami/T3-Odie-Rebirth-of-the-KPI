@@ -950,6 +950,7 @@ text = "[color=black]"
 fit_content = true
 
 [node name="pause" parent="." instance=ExtResource("19_yh65k")]
+process_mode = 3
 visible = false
 
 [connection signal="mouse_entered" from="home" to="home" method="_on_mouse_entered"]

@@ -1,5 +1,6 @@
 extends TileMapLayer
 @export var gameState: Script
+@onready var pause : CanvasLayer = $pause
 
 var txt1 = "Bonjour, c'est moi [Nom], le directeur général de la Z corp, c'est moi qui est fait appel a vous afin de réaliser l'audit interne de l'entreprise."
 var txt2 = "Pour ce faire, vous allez devoir vous rendre dans les différents pôles de l'entreprise (en cliquant dessus)."
@@ -27,6 +28,8 @@ func _process(delta: float) -> void:
 	pass
 	
 func _input(event: InputEvent) -> void:
+	if Input.is_action_pressed("pause"):
+		pause.pause_unpause()
 	if event.is_action_pressed("accept"):
 		if !txt1.is_empty()&&speech_part==0:
 			tuto_txt.append_text(txt1)

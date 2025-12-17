@@ -8186,35 +8186,9 @@ position = Vector2(500, 228)
 tile_map_data = PackedByteArray("AAAdAA4AAAAMADEAAAAdAA8AAAAMADIAAAAdABAAAAAMADMAAAAeAA4AAAANADEAAAAeAA8AAAANADIAAAAeABAAAAANADMAAAAfAA4AAAAOADEAAAAfAA8AAAAOADIAAAAfABAAAAAOADMAAAAgAA4AAAAPADEAAAAgAA8AAAAPADIAAAAgABAAAAAPADMAAAAhAA4AAAAQADEAAAAhAA8AAAAQADIAAAAhABAAAAAQADMAAAAiAA4AAAARADEAAAAiAA8AAAARADIAAAAiABAAAAARADMAAAA=")
 tile_set = SubResource("TileSet_2bov5")
 
-[node name="fade_cieiling_left" parent="ceiling_big_building_left"]
-_import_path = NodePath("")
-unique_name_in_owner = false
-process_mode = 0
-process_priority = 0
-process_physics_priority = 0
-process_thread_group = 0
-physics_interpolation_mode = 0
-auto_translate_mode = 0
-editor_description = ""
-position = Vector2(403, 190)
-script = null
-
 [node name="ceiling_big_building_right" type="TileMapLayer" parent="."]
 tile_map_data = PackedByteArray("AAAkAA4AAAASADEAAAAkAA8AAAASADIAAAAkABAAAAASADMAAAAlAA4AAAATADEAAAAlAA8AAAATADIAAAAlABAAAAATADMAAAAmAA4AAAAUADEAAAAmAA8AAAAUADIAAAAmABAAAAAUADMAAAAnAA4AAAAVADEAAAAnAA8AAAAVADIAAAAnABAAAAAVADMAAAAoAA4AAAAWADEAAAAoAA8AAAAWADIAAAAoABAAAAAWADMAAAApAA4AAAAXADEAAAApAA8AAAAXADIAAAApABAAAAAXADMAAAA=")
 tile_set = SubResource("TileSet_k14eu")
-
-[node name="fade_cieiling_right" parent="ceiling_big_building_right"]
-_import_path = NodePath("")
-unique_name_in_owner = false
-process_mode = 0
-process_priority = 0
-process_physics_priority = 0
-process_thread_group = 0
-physics_interpolation_mode = 0
-auto_translate_mode = 0
-editor_description = ""
-position = Vector2(524, 190)
-script = null
 
 [node name="finances_department" type="TileMapLayer" parent="."]
 texture_filter = 1
@@ -8222,35 +8196,8 @@ position = Vector2(196, 357)
 tile_map_data = PackedByteArray("AAADAAEAAQAMAC0AAAADAAIAAQAMAC4AAAADAAMAAQAMAC8AAAADAAQAAQAMADAAAAAEAAEAAQANAC0AAAAEAAIAAQANAC4AAAAEAAMAAQANAC8AAAAEAAQAAQANADAAAAAFAAEAAQAOAC0AAAAFAAIAAQAOAC4AAAAFAAMAAQAOAC8AAAAFAAQAAQAOADAAAAAGAAEAAQAPAC0AAAAGAAIAAQAPAC4AAAAGAAMAAQAPAC8AAAAGAAQAAQAPADAAAAAHAAEAAQAQAC0AAAAHAAIAAQAQAC4AAAAHAAMAAQAQAC8AAAAHAAQAAQAQADAAAAAIAAEAAQARAC0AAAAIAAIAAQARAC4AAAAIAAMAAQARAC8AAAAIAAQAAQARADAAAAAJAAEAAQASAC0AAAAJAAIAAQASAC4AAAAJAAMAAQASAC8AAAAJAAQAAQASADAAAAA=")
 tile_set = SubResource("TileSet_tu1ev")
 
-[node name="fade_cieiling" parent="finances_department"]
-_import_path = NodePath("")
-unique_name_in_owner = false
-process_mode = 0
-process_priority = 0
-process_physics_priority = 0
-process_thread_group = 0
-physics_interpolation_mode = 0
-auto_translate_mode = 0
-editor_description = ""
-position = Vector2(-7, -18)
-scale = Vector2(1.07279, 1.18287)
-script = null
-
 [node name="player" parent="." instance=ExtResource("4_rpdi3")]
 position = Vector2(546, 399)
-
-[node name="Inventory" parent="player"]
-_import_path = NodePath("")
-unique_name_in_owner = false
-process_mode = 0
-process_priority = 0
-process_physics_priority = 0
-process_thread_group = 0
-physics_interpolation_mode = 0
-auto_translate_mode = 0
-editor_description = ""
-visible = false
-script = null
 
 [node name="2nd_layer_no_collisions" type="TileMapLayer" parent="."]
 tile_map_data = PackedByteArray("AAAiAA0AAgAKADoAAAAjAA0AAgALADoAAAAkAA0AAgAMADoAAAA=")

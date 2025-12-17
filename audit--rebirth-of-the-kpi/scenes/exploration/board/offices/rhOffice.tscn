@@ -757,13 +757,17 @@ position = Vector2(499, 195)
 [node name="player" parent="." instance=ExtResource("3_o2rcr")]
 position = Vector2(491, 223)
 
-[node name="pause" parent="." instance=ExtResource("5_4aelf")]
-visible = false
-
 [node name="office_zone" parent="." instance=ExtResource("6_t3yd0")]
 position = Vector2(399, 161)
 scale = Vector2(0.636411, 0.923551)
 
+[node name="CanvasLayer" parent="." instance=ExtResource("5_4aelf")]
+visible = false
+
 [node name="fight" parent="." instance=ExtResource("8_4aelf")]
 process_mode = 2
+visible = false
+
+[node name="pause" parent="." instance=ExtResource("5_4aelf")]
+process_mode = 3
 visible = false

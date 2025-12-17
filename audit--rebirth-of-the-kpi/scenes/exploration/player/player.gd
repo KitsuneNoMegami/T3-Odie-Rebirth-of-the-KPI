@@ -20,9 +20,10 @@ var pnj_in_range = false # si un pnj est aux alentours
 ## Script de gestion de l'état global du jeu
 @export var gameState: Script
 
+
+
 ## Signal émis lorsque le joueur quitte la zone d'interaction
 signal no_player_in_range
-
 @onready var sprite = $player_sprite
 
 func _ready() -> void:

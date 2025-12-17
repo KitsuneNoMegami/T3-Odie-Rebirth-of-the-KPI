@@ -27,10 +27,20 @@ var _turn := "player"
 ## Référence au panneau de messages
 @onready var message = get_node("NinePatchRect2/message_panel")
 ## Référence au curseur de sélection
-@onready var cursor: AnimatedSprite2D = $AnimatedSprite2D
+@onready var cursor: AnimatedSprite2D = $Cursor
+@onready var _log: NinePatchRect=$Log
+
+# --- AJOUTS: sauvegarde/restauration du joueur et suivi des ennemis spawnés ---
+var _player_original_parent: Node = null
+var _player_original_index: int = -1
+var _player_original_xform: Transform2D
+var _spawned_enemies: Array = []
+# ------------------------------------------------------------------------------
 
 ## Initialisation du système de combat (callback Godot)
 func _ready() -> void:
+	_log.clearLog()
+	_log.addLog("Début de l'audit, bonne chance à vous !")
 	randomize()
 
 ## Retourne la liste des combattants ennemis
@@ -44,10 +54,32 @@ func get_player():
 ## Vérifie si c'est le tour du joueur
 func is_player_turn() -> bool:
 	return _turn == "player"
+	
+func animation_initialisation():
+	var fighter_node = get_node_or_null("Fighter")
+	fighter_node._play()
+	fighter_node.set_positions(100,200)
+	fighter_node.set_size(10)
+
+	var i=2
+	for fighter in _fighters:
+		var enemy_node = get_node_or_null("Fighter"+str(i))
+		enemy_node._play()
+		enemy_node.set_positions(380+i*130,150)
+		enemy_node.set_size(10)
+		i+=1
+	return
 
 ## Termine le combat et retourne à l'exploration
-func end_fight():
-	GameState.change_state_pole(GameState.get_pole())
+func end_fight(win):
+	if win!=null:
+		if(win):
+			GameState.change_state_pole(GameState.get_pole(),true)
+		else:
+			GameState.change_state_pole(GameState.get_pole(),false)
+			_player.add_credibility(-20)
+			_player.add_skill(-20)
+	fight_unfight(null, null,null)
 	return
 
 ## Active ou désactive le mode combat
@@ -56,23 +88,76 @@ func end_fight():
 ## player:Fighter - Instance du joueur
 func fight_unfight(path,pole, player):
 	_pause = !_pause
-	_player = player
 	if _pause:
+		_player = player
 		# Prépare les ennemis
 		fighters_script = load(path)
 		var _fighters_object = fighters_script.new()
-		_fighters = _fighters_object.get_fighters(pole)
+		_fighters = _fighters_object.get_fighters(pole,player.get_skill(),player.get_credibility())
+
+		# --- AJOUT: préparer le reparenting propre du joueur ---
+		_player_original_parent = null
+		_player_original_index = -1
+		if _player:
+			_player_original_parent = _player.get_parent()
+			if _player_original_parent:
+				_player_original_index = _player.get_index()
+				_player_original_xform = _player.global_transform
+				_player_original_parent.remove_child(_player)
+		# ------------------------------------------------------
+
+		# Replace Fighter placeholder node with actual player instance
+		var old_fighter_node = get_node_or_null("Fighter")
+		if old_fighter_node:
+			old_fighter_node.queue_free()
+		if _player:
+			_player.name = "Fighter"
+			add_child(_player)
+
+		# Replace Fighter2, Fighter3, Fighter4 placeholder nodes with actual enemy instances
+		_spawned_enemies.clear() # --- AJOUT: on suit ce qu'on spawne pour cleanup ---
+		var i = 2
+		for fighter in _fighters:
+			var old_enemy_node = get_node_or_null("Fighter" + str(i))
+			if old_enemy_node:
+				old_enemy_node.queue_free()
+			if fighter:
+				fighter.name = "Fighter" + str(i)
+				add_child(fighter)
+				_spawned_enemies.append(fighter) # --- AJOUT ---
+			i += 1
 
 		# Affiche l’UI et le curseur
+		cursor.initialisation()
 		show()
 		cursor.show()
-		cursor.initialisation()
 
 		# Démarre au tour du joueur
 		_turn = "player"
 
 		get_tree().paused = true
 	else:
+		# --- AJOUT: restauration à la sortie du combat ---
+		# 1) Supprimer les ennemis instanciés pour le combat
+		for e in _spawned_enemies:
+			if is_instance_valid(e):
+				e.queue_free()
+		_spawned_enemies.clear()
+
+		# 2) Rapatrier le joueur chez son parent d'origine et restaurer son transform
+		if _player and is_instance_valid(_player):
+			# Le joueur est actuellement enfant de cette scène (fight)
+			if _player.get_parent() == self:
+				remove_child(_player)
+			if _player_original_parent and is_instance_valid(_player_original_parent):
+				_player_original_parent.add_child(_player)
+				# Restituer l'ordre d'enfant si on l'a
+				if _player_original_index >= 0:
+					_player_original_parent.move_child(_player, _player_original_index)
+				# Restaurer sa transform (taille/position/rotation)
+				_player.global_transform = _player_original_xform
+		# -------------------------------------------------
+
 		hide()
 		cursor.hide()
 		get_tree().paused = false
@@ -140,6 +225,7 @@ func enemy_auto_reply() -> void:
 		var e_attacks = enemy.get_attacks()
 		if e_attacks.size() > 0:
 			enemy_attack = e_attacks[randi() % e_attacks.size()]
+	#await attack(_player, enemy_attack,enemy.get_fname())
 	await attack(_player, enemy_attack)
 
 # Fin du tour du joueur -> lance le tour ennemi puis rend la main au joueur
@@ -178,14 +264,18 @@ func do_action(fname, action_menu, action_use = null):
 					var e_attacks = enemy.get_attacks()
 					if e_attacks.size() > 0:
 						enemy_attack = e_attacks[randi() % e_attacks.size()]
+				#await attack(_player, enemy_attack, sender)
 				await attack(_player, enemy_attack)
+				_log.addLog(enemy.get_fname()+"->"+enemy_attack.get_aname()+"("+str(enemy_attack.get_damage())+")"+"->"+fname+"("+str(_player.get_pv()+enemy_attack.get_damage())+"->"+str(_player.get_pv())+")")
 				return
 			# Attaque du joueur vers l'ennemi
 			await message.show_message_blocking(_player.get_fname() + " lance une attaque")
 			var target = _find_fighter(fname)
-			if await attack(target, action_use):
-				_player.add_credibility(20)
-				_player.add_skill(20)
+			if await attack(target, action_use) and target.get_fname()!="enemy":
+				if _player.add_credibility(20):
+					await message.show_message_blocking("Vous avez débloqué une nouvelle compétence de défense grâce à votre crédibilité")
+				if _player.add_skill(25):
+					await message.show_message_blocking("Vous avez débloqué une nouvelle compétence d'attaque grâce à votre niveau de compétence")
 				_fighters.erase(target)
 		"Défense":
 			if _player == null:

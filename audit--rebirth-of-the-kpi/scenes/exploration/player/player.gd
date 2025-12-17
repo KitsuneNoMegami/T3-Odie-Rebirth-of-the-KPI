@@ -8,7 +8,7 @@
 ## Variables exportées :
 ## - gameState:Script - Script de gestion de l'état global du jeu
 
-class_name Player 
+class_name Player
 extends CharacterBody2D
 
 ## Vitesse de déplacement en pixels/seconde
@@ -25,9 +25,6 @@ signal no_player_in_range
 
 @onready var sprite = $player_sprite
 
-
-
-## Initialisation du joueur et création de l'inventaire (callback Godot)
 func _ready() -> void:
 	pass
 

@@ -21,29 +21,29 @@ var fight_scene
 ## Pôle actuellement en combat
 var _pole
 
-## Tuto vu ? 
+## Tuto vu ?
 var tuto_watched=false;
 
 func get_tuto_state():
 	return tuto_watched
-	
+
 func watch_tuto():
 	tuto_watched = true
 	pass
-	
+
 ## Instance du joueur de combat (chargée dynamiquement)
 @onready var _player = load("res://scenes/fight/scripts/creation_player.gd").new().get_player()
 
 ## Indique si le pôle Marketing a été vaincu
-var marketing_win = false;
+var marketing_win = null;
 ## Indique si le pôle RH a été vaincu
-var rh_win = false;
+var rh_win = null;
 ## Indique si le pôle Informatique a été vaincu
-var informatique_win = false;
+var informatique_win = null;
 ## Indique si le pôle Communication a été vaincu
-var communcation_win = false;
+var communcation_win = null;
 ## Indique si le pôle Finance a été vaincu
-var finance_win = false;
+var finance_win = null;
 
 ## Définit l'état de pause du jeu
 ## value:bool - Nouvel état de pause
@@ -58,8 +58,9 @@ func get_player():
 ## path:String - Chemin vers le script des ennemis
 ## pole:String - Nom du pôle à combattre
 func start_fight(path, pole):
-	_pole = pole
-	fight_scene.fight_unfight(path, pole, _player)
+	_pole=pole
+	if get_win(pole)==null:
+		fight_scene.fight_unfight(path,pole,_player)
 
 ## Définit la référence à la scène de combat
 ## fight:CanvasLayer - Référence à la scène de combat
@@ -92,20 +93,20 @@ func get_win(pole):
 
 ## Marque un pôle comme vaincu
 ## pole:String - Nom du pôle à marquer comme vaincu
-func change_state_pole(pole):
+func change_state_pole(pole,state):
 	match pole:
 		"informatique":
-			informatique_win = true
+			informatique_win=state
 			return
 		"rh":
-			rh_win = true
+			rh_win=state
 			return
 		"marketing":
-			marketing_win = true
+			marketing_win=state
 			return
 		"communication":
-			communcation_win = true
+			communcation_win=state
 			return
 		"finance":
-			finance_win = true
+			finance_win=state
 			return

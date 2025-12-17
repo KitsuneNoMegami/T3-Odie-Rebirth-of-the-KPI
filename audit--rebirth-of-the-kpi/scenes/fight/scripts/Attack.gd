@@ -20,13 +20,16 @@ var _description
 
 ## Constructeur de l'attaque/défense
 ## aname:String - Nom de la compétence à créer
-func _init(aname = null):
+func _init(aname = null,buff=1):
 	_name = aname
 	match aname:
 		#Compétence d'attaques
 		"Turbo puissance":
 			_damage=50
 			_description="attaque pour faire bcp de dégat en mode je suis trop puissant "
+		"Turbo fraude":
+			_damage=0
+			_description="Tu es là, voilà"
 		"Collecte d'information":
 			_damage=2
 			_description="Pose une question"
@@ -69,7 +72,8 @@ func _init(aname = null):
 			_damage=3
 			_description="Résistance à la pression et au stress causé par l'interlocuteur. Mode Suisse activé"
 			pass
-			
+	_damage=_damage*buff
+
 	
 ## Retourne les points de dégâts de la compétence
 func get_damage():

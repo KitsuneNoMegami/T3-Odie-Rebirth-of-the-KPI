@@ -35,6 +35,7 @@ var _player_original_parent: Node = null
 var _player_original_index: int = -1
 var _player_original_xform: Transform2D
 var _spawned_enemies: Array = []
+var _is_initializing: bool = false  # Flag pour éviter les initialisations simultanées
 # ------------------------------------------------------------------------------
 
 ## Initialisation du système de combat (callback Godot)
@@ -89,6 +90,12 @@ func end_fight(win):
 func fight_unfight(path,pole, player):
 	_pause = !_pause
 	if _pause:
+		# Protection contre les initialisations simultanées
+		if _is_initializing:
+			push_warning("Combat déjà en cours d'initialisation, requête ignorée")
+			return
+		_is_initializing = true
+		
 		_player = player
 		_player.refill_pv()
 		# Prépare les ennemis
@@ -148,6 +155,7 @@ func fight_unfight(path,pole, player):
 		_turn = "player"
 
 		get_tree().paused = true
+		_is_initializing = false  # Initialisation terminée
 	else:
 		# --- AJOUT: restauration à la sortie du combat ---
 		# 1) Supprimer les ennemis instanciés pour le combat
@@ -173,6 +181,7 @@ func fight_unfight(path,pole, player):
 		hide()
 		cursor.hide()
 		get_tree().paused = false
+		_is_initializing = false  # Réinitialiser le flag à la sortie du combat
 
 ## Exécute une attaque sur une cible
 ## target:Fighter - Cible de l'attaque

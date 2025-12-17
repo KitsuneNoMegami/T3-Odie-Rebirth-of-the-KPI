@@ -107,28 +107,39 @@ func fight_unfight(path,pole, player):
 				_player_original_parent.remove_child(_player)
 		# ------------------------------------------------------
 
-		# Replace Fighter placeholder node with actual player instance
+		# MODIFICATION: Nettoyer d'abord tous les anciens combattants avant d'ajouter les nouveaux
+		# Cela garantit qu'il n'y a pas de conflit de noms ou d'état incohérent
 		var old_fighter_node = get_node_or_null("Fighter")
-		if old_fighter_node:
+		if old_fighter_node and is_instance_valid(old_fighter_node):
+			remove_child(old_fighter_node)
 			old_fighter_node.queue_free()
+		
+		# Nettoyer les anciens ennemis (Fighter2, Fighter3, Fighter4)
+		for i in range(2, 5):
+			var old_enemy_node = get_node_or_null("Fighter" + str(i))
+			if old_enemy_node and is_instance_valid(old_enemy_node):
+				remove_child(old_enemy_node)
+				old_enemy_node.queue_free()
+		
+		# Attendre une frame pour s'assurer que tous les nodes sont bien supprimés
+		await get_tree().process_frame
+		
+		# Maintenant, ajouter le joueur
 		if _player:
 			_player.name = "Fighter"
 			add_child(_player)
 
-		# Replace Fighter2, Fighter3, Fighter4 placeholder nodes with actual enemy instances
-		_spawned_enemies.clear() # --- AJOUT: on suit ce qu'on spawne pour cleanup ---
+		# Ajouter les nouveaux ennemis
+		_spawned_enemies.clear()
 		var i = 2
 		for fighter in _fighters:
-			var old_enemy_node = get_node_or_null("Fighter" + str(i))
-			if old_enemy_node:
-				old_enemy_node.queue_free()
 			if fighter:
 				fighter.name = "Fighter" + str(i)
 				add_child(fighter)
-				_spawned_enemies.append(fighter) # --- AJOUT ---
+				_spawned_enemies.append(fighter)
 			i += 1
 
-		# Affiche l’UI et le curseur
+		# Affiche l'UI et le curseur
 		cursor.initialisation()
 		show()
 		cursor.show()

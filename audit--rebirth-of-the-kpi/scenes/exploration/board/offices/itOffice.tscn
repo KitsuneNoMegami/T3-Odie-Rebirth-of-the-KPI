@@ -759,19 +759,6 @@ script = ExtResource("3_b73ca")
 [node name="player" parent="." instance=ExtResource("3_trv6a")]
 position = Vector2(491, 223)
 
-[node name="Inventory" parent="player"]
-_import_path = NodePath("")
-unique_name_in_owner = false
-process_mode = 0
-process_priority = 0
-process_physics_priority = 0
-process_thread_group = 0
-physics_interpolation_mode = 0
-auto_translate_mode = 0
-editor_description = ""
-visible = false
-script = null
-
 [node name="office_zone" parent="." instance=ExtResource("6_ba3ig")]
 position = Vector2(447, 191)
 scale = Vector2(0.354461, 0.482336)

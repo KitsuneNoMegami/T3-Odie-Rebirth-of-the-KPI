@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=4 uid="uid://h3ng52t7vgb3"]
+[gd_scene load_steps=24 format=4 uid="uid://h3ng52t7vgb3"]
 
 [ext_resource type="Texture2D" uid="uid://bxqp2q4d3p2mx" path="res://assets/sprites/arrowsheet.png" id="1_3a20j"]
 [ext_resource type="Script" uid="uid://dxvo8bjih7hia" path="res://scenes/fight/fight.gd" id="1_4qaks"]
@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://cxs35iqcds7g2" path="res://assets/sprites/fight_menu_background.png" id="3_3si2p"]
 [ext_resource type="Script" uid="uid://iinc6u6qxjwe" path="res://scenes/fight/scripts/audio_stream_player.gd" id="5_8og4d"]
 [ext_resource type="AudioStream" uid="uid://bgs6awcbdtryr" path="res://assets/sound/button_switch.mp3" id="6_inaet"]
+[ext_resource type="Script" uid="uid://dbqch140th120" path="res://scenes/fight/log.gd" id="8_4qaks"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_3si2p"]
 
@@ -100,10 +101,10 @@ offset_bottom = 803.19995
 scale = Vector2(0.84000003, 0.83333343)
 
 [node name="NinePatchRect" type="NinePatchRect" parent="."]
-offset_left = 70.625
-offset_top = 422.5
-offset_right = 579.32837
-offset_bottom = 667.05005
+offset_left = 10.0
+offset_top = 423.0
+offset_right = 519.0
+offset_bottom = 668.0
 scale = Vector2(0.84000003, 0.83333343)
 texture = ExtResource("3_3si2p")
 patch_margin_left = 3
@@ -184,10 +185,10 @@ switch = ExtResource("6_inaet")
 [node name="NinePatchRect2" type="NinePatchRect" parent="."]
 clip_children = 2
 texture_filter = 1
-offset_left = 523.75006
-offset_top = 426.25
-offset_right = 1014.37506
-offset_bottom = 628.75
+offset_left = 450.0
+offset_top = 423.0
+offset_right = 790.0
+offset_bottom = 633.0
 scale = Vector2(1.0945194, 0.9739752)
 texture = ExtResource("3_3si2p")
 patch_margin_left = 3
@@ -207,11 +208,32 @@ script = ExtResource("2_vpnpn")
 [node name="Label" type="Label" parent="NinePatchRect2/message_panel"]
 top_level = true
 layout_mode = 0
-offset_left = 527.5
-offset_top = 440.625
-offset_right = 1060.625
-offset_bottom = 618.625
+offset_left = 460.0
+offset_top = 440.0
+offset_right = 800.0
+offset_bottom = 650.0
 autowrap_mode = 1
+
+[node name="Log" type="NinePatchRect" parent="."]
+texture_filter = 1
+offset_left = 830.0
+offset_top = 423.0
+offset_right = 1200.0
+offset_bottom = 628.0
+texture = ExtResource("3_3si2p")
+patch_margin_left = 3
+patch_margin_top = 3
+patch_margin_right = 3
+patch_margin_bottom = 3
+script = ExtResource("8_4qaks")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Log"]
+layout_mode = 0
+offset_left = 2.5
+offset_top = 3.0
+offset_right = 362.5
+offset_bottom = 203.0
+scroll_following = true
 
 [connection signal="mouse_entered" from="NinePatchRect/MarginContainer/VBoxContainer/MenuOption1" to="Cursor" method="_on_menu_option_1_mouse_entered"]
 [connection signal="pressed" from="NinePatchRect/MarginContainer/VBoxContainer/MenuOption1" to="Cursor" method="_on_menu_option_1_pressed"]

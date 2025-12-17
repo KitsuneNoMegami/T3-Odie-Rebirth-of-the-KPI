@@ -11,6 +11,7 @@ var _turn := "player"
 @onready var fighters_script
 @onready var message = get_node("NinePatchRect2/message_panel")
 @onready var cursor: AnimatedSprite2D = $Cursor
+@onready var _log: NinePatchRect=$Log
 
 # --- AJOUTS: sauvegarde/restauration du joueur et suivi des ennemis spawnés ---
 var _player_original_parent: Node = null
@@ -20,6 +21,8 @@ var _spawned_enemies: Array = []
 # ------------------------------------------------------------------------------
 
 func _ready() -> void:
+	_log.clearLog()
+	_log.addLog("Début de l'audit, bonne chance à vous !")
 	randomize()
 
 func get_fighters():
@@ -44,7 +47,6 @@ func animation_initialisation():
 		enemy_node.set_positions(380+i*130,150)
 		enemy_node.set_size(10)
 		i+=1
-	print("test2")
 	return
 	
 func end_fight(win):
@@ -185,6 +187,7 @@ func enemy_auto_reply() -> void:
 		var e_attacks = enemy.get_attacks()
 		if e_attacks.size() > 0:
 			enemy_attack = e_attacks[randi() % e_attacks.size()]
+	#await attack(_player, enemy_attack,enemy.get_fname())
 	await attack(_player, enemy_attack)
 
 # Fin du tour du joueur -> lance le tour ennemi puis rend la main au joueur
@@ -218,7 +221,9 @@ func do_action(fname, action_menu, action_use = null):
 					var e_attacks = enemy.get_attacks()
 					if e_attacks.size() > 0:
 						enemy_attack = e_attacks[randi() % e_attacks.size()]
+				#await attack(_player, enemy_attack, sender)
 				await attack(_player, enemy_attack)
+				_log.addLog(enemy.get_fname()+"->"+enemy_attack.get_aname()+"("+str(enemy_attack.get_damage())+")"+"->"+fname+"("+str(_player.get_pv()+enemy_attack.get_damage())+"->"+str(_player.get_pv())+")")
 				return
 			# Attaque du joueur vers l'ennemi
 			await message.show_message_blocking(_player.get_fname() + " lance une attaque")

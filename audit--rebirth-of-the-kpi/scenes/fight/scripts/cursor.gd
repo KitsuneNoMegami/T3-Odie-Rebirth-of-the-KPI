@@ -29,7 +29,7 @@ var _is_action_running := false
 
 func _ready() -> void:
 	randomize()
-	position.x = 100
+	position.x = 64
 
 func _process(_delta: float) -> void:
 	if not visible:
@@ -47,7 +47,6 @@ func initialisation():
 	_is_action_running = false
 	_menu_input(5) # affiche le menu principal
 	_update_description()
-	print("test")
 	pass
 	
 

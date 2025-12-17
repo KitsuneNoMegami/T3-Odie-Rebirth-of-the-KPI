@@ -5,6 +5,7 @@ extends Panel
 func show_message_blocking(text: String) -> void:
 	get_parent().show()
 	get_parent().get_parent().get_node("NinePatchRect").hide()
+	get_parent().get_parent().get_node("Log").hide()
 	get_parent().get_parent().get_node("Cursor").hide()
 	change_size(1000,70,422)
 	show()
@@ -20,7 +21,8 @@ func show_message_blocking(text: String) -> void:
 	hide()
 	get_parent().get_parent().get_node("NinePatchRect").show()
 	get_parent().get_parent().get_node("Cursor").show()
-	change_size(490,523,426)
+	get_parent().get_parent().get_node("Log").show()
+	change_size(340,450,423)
 	
 
 func change_size(_size,x,y):

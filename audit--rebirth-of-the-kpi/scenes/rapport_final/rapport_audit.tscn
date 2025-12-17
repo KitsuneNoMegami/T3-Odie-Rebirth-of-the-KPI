@@ -1,6 +1,8 @@
-[gd_scene load_steps=2 format=3 uid="uid://di3a45tp6gos0"]
+[gd_scene load_steps=4 format=3 uid="uid://di3a45tp6gos0"]
 
 [ext_resource type="Script" uid="uid://5yyokgrd65tu" path="res://scenes/rapport_final/rapport_audit.gd" id="1_dukrq"]
+[ext_resource type="Script" uid="uid://cmdvqxol8h34m" path="res://scenes/rapport_final/rejouer.gd" id="2_vo4vq"]
+[ext_resource type="Script" uid="uid://dgy6x4d2r1go2" path="res://scenes/rapport_final/quitter.gd" id="2_w6ff1"]
 
 [node name="Node2D" type="CanvasLayer"]
 script = ExtResource("1_dukrq")
@@ -29,3 +31,16 @@ layout_mode = 2
 
 [node name="rh" type="Label" parent="ScrollContainer/VBoxContainer"]
 layout_mode = 2
+
+[node name="rejouer" type="Button" parent="ScrollContainer/VBoxContainer"]
+layout_mode = 2
+text = "rejouer une nouvelle partie ?"
+script = ExtResource("2_vo4vq")
+
+[node name="quitter" type="Button" parent="ScrollContainer/VBoxContainer"]
+layout_mode = 2
+text = "quitter le jeu ?"
+script = ExtResource("2_w6ff1")
+
+[connection signal="pressed" from="ScrollContainer/VBoxContainer/rejouer" to="ScrollContainer/VBoxContainer/rejouer" method="_on_pressed"]
+[connection signal="pressed" from="ScrollContainer/VBoxContainer/quitter" to="ScrollContainer/VBoxContainer/quitter" method="_on_pressed"]

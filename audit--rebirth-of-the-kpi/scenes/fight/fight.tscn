@@ -7,7 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://cxs35iqcds7g2" path="res://assets/sprites/fight_menu_background.png" id="3_3si2p"]
 [ext_resource type="Script" uid="uid://iinc6u6qxjwe" path="res://scenes/fight/scripts/audio_stream_player.gd" id="5_8og4d"]
 [ext_resource type="AudioStream" uid="uid://bgs6awcbdtryr" path="res://assets/sound/button_switch.mp3" id="6_inaet"]
-[ext_resource type="Script" uid="uid://dbqch140th120" path="res://scenes/fight/log.gd" id="8_4qaks"]
+[ext_resource type="Script" path="res://scenes/fight/log.gd" id="8_4qaks"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_3si2p"]
 
@@ -97,7 +97,7 @@ script = ExtResource("1_4qaks")
 
 [node name="Panel" type="Panel" parent="."]
 offset_right = 1462.8
-offset_bottom = 858.2072
+offset_bottom = 858.207
 scale = Vector2(0.84, 0.833333)
 
 [node name="NinePatchRect" type="NinePatchRect" parent="."]

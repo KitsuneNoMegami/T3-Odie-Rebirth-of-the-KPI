@@ -249,7 +249,7 @@ func _init(aname = null,buff=1):
 		"Risque accepté implicitement":
 			_damage=40
 			_description="Exposition connue mais non formalisée ni validée."
-	
+			
 		"Plan d’action non priorisé":
 			_damage=30
 			_description="Actions identifiées sans échéance ni responsable clair."

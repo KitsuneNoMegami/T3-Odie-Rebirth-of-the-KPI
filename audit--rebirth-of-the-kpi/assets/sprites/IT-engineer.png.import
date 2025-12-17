@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bpmkht0vr5udj"
-path="res://.godot/imported/walking_downright1.png-91975a50da066404614c959ddad98266.ctex"
+uid="uid://cynew74m01uy4"
+path="res://.godot/imported/IT-engineer.png-9df0604070796b777e93e4b77cbb702d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/player_animations/down_right/walking_downright1.png"
-dest_files=["res://.godot/imported/walking_downright1.png-91975a50da066404614c959ddad98266.ctex"]
+source_file="res://assets/sprites/IT-engineer.png"
+dest_files=["res://.godot/imported/IT-engineer.png-9df0604070796b777e93e4b77cbb702d.ctex"]
 
 [params]
 

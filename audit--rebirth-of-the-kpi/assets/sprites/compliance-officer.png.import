@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bpmkht0vr5udj"
-path="res://.godot/imported/walking_downright1.png-91975a50da066404614c959ddad98266.ctex"
+uid="uid://owhk0ruiudy1"
+path="res://.godot/imported/compliance-officer.png-434b66865743763579c67360fe298b3b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/player_animations/down_right/walking_downright1.png"
-dest_files=["res://.godot/imported/walking_downright1.png-91975a50da066404614c959ddad98266.ctex"]
+source_file="res://assets/sprites/compliance-officer.png"
+dest_files=["res://.godot/imported/compliance-officer.png-434b66865743763579c67360fe298b3b.ctex"]
 
 [params]
 

@@ -1,11 +1,11 @@
 [gd_scene load_steps=30 format=3 uid="uid://bmegaasqhjghc"]
 
 [ext_resource type="Script" uid="uid://bjfngxo28q0dm" path="res://scenes/exploration/pnj/pnj.gd" id="1_tpmle"]
-[ext_resource type="Texture2D" uid="uid://bepbopii2ttv8" path="res://assets/sprites/pnj_animations/maman.png" id="3_kq0vh"]
-[ext_resource type="Texture2D" uid="uid://cjwiln6lxht85" path="res://assets/sprites/pnj_animations/roy_isabelle.png" id="5_kq0vh"]
-[ext_resource type="Texture2D" uid="uid://b3kkttuqskjqv" path="res://assets/sprites/pnj_animations/wemmert_cedric.png" id="6_6afk0"]
-[ext_resource type="Texture2D" uid="uid://x2c0x47vjvyo" path="res://assets/sprites/pnj_animations/wessler_eric.png" id="6_kpv4r"]
-[ext_resource type="Texture2D" uid="uid://d31qhobsupi75" path="res://assets/sprites/pnj_animations/z-sheet.png" id="6_kq0vh"]
+[ext_resource type="Texture2D" uid="uid://dvm3bd4p64uge" path="res://assets/sprites/pnj_animations/maman.png" id="3_kq0vh"]
+[ext_resource type="Texture2D" uid="uid://2rl2l4gw6p4s" path="res://assets/sprites/pnj_animations/roy_isabelle.png" id="5_kq0vh"]
+[ext_resource type="Texture2D" uid="uid://n2yi74gvpykv" path="res://assets/sprites/pnj_animations/wemmert_cedric.png" id="6_6afk0"]
+[ext_resource type="Texture2D" uid="uid://bj87kuankagh8" path="res://assets/sprites/pnj_animations/wessler_eric.png" id="6_kpv4r"]
+[ext_resource type="Texture2D" uid="uid://clbq1ixpxryhs" path="res://assets/sprites/pnj_animations/z-sheet.png" id="6_kq0vh"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ug0y5"]
 atlas = ExtResource("3_kq0vh")
@@ -25,19 +25,19 @@ region = Rect2(240, 0, 80, 80)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_kpv4r"]
 atlas = ExtResource("5_kq0vh")
-region = Rect2(0, 0, 20, 20)
+region = Rect2(0, 0, 80, 80)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_6afk0"]
 atlas = ExtResource("5_kq0vh")
-region = Rect2(20, 0, 20, 20)
+region = Rect2(80, 0, 80, 80)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_hjnq4"]
 atlas = ExtResource("5_kq0vh")
-region = Rect2(40, 0, 20, 20)
+region = Rect2(160, 0, 80, 80)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_5m2j0"]
 atlas = ExtResource("5_kq0vh")
-region = Rect2(60, 0, 20, 20)
+region = Rect2(240, 0, 80, 80)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ncmjc"]
 atlas = ExtResource("6_6afk0")
@@ -196,9 +196,9 @@ script = ExtResource("1_tpmle")
 position = Vector2(5.5, 8)
 scale = Vector2(0.75, 0.75)
 sprite_frames = SubResource("SpriteFrames_d24va")
-animation = &"maman"
+animation = &"roy"
 
 [node name="collison" type="CollisionPolygon2D" parent="."]
-position = Vector2(58.999996, 71)
+position = Vector2(59, 71)
 scale = Vector2(0.442654, 0.478323)
 polygon = PackedVector2Array(-115.379, -147.071, -109, -142, -106, -136, -107, -132, -114, -126, -107, -120, -107.718, -115.018, -114, -109, -125.009, -108.317, -132, -115, -132, -120, -126, -125, -133, -132, -133, -135, -131, -142, -126, -147)

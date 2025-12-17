@@ -831,7 +831,7 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 bbcode_enabled = true
-text = "[b]Pole commercial[/b]
+text = "[b]Pole Informatique[/b]
 Niveau du pole: 2
 
 [i]Vous y trouverez [b]W[/b] ou [b] Watman[/b] , l'un des deux responsables du pôle, bien qu'apparemment personne ne les aurait vu en même temps dans la même pièce [b][insérez lore + indice sur strat a adopter][/b]"

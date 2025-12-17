@@ -1,6 +1,6 @@
 [gd_scene load_steps=11 format=4 uid="uid://boa48bkgxp2x4"]
 
-[ext_resource type="Texture2D" uid="uid://2vs650wnt8uq" path="res://assets/map/offices/finance_office.png" id="1_b6g77"]
+[ext_resource type="Texture2D" uid="uid://bfckxahchanl5" path="res://assets/map/offices/finance_office.png" id="1_b6g77"]
 [ext_resource type="Script" uid="uid://ckkruwmgpfohk" path="res://scenes/exploration/board/offices/finances_office.gd" id="2_bup5o"]
 [ext_resource type="PackedScene" uid="uid://bmegaasqhjghc" path="res://scenes/exploration/pnj/pnj.tscn" id="2_vf85f"]
 [ext_resource type="PackedScene" uid="uid://ce7gk84oa0efc" path="res://scenes/exploration/player/player.tscn" id="3_b6g77"]
@@ -809,15 +809,17 @@ script = ExtResource("2_bup5o")
 [node name="pnj" parent="." instance=ExtResource("2_vf85f")]
 light_mask = 2
 visibility_layer = 2
-position = Vector2(501, 214)
+position = Vector2(382.333, 67.6667)
+scale = Vector2(0.75, 0.75)
 script = ExtResource("4_b6g77")
 
 [node name="player" parent="." instance=ExtResource("3_b6g77")]
 position = Vector2(491, 223)
+scale = Vector2(2, 2)
 
 [node name="office_zone" parent="." instance=ExtResource("6_kasll")]
-position = Vector2(447, 191)
-scale = Vector2(0.354461, 0.482336)
+position = Vector2(65.6667, 3.99998)
+scale = Vector2(1.53331, 2.08807)
 
 [node name="fight" parent="." instance=ExtResource("8_b6g77")]
 process_mode = 2
@@ -830,5 +832,5 @@ visible = false
 zoom = Vector2(1.2, 1.2)
 limit_left = 1500
 limit_top = 20
-limit_right = 400
+limit_right = 1700
 limit_bottom = 900

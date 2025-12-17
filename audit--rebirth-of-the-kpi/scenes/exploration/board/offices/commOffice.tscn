@@ -1,6 +1,6 @@
 [gd_scene load_steps=13 format=4 uid="uid://c7wh7gjcu1bks"]
 
-[ext_resource type="Texture2D" uid="uid://cr8nm1sqfk1uo" path="res://assets/map/offices/communication_office.png" id="1_qvj6k"]
+[ext_resource type="Texture2D" uid="uid://c41b1nej157wi" path="res://assets/map/offices/communication_office.png" id="1_qvj6k"]
 [ext_resource type="PackedScene" uid="uid://bmegaasqhjghc" path="res://scenes/exploration/pnj/pnj.tscn" id="2_81v5q"]
 [ext_resource type="Script" uid="uid://dve3m51g61flk" path="res://scenes/exploration/board/offices/comm_office.gd" id="2_qvj6k"]
 [ext_resource type="PackedScene" uid="uid://ce7gk84oa0efc" path="res://scenes/exploration/player/player.tscn" id="3_qvj6k"]
@@ -1073,8 +1073,8 @@ position = Vector2(167.5, 116)
 scale = Vector2(3, 3)
 
 [node name="office_zone" parent="." instance=ExtResource("6_q1r4v")]
-position = Vector2(2.0000076, -1.25)
-scale = Vector2(1.2758076, 1.5268955)
+position = Vector2(2.00001, -1.25)
+scale = Vector2(1.27581, 1.5269)
 
 [node name="fight" parent="." instance=ExtResource("7_81v5q")]
 process_mode = 2
@@ -1084,10 +1084,10 @@ visible = false
 visible = false
 
 [node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(87, 60.500008)
-scale = Vector2(-0.20836425, 0.5887739)
+position = Vector2(87, 60.5)
+scale = Vector2(-0.208364, 0.588774)
 zoom = Vector2(1.2, 1.2)
-limit_left = 1200
+limit_left = 1500
 limit_top = 0
-limit_right = 500
+limit_right = 1600
 limit_bottom = 800

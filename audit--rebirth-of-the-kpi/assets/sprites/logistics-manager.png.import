@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bpmkht0vr5udj"
-path="res://.godot/imported/walking_downright1.png-91975a50da066404614c959ddad98266.ctex"
+uid="uid://bp0rttmserf0d"
+path="res://.godot/imported/logistics-manager.png-243fa552058db6e8d6ee1dc38ab7f444.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/player_animations/down_right/walking_downright1.png"
-dest_files=["res://.godot/imported/walking_downright1.png-91975a50da066404614c959ddad98266.ctex"]
+source_file="res://assets/sprites/logistics-manager.png"
+dest_files=["res://.godot/imported/logistics-manager.png-243fa552058db6e8d6ee1dc38ab7f444.ctex"]
 
 [params]
 

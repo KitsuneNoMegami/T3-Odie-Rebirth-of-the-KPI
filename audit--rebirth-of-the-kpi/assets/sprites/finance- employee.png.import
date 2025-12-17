@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bpmkht0vr5udj"
-path="res://.godot/imported/walking_downright1.png-91975a50da066404614c959ddad98266.ctex"
+uid="uid://ctgdcp2gmow52"
+path="res://.godot/imported/finance- employee.png-07b6a08c2d3f3e32759c0a8d5f9757b8.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/player_animations/down_right/walking_downright1.png"
-dest_files=["res://.godot/imported/walking_downright1.png-91975a50da066404614c959ddad98266.ctex"]
+source_file="res://assets/sprites/finance- employee.png"
+dest_files=["res://.godot/imported/finance- employee.png-07b6a08c2d3f3e32759c0a8d5f9757b8.ctex"]
 
 [params]
 

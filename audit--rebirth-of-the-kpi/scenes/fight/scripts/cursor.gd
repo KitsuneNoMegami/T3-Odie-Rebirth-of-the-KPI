@@ -302,6 +302,7 @@ func _menu_input(slot) -> void:
 			button4.text = " "
 			_update_description()
 		else:
+
 			while (_current_menu != _menu_options[i][0] and i < _menu_options.size()):
 				i += 1
 			if i >= _menu_options.size():

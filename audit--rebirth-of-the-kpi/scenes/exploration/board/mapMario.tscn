@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=4 uid="uid://d1ina3ja7hqpa"]
+[gd_scene load_steps=39 format=4 uid="uid://d1ina3ja7hqpa"]
 
 [ext_resource type="Texture2D" uid="uid://bo4bcdbhblcbh" path="res://assets/map/tilemap.png" id="1_lrwju"]
 [ext_resource type="Texture2D" uid="uid://dj6wyfg5kdfjh" path="res://assets/map/Home.png" id="2_cydq1"]
@@ -19,6 +19,7 @@
 [ext_resource type="Script" uid="uid://doxvy8ki16jsk" path="res://scenes/exploration/board/communicationBuilding.gd" id="18_3ir1f"]
 [ext_resource type="Texture2D" uid="uid://cxs35iqcds7g2" path="res://assets/sprites/fight_menu_background.png" id="19_mians"]
 [ext_resource type="PackedScene" uid="uid://c1l537l6qsm3u" path="res://scenes/exploration/board/pause/pause_menu.tscn" id="19_yh65k"]
+[ext_resource type="Texture2D" uid="uid://bdealng6pdefv" path="res://assets/sprites/pnj_animations/z-sheet.png" id="20_mians"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_vs5oo"]
 texture = ExtResource("1_lrwju")
@@ -579,11 +580,61 @@ atlas = ExtResource("11_v4jje")
 [sub_resource type="AtlasTexture" id="AtlasTexture_olxho"]
 atlas = ExtResource("13_hflr0")
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_lb0w3"]
-
 [sub_resource type="LabelSettings" id="LabelSettings_burnk"]
 outline_size = 6
 outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_lb0w3"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mians"]
+atlas = ExtResource("20_mians")
+region = Rect2(0, 0, 20, 20)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3ir1f"]
+atlas = ExtResource("20_mians")
+region = Rect2(20, 0, 20, 20)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pjyna"]
+atlas = ExtResource("20_mians")
+region = Rect2(40, 0, 20, 20)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rlmv1"]
+atlas = ExtResource("20_mians")
+region = Rect2(60, 0, 20, 20)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v4jje"]
+atlas = ExtResource("20_mians")
+region = Rect2(80, 0, 20, 20)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_o8n4m"]
+atlas = ExtResource("20_mians")
+region = Rect2(100, 0, 20, 20)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_o8n4m"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mians")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3ir1f")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pjyna")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rlmv1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_v4jje")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_o8n4m")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
 
 [node name="TileMapLayer" type="TileMapLayer" node_paths=PackedStringArray("tuto_txt")]
 scale = Vector2(1.1, 1.1)
@@ -887,13 +938,33 @@ Niveau du pole: 1
 [i]Vous y trouverez [b]Prof, [insérez lore + indice sur strat a adopter[/b]
 "
 
+[node name="lvl_label" type="Label" parent="."]
+offset_left = 791.8182
+offset_top = 831.8182
+offset_right = 963.8182
+offset_bottom = 854.8182
+text = "Niveau de crédibilité : "
+label_settings = SubResource("LabelSettings_burnk")
+horizontal_alignment = 1
+script = ExtResource("15_cydq1")
+gameState = ExtResource("16_burnk")
+
+[node name="tuto_backgrounds" type="Panel" parent="." groups=["Tuto"]]
+visible = false
+offset_left = -59.09085
+offset_top = -41.818176
+offset_right = 1809.9999
+offset_bottom = 1031.8181
+
 [node name="tuto_sprite" type="Sprite2D" parent="." groups=["Tuto"]]
+visible = false
 texture_filter = 1
 position = Vector2(287.27267, 726.3636)
 scale = Vector2(21, 21)
 texture = ExtResource("17_qba66")
 
 [node name="tuto_speech" type="NinePatchRect" parent="." groups=["Tuto"]]
+visible = false
 texture_filter = 1
 custom_minimum_size = Vector2(1000, 500)
 offset_left = 447.27267
@@ -930,19 +1001,15 @@ bbcode_enabled = true
 text = "[color=black]"
 fit_content = true
 
-[node name="lvl_label" type="Label" parent="."]
-offset_left = 791.8182
-offset_top = 831.8182
-offset_right = 951.8182
-offset_bottom = 854.8182
-text = "Niveau de crédibilité : "
-label_settings = SubResource("LabelSettings_burnk")
-horizontal_alignment = 1
-script = ExtResource("15_cydq1")
-gameState = ExtResource("16_burnk")
-
 [node name="pause" parent="." instance=ExtResource("19_yh65k")]
 visible = false
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+position = Vector2(798.1819, 472.72726)
+scale = Vector2(48.982, 45)
+sprite_frames = SubResource("SpriteFrames_o8n4m")
+autoplay = "default"
 
 [connection signal="mouse_entered" from="rh" to="rh" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="rh" to="rh" method="_on_mouse_exited"]

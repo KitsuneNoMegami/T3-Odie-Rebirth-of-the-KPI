@@ -37,11 +37,12 @@ func _input(event: InputEvent) -> void:
 		elif !txt3.is_empty()&&speech_part==2:
 			tuto_txt.append_text(txt3)
 			txt3 = ""
+		elif txt3.is_empty():
+			get_tree().call_group("Tuto", "hide")
+			GameState.watch_tuto()
 		else:
 			tuto_txt.clear()
 			tuto_txt.append_text("[color=black]")
 			speech_part +=1
-		GameState.watch_tuto()
 
-		
 	pass

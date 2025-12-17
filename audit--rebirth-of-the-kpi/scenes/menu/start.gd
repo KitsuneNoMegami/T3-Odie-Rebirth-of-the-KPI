@@ -10,6 +10,5 @@ func _ready() -> void:
 func _process(_delta: float) -> void:
 	pass
 
-
 func _on_pressed() -> void:
-	get_tree().quit()
+	get_tree().change_scene_to_file("res://scenes/exploration/board/mapMario.tscn")

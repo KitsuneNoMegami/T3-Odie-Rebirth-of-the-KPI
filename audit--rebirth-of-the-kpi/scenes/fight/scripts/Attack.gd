@@ -31,28 +31,232 @@ func _init(aname = null,buff=1):
 			_damage=0
 			_description="Tu es là, voilà"
 			
-		#Compétence d'attaques
-		"Collecte d'information":
-			_damage=2
-			_description="Pose une question"
-			pass
-		"Validation factuelle":
-			_damage=5
-			_description="Confrontation de données d'autres pôles avec des informations données dans ce pôle"
-			pass
-		"Analyse comportementale":
-			_damage=4
-			_description="Analyse de la personne auditée afin de décerner du stress ou du mensonge"
-			pass
-		"Recadrage de l'entretien":
-			_damage=3
-			_description="Rappel de l'objectif de l'audit"
-			pass
-		"Gestion relationnelle":
-			_damage=3
-			_description="Compliment,phrase d'accorche afin de mettre en confiance la personne auditée"
-			pass
+		#Compétence d'attaques joueur
+		"Revue de la documentation existante":
+			_damage=10
+			_description="Analyse des procédures, politiques et modes opératoires formalisés par l’entité."
+
+		"Entretien avec les parties prenantes":
+			_damage=10
+			_description="Collecte d’informations par échanges structurés avec les responsables concernés."
+
+		"Cartographie des processus":
+			_damage=10
+			_description="Identification et représentation des flux opérationnels et décisionnels."
+
+		"Analyse de conformité réglementaire":
+			_damage=10
+			_description="Vérification de l’alignement des pratiques avec les exigences légales et normatives."
+
+		"Évaluation du contrôle interne":
+			_damage=15
+			_description="Appréciation de la conception et de l’efficacité des contrôles en place."
+
+		"Identification des risques clés":
+			_damage=15
+			_description="Recensement des risques susceptibles d’affecter l’atteinte des objectifs."
+
+		"Matrice des risques":
+			_damage=15
+			_description="Classement des risques selon leur probabilité et leur impact."
+
+		"Test de conception des contrôles":
+			_damage=15
+			_description="Vérification que les contrôles prévus répondent aux risques identifiés."
+
+		"Test d’efficacité opérationnelle":
+			_damage=20
+			_description="Vérification que les contrôles fonctionnent réellement dans la pratique."
+
+		"Échantillonnage des transactions":
+			_damage=20
+			_description="Sélection d’un ensemble représentatif d’opérations à analyser."
+
+		"Revue des justificatifs":
+			_damage=20
+			_description="Examen des preuves documentaires associées aux opérations testées."
+
+		"Analyse des écarts":
+			_damage=20
+			_description="Identification des différences entre les procédures définies et les pratiques observées."
+
+		"Traçabilité des opérations":
+			_damage=28
+			_description="Suivi d’une opération de bout en bout dans les systèmes et documents."
+
+		"Séparation des tâches":
+			_damage=28
+			_description="Vérification de l’absence de cumul de fonctions incompatibles."
+
+		"Revue des habilitations":
+			_damage=28
+			_description="Analyse des droits d’accès aux systèmes et applications."
+
+		"Analyse des contrôles automatisés":
+			_damage=28
+			_description="Évaluation des contrôles intégrés aux outils informatiques."
+
+		"Revue des contrôles manuels":
+			_damage=0
+			_description="Analyse des contrôles reposant sur des interventions humaines."
+
+		"Analyse des incidents déclarés":
+			_damage=0
+			_description="Étude des anomalies et dysfonctionnements remontés."
+
+		"Revue des indicateurs de performance":
+			_damage=0
+			_description="Analyse des KPI utilisés pour piloter l’activité."
+
+		"Évaluation de la gouvernance":
+			_damage=0
+			_description="Analyse des rôles, responsabilités et circuits de décision."
+
+		"Revue des comités et instances":
+			_damage=0
+			_description="Analyse du fonctionnement des organes de pilotage et de contrôle."
+
+		"Analyse des plans d’action existants":
+			_damage=0
+			_description="Vérification du suivi et de l’avancement des actions correctrices."
+
+		"Constat d’audit":
+			_damage=0
+			_description="Formalisation d’un écart factuel et objectivé."
+
+		"Qualification du niveau de risque":
+			_damage=0
+			_description="Appréciation de la criticité associée à chaque constat."
+
+		"Formulation de recommandations":
+			_damage=0
+			_description="Proposition de mesures d’amélioration adaptées aux constats."
+
+		"Validation contradictoire":
+			_damage=0
+			_description="Échange avec l’audité pour confirmer les faits et leur compréhension."
+
+		"Rédaction du rapport d’audit":
+			_damage=0
+			_description="Synthèse structurée des travaux, constats et recommandations."
+
+		"Restitution orale des conclusions":
+			_damage=0
+			_description="Présentation des résultats aux instances concernées."
+
+		"Suivi des recommandations":
+			_damage=0
+			_description="Vérification de la mise en œuvre effective des actions décidées."
+
+		"Clôture de mission d’audit":
+			_damage=0
+			_description="Finalisation formelle de la mission après validation des livrables."
 			
+		#Compétence d'attaques ennemies
+		"Production tardive des documents":
+			_damage=3
+			_description="Transmission des éléments demandés après plusieurs relances ou hors délai prévu."
+
+		"Justificatif partiel":
+			_damage=3
+			_description="Fourniture de documents incomplets ou ne couvrant pas l’ensemble du périmètre demandé."
+
+		"Procédure non formalisée":
+			_damage=3
+			_description="Existence d’une pratique opérationnelle sans documentation écrite associée."
+
+		"Dépendance à une personne clé":
+			_damage=2
+			_description="Concentration des connaissances et des décisions sur un seul acteur."
+
+		"Argument de l’usage établi":
+			_damage=2
+			_description="Justification d’une pratique par son ancienneté plutôt que par une règle formelle."
+
+		"Interprétation souple du référentiel":
+			_damage=2
+			_description="Application subjective ou adaptée des exigences normatives."
+
+		"Absence de preuve disponible":
+			_damage=4
+			_description="Impossibilité de produire un élément attestant de la réalisation d’un contrôle."
+
+		"Contournement du processus":
+			_damage=4
+			_description="Réalisation d’une opération en dehors du circuit prévu."
+
+		"Validation a posteriori":
+			_damage=6
+			_description="Approbation réalisée après l’exécution effective de l’opération."
+
+		"Contrôle compensatoire informel":
+			_damage=6
+			_description="Existence d’un contrôle alternatif non documenté."
+
+		"Méconnaissance de la procédure":
+			_damage=6
+			_description="Non-maîtrise des règles applicables par les opérationnels."
+
+		"Habilitations excessives":
+			_damage=5
+			_description="Attribution de droits supérieurs aux besoins réels de la fonction."
+
+		"Absence de traçabilité":
+			_damage=5
+			_description="Manque d’historique permettant de reconstituer une opération."
+
+		"Données non réconciliées":
+			_damage=5
+			_description="Écarts entre plusieurs sources sans analyse formalisée."
+
+		"Mise à jour non réalisée":
+			_damage=7
+			_description="Documentation ou paramétrage non aligné avec la pratique actuelle."
+
+		"Délégation non encadrée":
+			_damage=40
+			_description="Transfert de responsabilités sans cadre formel défini."
+
+		"Contrôle non systématique":
+			_damage=10
+			_description="Réalisation irrégulière ou ponctuelle d’un contrôle prévu."
+
+		"Justification orale uniquement":
+			_damage=10
+			_description="Explication fournie sans support écrit ou preuve matérielle."
+
+		"Priorité opérationnelle invoquée":
+			_damage=12
+			_description="Non-application d’un contrôle au motif de contraintes de délai ou de charge."
+
+		"Historique non conservé":
+			_damage=13
+			_description="Suppression ou non-archivage des données nécessaires au suivi."
+
+		"Responsabilité non clairement définie":
+			_damage=20
+			_description="Flou sur le rôle ou le périmètre d’intervention des acteurs."
+
+		"Dépendance à un outil non maîtrisé":
+			_damage=15
+			_description="Utilisation d’un système sans compréhension complète de son fonctionnement."
+
+		"Absence de revue hiérarchique":
+			_damage=15
+			_description="Manque de supervision formalisée des travaux réalisés."
+
+		"Correction manuelle non tracée":
+			_damage=15
+			_description="Modification de données sans justification documentée."
+
+		"Risque accepté implicitement":
+			_damage=30
+			_description="Exposition connue mais non formalisée ni validée."
+
+		"Plan d’action non priorisé":
+			_damage=30
+			_description="Actions identifiées sans échéance ni responsable clair."
+		
 		#Compétence de défense
 		"Reformulation protectrice":
 			_damage=5

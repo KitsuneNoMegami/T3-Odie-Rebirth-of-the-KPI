@@ -1,7 +1,6 @@
-[gd_resource type="Theme" load_steps=8 format=3 uid="uid://d1pqsukdxg0s4"]
+[gd_resource type="Theme" load_steps=7 format=3 uid="uid://d1pqsukdxg0s4"]
 
-[ext_resource type="Texture2D" uid="uid://bdpnj64n61ii2" path="res://assets/[7] Wood.png" id="1_2jg6l"]
-[ext_resource type="FontFile" uid="uid://b8tjx0qie3x4e" path="res://assets/SimplePhoneDemo-pgVvd.ttf" id="1_mw0qu"]
+[ext_resource type="Texture2D" uid="uid://cxh0jefwto4db" path="res://assets/[7] Wood.png" id="1_2jg6l"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rdr5y"]
 content_margin_left = 4.0
@@ -32,13 +31,13 @@ texture = ExtResource("1_2jg6l")
 region_rect = Rect2(96, 0, 48, 16)
 
 [resource]
-Button/colors/font_color = Color(0.5686275, 0.58431375, 0.6, 1)
+Button/colors/font_color = Color(0.568627, 0.584314, 0.6, 1)
 Button/colors/font_disabled_color = Color(0.875, 0.875, 0.875, 0.5)
 Button/colors/font_focus_color = Color(0.95, 0.95, 0.95, 1)
-Button/colors/font_hover_color = Color(0.7846866, 0.80580753, 0.82692844, 1)
+Button/colors/font_hover_color = Color(0.784687, 0.805808, 0.826928, 1)
 Button/colors/font_hover_pressed_color = Color(1, 1, 1, 1)
 Button/colors/font_outline_color = Color(0, 0, 0, 1)
-Button/colors/font_pressed_color = Color(0.5686275, 0.58431375, 0.6, 1)
+Button/colors/font_pressed_color = Color(0.568627, 0.584314, 0.6, 1)
 Button/colors/icon_disabled_color = Color(1, 1, 1, 0.4)
 Button/colors/icon_focus_color = Color(1, 1, 1, 1)
 Button/colors/icon_hover_color = Color(1, 1, 1, 1)
@@ -50,7 +49,7 @@ Button/constants/h_separation = 4
 Button/constants/icon_max_width = 0
 Button/constants/outline_size = 0
 Button/font_sizes/font_size = 80
-Button/fonts/font = ExtResource("1_mw0qu")
+Button/fonts/font = null
 Button/styles/disabled = SubResource("StyleBoxFlat_rdr5y")
 Button/styles/focus = SubResource("StyleBoxTexture_2jg6l")
 Button/styles/hover = SubResource("StyleBoxTexture_qox7x")

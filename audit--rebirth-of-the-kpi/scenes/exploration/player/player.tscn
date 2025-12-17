@@ -214,6 +214,7 @@ polygon = PackedVector2Array(337.327, 295.741, 316.991, 330.181, 352.877, 369.80
 
 [node name="talknode_area" type="CollisionShape2D" parent="talknode"]
 position = Vector2(16, 20)
+scale = Vector2(0.6062489, 1.9241807)
 shape = SubResource("CircleShape2D_qwx4k")
 
 [connection signal="input_event" from="." to="." method="_on_input_event"]

@@ -1,8 +1,9 @@
-[gd_scene load_steps=31 format=4 uid="uid://d1ina3ja7hqpa"]
+[gd_scene load_steps=32 format=4 uid="uid://d1ina3ja7hqpa"]
 
 [ext_resource type="Texture2D" uid="uid://bo4bcdbhblcbh" path="res://assets/map/tilemap.png" id="1_lrwju"]
 [ext_resource type="Texture2D" uid="uid://dj6wyfg5kdfjh" path="res://assets/map/Home.png" id="2_cydq1"]
 [ext_resource type="Texture2D" uid="uid://kl5eyss4skgu" path="res://assets/map/RH.png" id="4_lb0w3"]
+[ext_resource type="Script" uid="uid://i31wxmpxxkf5" path="res://scenes/exploration/board/HomeBuilding.gd" id="5_mians"]
 [ext_resource type="Script" uid="uid://clwkghmw28sq6" path="res://scenes/exploration/board/rhBuilding.gd" id="6_yh65k"]
 [ext_resource type="Texture2D" uid="uid://bol1xxo8vw1vh" path="res://assets/map/Finance.png" id="7_mians"]
 [ext_resource type="Texture2D" uid="uid://blm8t2dewvbif" path="res://assets/map/It.png" id="9_pjyna"]
@@ -10,10 +11,10 @@
 [ext_resource type="Texture2D" uid="uid://doc3j8n2jict7" path="res://assets/map/Commercial.png" id="11_v4jje"]
 [ext_resource type="Script" uid="uid://tn7g6lpobc1f" path="res://scenes/exploration/board/itBuilding.gd" id="12_yh65k"]
 [ext_resource type="Texture2D" uid="uid://b617qla2ddrym" path="res://assets/map/Communication.png" id="13_hflr0"]
-[ext_resource type="Script" uid="uid://ddrm53ai7ssc7" path="res://scenes/exploration/board/player_lvl.gd" id="15_cydq1"]
+[ext_resource type="Script" path="res://scenes/exploration/board/player_lvl.gd" id="15_cydq1"]
 [ext_resource type="Script" uid="uid://cnp663hbiqlp6" path="res://scenes/exploration/board/commercialBuilding.gd" id="15_mians"]
 [ext_resource type="Script" uid="uid://co3usloo00wub" path="res://scenes/exploration/player/GameState.gd" id="16_burnk"]
-[ext_resource type="Texture2D" uid="uid://cb3n1agqkl81q" path="res://assets/sprites/tuto_speech.png" id="17_lb0w3"]
+[ext_resource type="Texture2D" uid="uid://booimevc1gimc" path="res://assets/sprites/tuto_speech.png" id="17_lb0w3"]
 [ext_resource type="Texture2D" uid="uid://cp4wibkybmky2" path="res://assets/sprites/player_animations/down_right/walking_downright4.png" id="17_qba66"]
 [ext_resource type="Script" uid="uid://dvrbbeab3smtt" path="res://scenes/exploration/board/Tuto.gd" id="17_yh65k"]
 [ext_resource type="Script" uid="uid://doxvy8ki16jsk" path="res://scenes/exploration/board/communicationBuilding.gd" id="18_3ir1f"]
@@ -594,20 +595,21 @@ gameState = ExtResource("16_burnk")
 tuto_txt = NodePath("tuto_speech/tuto_txt")
 
 [node name="home" type="TextureButton" parent="."]
-offset_left = 769.0908
-offset_top = 759.0909
-offset_right = 1111.0908
-offset_bottom = 1050.0908
+offset_left = 769.091
+offset_top = 759.091
+offset_right = 1111.09
+offset_bottom = 1050.09
 scale = Vector2(0.6, 0.6)
 texture_normal = SubResource("AtlasTexture_t28m3")
+script = ExtResource("5_mians")
 
 [node name="txt_box_home" type="NinePatchRect" parent="."]
 visible = false
 texture_filter = 1
-offset_left = 733.63635
-offset_top = 704.5454
-offset_right = 1010.00006
-offset_bottom = 918.18176
+offset_left = 733.636
+offset_top = 704.545
+offset_right = 1010.0
+offset_bottom = 918.182
 texture = ExtResource("19_mians")
 patch_margin_left = 3
 patch_margin_top = 3
@@ -635,28 +637,25 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 bbcode_enabled = true
-text = "[b]Pole commercial[/b]
-Niveau du pole: 2
-
-[i]Vous y trouverez  de grands scammeur tel que [b]Prof, [insérez lore + indice sur strat a adopter[/b]
+text = "vous pouvez finir votre journée ici
 "
 
 [node name="rh" type="TextureButton" parent="."]
-offset_left = 622.72723
-offset_top = 275.45453
-offset_right = 974.72723
-offset_bottom = 566.4545
-scale = Vector2(1.4825568, 1.4990257)
+offset_left = 622.727
+offset_top = 275.455
+offset_right = 974.727
+offset_bottom = 566.455
+scale = Vector2(1.48256, 1.49903)
 texture_normal = SubResource("AtlasTexture_vs5oo")
 script = ExtResource("6_yh65k")
 
 [node name="txt_box_rh" type="NinePatchRect" parent="."]
 visible = false
 texture_filter = 1
-offset_left = 615.4545
-offset_top = 281.81818
-offset_right = 1141.8181
-offset_bottom = 668.1818
+offset_left = 615.455
+offset_top = 281.818
+offset_right = 1141.82
+offset_bottom = 668.182
 texture = ExtResource("19_mians")
 patch_margin_left = 3
 patch_margin_top = 3
@@ -691,21 +690,21 @@ Niveau du pole: 4
 "
 
 [node name="finances" type="TextureButton" parent="."]
-offset_left = 1281.818
-offset_top = 27.272728
-offset_right = 1623.818
-offset_bottom = 318.27274
-scale = Vector2(0.89682806, 1.0170963)
+offset_left = 1281.82
+offset_top = 27.2727
+offset_right = 1623.82
+offset_bottom = 318.273
+scale = Vector2(0.896828, 1.0171)
 texture_normal = SubResource("AtlasTexture_1wkfm")
 script = ExtResource("9_qba66")
 
 [node name="txt_box_finance" type="NinePatchRect" parent="."]
 visible = false
 texture_filter = 1
-offset_left = 1272.7272
-offset_top = 34.545456
-offset_right = 1600.909
-offset_bottom = 316.36365
+offset_left = 1272.73
+offset_top = 34.5455
+offset_right = 1600.91
+offset_bottom = 316.364
 texture = ExtResource("19_mians")
 patch_margin_left = 3
 patch_margin_top = 3
@@ -740,21 +739,21 @@ Niveau du pole: 3
 "
 
 [node name="It" type="TextureButton" parent="."]
-offset_left = 1381.8182
+offset_left = 1381.82
 offset_top = 709.091
-offset_right = 2282.8184
-offset_bottom = 1536.0911
-scale = Vector2(0.19491038, 0.19651835)
+offset_right = 2282.82
+offset_bottom = 1536.09
+scale = Vector2(0.19491, 0.196518)
 texture_normal = SubResource("AtlasTexture_40kxt")
 script = ExtResource("12_yh65k")
 
 [node name="txt_box_it" type="NinePatchRect" parent="."]
 visible = false
 texture_filter = 1
-offset_left = 1328.1819
-offset_top = 680.90906
-offset_right = 1607.2727
-offset_bottom = 917.2727
+offset_left = 1328.18
+offset_top = 680.909
+offset_right = 1607.27
+offset_bottom = 917.273
 texture = ExtResource("19_mians")
 patch_margin_left = 3
 patch_margin_top = 3
@@ -788,21 +787,21 @@ Niveau du pole: 2
 [i]Vous y trouverez [b]W[/b] ou [b] Watman[/b] , l'un des deux responsables du pôle, bien qu'apparemment personne ne les aurait vu en même temps dans la même pièce [b][insérez lore + indice sur strat a adopter][/b]"
 
 [node name="commercial" type="TextureButton" parent="."]
-offset_left = 272.72726
-offset_top = 31.81818
-offset_right = 624.7273
-offset_bottom = 775.8182
-scale = Vector2(0.5093292, 0.40412062)
+offset_left = 272.727
+offset_top = 31.8182
+offset_right = 624.727
+offset_bottom = 775.818
+scale = Vector2(0.509329, 0.404121)
 texture_normal = SubResource("AtlasTexture_3sfn6")
 script = ExtResource("15_mians")
 
 [node name="txt_box_scam" type="NinePatchRect" parent="."]
 visible = false
 texture_filter = 1
-offset_left = 230.90909
-offset_top = 23.636353
-offset_right = 473.63635
-offset_bottom = 349.09088
+offset_left = 230.909
+offset_top = 23.6364
+offset_right = 473.636
+offset_bottom = 349.091
 texture = ExtResource("19_mians")
 patch_margin_left = 3
 patch_margin_top = 3
@@ -837,11 +836,11 @@ Niveau du pole: 2
 "
 
 [node name="communication" type="TextureButton" parent="."]
-offset_left = 260.90912
-offset_top = 706.3635
-offset_right = 916.7619
-offset_bottom = 1133.3635
-scale = Vector2(0.25227392, 0.27680343)
+offset_left = 260.909
+offset_top = 706.364
+offset_right = 916.762
+offset_bottom = 1133.36
+scale = Vector2(0.252274, 0.276803)
 size_flags_horizontal = 0
 texture_normal = SubResource("AtlasTexture_olxho")
 stretch_mode = 3
@@ -850,10 +849,10 @@ script = ExtResource("18_3ir1f")
 [node name="txt_box_com" type="NinePatchRect" parent="."]
 visible = false
 texture_filter = 1
-offset_left = 230.90909
-offset_top = 645.4545
-offset_right = 473.63635
-offset_bottom = 842.72723
+offset_left = 230.909
+offset_top = 645.455
+offset_right = 473.636
+offset_bottom = 842.727
 texture = ExtResource("19_mians")
 patch_margin_left = 3
 patch_margin_top = 3
@@ -888,10 +887,10 @@ Niveau du pole: 1
 "
 
 [node name="lvl_label" type="Label" parent="."]
-offset_left = 791.8182
-offset_top = 831.8182
-offset_right = 963.8182
-offset_bottom = 854.8182
+offset_left = 791.818
+offset_top = 831.818
+offset_right = 963.818
+offset_bottom = 854.818
 text = "Niveau de crédibilité : "
 label_settings = SubResource("LabelSettings_burnk")
 horizontal_alignment = 1
@@ -900,15 +899,15 @@ gameState = ExtResource("16_burnk")
 
 [node name="tuto_backgrounds" type="Panel" parent="." groups=["Tuto"]]
 visible = false
-offset_left = -59.09085
-offset_top = -41.818176
-offset_right = 1809.9999
-offset_bottom = 1031.8181
+offset_left = -59.0909
+offset_top = -41.8182
+offset_right = 1810.0
+offset_bottom = 1031.82
 
 [node name="tuto_sprite" type="Sprite2D" parent="." groups=["Tuto"]]
 visible = false
 texture_filter = 1
-position = Vector2(287.27267, 726.3636)
+position = Vector2(287.273, 726.364)
 scale = Vector2(21, 21)
 texture = ExtResource("17_qba66")
 
@@ -916,10 +915,10 @@ texture = ExtResource("17_qba66")
 visible = false
 texture_filter = 1
 custom_minimum_size = Vector2(1000, 500)
-offset_left = 447.27267
-offset_top = 141.81818
-offset_right = 1447.2727
-offset_bottom = 641.8182
+offset_left = 447.273
+offset_top = 141.818
+offset_right = 1447.27
+offset_bottom = 641.818
 texture = ExtResource("17_lb0w3")
 region_rect = Rect2(0, 0, 330, 340)
 patch_margin_left = 160
@@ -934,16 +933,16 @@ anchor_left = 0.084
 anchor_top = 0.126
 anchor_right = 0.927
 anchor_bottom = 0.842
-offset_left = -17.99997
-offset_top = -20.909088
+offset_left = -18.0
+offset_top = -20.9091
 offset_right = 20.0
-offset_bottom = 19.290863
+offset_bottom = 19.2909
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_colors/font_shadow_color = Color(0.69411767, 0.69411767, 0.69411767, 1)
-theme_override_constants/shadow_outline_size = 5
-theme_override_constants/shadow_offset_x = 0
+theme_override_colors/font_shadow_color = Color(0.694118, 0.694118, 0.694118, 1)
 theme_override_constants/shadow_offset_y = 0
+theme_override_constants/shadow_offset_x = 0
+theme_override_constants/shadow_outline_size = 5
 theme_override_font_sizes/normal_font_size = 48
 theme_override_styles/focus = SubResource("StyleBoxEmpty_lb0w3")
 bbcode_enabled = true
@@ -953,6 +952,9 @@ fit_content = true
 [node name="pause" parent="." instance=ExtResource("19_yh65k")]
 visible = false
 
+[connection signal="mouse_entered" from="home" to="home" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="home" to="home" method="_on_mouse_exited"]
+[connection signal="pressed" from="home" to="home" method="_on_pressed"]
 [connection signal="mouse_entered" from="rh" to="rh" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="rh" to="rh" method="_on_mouse_exited"]
 [connection signal="pressed" from="rh" to="rh" method="_on_pressed"]

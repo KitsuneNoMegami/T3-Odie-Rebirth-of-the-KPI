@@ -1,0 +1,6 @@
+~ start
+: Souhaitez vous redigez le rapport d'audit ?
+- Oui (met fin à la partie en cours)
+	do get_tree().change_scene_to_file("res://scenes/rapport_final/rapport_audit.tscn")
+- Non (continuer l'audit)
+=> END

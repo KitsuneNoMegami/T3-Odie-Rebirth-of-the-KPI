@@ -1,10 +1,9 @@
-[gd_scene load_steps=11 format=4 uid="uid://b14721102jrmy"]
+[gd_scene load_steps=10 format=4 uid="uid://boa48bkgxp2x4"]
 
 [ext_resource type="Texture2D" uid="uid://bifjlv4dykjpv" path="res://assets/map/BD001.png" id="1_cv06e"]
 [ext_resource type="Script" uid="uid://ckkruwmgpfohk" path="res://scenes/exploration/board/offices/finances_office.gd" id="2_bup5o"]
 [ext_resource type="PackedScene" uid="uid://bmegaasqhjghc" path="res://scenes/exploration/pnj/pnj.tscn" id="2_vf85f"]
 [ext_resource type="PackedScene" uid="uid://ce7gk84oa0efc" path="res://scenes/exploration/player/player.tscn" id="3_b6g77"]
-[ext_resource type="Script" uid="uid://dhnmloq2ihea4" path="res://scenes/exploration/pnj/banquier.gd" id="3_vf85f"]
 [ext_resource type="PackedScene" uid="uid://c1l537l6qsm3u" path="res://scenes/exploration/board/pause/pause_menu.tscn" id="5_2eagd"]
 [ext_resource type="PackedScene" uid="uid://h1db0cc8k0i3" path="res://scenes/exploration/board/offices/office_zone.tscn" id="6_kasll"]
 [ext_resource type="PackedScene" uid="uid://h3ng52t7vgb3" path="res://scenes/fight/fight.tscn" id="8_b6g77"]
@@ -754,23 +753,9 @@ script = ExtResource("2_bup5o")
 light_mask = 2
 visibility_layer = 2
 position = Vector2(501, 214)
-script = ExtResource("3_vf85f")
 
 [node name="player" parent="." instance=ExtResource("3_b6g77")]
 position = Vector2(491, 223)
-
-[node name="Inventory" parent="player"]
-_import_path = NodePath("")
-unique_name_in_owner = false
-process_mode = 0
-process_priority = 0
-process_physics_priority = 0
-process_thread_group = 0
-physics_interpolation_mode = 0
-auto_translate_mode = 0
-editor_description = ""
-visible = false
-script = null
 
 [node name="pause" parent="." instance=ExtResource("5_2eagd")]
 visible = false

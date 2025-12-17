@@ -46,3 +46,7 @@ func _input(event: InputEvent) -> void:
 			speech_part +=1
 
 	pass
+
+
+func _on_home_mouse_entered() -> void:
+	pass # Replace with function body.

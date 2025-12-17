@@ -33,6 +33,8 @@ func set_size(size):
 	
 func delete_pv(pv):
 	_pv-=pv
+func refill_pv():
+	_pv=_pv_max
 	
 func add_credibility(nb):
 	_levelCredibility+=nb
@@ -98,6 +100,8 @@ func get_description():
 	return _description
 func get_pv():
 	return _pv
+func get_pvmax():
+	return _pv_max
 func get_skill():
 	return _levelSkill
 func get_credibility():

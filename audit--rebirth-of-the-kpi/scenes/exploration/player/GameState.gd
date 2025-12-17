@@ -8,7 +8,7 @@
 ## - fight_scene : Référence à la scène de combat
 ## - _pole : Pôle actuellement en combat
 ## - _player : Instance du joueur de combat
-## - marketing_win, rh_win, etc. : État de victoire de chaque pôle
+## - commercial_win, rh_win, etc. : État de victoire de chaque pôle
 
 # Ce fichier sert a stocker des donnees du jeu h24
 # Permet aussi de les transmettre au dialogue
@@ -34,8 +34,8 @@ func watch_tuto():
 ## Instance du joueur de combat (chargée dynamiquement)
 @onready var _player = load("res://scenes/fight/scripts/creation_player.gd").new().get_player()
 
-## Indique si le pôle Marketing a été vaincu
-var marketing_win = null;
+## Indique si le pôle Commercial a été vaincu
+var commercial_win = null;
 ## Indique si le pôle RH a été vaincu
 var rh_win = null;
 ## Indique si le pôle Informatique a été vaincu
@@ -84,8 +84,8 @@ func get_win(pole):
 			return informatique_win
 		"rh":
 			return rh_win
-		"marketing":
-			return marketing_win
+		"commercial":
+			return commercial_win
 		"communication":
 			return communcation_win
 		"finance":
@@ -101,8 +101,8 @@ func change_state_pole(pole,state):
 		"rh":
 			rh_win=state
 			return
-		"marketing":
-			marketing_win=state
+		"commercial":
+			commercial_win=state
 			return
 		"communication":
 			communcation_win=state

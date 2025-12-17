@@ -13,7 +13,7 @@
 [ext_resource type="Script" uid="uid://ddrm53ai7ssc7" path="res://scenes/exploration/board/player_lvl.gd" id="15_cydq1"]
 [ext_resource type="Script" uid="uid://cnp663hbiqlp6" path="res://scenes/exploration/board/commercialBuilding.gd" id="15_mians"]
 [ext_resource type="Script" uid="uid://co3usloo00wub" path="res://scenes/exploration/player/GameState.gd" id="16_burnk"]
-[ext_resource type="Texture2D" uid="uid://cb3n1agqkl81q" path="res://assets/sprites/tuto_speech.png" id="17_lb0w3"]
+[ext_resource type="Texture2D" uid="uid://2v3kqovvstvn" path="res://assets/sprites/tuto_speech.png" id="17_lb0w3"]
 [ext_resource type="Texture2D" uid="uid://cp4wibkybmky2" path="res://assets/sprites/player_animations/down_right/walking_downright4.png" id="17_qba66"]
 [ext_resource type="Script" uid="uid://dvrbbeab3smtt" path="res://scenes/exploration/board/Tuto.gd" id="17_yh65k"]
 [ext_resource type="Script" uid="uid://doxvy8ki16jsk" path="res://scenes/exploration/board/communicationBuilding.gd" id="18_3ir1f"]

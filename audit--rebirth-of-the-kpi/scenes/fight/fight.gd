@@ -90,6 +90,7 @@ func fight_unfight(path,pole, player):
 	_pause = !_pause
 	if _pause:
 		_player = player
+		_player.refill_pv()
 		# Prépare les ennemis
 		fighters_script = load(path)
 		var _fighters_object = fighters_script.new()
@@ -175,14 +176,18 @@ func attack(target, _attack):
 	# Récupération nom/dégâts
 	var aname := _attack_name(_attack)
 	var dmg := _attack_damage(_attack)
+	_log.addLog(aname+" ("+str(dmg)+" dégats)\n")
+	_log.addLog(target.get_fname()+"("+str(target.get_pv())+"/"+str(target.get_pvmax())+")->(")
 	# Appliquer la défense avant les dégâts
 	var reduced = target.del_defense(dmg)
 	if reduced <= 0:
 		await message.show_message_blocking(target.get_fname() + " se défend et ne prend aucun dégat")
+		_log.addLog(str(target.get_pv())+"/"+str(target.get_pvmax())+")")
 		return false
 	# Séquence BLOQUANTE d'attaque
 	await message.show_message_blocking(aname + " est lancé sur " + target.get_fname() + " et lui inflige " + str(reduced) + " dégats")
 	target.delete_pv(reduced)
+	_log.addLog(str(target.get_pv())+"/"+str(target.get_pvmax())+")\n")
 	if target.get_pv() <= 0:
 		await message.show_message_blocking(target.get_fname() + " est mort")
 		return true
@@ -195,6 +200,7 @@ func attack(target, _attack):
 func defenses(target, _defense):
 	var dname := _attack_name(_defense)
 	var pts_defense := _attack_damage(_defense)
+	_log.addLog(dname+"("+str(pts_defense)+")->"+target.get_fname()+"("+str(target.get_pv())+"+"+str(pts_defense)+")\n")
 	# Message BLOQUANT de défense
 	await message.show_message_blocking(target.get_fname() + " se protège avec " + dname + " de " + str(pts_defense) + " dégats")
 	target.add_pts_defense(pts_defense)
@@ -220,6 +226,7 @@ func enemy_auto_reply() -> void:
 		return
 	var enemy = _fighters[idx]
 	await message.show_message_blocking(enemy.get_fname() + " lance une attaque")
+	_log.addLog(enemy.get_fname()+"("+str(enemy.get_pv())+"/"+str(enemy.get_pvmax())+")"+"->")
 	var enemy_attack = null
 	if enemy.has_method("get_attacks"):
 		var e_attacks = enemy.get_attacks()
@@ -252,31 +259,17 @@ func do_action(fname, action_menu, action_use = null):
 		"Attaque":
 			if _player == null:
 				return
-			if fname == _player.get_fname():
-				# Tour d'un ennemi
-				var idx := _random_alive_fighter_index()
-				if idx == -1:
-					return
-				var enemy = _fighters[idx]
-				await message.show_message_blocking(enemy.get_fname() + " lance une attaque")
-				var enemy_attack = action_use
-				if enemy_attack == null and enemy.has_method("get_attacks"):
-					var e_attacks = enemy.get_attacks()
-					if e_attacks.size() > 0:
-						enemy_attack = e_attacks[randi() % e_attacks.size()]
-				#await attack(_player, enemy_attack, sender)
-				await attack(_player, enemy_attack)
-				_log.addLog(enemy.get_fname()+"->"+enemy_attack.get_aname()+"("+str(enemy_attack.get_damage())+")"+"->"+fname+"("+str(_player.get_pv()+enemy_attack.get_damage())+"->"+str(_player.get_pv())+")")
-				return
 			# Attaque du joueur vers l'ennemi
 			await message.show_message_blocking(_player.get_fname() + " lance une attaque")
 			var target = _find_fighter(fname)
+			_log.addLog(_player.get_fname()+"("+str(_player.get_pv())+"/"+str(_player.get_pvmax())+")"+"->")
 			if await attack(target, action_use) and target.get_fname()!="enemy":
 				if _player.add_credibility(20):
 					await message.show_message_blocking("Vous avez débloqué une nouvelle compétence de défense grâce à votre crédibilité")
 				if _player.add_skill(25):
 					await message.show_message_blocking("Vous avez débloqué une nouvelle compétence d'attaque grâce à votre niveau de compétence")
 				_fighters.erase(target)
+			#qui attaqui qui, les degats, les pv
 		"Défense":
 			if _player == null:
 				return
@@ -284,6 +277,7 @@ func do_action(fname, action_menu, action_use = null):
 			await defenses(_player, action_use)
 		_:
 			pass
+	_log.addLog("\n")
 
 ## Réinitialise tous les points de défense (fin de tour)
 func del_all_defense():

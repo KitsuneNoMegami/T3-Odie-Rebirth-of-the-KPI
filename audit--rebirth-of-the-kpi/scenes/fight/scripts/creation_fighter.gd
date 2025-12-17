@@ -24,7 +24,9 @@ func create_fighter(pv: int, fname: String, attacks: Array, defenses: Array = []
 	return fighter
 
 func generate_buff(pole_skill,pole_credibility,player_skill,player_credibility):
-	return 1+((pole_skill-player_skill)+(pole_credibility-player_credibility))/100
+	var buff=1+(((pole_skill-player_skill)+(pole_credibility-player_credibility))/100)
+	buff=clamp(buff,1,100)
+	return buff
 
 func get_fighters(pole,lvl_skill,lvl_credibility):
 	var attacks=[Attack.new("Analyse comportementale",),Attack.new("Gestion relationnelle")]

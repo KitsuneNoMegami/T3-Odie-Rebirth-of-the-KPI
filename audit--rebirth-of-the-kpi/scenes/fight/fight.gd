@@ -75,10 +75,12 @@ func end_fight(win):
 	if win!=null:
 		if(win):
 			GameState.change_state_pole(GameState.get_pole(),true)
+			print("gagné")
 		else:
 			GameState.change_state_pole(GameState.get_pole(),false)
-			_player.add_credibility(-20)
-			_player.add_skill(-20)
+			_player.add_credibility(-1)
+			_player.add_skill(-1)
+			print("perdu")
 	fight_unfight(null, null,null)
 	return
 
@@ -158,7 +160,6 @@ func fight_unfight(path,pole, player):
 				# Restaurer sa transform (taille/position/rotation)
 				_player.global_transform = _player_original_xform
 		# -------------------------------------------------
-
 		hide()
 		cursor.hide()
 		get_tree().paused = false

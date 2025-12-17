@@ -14,8 +14,9 @@ export_presets.cfg
 data_*/
 mono_crash.*.json
 
-#
+# editeur de con
 .idea
+.vscode
 
 **.import
 .directory

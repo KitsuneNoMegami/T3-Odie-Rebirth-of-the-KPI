@@ -6,11 +6,19 @@ var pause= false
 var fight_scene
 var _pole
 @onready var _player =load("res://scenes/fight/scripts/creation_player.gd").new().get_player()
+var tuto_watched=false;
 var marketing_win=false;
 var rh_win=false;
 var informatique_win=false;
 var communcation_win=false;
 var finance_win=false;
+
+func get_tuto_state():
+	return tuto_watched
+	
+func watch_tuto():
+	tuto_watched = true
+	pass
 	
 func set_pause(value: bool):
 	pause = value

@@ -5,7 +5,8 @@ extends CanvasLayer
 @onready var finance = $ScrollContainer/VBoxContainer/finance
 @onready var info = $ScrollContainer/VBoxContainer/informatique
 @onready var rh = $ScrollContainer/VBoxContainer/rh
-
+@onready var note=$ScrollContainer/VBoxContainer/note
+var nb=0
 func _ready():
 	if (GameState.get_win("communication")):
 		comm.text = "COMMUNICATION\n" + "Le Pôle Communication assure ses missions de manière satisfaisante. Les flux d’information internes et externes sont structurés et cohérents. On note toutefois une tendance récurrente à l’humour verbal, avec des réponses réflexes “feur” à certains mots se terminant par “quoi”, ce qui n’impacte en rien la qualité des échanges.
@@ -234,3 +235,18 @@ Note : acheter du café pour comprendre les formulaires.
 Ne pas oublier de sourire en relisant ce rapport.
 
 Niveau de risque : rapport peu utile.\n\n\n"
+	
+	match (GameState.get_player().get_credibility()):
+		150:
+			note.text="NOTE DE L'AUDIT  :  S"
+		149:
+			note.text="NOTE DE L'AUDIT  :  A"
+		100:
+			note.text="NOTE DE L'AUDIT  :  B"
+		50:
+			note.text="NOTE DE L'AUDIT  :  C"
+		0:
+			note.text="NOTE DE L'AUDIT  :  D"
+		-50:
+			note.text="NOTE DE L'AUDIT  :  D"
+	note.text=note.text +"\n\n"

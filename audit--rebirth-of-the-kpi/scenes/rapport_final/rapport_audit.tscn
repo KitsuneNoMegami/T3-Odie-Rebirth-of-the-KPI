@@ -32,6 +32,10 @@ layout_mode = 2
 [node name="rh" type="Label" parent="ScrollContainer/VBoxContainer"]
 layout_mode = 2
 
+[node name="note" type="Label" parent="ScrollContainer/VBoxContainer"]
+layout_mode = 2
+horizontal_alignment = 1
+
 [node name="rejouer" type="Button" parent="ScrollContainer/VBoxContainer"]
 layout_mode = 2
 text = "rejouer une nouvelle partie ?"

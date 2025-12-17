@@ -22,6 +22,7 @@ var _description
 ## aname:String - Nom de la compétence à créer
 func _init(aname = null,buff=1):
 	_name = aname
+	_damage=0
 	match aname:
 		#Compétence d'attaques de test
 		"Turbo puissance":
@@ -173,20 +174,16 @@ func _init(aname = null,buff=1):
 			_damage=2
 			_description="Justification d’une pratique par son ancienneté plutôt que par une règle formelle."
 
-		"Interprétation souple du référentiel":
-			_damage=2
-			_description="Application subjective ou adaptée des exigences normatives."
-
 		"Absence de preuve disponible":
 			_damage=4
 			_description="Impossibilité de produire un élément attestant de la réalisation d’un contrôle."
 
 		"Contournement du processus":
-			_damage=4
+			_damage=6
 			_description="Réalisation d’une opération en dehors du circuit prévu."
 
 		"Validation a posteriori":
-			_damage=6
+			_damage=4
 			_description="Approbation réalisée après l’exécution effective de l’opération."
 
 		"Contrôle compensatoire informel":
@@ -214,7 +211,7 @@ func _init(aname = null,buff=1):
 			_description="Documentation ou paramétrage non aligné avec la pratique actuelle."
 
 		"Délégation non encadrée":
-			_damage=40
+			_damage=30
 			_description="Transfert de responsabilités sans cadre formel défini."
 
 		"Contrôle non systématique":
@@ -250,9 +247,9 @@ func _init(aname = null,buff=1):
 			_description="Modification de données sans justification documentée."
 
 		"Risque accepté implicitement":
-			_damage=30
+			_damage=40
 			_description="Exposition connue mais non formalisée ni validée."
-
+	x
 		"Plan d’action non priorisé":
 			_damage=30
 			_description="Actions identifiées sans échéance ni responsable clair."

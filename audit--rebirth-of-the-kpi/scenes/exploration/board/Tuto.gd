@@ -5,9 +5,9 @@ extends TileMapLayer
 var txt1 = "Bonjour, c'est moi Z le malicieux, le directeur général de la Z corp, c'est moi qui est fait appel a vous afin de réaliser l'audit interne de l'entreprise."
 var txt2 = "Pour ce faire, vous allez devoir vous rendre dans les différents pôles de l'entreprise (en cliquant dessus)."
 var txt3 = "Puis vous devrez inspecter les pôles en interrogeant le chef de département correspondant. Attention cependant il pourrait vous causez un peu de tort."
-var txt4 = "Pour vous aidez pendant votre audit veuillez utilisez les flèches directionnelles du clavier pour vous déplacez et appuyez sur entrée ou le clique de la souris pour démarrer un dialogue ou validez une action.
-Durant les combats ; si part erreur vous réalisez une action involontaire il vous sera possible de retourner sur le menu précedent à tout moment avec la touche delete"
-var txt5= "Sur ce je vous souhaite bonne chance je retourne vaquer à mes occupations"
+var txt4 = "Pour vous aidez pendant votre audit veuillez utilisez les flèches directionnelles du clavier pour vous déplacez, appuyez sur entrée ou la barre espace pour démarrer un dialogue ou validez une action durant les combats."
+var txt5 = "Si part erreur vous réalisez une action involontaire il vous sera possible de retourner sur le menu précedent à tout moment avec la touche delete"
+var txt6 = "Sur ce je vous souhaite bonne chance je retourne vaquer à mes occupations"
 var speech_part= 0
 @export var tuto_txt :RichTextLabel
 
@@ -17,7 +17,7 @@ func _ready():
 	else:
 		get_tree().call_group("Tuto", "hide")
 	pass
-	
+
 func _process(_delta: float) -> void:
 	if(speech_part==0):
 		tuto_txt.append_text(txt1.left(1))
@@ -28,8 +28,17 @@ func _process(_delta: float) -> void:
 	elif(speech_part==2):
 		tuto_txt.append_text(txt3.left(1))
 		txt3 = txt3.erase(0,1)
+	elif(speech_part==3):
+		tuto_txt.append_text(txt4.left(1))
+		txt4 = txt4.erase(0,1)
+	elif(speech_part==4):
+		tuto_txt.append_text(txt5.left(1))
+		txt5 = txt5.erase(0,1)
+	elif(speech_part==5):
+		tuto_txt.append_text(txt6.left(1))
+		txt6 = txt6.erase(0,1)
 	pass
-	
+
 func _input(event: InputEvent) -> void:
 	if Input.is_action_pressed("pause"):
 		pause.pause_unpause()
@@ -43,7 +52,16 @@ func _input(event: InputEvent) -> void:
 		elif !txt3.is_empty()&&speech_part==2:
 			tuto_txt.append_text(txt3)
 			txt3 = ""
-		elif txt3.is_empty():
+		elif !txt4.is_empty()&&speech_part==3:
+			tuto_txt.append_text(txt4)
+			txt4 = ""
+		elif !txt5.is_empty()&&speech_part==4:
+			tuto_txt.append_text(txt5)
+			txt5 = ""
+		elif !txt6.is_empty()&&speech_part==5:
+			tuto_txt.append_text(txt6)
+			txt6 = ""
+		elif txt6.is_empty():
 			get_tree().call_group("Tuto", "hide")
 			GameState.watch_tuto()
 		else:

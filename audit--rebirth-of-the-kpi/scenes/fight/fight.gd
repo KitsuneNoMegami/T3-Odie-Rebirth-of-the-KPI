@@ -96,6 +96,7 @@ func end_fight(win):
 ## pole:String - Pôle du combat (détermine les ennemis)
 ## player:Fighter - Instance du joueur
 func fight_unfight(path,pole, player):
+	await get_tree().create_timer(0.1).timeout
 	_pause = !_pause
 	if _pause:
 		_player = player

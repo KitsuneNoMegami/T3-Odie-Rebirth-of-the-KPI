@@ -308,7 +308,6 @@ func _menu_input(slot) -> void:
 				# Menu principal
 				# Fuite sur le bouton 3 désormais
 				if slot == 3:
-					
 					await get_tree().create_timer(0.1).timeout
 					fight.end_fight(null)
 				if slot == 4:

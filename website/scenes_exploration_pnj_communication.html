@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Communication_pnj - T3 Odie Documentation</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #f5f5f5;
+        }
+        
+        .container {
+            display: flex;
+            min-height: 100vh;
+        }
+        
+        .sidebar {
+            width: 280px;
+            background: #2c3e50;
+            color: #ecf0f1;
+            padding: 20px;
+            position: fixed;
+            height: 100vh;
+            overflow-y: auto;
+        }
+        
+        .sidebar h1 {
+            font-size: 1.4em;
+            margin-bottom: 20px;
+            color: #3498db;
+        }
+        
+        .sidebar a {
+            color: #ecf0f1;
+            text-decoration: none;
+            display: block;
+            padding: 5px 0;
+            transition: color 0.3s;
+        }
+        
+        .sidebar a:hover {
+            color: #3498db;
+        }
+        
+        .content {
+            flex: 1;
+            margin-left: 280px;
+            padding: 40px;
+            background: white;
+            max-width: 1200px;
+        }
+        
+        .content h1 {
+            color: #2c3e50;
+            margin-bottom: 20px;
+            border-bottom: 3px solid #3498db;
+            padding-bottom: 10px;
+        }
+        
+        .content h2 {
+            color: #34495e;
+            margin-top: 30px;
+            margin-bottom: 15px;
+            border-bottom: 1px solid #ecf0f1;
+            padding-bottom: 5px;
+        }
+        
+        .content h3 {
+            color: #2c3e50;
+            margin-top: 20px;
+            margin-bottom: 10px;
+        }
+        
+        .content code {
+            background: #f8f9fa;
+            padding: 2px 6px;
+            border-radius: 3px;
+            font-family: 'Courier New', monospace;
+            font-size: 0.9em;
+            color: #e74c3c;
+        }
+        
+        .content pre {
+            background: #2c3e50;
+            color: #ecf0f1;
+            padding: 15px;
+            border-radius: 5px;
+            overflow-x: auto;
+            margin: 15px 0;
+        }
+        
+        .content pre code {
+            background: none;
+            color: #ecf0f1;
+            padding: 0;
+        }
+        
+        .content ul {
+            margin: 15px 0 15px 30px;
+        }
+        
+        .content li {
+            margin: 5px 0;
+        }
+        
+        .content a {
+            color: #3498db;
+            text-decoration: none;
+        }
+        
+        .content a:hover {
+            text-decoration: underline;
+        }
+        
+        .nav-home {
+            background: #3498db;
+            color: white;
+            padding: 10px 15px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+            display: inline-block;
+        }
+        
+        .nav-home:hover {
+            background: #2980b9;
+        }
+        
+        @media (max-width: 768px) {
+            .sidebar {
+                display: none;
+            }
+            
+            .content {
+                margin-left: 0;
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <nav class="sidebar">
+            <h1>T3 Odie Docs</h1>
+            <a href="index.html" class="nav-home">📖 Home</a>
+            <hr style="border: 1px solid #34495e; margin: 15px 0;">
+            <div style="margin-bottom: 10px;"><strong>📄 Main</strong></div>
+<a href="index.html">→ Documentation Index</a>
+<br><br>
+<div style="margin: 15px 0 5px 0;"><strong>📁 root</strong></div>
+<a href="dialogue_dialogue.html" style="font-size: 0.9em; padding-left: 10px;">→ dialogue_dialogue</a>
+<a href="panel.html" style="font-size: 0.9em; padding-left: 10px;">→ panel</a>
+<div style="margin: 15px 0 5px 0;"><strong>📁 scenes</strong></div>
+<a href="scenes_exploration_board_HomeBuilding.html" style="font-size: 0.9em; padding-left: 10px;">→ exploration_board_HomeBuilding</a>
+<a href="scenes_exploration_board_Tuto.html" style="font-size: 0.9em; padding-left: 10px;">→ exploration_board_Tuto</a>
+<a href="scenes_exploration_board_commercialBuilding.html" style="font-size: 0.9em; padding-left: 10px;">→ exploration_board_commercialBuilding</a>
+<a href="scenes_exploration_board_communicationBuilding.html" style="font-size: 0.9em; padding-left: 10px;">→ exploration_board_communicationBuilding</a>
+<a href="scenes_exploration_board_financesBuilding.html" style="font-size: 0.9em; padding-left: 10px;">→ exploration_board_financesBuilding</a>
+<a href="scenes_exploration_board_itBuilding.html" style="font-size: 0.9em; padding-left: 10px;">→ exploration_board_itBuilding</a>
+<a href="scenes_exploration_board_offices_comm_office.html" style="font-size: 0.9em; padding-left: 10px;">→ exploration_board_offices_comm_office</a>
+<a href="scenes_exploration_board_offices_commercial_office.html" style="font-size: 0.9em; padding-left: 10px;">→ exploration_board_offices_commercial_office</a>
+<a href="scenes_exploration_board_offices_finances_office.html" style="font-size: 0.9em; padding-left: 10px;">→ exploration_board_offices_finances_office</a>
+<a href="scenes_exploration_board_offices_it_office.html" style="font-size: 0.9em; padding-left: 10px;">→ exploration_board_offices_it_office</a>
+<a href="scenes_exploration_board_offices_office_zone.html" style="font-size: 0.9em; padding-left: 10px;">→ exploration_board_offices_office_zone</a>
+<a href="scenes_exploration_board_offices_rh_office.html" style="font-size: 0.9em; padding-left: 10px;">→ exploration_board_offices_rh_office</a>
+<a href="scenes_exploration_board_pause_pause_menu.html" style="font-size: 0.9em; padding-left: 10px;">→ exploration_board_pause_pause_menu</a>
+<a href="scenes_exploration_board_pause_sound_bar.html" style="font-size: 0.9em; padding-left: 10px;">→ exploration_board_pause_sound_bar</a>
+<a href="scenes_exploration_board_player_lvl.html" style="font-size: 0.9em; padding-left: 10px;">→ exploration_board_player_lvl</a>
+<a href="scenes_exploration_board_rhBuilding.html" style="font-size: 0.9em; padding-left: 10px;">→ exploration_board_rhBuilding</a>
+<a href="scenes_exploration_board_todo.html" style="font-size: 0.9em; padding-left: 10px;">→ exploration_board_todo</a>
+<a href="scenes_exploration_player_GameState.html" style="font-size: 0.9em; padding-left: 10px;">→ exploration_player_GameState</a>
+<a href="scenes_exploration_player_player.html" style="font-size: 0.9em; padding-left: 10px;">→ exploration_player_player</a>
+<a href="scenes_exploration_pnj_commercial.html" style="font-size: 0.9em; padding-left: 10px;">→ exploration_pnj_commercial</a>
+<a href="scenes_exploration_pnj_communication.html" style="font-size: 0.9em; padding-left: 10px;">→ exploration_pnj_communication</a>
+<a href="scenes_exploration_pnj_finances.html" style="font-size: 0.9em; padding-left: 10px;">→ exploration_pnj_finances</a>
+<a href="scenes_exploration_pnj_it.html" style="font-size: 0.9em; padding-left: 10px;">→ exploration_pnj_it</a>
+<a href="scenes_exploration_pnj_pnj.html" style="font-size: 0.9em; padding-left: 10px;">→ exploration_pnj_pnj</a>
+<a href="scenes_fight_fight.html" style="font-size: 0.9em; padding-left: 10px;">→ fight_fight</a>
+<a href="scenes_fight_log.html" style="font-size: 0.9em; padding-left: 10px;">→ fight_log</a>
+<a href="scenes_fight_message_panel.html" style="font-size: 0.9em; padding-left: 10px;">→ fight_message_panel</a>
+<a href="scenes_fight_scripts_Attack.html" style="font-size: 0.9em; padding-left: 10px;">→ fight_scripts_Attack</a>
+<a href="scenes_fight_scripts_audio_stream_player.html" style="font-size: 0.9em; padding-left: 10px;">→ fight_scripts_audio_stream_player</a>
+<a href="scenes_fight_scripts_creation_fighter.html" style="font-size: 0.9em; padding-left: 10px;">→ fight_scripts_creation_fighter</a>
+<a href="scenes_fight_scripts_creation_player.html" style="font-size: 0.9em; padding-left: 10px;">→ fight_scripts_creation_player</a>
+<a href="scenes_fight_scripts_cursor.html" style="font-size: 0.9em; padding-left: 10px;">→ fight_scripts_cursor</a>
+<a href="scenes_fight_scripts_ennemies_scripts_Fighter.html" style="font-size: 0.9em; padding-left: 10px;">→ fight_scripts_ennemies_scripts_Fighter</a>
+<a href="scenes_menu_exit.html" style="font-size: 0.9em; padding-left: 10px;">→ menu_exit</a>
+<a href="scenes_menu_setting.html" style="font-size: 0.9em; padding-left: 10px;">→ menu_setting</a>
+<a href="scenes_menu_start.html" style="font-size: 0.9em; padding-left: 10px;">→ menu_start</a>
+<a href="scenes_menu_text.html" style="font-size: 0.9em; padding-left: 10px;">→ menu_text</a>
+<a href="scenes_rapport_final_quitter.html" style="font-size: 0.9em; padding-left: 10px;">→ rapport_final_quitter</a>
+<a href="scenes_rapport_final_rapport_audit.html" style="font-size: 0.9em; padding-left: 10px;">→ rapport_final_rapport_audit</a>
+<a href="scenes_rapport_final_rejouer.html" style="font-size: 0.9em; padding-left: 10px;">→ rapport_final_rejouer</a>
+        </nav>
+        <main class="content">
+            <h1>Communication_pnj</h1>
+<p><strong>Path:</strong> <code>audit--rebirth-of-the-kpi/scenes/exploration/pnj/communication.gd</code></p>
+<p><strong>Extends:</strong> <code>StaticBody2D</code></p>
+<h2>Functions</h2>
+<h3>_ready()</h3>
+<p>Initialisation du PNJ Banquier (callback Godot)</p>
+<h3>_process(_delta: float)</h3>
+<p>Mise à jour du PNJ (callback Godot)
+delta:float - Temps écoulé depuis la dernière frame en secondes</p>
+        </main>
+    </div>
+</body>
+</html>

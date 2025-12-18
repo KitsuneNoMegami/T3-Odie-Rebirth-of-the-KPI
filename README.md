@@ -65,6 +65,30 @@ Permettre à des apprenants de comprendre et pratiquer, de façon ludique, les �
 - Moteur : Godot Engine.
 - Langage principal : GDScript
 
+## Documentation
+
+Le projet dispose d'une documentation complète générée automatiquement à partir des commentaires du code source :
+
+- **📖 [Documentation en ligne](./website/index.html)** - Site web HTML avec navigation facile
+- **📄 [Documentation Markdown](./docs/index.md)** - Version markdown de la documentation
+- **📁 [Structure du projet](./DIRECTORY_STRUCTURE.md)** - Vue d'ensemble de l'arborescence
+- **📚 [Guide de génération](./DOCUMENTATION.md)** - Instructions pour régénérer la documentation
+
+### Générer la documentation
+
+Pour régénérer toute la documentation :
+
+```bash
+python3 generate_all.py
+```
+
+Cela créera :
+- `docs/` - Documentation markdown de tous les scripts GDScript
+- `website/` - Site web HTML statique consultable
+- `DIRECTORY_STRUCTURE.md` - Structure complète du projet
+
+Voir [DOCUMENTATION.md](./DOCUMENTATION.md) pour plus de détails.
+
 ## Crédits
 
    Développement

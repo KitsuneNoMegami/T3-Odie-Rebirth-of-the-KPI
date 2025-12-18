@@ -179,7 +179,10 @@ func attack(target, _attack):
 	var aname = _attack_name(_attack)
 	var dmg = _attack_damage(_attack)
 	_log.addLog(aname+" ("+str(dmg)+" dégats)\n")
-	_log.addLog(target.get_fname()+"("+str(target.get_pv())+"/"+str(target.get_pvmax())+")->(")
+	if target.get_pts_defenses()>0:
+		_log.addLog(target.get_fname()+"("+str(target.get_pv())+"/"+str(target.get_pvmax())+"+"+str(target.get_pts_defenses())+")->(")
+	else:
+		_log.addLog(target.get_fname()+"("+str(target.get_pv())+"/"+str(target.get_pvmax())+")->(")
 	# Appliquer la défense avant les dégâts
 	var reduced=0
 	reduced = target.del_defense(dmg)
@@ -192,7 +195,10 @@ func attack(target, _attack):
 		await message.show_message_blocking(aname + " est lancé sur " + target.get_fname() + " et lui inflige " + str(reduced) + " dégats")
 	await message.show_message_blocking(aname + " est lancé sur " + target.get_fname() + " et lui inflige " + str(reduced) + " dégats")
 	target.delete_pv(reduced)
-	_log.addLog(str(target.get_pv())+"/"+str(target.get_pvmax())+")\n")
+	if target.get_pts_defenses()>0:
+		_log.addLog(str(target.get_pv())+"/"+str(target.get_pvmax())+"+"+str(target.get_pts_defenses())+")\n")
+	else:
+		_log.addLog(str(target.get_pv())+"/"+str(target.get_pvmax())+")\n")
 	if target.get_pv() <= 0:
 		await message.show_message_blocking(target.get_fname() + " est mort")
 		return true

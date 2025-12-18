@@ -114,6 +114,8 @@ func get_fname()->String:
 	return _name
 func get_defenses():
 	return _defenses
+func get_pts_defenses():
+	return _pts_defense
 func get_attacks():
 	return _attacks
 func get_description():

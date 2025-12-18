@@ -186,6 +186,8 @@ func attack(target, _attack):
 		_log.addLog(str(target.get_pv())+"/"+str(target.get_pvmax())+")")
 		return false
 	# Séquence BLOQUANTE d'attaque
+	if target==_player.get_fname():
+		await message.show_message_blocking(aname + " est lancé sur " + target.get_fname() + " et lui inflige " + str(reduced) + " dégats")
 	await message.show_message_blocking(aname + " est lancé sur " + target.get_fname() + " et lui inflige " + str(reduced) + " dégats")
 	target.delete_pv(reduced)
 	_log.addLog(str(target.get_pv())+"/"+str(target.get_pvmax())+")\n")

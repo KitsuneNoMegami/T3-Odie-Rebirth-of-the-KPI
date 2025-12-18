@@ -42,19 +42,19 @@ func _init(aname = null,buff=1):
 			_description="Collecte d’informations par échanges structurés avec les responsables concernés."
 
 		"Cartographie des processus":
-			_damage=10
+			_damage=15
 			_description="Identification et représentation des flux opérationnels et décisionnels."
 
 		"Analyse de conformité réglementaire":
-			_damage=10
+			_damage=15
 			_description="Vérification de l’alignement des pratiques avec les exigences légales et normatives."
 
 		"Évaluation du contrôle interne":
-			_damage=15
+			_damage=10
 			_description="Appréciation de la conception et de l’efficacité des contrôles en place."
 
 		"Identification des risques clés":
-			_damage=15
+			_damage=10
 			_description="Recensement des risques susceptibles d’affecter l’atteinte des objectifs."
 
 		"Matrice des risques":
@@ -62,7 +62,7 @@ func _init(aname = null,buff=1):
 			_description="Classement des risques selon leur probabilité et leur impact."
 
 		"Test de conception des contrôles":
-			_damage=15
+			_damage=20
 			_description="Vérification que les contrôles prévus répondent aux risques identifiés."
 
 		"Test d’efficacité opérationnelle":
@@ -74,7 +74,7 @@ func _init(aname = null,buff=1):
 			_description="Sélection d’un ensemble représentatif d’opérations à analyser."
 
 		"Revue des justificatifs":
-			_damage=20
+			_damage=15
 			_description="Examen des preuves documentaires associées aux opérations testées."
 
 		"Analyse des écarts":
@@ -96,62 +96,6 @@ func _init(aname = null,buff=1):
 		"Analyse des contrôles automatisés":
 			_damage=28
 			_description="Évaluation des contrôles intégrés aux outils informatiques."
-
-		"Revue des contrôles manuels":
-			_damage=0
-			_description="Analyse des contrôles reposant sur des interventions humaines."
-
-		"Analyse des incidents déclarés":
-			_damage=0
-			_description="Étude des anomalies et dysfonctionnements remontés."
-
-		"Revue des indicateurs de performance":
-			_damage=0
-			_description="Analyse des KPI utilisés pour piloter l’activité."
-
-		"Évaluation de la gouvernance":
-			_damage=0
-			_description="Analyse des rôles, responsabilités et circuits de décision."
-
-		"Revue des comités et instances":
-			_damage=0
-			_description="Analyse du fonctionnement des organes de pilotage et de contrôle."
-
-		"Analyse des plans d’action existants":
-			_damage=0
-			_description="Vérification du suivi et de l’avancement des actions correctrices."
-
-		"Constat d’audit":
-			_damage=0
-			_description="Formalisation d’un écart factuel et objectivé."
-
-		"Qualification du niveau de risque":
-			_damage=0
-			_description="Appréciation de la criticité associée à chaque constat."
-
-		"Formulation de recommandations":
-			_damage=0
-			_description="Proposition de mesures d’amélioration adaptées aux constats."
-
-		"Validation contradictoire":
-			_damage=0
-			_description="Échange avec l’audité pour confirmer les faits et leur compréhension."
-
-		"Rédaction du rapport d’audit":
-			_damage=0
-			_description="Synthèse structurée des travaux, constats et recommandations."
-
-		"Restitution orale des conclusions":
-			_damage=0
-			_description="Présentation des résultats aux instances concernées."
-
-		"Suivi des recommandations":
-			_damage=0
-			_description="Vérification de la mise en œuvre effective des actions décidées."
-
-		"Clôture de mission d’audit":
-			_damage=0
-			_description="Finalisation formelle de la mission après validation des livrables."
 			
 		#Compétence d'attaques ennemies
 		"Production tardive des documents":
@@ -249,11 +193,15 @@ func _init(aname = null,buff=1):
 		"Risque accepté implicitement":
 			_damage=40
 			_description="Exposition connue mais non formalisée ni validée."
-			
+
 		"Plan d’action non priorisé":
 			_damage=30
 			_description="Actions identifiées sans échéance ni responsable clair."
 		
+		"Validation contradictoire":
+			_damage=0
+			_description="Échange avec l’audité pour confirmer les faits et leur compréhension."
+
 		#Compétence de défense
 		"Reformulation protectrice":
 			_damage=17

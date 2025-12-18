@@ -1190,5 +1190,5 @@ scale = Vector2(0.208364, -0.588774)
 zoom = Vector2(1.2, 1.2)
 limit_left = 100
 limit_top = 0
-limit_right = 1600
+limit_right = 500
 limit_bottom = 800

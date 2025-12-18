@@ -2,8 +2,8 @@
 
 [ext_resource type="Texture2D" uid="uid://bo4bcdbhblcbh" path="res://assets/map/tilemap.png" id="1_lrwju"]
 [ext_resource type="Texture2D" uid="uid://kl5eyss4skgu" path="res://assets/map/RH.png" id="4_lb0w3"]
-[ext_resource type="Texture2D" uid="uid://bs6usojukvwqd" path="res://assets/map/audit_house.png" id="4_mians"]
-[ext_resource type="Script" path="res://scenes/exploration/board/HomeBuilding.gd" id="5_mians"]
+[ext_resource type="Texture2D" uid="uid://goqkvm3dwjy4" path="res://assets/map/audit_house.png" id="4_mians"]
+[ext_resource type="Script" uid="uid://i31wxmpxxkf5" path="res://scenes/exploration/board/HomeBuilding.gd" id="5_mians"]
 [ext_resource type="Script" uid="uid://clwkghmw28sq6" path="res://scenes/exploration/board/rhBuilding.gd" id="6_yh65k"]
 [ext_resource type="Texture2D" uid="uid://bol1xxo8vw1vh" path="res://assets/map/Finance.png" id="7_mians"]
 [ext_resource type="Texture2D" uid="uid://blm8t2dewvbif" path="res://assets/map/It.png" id="9_pjyna"]
@@ -14,15 +14,15 @@
 [ext_resource type="Script" uid="uid://ddrm53ai7ssc7" path="res://scenes/exploration/board/player_lvl.gd" id="15_cydq1"]
 [ext_resource type="Script" uid="uid://cnp663hbiqlp6" path="res://scenes/exploration/board/commercialBuilding.gd" id="15_mians"]
 [ext_resource type="Script" uid="uid://co3usloo00wub" path="res://scenes/exploration/player/GameState.gd" id="16_burnk"]
-[ext_resource type="Texture2D" uid="uid://2v3kqovvstvn" path="res://assets/sprites/tuto_speech.png" id="17_lb0w3"]
+[ext_resource type="Texture2D" uid="uid://setctk3xlkha" path="res://assets/sprites/tuto_speech.png" id="17_lb0w3"]
 [ext_resource type="Script" uid="uid://dvrbbeab3smtt" path="res://scenes/exploration/board/Tuto.gd" id="17_yh65k"]
 [ext_resource type="Script" uid="uid://doxvy8ki16jsk" path="res://scenes/exploration/board/communicationBuilding.gd" id="18_3ir1f"]
-[ext_resource type="Texture2D" uid="uid://c3rxxl7l0eaf5" path="res://assets/sprites/pnj_animations/z.png" id="18_mians"]
+[ext_resource type="Texture2D" uid="uid://utinf8xbengh" path="res://assets/sprites/pnj_animations/z.png" id="18_mians"]
 [ext_resource type="Texture2D" uid="uid://cxs35iqcds7g2" path="res://assets/sprites/fight_menu_background.png" id="19_mians"]
 [ext_resource type="PackedScene" uid="uid://c1l537l6qsm3u" path="res://scenes/exploration/board/pause/pause_menu.tscn" id="19_yh65k"]
 [ext_resource type="Theme" uid="uid://d1pqsukdxg0s4" path="res://assets/button.tres" id="21_pjyna"]
 [ext_resource type="Script" uid="uid://udv5gnf8qgfq" path="res://scenes/exploration/board/todo.gd" id="22_rlmv1"]
-[ext_resource type="FontFile" uid="uid://dl0ci1ng33xpc" path="res://assets/button_font.ttf" id="22_v4jje"]
+[ext_resource type="FontFile" uid="uid://w7bmfp3ffiaw" path="res://assets/button_font.ttf" id="22_v4jje"]
 [ext_resource type="Texture2D" uid="uid://cyuectgpp6vx1" path="res://assets/sprites/objects/meuble.png" id="23_v4jje"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_vs5oo"]
@@ -653,10 +653,10 @@ tuto_txt = NodePath("tuto_speech/tuto_txt")
 
 [node name="TODO" type="RichTextLabel" parent="."]
 texture_filter = 1
-offset_left = -3.6363635
-offset_top = 219.09091
-offset_right = 259.0909
-offset_bottom = 627.2727
+offset_left = -3.63636
+offset_top = 219.091
+offset_right = 259.091
+offset_bottom = 627.273
 theme = ExtResource("21_pjyna")
 theme_override_fonts/normal_font = ExtResource("22_v4jje")
 theme_override_font_sizes/normal_font_size = 32
@@ -758,6 +758,7 @@ text = "[b]Pole ressources humaines[/b]
 Niveau du pole: 4
 
 [i]Vous y trouverez le maléfique [shake][pulse][b]Z[/b][/pulse][/shake], responsable en chef des RH, il vous apparaît comme méfiant et plein d'expérience, obtenir des informations auprès de lui n'est probablement pas une tâche aisé.
+particulièrement tant qu'il est accompagné de ses deux camarades : Jeff et Kraemer 
 "
 
 [node name="finances" type="TextureButton" parent="."]
@@ -806,8 +807,8 @@ bbcode_enabled = true
 text = "[b]Pole finance[/b]
 Niveau du pole: 3
 
-[i]Vous y trouverez [b]Roy, [insérez lore + indice sur strat a adopter][/b]
-"
+[i]Vous y trouverez Roy,Mossert, une pièce d'une monnaie inconnu.
+Dans ce pôle la responsable Roy est particulierement mefiante vis a vis des auditeur il faut donc auditer cette personne en priorité dans le pôle"
 
 [node name="It" type="TextureButton" parent="."]
 offset_left = 1381.82
@@ -854,8 +855,8 @@ mouse_filter = 2
 bbcode_enabled = true
 text = "[b]Pole Informatique[/b]
 Niveau du pole: 2
-
-[i]Vous y trouverez [b]W[/b] ou [b] Watman[/b] , l'un des deux responsables du pôle, bien qu'apparemment personne ne les aurait vu en même temps dans la même pièce [b][insérez lore + indice sur strat a adopter][/b]"
+[i]Vous y trouverez Blindauer, Mathéo, Wemmert ou Watman.
+Ce pôle est soutenu par un héros masqué ; la prudence est donc de mise durant l’audit de ce pôle.[/i]"
 
 [node name="commercial" type="TextureButton" parent="."]
 offset_left = 272.727
@@ -900,11 +901,10 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 bbcode_enabled = true
-text = "[b]Pole commercial[/b]
-Niveau du pole: 2
+text = "[b]Pôle commercial[/b]
+Niveau du pôle : 2
 
-[i]Vous y trouverez [b]Prof, [insérez lore + indice sur strat a adopter[/b]
-"
+[i]Vous y trouverez Oran, Ali et Ilias. Ici, il faut s’occuper d’eux au cas par cas en les isolant des autres membres de leur pôle au plus vite.[/i]"
 
 [node name="communication" type="TextureButton" parent="."]
 offset_left = 260.909
@@ -951,11 +951,10 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 bbcode_enabled = true
-text = "[b]Pole communication[/b]
-Niveau du pole: 1
-
-[i]Vous y trouverez [b]Prof, [insérez lore + indice sur strat a adopter[/b]
-"
+text = "[b]Pôle communication[/b]
+Niveau du pôle : 1
+[i]Vous y trouverez Wessler, Ivanoe et l’amicale core.
+La tâche assignée à ce pôle est d’assurer la bonne transmission des informations entre les pôles.[/i]"
 
 [node name="lvl_label" type="Label" parent="."]
 offset_left = 791.818
@@ -1013,9 +1012,9 @@ offset_bottom = 19.2909
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_shadow_color = Color(0.694118, 0.694118, 0.694118, 1)
-theme_override_constants/shadow_outline_size = 5
-theme_override_constants/shadow_offset_x = 0
 theme_override_constants/shadow_offset_y = 0
+theme_override_constants/shadow_offset_x = 0
+theme_override_constants/shadow_outline_size = 5
 theme_override_font_sizes/normal_font_size = 48
 theme_override_styles/focus = SubResource("StyleBoxEmpty_lb0w3")
 bbcode_enabled = true

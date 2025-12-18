@@ -5,5 +5,4 @@ Roy: Bonjour équipe. Bienvenue au Pôle Financier, où les tableaux ressemblent
 	do GameState.start_fight("res://scenes/fight/scripts/creation_fighter.gd","finance")
 - Faire une pause
 	Roy: Une pause ? D’accord… mais chaque détail attend votre attention.
-do GameState.set_pause(false)
 => END

@@ -248,7 +248,7 @@ func _input(event: InputEvent) -> void:
 		_menu_input(5)
 		_update_description()
 
-	if event.is_action_pressed("accept"):
+	if event.is_action_pressed("validate"):
 		match _slot:
 			0:
 				_on_menu_option_1_pressed()

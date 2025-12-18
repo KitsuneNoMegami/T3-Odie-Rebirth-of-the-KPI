@@ -237,6 +237,10 @@ offset_bottom = 203.0
 scroll_following = true
 
 [connection signal="mouse_entered" from="NinePatchRect/MarginContainer/VBoxContainer/MenuOption1" to="Cursor" method="_on_menu_option_1_mouse_entered"]
+[connection signal="pressed" from="NinePatchRect/MarginContainer/VBoxContainer/MenuOption1" to="Cursor" method="_on_menu_option_1_pressed"]
 [connection signal="mouse_entered" from="NinePatchRect/MarginContainer/VBoxContainer/MenuOption2" to="Cursor" method="_on_menu_option_2_mouse_entered"]
+[connection signal="pressed" from="NinePatchRect/MarginContainer/VBoxContainer/MenuOption2" to="Cursor" method="_on_menu_option_2_pressed"]
 [connection signal="mouse_entered" from="NinePatchRect/MarginContainer/VBoxContainer/MenuOption3" to="Cursor" method="_on_menu_option_3_mouse_entered"]
+[connection signal="pressed" from="NinePatchRect/MarginContainer/VBoxContainer/MenuOption3" to="Cursor" method="_on_menu_option_3_pressed"]
 [connection signal="mouse_entered" from="NinePatchRect/MarginContainer/VBoxContainer/MenuOption4" to="Cursor" method="_on_menu_option_4_mouse_entered"]
+[connection signal="pressed" from="NinePatchRect/MarginContainer/VBoxContainer/MenuOption4" to="Cursor" method="_on_menu_option_4_pressed"]

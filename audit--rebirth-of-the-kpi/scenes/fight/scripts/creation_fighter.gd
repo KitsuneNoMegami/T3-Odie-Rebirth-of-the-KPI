@@ -40,10 +40,10 @@ func get_fighters(pole,lvl_skill,lvl_credibility):
 			buff=generate_buff(240,120,lvl_skill,lvl_credibility)
 			attacks=[Attack.new("Dépendance à un outil non maitrisé",buff),Attack.new("Absence de revue hiérarchique",buff),Attack.new("Correction manuellement tracé",buff)]
 			fighter1=create_fighter(150*buff,"Z",attacks,[],"L’ultime barbu qui a ses cheveux sur son menton.
-                                                         Ce grand coquin n’hésiterait pas à donner un vilain coup de fouet pour motiver ses employés.")
+														 Ce grand coquin n’hésiterait pas à donner un vilain coup de fouet pour motiver ses employés.")
 			attacks=[Attack.new("Contrôle non systématique",buff),Attack.new("Délégation non encadrée",buff),Attack.new("Responsabilité non clairement définie",buff)]
 			fighter2=create_fighter(20*buff,"Jeff",attacks,[],"Le légendaire secrétaire , le seul l'unique , le fabuleux , le légendaire , le ravissssant
-                                                           			JJJJJJJJEEEEEEEEFFFFF Smoliga!")
+														   			JJJJJJJJEEEEEEEEFFFFF Smoliga!")
 			attacks=[Attack.new("Plan d'action non priorisé",buff),Attack.new("Justification orale uniquement",buff),Attack.new("Responsabilité non clairement définie",buff)]
 			fighter3=create_fighter(20*buff,"Kraemer",attacks,[],"Il est en charge des voyages à l’étranger. Pour résumer, il essaie de se débarrasser des élèves en les envoyant loin.")
 		"it":
@@ -69,11 +69,11 @@ func get_fighters(pole,lvl_skill,lvl_credibility):
 			attacks=[Attack.new("Contournement du processus",buff),Attack.new("Justificatif partiel",buff),Attack.new("Dépendance à une personne clé",buff)]
 			fighter2=create_fighter(10*buff,"Le Z coin",attacks,[],"Commandante des Z coin.\nElle représente la monnaie officielle de l’IUT : cette pièce est recherchée pour délit de fuite après s’être échappée des caisses de l’établissement.")
 			attacks=[Attack.new("Absence de traçabilité",buff),Attack.new("Données non réconciliées",buff),Attack.new("Risque accepté implicitement",buff)]
-			fighter3=create_fighter(10*buff,"Roy",attacks)
+			fighter3=create_fighter(10*buff,"Roy",attacks,[],"Après avoir appris aux élèves à réaliser une matrice de risques, elle a mis tout cela en pratique en se coupant la main avec un couteau.")
 		"commercial":
 			buff=generate_buff(60,30,lvl_skill,lvl_credibility)
 			attacks=[Attack.new("Priorité opérationnelle invoquée",buff),Attack.new("Historique non conservé",buff),Attack.new("Validation contradictoire",buff)]
-			fighter1=create_fighter(30*buff,"Maman",attacks)
+			fighter1=create_fighter(30*buff,"Maman",attacks,[],"Étrangement, le bureau de cette personne n’est jamais correctement rangé.\n Il accuse généralement ses élèves, ce qui est faux : il s’agit surtout d’un manque d’organisation.")
 			attacks=[Attack.new("Production non formalisée",buff),Attack.new("Abscence de preuve disponible",buff),Attack.new("Données non réconcilliées",buff)]
 			fighter2=create_fighter(13*buff,"Ali",attacks,[],"Il est chargé des stages .\n Trouvez un stage et tout ira bien pour vous sinon il viendra la nuit vous hantez.")
 			attacks=[Attack.new("Habilitations excessives",buff),Attack.new("Contournement du processus",buff),Attack.new("Abscence de traçabilité",buff)]

@@ -206,7 +206,7 @@ func _update_description():
 			if aname != " ":
 				var def = _resolve_defense_name_to_object(aname)
 				if def and def.has_method("get_description"):
-					txt = "Défense : "Points de défense: "+def.get_damage()+"\n"+def.get_description()
+					txt = "Points de défense: "+def.get_damage()+"\n"+def.get_description()
 				else:
 					txt = "Défense: " + aname
 			else:

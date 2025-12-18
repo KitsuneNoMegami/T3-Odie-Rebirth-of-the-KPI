@@ -1,6 +1,6 @@
 [gd_scene load_steps=11 format=4 uid="uid://boa48bkgxp2x4"]
 
-[ext_resource type="Texture2D" uid="uid://2vs650wnt8uq" path="res://assets/map/offices/finance_office.png" id="1_b6g77"]
+[ext_resource type="Texture2D" uid="uid://bfckxahchanl5" path="res://assets/map/offices/finance_office.png" id="1_b6g77"]
 [ext_resource type="Script" uid="uid://ckkruwmgpfohk" path="res://scenes/exploration/board/offices/finances_office.gd" id="2_bup5o"]
 [ext_resource type="PackedScene" uid="uid://bmegaasqhjghc" path="res://scenes/exploration/pnj/pnj.tscn" id="2_vf85f"]
 [ext_resource type="PackedScene" uid="uid://ce7gk84oa0efc" path="res://scenes/exploration/player/player.tscn" id="3_b6g77"]
@@ -809,7 +809,7 @@ script = ExtResource("2_bup5o")
 [node name="pnj" parent="." instance=ExtResource("2_vf85f")]
 light_mask = 2
 visibility_layer = 2
-position = Vector2(370.6667, 102.000015)
+position = Vector2(370.667, 102)
 scale = Vector2(0.75, 0.75)
 script = ExtResource("4_b6g77")
 

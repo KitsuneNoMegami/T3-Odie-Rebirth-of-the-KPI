@@ -39,21 +39,21 @@ func get_fighters(pole,lvl_skill,lvl_credibility):
 	match pole:
 		"rh":
 			buff=generate_buff(240,120,lvl_skill,lvl_credibility)
-			attacks=[Attack.new("Dépendance à un outil non maitrisé",buff),Attack.new("Absence de revue hiérarchique",buff),Attack.new("Correction manuellement tracé",buff)]
+			attacks=[Attack.new("Dépendance à un outil non maîtrisé",buff),Attack.new("Absence de revue hiérarchique",buff),Attack.new("Correction manuelle non tracée",buff)]
 			fighter1=create_fighter(150*buff,"Z",attacks,[],"L’ultime barbu qui a ses cheveux sur son menton.
 														 Ce grand coquin n’hésiterait pas à donner un vilain coup de fouet pour motiver ses employés.")
 			attacks=[Attack.new("Contrôle non systématique",buff),Attack.new("Délégation non encadrée",buff),Attack.new("Responsabilité non clairement définie",buff)]
 			fighter2=create_fighter(20*buff,"Jeff",attacks,[],"Le légendaire secrétaire , le seul l'unique , le fabuleux , le légendaire , le ravissssant
 														   			JJJJJJJJEEEEEEEEFFFFF Smoliga!")
-			attacks=[Attack.new("Plan d'action non priorisé",buff),Attack.new("Justification orale uniquement",buff),Attack.new("Responsabilité non clairement définie",buff)]
+			attacks=[Attack.new("Plan d’action non priorisé",buff),Attack.new("Justification orale uniquement",buff),Attack.new("Responsabilité non clairement définie",buff)]
 			fighter3=create_fighter(20*buff,"Kraemer",attacks,[],"Il est en charge des voyages à l’étranger. Pour résumer, il essaie de se débarrasser des élèves en les envoyant loin.")
 		"it":
 			buff=generate_buff(60,30,lvl_skill,lvl_credibility)
 			attacks=[Attack.new("Justificatif partiel",buff),Attack.new("Procédure non formalisée",buff)]
 			fighter1=create_fighter(75*buff, "Blindauer",attacks,[],"Cette personne est chargée de la maintenance et du maintien du bon fonctionnement de tous les ordinateurs de l’IUT.\n Son rôle est donc majeur pour le bon fonctionnement de l’établissement.")
-			attacks=[Attack.new("Production tardive des documents",buff),Attack.new("Validation à posteriori",buff),Attack.new("Habilitations exessives",buff)]
+			attacks=[Attack.new("Production tardive des documents",buff),Attack.new("Validation a posteriori",buff),Attack.new("Habilitations excessives",buff)]
 			fighter2=create_fighter(69*buff, "Wathéo",attacks,[],"Cet employé est unique en son genre.\n Il a été recruté pendant ses années de BUT après avoir installé Linux sur l’ordinateur de son professeur.\n Après avoir terminé cette mission, il aurait dit : “C’était comme un lundi.")
-			attacks=[Attack.new("Abscence de traçabilité",buff),Attack.new("Méconnaissance de la procédure",buff),Attack.new("Contournement du processus",buff),Attack.new("Mise à jour non réalisée",buff)]
+			attacks=[Attack.new("Absence de traçabilité",buff),Attack.new("Méconnaissance de la procédure",buff),Attack.new("Contournement du processus",buff),Attack.new("Mise à jour non réalisée",buff)]
 			fighter3=create_fighter(100*buff, "Batman",attacks,[],"Il apparaît uniquement lorsqu’on l’appelle avec un Bat-signal.\n Quand nous avons besoin de lui, tel un sauveur, il jaillit et aide l’entreprise à résoudre ses problèmes.")
 		"communication":
 			buff=generate_buff(0,0,lvl_skill,lvl_credibility)
@@ -75,9 +75,9 @@ func get_fighters(pole,lvl_skill,lvl_credibility):
 			buff=generate_buff(60,30,lvl_skill,lvl_credibility)
 			attacks=[Attack.new("Priorité opérationnelle invoquée",buff),Attack.new("Historique non conservé",buff),Attack.new("Validation contradictoire",buff)]
 			fighter1=create_fighter(30*buff,"Maman",attacks,[],"Étrangement, le bureau de cette personne n’est jamais correctement rangé.\n Il accuse généralement ses élèves, ce qui est faux : il s’agit surtout d’un manque d’organisation.")
-			attacks=[Attack.new("Production non formalisée",buff),Attack.new("Abscence de preuve disponible",buff),Attack.new("Données non réconcilliées",buff)]
+			attacks=[Attack.new("Procédure non formalisée",buff),Attack.new("Absence de preuve disponible",buff),Attack.new("Données non réconciliées",buff)]
 			fighter2=create_fighter(13*buff,"Ali",attacks,[],"Il est chargé des stages .\n Trouvez un stage et tout ira bien pour vous sinon il viendra la nuit vous hantez.")
-			attacks=[Attack.new("Habilitations excessives",buff),Attack.new("Contournement du processus",buff),Attack.new("Abscence de traçabilité",buff)]
+			attacks=[Attack.new("Habilitations excessives",buff),Attack.new("Contournement du processus",buff),Attack.new("Absence de traçabilité",buff)]
 			fighter3=create_fighter(12*buff,"Ilias",attacks,[],"Rêve de Leya en esclave tout les soirs et partage cette passion avec Wathéo")
 	Fighters.append(fighter1)
 	Fighters.append(fighter2)

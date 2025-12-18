@@ -17,7 +17,7 @@ func show_message_blocking(text: String) -> void:
 	change_size(1000,5,485)
 	show()
 	
-	await get_tree().create_timer(0.05).timeout
+	await get_tree().create_timer(0.01).timeout
 	$Label.text = text
 	# Boucle d'attente non bloquante: attend que l'utilisateur appuie sur "accept"
 	while true:

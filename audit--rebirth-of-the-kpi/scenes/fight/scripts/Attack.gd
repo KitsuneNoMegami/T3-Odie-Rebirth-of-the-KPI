@@ -193,11 +193,15 @@ func _init(aname = null,buff=1):
 		"Risque accepté implicitement":
 			_damage=40
 			_description="Exposition connue mais non formalisée ni validée."
-			
+
 		"Plan d’action non priorisé":
 			_damage=30
 			_description="Actions identifiées sans échéance ni responsable clair."
 		
+		"Validation contradictoire":
+			_damage=0
+			_description="Échange avec l’audité pour confirmer les faits et leur compréhension."
+
 		#Compétence de défense
 		"Reformulation protectrice":
 			_damage=17

@@ -1073,8 +1073,8 @@ position = Vector2(167.5, 116)
 scale = Vector2(3, 3)
 
 [node name="office_zone" parent="." instance=ExtResource("6_q1r4v")]
-position = Vector2(2.00001, -1.25)
-scale = Vector2(1.27581, 1.5269)
+position = Vector2(2.0000076, -1.25)
+scale = Vector2(1.2758076, 1.5268955)
 
 [node name="fight" parent="." instance=ExtResource("7_81v5q")]
 process_mode = 2
@@ -1084,10 +1084,10 @@ visible = false
 visible = false
 
 [node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(87, 60.5)
-scale = Vector2(-0.208364, 0.588774)
+position = Vector2(87, 60.500008)
+scale = Vector2(-0.20836425, 0.5887739)
 zoom = Vector2(1.2, 1.2)
-limit_left = 1500
+limit_left = 1200
 limit_top = 0
-limit_right = 1600
+limit_right = 500
 limit_bottom = 800

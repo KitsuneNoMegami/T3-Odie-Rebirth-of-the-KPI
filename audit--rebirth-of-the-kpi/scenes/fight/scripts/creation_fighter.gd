@@ -64,13 +64,13 @@ func get_fighters(pole,lvl_skill,lvl_credibility):
 			attacks=[Attack.new("Procédure non formalisée",buff),Attack.new("Dépendance à une personne clé",buff)]
 			fighter3=create_fighter(30*buff,"Ivanoe",attacks,[],"Cet employé a été recruté à la suite de discussions philosophiques récurrentes avec différents professeurs de son établissement.\n Les professeurs se sont accordés sur le fait qu’il devrait mettre à profit cette envie de partager son savoir.")
 		"finance":
-			buff=generate_buff(10,10,lvl_skill,lvl_credibility)
+			buff=generate_buff(180,90,lvl_skill,lvl_credibility)
 			attacks=[Attack.new("Dépendance à une personne clé",buff),Attack.new("Données non réconciliées",buff),Attack.new("Argument de l’usage établi",buff)]
-			fighter1=create_fighter(10*buff,"Mosser",attacks,[],"Célèbre banquier de l'iut, il est connu pour son savoir-faire et sa discrétion professionnelle avec ses clients.\n Il aurait été recruté à la suite d’un blanchiment d’argent dans un casino.")
+			fighter1=create_fighter(67*buff,"Mosser",attacks,[],"Célèbre banquier de l'iut, il est connu pour son savoir-faire et sa discrétion professionnelle avec ses clients.\n Il aurait été recruté à la suite d’un blanchiment d’argent dans un casino.")
 			attacks=[Attack.new("Contournement du processus",buff),Attack.new("Justificatif partiel",buff),Attack.new("Dépendance à une personne clé",buff)]
-			fighter2=create_fighter(10*buff,"Le Z coin",attacks,[],"Commandante des Z coin.\nElle représente la monnaie officielle de l’IUT : cette pièce est recherchée pour délit de fuite après s’être échappée des caisses de l’établissement.")
+			fighter2=create_fighter(86*buff,"Le Z coin",attacks,[],"Commandante des Z coin.\nElle représente la monnaie officielle de l’IUT : cette pièce est recherchée pour délit de fuite après s’être échappée des caisses de l’établissement.")
 			attacks=[Attack.new("Absence de traçabilité",buff),Attack.new("Données non réconciliées",buff),Attack.new("Risque accepté implicitement",buff)]
-			fighter3=create_fighter(10*buff,"Roy",attacks,[],"Après avoir appris aux élèves à réaliser une matrice de risques, elle a mis tout cela en pratique en se coupant la main avec un couteau.")
+			fighter3=create_fighter(37*buff,"Roy",attacks,[],"Après avoir appris aux élèves à réaliser une matrice de risques, elle a mis tout cela en pratique en se coupant la main avec un couteau.")
 		"commercial":
 			buff=generate_buff(60,30,lvl_skill,lvl_credibility)
 			attacks=[Attack.new("Priorité opérationnelle invoquée",buff),Attack.new("Historique non conservé",buff),Attack.new("Validation contradictoire",buff)]

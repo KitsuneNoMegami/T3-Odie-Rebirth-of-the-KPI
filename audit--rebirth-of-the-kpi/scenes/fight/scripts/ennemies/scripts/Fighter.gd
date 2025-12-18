@@ -57,38 +57,50 @@ func del_defense(nb=null):
 	
 func add_random_attack():
 	var skills
-	if _levelCredibility > 20 and _attacks.size()==1:
-		_pv_max+=25
-		skills=["","","",""]
+	if _levelCredibility > 20 :
+		_pv_max=75
 		
-	if _levelCredibility > 60 and _attacks.size()==2:
-		_pv_max+=15
-		skills=["","","",""]
+	if _levelCredibility>30 and _attacks.size()==1:
+		#15
+		skills=["Cartographie des processus","Analyse de conformité réglementaire","Matrice des risques"]
+		pass
 		
-	if _levelCredibility > 100 and _attacks.size()==3:
-		_pv_max+=30
-		skills=["","","",""]
+	if _levelCredibility > 60 :
+		_pv_max=90
 		
-	if _levelCredibility > 130 and _levelSkill > 5 and _attacks.size()==3:
-		_pv_max+=30
-		skills=["","","",""]
+	if _levelCredibility>90 and _attacks.size()==2:
+		#20
+		skills=["Test de conception des contrôles","Test d’efficacité opérationnelle","Échantillonnage des transactions","Analyse des écarts"]
+		pass
+		
+	if _levelCredibility > 100 :
+		_pv_max=120
+		
+	if _levelCredibility > 130 :
+		_pv_max=150
+		
+	if _levelCredibility>140 and _attacks.size()==3:
+		#28
+		skills=["Traçabilité des opérations","Séparation des tâches","Revue des habilitations","Analyse des contrôles automatisés"]
+		pass
 	if skills!=null:
-		_attacks.append(skills[randi() % 4])
+		_attacks.append(skills[randi() % skills.size()])
 		return true
 	return false
 func add_random_defense():
 	var defense
-	if _levelSkill > 5 and _attacks.size()==1:
-		defense=["","","",""]
+	if _levelSkill > 20 and _defenses.size()==1:
+		defense=["Clarification"]
 		
-	if _levelSkill > 5 and _attacks.size()==2:
-		defense=["","","",""]
+	if _levelSkill > 140 and _defenses.size()==2:
+		defense=["Reformulation protectrice"]
 		
-	if _levelSkill > 5 and _attacks.size()==3:
-		defense=["","","",""]
+	if _levelSkill > 240 and _defenses.size()==3:
+		defense=["Cadre de l'entretien"]
 	
 	if defense!=null:
-		_defenses.append(defense[randi() % 4])
+		#_defenses.append(defense[randi() % 4])
+		_defenses.append(defense[0])
 		return true
 	return false
 		

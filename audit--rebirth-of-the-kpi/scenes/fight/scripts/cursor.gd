@@ -198,10 +198,7 @@ func _update_description():
 			var aname = _menu_options[1][1 + _slot]
 			if aname != " ":
 				var atk = _resolve_attack_name_to_object(aname)
-				if atk and atk.has_method("get_description"):
-					txt = atk.get_description()
-				else:
-					txt = "Attaque: " + aname
+				txt = "Dégats : "+atk.get_damage()+"\n"+atk.get_description()
 			else:
 				txt = "Choix de l'attaque"
 		"Défense":
@@ -209,7 +206,7 @@ func _update_description():
 			if aname != " ":
 				var def = _resolve_defense_name_to_object(aname)
 				if def and def.has_method("get_description"):
-					txt = def.get_description()
+					txt = "Défense : "Points de défense: "+def.get_damage()+"\n"+def.get_description()
 				else:
 					txt = "Défense: " + aname
 			else:

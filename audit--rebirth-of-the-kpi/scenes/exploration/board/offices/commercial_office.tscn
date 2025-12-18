@@ -826,6 +826,7 @@ process_mode = 2
 visible = false
 
 [node name="pause" parent="." instance=ExtResource("7_htrn2")]
+process_mode = 3
 visible = false
 
 [node name="Control" type="Control" parent="."]

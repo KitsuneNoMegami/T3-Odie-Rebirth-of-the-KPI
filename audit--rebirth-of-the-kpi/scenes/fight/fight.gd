@@ -40,7 +40,7 @@ var _spawned_enemies: Array = []
 ## Initialisation du système de combat (callback Godot)
 func _ready() -> void:
 	_log.clearLog()
-	_log.addLog("Début de l'audit, bonne chance à vous !")
+	_log.addLog("Début de l'audit, bonne chance à vous !\n")
 	randomize()
 
 ## Retourne la liste des combattants ennemis
@@ -58,15 +58,15 @@ func is_player_turn() -> bool:
 func animation_initialisation():
 	var fighter_node = get_node_or_null("Fighter")
 	fighter_node._play()
-	fighter_node.set_positions(100,250)
-	fighter_node.set_size(10)
+	fighter_node.set_positions(100,200)
+	#fighter_node.set_size(10)
 
 	var i=2
 	for fighter in _fighters:
 		var enemy_node = get_node_or_null("Fighter"+str(i))
 		enemy_node._play()
-		enemy_node.set_positions(i*150+300,150)
-		enemy_node.set_size(2)
+		enemy_node.set_positions(380+i*150,150)
+		#enemy_node.set_size(10)
 		i+=1
 	return
 
@@ -188,7 +188,7 @@ func attack(target, _attack):
 	reduced = target.del_defense(dmg)
 	if reduced <= 0:
 		await message.show_message_blocking(target.get_fname() + " se défend et ne prend aucun dégat")
-		_log.addLog(str(target.get_pv())+"/"+str(target.get_pvmax())+")")
+		_log.addLog(str(target.get_pv())+"/"+str(target.get_pvmax())+"+"+str(target.get_pts_defenses())+")\n")
 		return false
 	# Séquence BLOQUANTE d'attaque
 	if target.get_fname()==_player.get_fname():

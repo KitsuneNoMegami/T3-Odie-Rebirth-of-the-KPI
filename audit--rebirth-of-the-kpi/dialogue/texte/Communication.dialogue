@@ -6,5 +6,4 @@ Wessler: Bon. Vous êtes l’équipe d’audit ?
 	Wessler: Trop tard. Vous êtes déjà là. Alors allons-y
 	do GameState.start_fight("res://scenes/fight/scripts/creation_fighter.gd","communication")
 - On repassera après la pause déjeuner.(Fuite)
-do GameState.set_pause(false)
 => END

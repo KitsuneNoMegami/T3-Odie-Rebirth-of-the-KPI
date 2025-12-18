@@ -49,14 +49,14 @@ var _is_action_running := false
 ## Initialisation du curseur (callback Godot)
 func _ready() -> void:
 	randomize()
-	position.x = 55
+	position.x = 2
 
 ## Mise à jour de la position du curseur (callback Godot)
 ## _delta:float - Temps écoulé depuis la dernière frame
 func _process(_delta: float) -> void:
 	if not visible:
 		return
-	position.y = 430 + (43 * _slot)
+	position.y = 489 + (43 * _slot)
 
 ## Réinitialise le curseur et affiche le menu principal
 func initialisation():
@@ -202,7 +202,14 @@ func _update_description():
 			var aname = _menu_options[2][1 + _slot]
 			if aname != " ":
 				var def = _resolve_defense_name_to_object(aname)
+<<<<<<< Updated upstream
 				txt = "Points de défense: "+str(def.get_damage())+"\n"+def.get_description()
+=======
+				if def and def.has_method("get_description"):
+					txt = "Points de défense: "+str(def.get_damage())+"\n"+def.get_description()
+				else:
+					txt = "Défense: " + aname
+>>>>>>> Stashed changes
 			else:
 				txt = "Choix de la défense"
 		"Ennemis":

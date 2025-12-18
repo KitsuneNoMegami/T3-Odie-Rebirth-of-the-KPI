@@ -1,36 +1,38 @@
-[gd_scene load_steps=79 format=3 uid="uid://bkutgi5e3cayd"]
+[gd_scene load_steps=81 format=3 uid="uid://bkutgi5e3cayd"]
 
 [ext_resource type="Script" uid="uid://i0fjly4h008r" path="res://scenes/fight/scripts/ennemies/scripts/Fighter.gd" id="1_7quk1"]
-[ext_resource type="Texture2D" uid="uid://b1vvhldbyjw4" path="res://assets/sprites/player_animations/16x32_Walk.png" id="2_7snke"]
-[ext_resource type="Texture2D" uid="uid://cdnopflbr16h6" path="res://assets/sprites/pnj_animations/kraemer_pierre.png" id="2_k56wu"]
-[ext_resource type="Texture2D" uid="uid://dyxlv0325ue0j" path="res://assets/sprites/pnj_animations/ali.png" id="2_wj7bc"]
-[ext_resource type="Texture2D" uid="uid://dmmgn4hfsmjvt" path="res://assets/sprites/pnj_animations/batman.png" id="3_21wl8"]
-[ext_resource type="Texture2D" uid="uid://b5cxe6o8u8mao" path="res://assets/sprites/pnj_animations/blindauer.png" id="3_pdos2"]
-[ext_resource type="Texture2D" uid="uid://dt0kygh8x58fp" path="res://assets/sprites/pnj_animations/rmouque_ilias.png" id="4_21wl8"]
-[ext_resource type="Texture2D" uid="uid://2rl2l4gw6p4s" path="res://assets/sprites/pnj_animations/roy_isabelle.png" id="4_emdx7"]
-[ext_resource type="Texture2D" uid="uid://dp2edp6a8hsje" path="res://assets/sprites/pnj_animations/ivanoe.png" id="5_7a1gc"]
-[ext_resource type="Texture2D" uid="uid://be7ge0e85xqok" path="res://assets/sprites/pnj_animations/smoliga_jeff.png" id="6_emdx7"]
-[ext_resource type="Texture2D" uid="uid://dvm3bd4p64uge" path="res://assets/sprites/pnj_animations/maman.png" id="8_83yru"]
-[ext_resource type="Texture2D" uid="uid://b1dyd5g7db8ci" path="res://assets/sprites/pnj_animations/mosser_rene.png" id="9_kwgjd"]
-[ext_resource type="Texture2D" uid="uid://clkjnv3rf1flo" path="res://assets/sprites/pnj_animations/watheo.png" id="12_y8sr0"]
-[ext_resource type="Texture2D" uid="uid://bj87kuankagh8" path="res://assets/sprites/pnj_animations/wessler_eric.png" id="13_t4f0l"]
-[ext_resource type="Texture2D" uid="uid://clbq1ixpxryhs" path="res://assets/sprites/pnj_animations/z-sheet.png" id="14_2i57f"]
+[ext_resource type="Texture2D" uid="uid://bovv5vyi0r0su" path="res://assets/sprites/player_animations/16x32_Walk.png" id="2_7snke"]
+[ext_resource type="Texture2D" uid="uid://b3uhbbwmoc8e" path="res://assets/sprites/pnj_animations/kraemer_pierre.png" id="2_k56wu"]
+[ext_resource type="Texture2D" uid="uid://m4pijv0h1o0x" path="res://assets/sprites/pnj_animations/ali.png" id="2_wj7bc"]
+[ext_resource type="Texture2D" uid="uid://hd8xkmd7o87m" path="res://assets/sprites/pnj_animations/batman.png" id="3_21wl8"]
+[ext_resource type="Texture2D" uid="uid://pt12tuwb4ye7" path="res://assets/sprites/pnj_animations/blindauer.png" id="3_pdos2"]
+[ext_resource type="Texture2D" uid="uid://dp67o0do36q8o" path="res://assets/sprites/pnj_animations/rmouque_ilias.png" id="4_21wl8"]
+[ext_resource type="Texture2D" uid="uid://cjwiln6lxht85" path="res://assets/sprites/pnj_animations/roy_isabelle.png" id="4_emdx7"]
+[ext_resource type="Texture2D" uid="uid://csl4j8ug8vpp0" path="res://assets/sprites/pnj_animations/ivanoe.png" id="5_7a1gc"]
+[ext_resource type="Texture2D" uid="uid://b12jbd0dmwuc2" path="res://assets/sprites/pnj_animations/afficheCore.png" id="5_83yru"]
+[ext_resource type="Texture2D" uid="uid://3irf1whjx38b" path="res://assets/sprites/pnj_animations/smoliga_jeff.png" id="6_emdx7"]
+[ext_resource type="Texture2D" uid="uid://bepbopii2ttv8" path="res://assets/sprites/pnj_animations/maman.png" id="8_83yru"]
+[ext_resource type="Texture2D" uid="uid://b3kpdwg2od8tv" path="res://assets/sprites/pnj_animations/mosser_rene.png" id="9_kwgjd"]
+[ext_resource type="Texture2D" uid="uid://dqs8mnndx7cno" path="res://assets/sprites/pnj_animations/coin.png" id="10_kwgjd"]
+[ext_resource type="Texture2D" uid="uid://20jgkolsvjtl" path="res://assets/sprites/pnj_animations/watheo.png" id="12_y8sr0"]
+[ext_resource type="Texture2D" uid="uid://x2c0x47vjvyo" path="res://assets/sprites/pnj_animations/wessler_eric.png" id="13_t4f0l"]
+[ext_resource type="Texture2D" uid="uid://d31qhobsupi75" path="res://assets/sprites/pnj_animations/z-sheet.png" id="14_2i57f"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_pg6ke"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_y8sr0"]
 atlas = ExtResource("2_wj7bc")
-region = Rect2(0, 0, 20, 20)
+region = Rect2(0, 0, 80, 80)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_p511e"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_t4f0l"]
 atlas = ExtResource("2_wj7bc")
-region = Rect2(20, 0, 20, 20)
+region = Rect2(80, 0, 80, 80)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_idfxs"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_2i57f"]
 atlas = ExtResource("2_wj7bc")
-region = Rect2(40, 0, 20, 20)
+region = Rect2(160, 0, 80, 80)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_1f3s5"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_qek86"]
 atlas = ExtResource("2_wj7bc")
-region = Rect2(60, 0, 20, 20)
+region = Rect2(240, 0, 80, 80)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_pdos2"]
 atlas = ExtResource("3_21wl8")
@@ -63,6 +65,10 @@ region = Rect2(160, 0, 80, 80)
 [sub_resource type="AtlasTexture" id="AtlasTexture_jwmu2"]
 atlas = ExtResource("3_pdos2")
 region = Rect2(240, 0, 80, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pg6ke"]
+atlas = ExtResource("5_83yru")
+region = Rect2(0, 0, 56, 80)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_fbjql"]
 atlas = ExtResource("4_21wl8")
@@ -131,6 +137,22 @@ region = Rect2(160, 0, 80, 80)
 [sub_resource type="AtlasTexture" id="AtlasTexture_kq4ld"]
 atlas = ExtResource("2_k56wu")
 region = Rect2(240, 0, 80, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_p511e"]
+atlas = ExtResource("10_kwgjd")
+region = Rect2(11, 0, 77, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_idfxs"]
+atlas = ExtResource("10_kwgjd")
+region = Rect2(88, 0, 77, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1f3s5"]
+atlas = ExtResource("10_kwgjd")
+region = Rect2(165, 0, 77, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tbws0"]
+atlas = ExtResource("10_kwgjd")
+region = Rect2(242, 0, 77, 80)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ejf1w"]
 atlas = ExtResource("8_83yru")
@@ -244,40 +266,20 @@ region = Rect2(320, 0, 80, 80)
 atlas = ExtResource("14_2i57f")
 region = Rect2(400, 0, 80, 80)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_rs8q4"]
-atlas = ExtResource("6_emdx7")
-region = Rect2(0, 0, 20, 20)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_y8sr0"]
-atlas = ExtResource("6_emdx7")
-region = Rect2(20, 0, 20, 20)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_t4f0l"]
-atlas = ExtResource("6_emdx7")
-region = Rect2(40, 0, 20, 20)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_2i57f"]
-atlas = ExtResource("6_emdx7")
-region = Rect2(60, 0, 20, 20)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_qek86"]
-atlas = ExtResource("6_emdx7")
-region = Rect2(80, 0, 20, 20)
-
 [sub_resource type="SpriteFrames" id="SpriteFrames_7quk1"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_pg6ke")
+"texture": SubResource("AtlasTexture_y8sr0")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_p511e")
+"texture": SubResource("AtlasTexture_t4f0l")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_idfxs")
+"texture": SubResource("AtlasTexture_2i57f")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_1f3s5")
+"texture": SubResource("AtlasTexture_qek86")
 }],
 "loop": true,
 "name": &"Ali",
@@ -316,6 +318,14 @@ animations = [{
 "loop": true,
 "name": &"Blindauer",
 "speed": 3.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pg6ke")
+}],
+"loop": true,
+"name": &"Core",
+"speed": 5.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -387,6 +397,23 @@ animations = [{
 "loop": true,
 "name": &"Kraemer",
 "speed": 3.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_p511e")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_idfxs")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1f3s5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tbws0")
+}],
+"loop": true,
+"name": &"Le Z coin",
+"speed": 5.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -506,26 +533,6 @@ animations = [{
 "loop": true,
 "name": &"Z",
 "speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_rs8q4")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_y8sr0")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_t4f0l")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_2i57f")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_qek86")
-}],
-"loop": true,
-"name": &"default",
-"speed": 3.0
 }]
 
 [node name="fighter" type="Node2D"]
@@ -534,5 +541,6 @@ script = ExtResource("1_7quk1")
 [node name="sprite" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
 position = Vector2(48.5, 53.5)
-scale = Vector2(0.267241, 0.295977)
+scale = Vector2(1, 1.109)
 sprite_frames = SubResource("SpriteFrames_7quk1")
+animation = &"Core"

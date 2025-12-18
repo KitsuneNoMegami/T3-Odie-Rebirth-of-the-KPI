@@ -1,58 +1,78 @@
-[gd_scene load_steps=5 format=3 uid="uid://c1l537l6qsm3u"]
+[gd_scene load_steps=9 format=3 uid="uid://c1l537l6qsm3u"]
 
 [ext_resource type="Script" uid="uid://cpju2hxr56t7x" path="res://panel.gd" id="1_hdmo1"]
 [ext_resource type="Script" uid="uid://cqja0kpunq20a" path="res://scenes/exploration/board/pause/pause_menu.gd" id="1_nwcfo"]
-[ext_resource type="PackedScene" uid="uid://bjicvafn3yb6j" path="res://scenes/menu/textemodele.tscn" id="3_81a2n"]
+[ext_resource type="Theme" uid="uid://bl8ijxdfy6u60" path="res://scenes/exploration/board/pause/menu_theme.tres" id="2_bvrrj"]
 [ext_resource type="Script" uid="uid://dm0g8k30nrk5n" path="res://scenes/exploration/board/pause/sound_bar.gd" id="3_mexsl"]
+[ext_resource type="FontFile" uid="uid://dsinuyqi5lwfy" path="res://assets/button_font.ttf" id="5_bvrrj"]
+[ext_resource type="Theme" uid="uid://d1pqsukdxg0s4" path="res://assets/button.tres" id="6_syvnl"]
+[ext_resource type="Script" uid="uid://b4ow1apiqci4c" path="res://scenes/menu/exit.gd" id="7_81lag"]
+
+[sub_resource type="FontVariation" id="FontVariation_syvnl"]
+base_font = ExtResource("5_bvrrj")
 
 [node name="CanvasLayer" type="CanvasLayer"]
 process_mode = 4
 script = ExtResource("1_nwcfo")
 
 [node name="Panel" type="Panel" parent="."]
+texture_filter = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = ExtResource("2_bvrrj")
 script = ExtResource("1_hdmo1")
-
-[node name="start" parent="." instance=ExtResource("3_81a2n")]
-process_mode = 3
-offset_left = 1133.0
-offset_top = 230.0
-offset_right = 1559.0
-offset_bottom = 367.0
-text = "continue"
-
-[node name="exit" parent="." instance=ExtResource("3_81a2n")]
-process_mode = 3
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -188.5
-offset_top = 165.0
-offset_right = 349.5
-offset_bottom = 302.0
-grow_horizontal = 2
-grow_vertical = 2
-size_flags_horizontal = 8
-text = "close game"
 
 [node name="son" type="HScrollBar" parent="."]
 process_mode = 3
-modulate = Color(0, 0.690196, 0.992157, 1)
-self_modulate = Color(0.121569, 0.968627, 1, 1)
+modulate = Color(0.67058825, 0.5882353, 0.49019608, 1)
+self_modulate = Color(0.7640127, 0.6865355, 0.5948364, 1)
 texture_filter = 2
-offset_left = 1055.0
-offset_top = 522.0
-offset_right = 1665.0
-offset_bottom = 569.0
+offset_left = 665.0
+offset_top = 246.0
+offset_right = 1275.0
+offset_bottom = 293.0
 max_value = 1.0
 step = 0.01
 value = 1.0
 script = ExtResource("3_mexsl")
 
+[node name="son_text" type="RichTextLabel" parent="son"]
+layout_mode = 0
+offset_left = -243.0
+offset_top = -18.0
+offset_right = -74.0
+offset_bottom = 58.0
+scale = Vector2(1.1978756, 1.1120048)
+theme_override_fonts/normal_font = SubResource("FontVariation_syvnl")
+theme_override_font_sizes/normal_font_size = 60
+bbcode_enabled = true
+text = "Volume"
+fit_content = true
+autowrap_mode = 0
+
+[node name="exit" type="Button" parent="."]
+texture_filter = 1
+offset_left = 515.0
+offset_top = 694.0
+offset_right = 1175.0
+offset_bottom = 894.0
+theme = ExtResource("6_syvnl")
+text = "Exit"
+script = ExtResource("7_81lag")
+
+[node name="continue" type="Button" parent="."]
+texture_filter = 1
+offset_left = 517.0
+offset_top = 382.0
+offset_right = 1177.0
+offset_bottom = 581.9997
+theme = ExtResource("6_syvnl")
+text = "Continue
+"
+
 [connection signal="value_changed" from="son" to="." method="_on_son_value_changed"]
+[connection signal="pressed" from="exit" to="exit" method="_on_pressed"]
+[connection signal="pressed" from="continue" to="." method="_on_continue_pressed"]

@@ -1,0 +1,33 @@
+[gd_resource type="Theme" load_steps=7 format=3 uid="uid://dnuibgx502fo"]
+
+[ext_resource type="FontFile" uid="uid://dsinuyqi5lwfy" path="res://assets/button_font.ttf" id="1_se3jy"]
+[ext_resource type="Texture2D" uid="uid://15gxty51qhcm" path="res://assets/dialogue_theme.png" id="2_8fdts"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_se3jy"]
+bg_color = Color(0.5865865, 0.50703967, 0.41199365, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8fdts"]
+bg_color = Color(0.67058825, 0.5882353, 0.49019608, 1)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_y1bcg"]
+atlas = ExtResource("2_8fdts")
+region = Rect2(0, 0, 48, 16)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_5ntic"]
+texture = SubResource("AtlasTexture_y1bcg")
+region_rect = Rect2(0, 0, 48, 16)
+
+[resource]
+Button/font_sizes/font_size = 18
+Button/styles/hover = SubResource("StyleBoxFlat_se3jy")
+Button/styles/normal = SubResource("StyleBoxFlat_8fdts")
+CharacterName/base_type = &"RichTextLabel"
+CharacterName/font_sizes/normal_font_size = 25
+CharacterName/fonts/normal_font = ExtResource("1_se3jy")
+DialogueText/base_type = &"RichTextLabel"
+DialogueText/font_sizes/normal_font_size = 28
+MarginContainer/constants/margin_bottom = 10
+MarginContainer/constants/margin_left = 10
+MarginContainer/constants/margin_right = 10
+MarginContainer/constants/margin_top = 10
+Panel/styles/panel = SubResource("StyleBoxTexture_5ntic")

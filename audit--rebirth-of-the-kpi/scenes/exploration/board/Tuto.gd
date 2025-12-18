@@ -2,7 +2,7 @@ extends TileMapLayer
 @export var gameState: Script
 @onready var pause : CanvasLayer = $pause
 
-var txt1 = "Bonjour, c'est moi [Nom], le directeur général de la Z corp, c'est moi qui est fait appel a vous afin de réaliser l'audit interne de l'entreprise."
+var txt1 = "Bonjour, c'est moi Z le malicieux, le directeur général de la Z corp, c'est moi qui est fait appel a vous afin de réaliser l'audit interne de l'entreprise."
 var txt2 = "Pour ce faire, vous allez devoir vous rendre dans les différents pôles de l'entreprise (en cliquant dessus)."
 var txt3 = "Puis vous devrez inspecter les pôles en interrogeant le chef de département correspondant. Attention cependant il pourrait vous causez un peu de tort."
 var txt4 = "Pour vous aidez pendant votre audit veuillez utilisez les flèches directionnelles du clavier pour vous déplacez et appuyez sur entrée ou le clique de la souris pour démarrer un dialogue ou validez une action.

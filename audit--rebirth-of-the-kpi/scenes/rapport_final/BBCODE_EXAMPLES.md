@@ -1,8 +1,18 @@
-# Guide BBCode pour DialogueLabel/RichTextLabel dans Godot
+# Guide BBCode pour RichTextLabel dans Godot
 
-Les DialogueLabel utilisent BBCode (pas Markdown) pour le formatage du texte.
+Les RichTextLabel utilisent BBCode (pas Markdown) pour le formatage du texte.
 
-**Note:** Toutes les sections du rapport_audit.gd ont maintenant été formatées avec BBCode pour une présentation cohérente et professionnelle.
+**Note importante:** Nous utilisons maintenant des RichTextLabel standards (au lieu de DialogueLabel) car ils sont mieux adaptés pour afficher du texte statique multi-lignes avec BBCode. DialogueLabel était conçu pour les effets de "typing" (texte qui s'affiche lettre par lettre).
+
+**Toutes les sections du rapport_audit.gd ont été formatées avec BBCode pour une présentation cohérente et professionnelle.**
+
+## Configuration RichTextLabel
+
+Pour qu'un RichTextLabel affiche le BBCode correctement :
+- `bbcode_enabled = true` (activé dans rapport_audit.tscn)
+- `fit_content = true` (pour ajuster automatiquement la taille)
+- `scroll_active = false` (désactiver le scroll interne)
+- Utiliser `.text` pour assigner le contenu avec les tags BBCode
 
 ## Tags BBCode disponibles
 

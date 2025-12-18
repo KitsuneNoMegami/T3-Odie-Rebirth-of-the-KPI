@@ -218,6 +218,9 @@ def convert_markdown_to_html(md_file: Path, output_dir: Path, nav_links: str):
     # Convert markdown to HTML
     html_content = markdown.markdown(md_content, extensions=['fenced_code', 'tables', 'codehilite'])
     
+    # Fix links: replace .md with .html
+    html_content = html_content.replace('.md"', '.html"').replace('.md\'', '.html\'')
+    
     # Extract title from first heading
     title = md_file.stem
     if md_content.startswith('# '):

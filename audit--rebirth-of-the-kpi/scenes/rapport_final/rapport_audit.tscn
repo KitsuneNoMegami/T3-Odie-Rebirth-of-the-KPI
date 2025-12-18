@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://di3a45tp6gos0"]
+[gd_scene load_steps=7 format=3 uid="uid://di3a45tp6gos0"]
 
 [ext_resource type="Script" uid="uid://5yyokgrd65tu" path="res://scenes/rapport_final/rapport_audit.gd" id="1_dukrq"]
 [ext_resource type="Texture2D" uid="uid://dr8vekt2y8onv" path="res://scenes/rapport_final/fond.png" id="2_qsx7v"]
 [ext_resource type="Script" uid="uid://cmdvqxol8h34m" path="res://scenes/rapport_final/rejouer.gd" id="2_vo4vq"]
 [ext_resource type="Script" uid="uid://dgy6x4d2r1go2" path="res://scenes/rapport_final/quitter.gd" id="2_w6ff1"]
 [ext_resource type="Theme" uid="uid://d1pqsukdxg0s4" path="res://assets/button.tres" id="3_yetux"]
+[ext_resource type="PackedScene" uid="uid://ckvgyvclnwggo" path="res://addons/dialogue_manager/dialogue_label.tscn" id="6_7y8kl"]
 
 [node name="Node2D" type="CanvasLayer"]
 script = ExtResource("1_dukrq")
@@ -34,24 +35,30 @@ grow_vertical = 2
 [node name="VBoxContainer" type="VBoxContainer" parent="ScrollContainer"]
 layout_mode = 2
 
-[node name="communication" type="Label" parent="ScrollContainer/VBoxContainer"]
+[node name="communication" parent="ScrollContainer/VBoxContainer" instance=ExtResource("6_7y8kl")]
 layout_mode = 2
+fit_content = true
 
-[node name="marketing" type="Label" parent="ScrollContainer/VBoxContainer"]
+[node name="marketing" parent="ScrollContainer/VBoxContainer" instance=ExtResource("6_7y8kl")]
 layout_mode = 2
+fit_content = true
 
-[node name="finance" type="Label" parent="ScrollContainer/VBoxContainer"]
+[node name="finance" parent="ScrollContainer/VBoxContainer" instance=ExtResource("6_7y8kl")]
 layout_mode = 2
+fit_content = true
 
-[node name="informatique" type="Label" parent="ScrollContainer/VBoxContainer"]
+[node name="informatique" parent="ScrollContainer/VBoxContainer" instance=ExtResource("6_7y8kl")]
 layout_mode = 2
+fit_content = true
 
-[node name="rh" type="Label" parent="ScrollContainer/VBoxContainer"]
+[node name="rh" parent="ScrollContainer/VBoxContainer" instance=ExtResource("6_7y8kl")]
 layout_mode = 2
+fit_content = true
 
-[node name="note" type="Label" parent="ScrollContainer/VBoxContainer"]
+[node name="note" parent="ScrollContainer/VBoxContainer" instance=ExtResource("6_7y8kl")]
 layout_mode = 2
 horizontal_alignment = 1
+fit_content = true
 
 [node name="rejouer" type="Button" parent="ScrollContainer/VBoxContainer"]
 texture_filter = 1

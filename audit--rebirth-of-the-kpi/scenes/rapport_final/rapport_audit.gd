@@ -9,9 +9,9 @@ extends CanvasLayer
 var nb=0
 func _ready():
 	if (GameState.get_win("communication")):
-		comm.text = "COMMUNICATION\n" + "Le Pôle Communication assure ses missions de manière satisfaisante. Les flux d’information internes et externes sont structurés et cohérents. On note toutefois une tendance récurrente à l’humour verbal, avec des réponses réflexes “feur” à certains mots se terminant par “quoi”, ce qui n’impacte en rien la qualité des échanges.
+		comm.text = "[b]COMMUNICATION[/b]\n" + "Le Pôle Communication assure ses missions de manière satisfaisante. Les flux d’information internes et externes sont structurés et cohérents. On note toutefois une tendance récurrente à l’humour verbal, avec des réponses réflexes “feur” à certains mots se terminant par “quoi”, ce qui n’impacte en rien la qualité des échanges.
 
-Observations :
+[i]Observations :[/i]
 
 Les cahiers des charges sont parfois transmis après la date de livraison prévue, mais les équipes partenaires s’adaptent efficacement.
 
@@ -19,7 +19,7 @@ Les supports de communication sont clairs, complets et bien organisés.
 
 Les messages internes restent compréhensibles malgré les petites particularités humoristiques.
 
-Points forts :
+[i]Points forts :[/i]
 
 Cohérence et clarté des messages.
 
@@ -27,7 +27,7 @@ Organisation solide malgré des délais décalés.
 
 Supports professionnels et structurés.
 
-Niveau de risque : très faible.\n\n\n"
+[color=green]Niveau de risque : très faible.[/color]\n\n\n"
 	else :
 		comm.text="Alors euh… le Pôle Communication, donc… ils communiquent. Je crois. Enfin, parfois. Il y a beaucoup de messages, beaucoup de mails, certains commencent par “quoi” et là… réflexe, FEUR. Oui FEUR. Désolé, mauvais réflexe de ma part.
 

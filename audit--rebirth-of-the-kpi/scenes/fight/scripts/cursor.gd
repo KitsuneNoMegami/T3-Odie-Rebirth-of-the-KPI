@@ -202,14 +202,10 @@ func _update_description():
 			var aname = _menu_options[2][1 + _slot]
 			if aname != " ":
 				var def = _resolve_defense_name_to_object(aname)
-<<<<<<< Updated upstream
-				txt = "Points de défense: "+str(def.get_damage())+"\n"+def.get_description()
-=======
 				if def and def.has_method("get_description"):
 					txt = "Points de défense: "+str(def.get_damage())+"\n"+def.get_description()
 				else:
 					txt = "Défense: " + aname
->>>>>>> Stashed changes
 			else:
 				txt = "Choix de la défense"
 		"Ennemis":

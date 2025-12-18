@@ -6,7 +6,7 @@ Z le maudit : L'équipe d'audit ! Vous arrivez juste au moment parfait. Le plann
 		Z le maudit : Le vendredi prend feu !! Le T5 arrive...
 		do GameState.start_fight("res://scenes/fight/scripts/creation_fighter.gd","rh")
 	- Non
-	do GameState.set_pause(false)
+do GameState.set_pause(false)
 - Je pourrais attendre un moment pour mieux comprendre le context et revenir plus tard (Fuite)
 do GameState.set_pause(false)
 

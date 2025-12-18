@@ -85,5 +85,3 @@ func _unhandled_input(_event: InputEvent) -> void:
 		GameState.set_pause(true)
 		if (GameState.get_pause()):
 			DialogueManager.show_dialogue_balloon("start")
-
-	

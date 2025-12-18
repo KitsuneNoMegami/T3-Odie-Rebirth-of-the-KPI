@@ -201,6 +201,8 @@ func attack(target, _attack):
 		_log.addLog(str(target.get_pv())+"/"+str(target.get_pvmax())+")\n")
 	if target.get_pv() <= 0:
 		await message.show_message_blocking(target.get_fname() + " est mort")
+		# SUPPRESSION DU SPRITE DE L'ENNEMI MORT
+		del_sprite_fighter(target)
 		return true
 	return false
 
@@ -217,6 +219,8 @@ func defenses(target, _defense):
 	target.add_pts_defense(pts_defense)
 	if target.get_pv() <= 0:
 		await message.show_message_blocking(target.get_fname() + " est mort")
+		# SUPPRESSION DU SPRITE SI LA DEFENSE ABOUTIT À LA MORT (cas extrême)
+		del_sprite_fighter(target)
 		return true
 	return false
 
@@ -228,6 +232,32 @@ func _find_fighter(name_fighter):
 		if fighter.get_fname() == name_fighter:
 			return fighter
 	return null
+
+## Supprime de la scène les sprites (nodes) des ennemis morts
+## dead_fighter:Fighter (optionnel) - si fourni, supprime uniquement ce combattant
+func del_sprite_fighter(dead_fighter = null) -> void:
+	if dead_fighter != null and is_instance_valid(dead_fighter):
+		# Retire des listes internes
+		var idx := _spawned_enemies.find(dead_fighter)
+		if idx != -1:
+			_spawned_enemies.remove_at(idx)
+		var fidx = _fighters.find(dead_fighter)
+		if fidx != -1:
+			_fighters.remove_at(fidx)
+		# Supprime le node de la scène
+		if dead_fighter.get_parent() == self:
+			dead_fighter.queue_free()
+		return
+	# Sinon, supprime tous les ennemis morts
+	for child in get_children():
+		if child != null and child.has_method("get_pv") and child.get_pv() <= 0:
+			var eidx := _spawned_enemies.find(child)
+			if eidx != -1:
+				_spawned_enemies.remove_at(eidx)
+			var efidx = _fighters.find(child)
+			if efidx != -1:
+				_fighters.remove_at(efidx)
+			child.queue_free()
 
 # Tour de l'ennemi: attaque aléatoire sur le joueur
 ## Exécute automatiquement l'attaque d'un ennemi aléatoire vivant
@@ -274,7 +304,8 @@ func do_action(fname, action_menu, action_use = null):
 					await message.show_message_blocking("Vous avez débloqué une nouvelle compétence de défense grâce à votre crédibilité")
 				if _player.add_skill(20):
 					await message.show_message_blocking("Vous avez débloqué une nouvelle compétence d'attaque grâce à votre niveau de compétence")
-				_fighters.erase(target)
+				# Retire l'ennemi de la scène (sprite) et des listes
+				del_sprite_fighter(target)
 			#qui attaqui qui, les degats, les pv
 		"Défense":
 			if _player == null:

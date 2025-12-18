@@ -198,7 +198,7 @@ func _update_description():
 			var aname = _menu_options[1][1 + _slot]
 			if aname != " ":
 				var atk = _resolve_attack_name_to_object(aname)
-				txt = "Dégats : "+atk.get_damage()+"\n"+atk.get_description()
+				txt = "Dégats : "+str(atk.get_damage())+"\n"+atk.get_description()
 			else:
 				txt = "Choix de l'attaque"
 		"Défense":
@@ -206,7 +206,7 @@ func _update_description():
 			if aname != " ":
 				var def = _resolve_defense_name_to_object(aname)
 				if def and def.has_method("get_description"):
-					txt = "Points de défense: "+def.get_damage()+"\n"+def.get_description()
+					txt = "Points de défense: "+str(def.get_damage())+"\n"+def.get_description()
 				else:
 					txt = "Défense: " + aname
 			else:
@@ -311,6 +311,7 @@ func _menu_input(slot) -> void:
 				# Menu principal
 				# Fuite sur le bouton 3 désormais
 				if slot == 3:
+					
 					await get_tree().create_timer(0.1).timeout
 					fight.end_fight(null)
 				if slot == 4:

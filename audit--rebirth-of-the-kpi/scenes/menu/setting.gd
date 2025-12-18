@@ -12,4 +12,5 @@ func _process(_delta: float) -> void:
 
 
 func _on_pressed() -> void:
-	pass # Replace with function body.
+	hide()
+	

@@ -734,7 +734,7 @@ text = "[b]Pole ressources humaines[/b]
 Niveau du pole: 4
 
 [i]Vous y trouverez le maléfique [shake][pulse][b]Z[/b][/pulse][/shake], responsable en chef des RH, il vous apparaît comme méfiant et plein d'expérience, obtenir des informations auprès de lui n'est probablement pas une tâche aisé.
-"
+particulièrement tant qu'il est accompagné de ses deux camarades : Jeff et Kraemer"
 
 [node name="finances" type="TextureButton" parent="."]
 offset_left = 1281.82
@@ -782,7 +782,8 @@ bbcode_enabled = true
 text = "[b]Pole finance[/b]
 Niveau du pole: 3
 
-[i]Vous y trouverez [b]Roy, [insérez lore + indice sur strat a adopter][/b]
+[i]Vous y trouverez Roy,Mossert, une pièce d'une monnaie inconnu.
+Dans ce pôle la responsable Roy est particulierement mefiante vis a vis des auditeur il faut donc auditer cette personne en priorité dans le pôle
 "
 
 [node name="It" type="TextureButton" parent="."]
@@ -830,8 +831,9 @@ mouse_filter = 2
 bbcode_enabled = true
 text = "[b]Pole Informatique[/b]
 Niveau du pole: 2
-
-[i]Vous y trouverez [b]W[/b] ou [b] Watman[/b] , l'un des deux responsables du pôle, bien qu'apparemment personne ne les aurait vu en même temps dans la même pièce [b][insérez lore + indice sur strat a adopter][/b]"
+[i]Vous y trouverez Blindauer, Mathéo, Wemmert ou Watman.
+Ce pôle est soutenu par un héros masqué ; la prudence est donc de mise durant l’audit de ce pôle.[/i]
+"
 
 [node name="commercial" type="TextureButton" parent="."]
 offset_left = 272.727
@@ -876,10 +878,10 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 bbcode_enabled = true
-text = "[b]Pole commercial[/b]
-Niveau du pole: 2
+text = "[b]Pôle commercial[/b]
+Niveau du pôle : 2
 
-[i]Vous y trouverez [b]Prof, [insérez lore + indice sur strat a adopter[/b]
+[i]Vous y trouverez Oran, Ali et Ilias. Ici, il faut s’occuper d’eux au cas par cas en les isolant des autres membres de leur pôle au plus vite.[/i]
 "
 
 [node name="communication" type="TextureButton" parent="."]
@@ -927,11 +929,10 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 bbcode_enabled = true
-text = "[b]Pole communication[/b]
-Niveau du pole: 1
-
-[i]Vous y trouverez [b]Prof, [insérez lore + indice sur strat a adopter[/b]
-"
+text = "[b]Pôle communication[/b]
+Niveau du pôle : 1
+[i]Vous y trouverez Wessler, Ivanoe et l’amicale core.
+La tâche assignée à ce pôle est d’assurer la bonne transmission des informations entre les pôles.[/i]"
 
 [node name="lvl_label" type="Label" parent="."]
 offset_left = 791.818

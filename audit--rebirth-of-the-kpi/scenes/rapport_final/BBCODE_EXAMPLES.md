@@ -2,6 +2,8 @@
 
 Les DialogueLabel utilisent BBCode (pas Markdown) pour le formatage du texte.
 
+**Note:** Toutes les sections du rapport_audit.gd ont maintenant été formatées avec BBCode pour une présentation cohérente et professionnelle.
+
 ## Tags BBCode disponibles
 
 ### Formatage de texte de base

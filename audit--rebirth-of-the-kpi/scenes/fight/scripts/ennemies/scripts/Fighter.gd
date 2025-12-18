@@ -49,6 +49,9 @@ func add_pts_defense(nb):
 	_pts_defense+=nb
 	pass
 	
+func del_all_defense():
+	_pts_defense=0
+	
 func del_defense(nb=null):
 	var dmg = _pts_defense
 	if nb!=null:

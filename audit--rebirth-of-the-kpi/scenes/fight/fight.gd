@@ -18,6 +18,8 @@ var _pause = false
 var _fighters
 ## Référence au joueur
 var _player
+##
+var nb_kill=0
 
 # Gestion du tour: "player" ou "enemy"
 ## Tour actuel dans le combat
@@ -39,6 +41,7 @@ var _spawned_enemies: Array = []
 
 ## Initialisation du système de combat (callback Godot)
 func _ready() -> void:
+	nb_kill=0
 	_log.clearLog()
 	_log.addLog("Début de l'audit, bonne chance à vous !\n")
 	randomize()
@@ -81,6 +84,9 @@ func end_fight(win):
 			_player.add_credibility(-10)
 			_player.add_skill(-20)
 			print("perdu")
+	else:
+		_player.add_credibility(nb_kill*(-10))
+		_player.add_skill(nb_kill*(-20))
 	del_all_defense()
 	fight_unfight(null, null,null)
 	return
@@ -299,7 +305,8 @@ func do_action(fname, action_menu, action_use = null):
 			await message.show_message_blocking(_player.get_fname() + " lance une attaque")
 			var target = _find_fighter(fname)
 			_log.addLog(_player.get_fname()+"("+str(_player.get_pv())+"/"+str(_player.get_pvmax())+")"+"->")
-			if await attack(target, action_use) and target.get_fname()!="enemy":
+			if await attack(target, action_use) and fname!="enemy":
+				nb_kill+=1
 				if _player.add_credibility(10):
 					await message.show_message_blocking("Vous avez débloqué une nouvelle compétence de défense grâce à votre crédibilité")
 				if _player.add_skill(20):
@@ -318,13 +325,11 @@ func do_action(fname, action_menu, action_use = null):
 
 ## Réinitialise tous les points de défense (fin de tour)
 func del_all_defense():
-	if _player and _player.has_method("del_defense"):
-		_player.del_defense()
+	_player.del_all_defense()
 	# IMPORTANT: nettoyer aussi la défense des ennemis pour éviter l'accumulation
 	if _fighters:
 		for fighter in _fighters:
-			if fighter and fighter.has_method("del_defense"):
-				fighter.del_defense()
+			fighter.del_defense()
 
 ## Retourne un nombre aléatoire de combattants (legacy, à vérifier usage)
 func fighter_number():

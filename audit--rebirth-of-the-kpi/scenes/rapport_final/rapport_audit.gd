@@ -236,17 +236,15 @@ Ne pas oublier de sourire en relisant ce rapport.
 
 Niveau de risque : rapport peu utile.\n\n\n"
 	
-	match (GameState.get_player().get_credibility()):
-		150:
-			note.text="NOTE DE L'AUDIT  :  S"
-		149:
-			note.text="NOTE DE L'AUDIT  :  A"
-		100:
-			note.text="NOTE DE L'AUDIT  :  B"
-		50:
-			note.text="NOTE DE L'AUDIT  :  C"
-		0:
-			note.text="NOTE DE L'AUDIT  :  D"
-		-50:
-			note.text="NOTE DE L'AUDIT  :  D"
-	note.text=note.text +"\n\n"
+	var credibility = GameState.get_player().get_credibility()
+
+	if credibility >= 150:
+		note.text = "NOTE DE L'AUDIT : S"
+	elif credibility >= 100:
+		note.text = "NOTE DE L'AUDIT : A"
+	elif credibility >= 50:
+		note.text = "NOTE DE L'AUDIT : B"
+	elif credibility >= 0:
+		note.text = "NOTE DE L'AUDIT : C"
+	else:
+		note.text = "NOTE DE L'AUDIT : D"

@@ -7,7 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://cxs35iqcds7g2" path="res://assets/sprites/fight_menu_background.png" id="3_3si2p"]
 [ext_resource type="Script" uid="uid://iinc6u6qxjwe" path="res://scenes/fight/scripts/audio_stream_player.gd" id="5_8og4d"]
 [ext_resource type="AudioStream" uid="uid://bgs6awcbdtryr" path="res://assets/sound/button_switch.mp3" id="6_inaet"]
-[ext_resource type="Script" path="res://scenes/fight/log.gd" id="8_4qaks"]
+[ext_resource type="Script" uid="uid://dbqch140th120" path="res://scenes/fight/log.gd" id="8_4qaks"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_3si2p"]
 
@@ -101,10 +101,10 @@ offset_bottom = 858.207
 scale = Vector2(0.84, 0.833333)
 
 [node name="NinePatchRect" type="NinePatchRect" parent="."]
-offset_left = 10.0
-offset_top = 423.0
-offset_right = 519.0
-offset_bottom = 668.0
+offset_left = 5.5172415
+offset_top = 485.51718
+offset_right = 514.5172
+offset_bottom = 730.5172
 scale = Vector2(0.84, 0.833333)
 texture = ExtResource("3_3si2p")
 patch_margin_left = 3
@@ -165,7 +165,7 @@ flat = true
 [node name="Cursor" type="AnimatedSprite2D" parent="." node_paths=PackedStringArray("button1", "button2", "button3", "button4", "sound_handler")]
 process_mode = 2
 texture_filter = 1
-position = Vector2(116.875, 437.5)
+position = Vector2(56.551735, 489.65515)
 scale = Vector2(3.36, 3.33333)
 sprite_frames = SubResource("SpriteFrames_inaet")
 autoplay = "default"
@@ -185,11 +185,11 @@ switch = ExtResource("6_inaet")
 [node name="NinePatchRect2" type="NinePatchRect" parent="."]
 clip_children = 2
 texture_filter = 1
-offset_left = 450.0
-offset_top = 423.0
-offset_right = 790.0
-offset_bottom = 633.0
-scale = Vector2(1.09452, 0.973975)
+offset_left = 443.44827
+offset_top = 488.27582
+offset_right = 783.44824
+offset_bottom = 698.2758
+scale = Vector2(1.1352973, 0.973975)
 texture = ExtResource("3_3si2p")
 patch_margin_left = 3
 patch_margin_top = 3
@@ -199,26 +199,28 @@ patch_margin_bottom = 3
 [node name="message_panel" type="Panel" parent="NinePatchRect2"]
 visible = false
 layout_mode = 0
-offset_top = 10.625
+offset_top = 12.0
 offset_right = 492.5
-offset_bottom = 197.625
+offset_bottom = 199.0
 theme_override_styles/panel = SubResource("StyleBoxEmpty_vpnpn")
 script = ExtResource("2_vpnpn")
 
 [node name="Label" type="Label" parent="NinePatchRect2/message_panel"]
 top_level = true
 layout_mode = 0
-offset_left = 460.0
-offset_top = 440.0
-offset_right = 800.0
-offset_bottom = 650.0
+offset_left = 450.0
+offset_top = 488.0
+offset_right = 790.0
+offset_bottom = 698.0
+autowrap_mode = 3
 
 [node name="Log" type="NinePatchRect" parent="."]
 texture_filter = 1
-offset_left = 830.0
-offset_top = 423.0
-offset_right = 1200.0
-offset_bottom = 628.0
+offset_left = 838.62067
+offset_top = 488.27582
+offset_right = 1208.6206
+offset_bottom = 693.2758
+scale = Vector2(1.0354143, 1)
 texture = ExtResource("3_3si2p")
 patch_margin_left = 3
 patch_margin_top = 3
@@ -235,6 +237,10 @@ offset_bottom = 203.0
 scroll_following = true
 
 [connection signal="mouse_entered" from="NinePatchRect/MarginContainer/VBoxContainer/MenuOption1" to="Cursor" method="_on_menu_option_1_mouse_entered"]
+[connection signal="pressed" from="NinePatchRect/MarginContainer/VBoxContainer/MenuOption1" to="Cursor" method="_on_menu_option_1_pressed"]
 [connection signal="mouse_entered" from="NinePatchRect/MarginContainer/VBoxContainer/MenuOption2" to="Cursor" method="_on_menu_option_2_mouse_entered"]
+[connection signal="pressed" from="NinePatchRect/MarginContainer/VBoxContainer/MenuOption2" to="Cursor" method="_on_menu_option_2_pressed"]
 [connection signal="mouse_entered" from="NinePatchRect/MarginContainer/VBoxContainer/MenuOption3" to="Cursor" method="_on_menu_option_3_mouse_entered"]
+[connection signal="pressed" from="NinePatchRect/MarginContainer/VBoxContainer/MenuOption3" to="Cursor" method="_on_menu_option_3_pressed"]
 [connection signal="mouse_entered" from="NinePatchRect/MarginContainer/VBoxContainer/MenuOption4" to="Cursor" method="_on_menu_option_4_mouse_entered"]
+[connection signal="pressed" from="NinePatchRect/MarginContainer/VBoxContainer/MenuOption4" to="Cursor" method="_on_menu_option_4_pressed"]

@@ -1,34 +1,18 @@
-[gd_resource type="Theme" load_steps=8 format=3 uid="uid://d1pqsukdxg0s4"]
+[gd_resource type="Theme" load_steps=6 format=3 uid="uid://d1pqsukdxg0s4"]
 
-[ext_resource type="Texture2D" uid="uid://dl1k5h1sii3r6" path="res://assets/[7] Wood.png" id="1_2jg6l"]
-[ext_resource type="FontFile" uid="uid://d1wuqbwap8csm" path="res://assets/button_font.ttf" id="1_mw0qu"]
+[ext_resource type="FontFile" uid="uid://dsinuyqi5lwfy" path="res://assets/button_font.ttf" id="1_mw0qu"]
+[ext_resource type="Texture2D" uid="uid://bl0u5kgscehi3" path="res://assets/button_sprite.png" id="2_mw0qu"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rdr5y"]
-content_margin_left = 4.0
-content_margin_top = 4.0
-content_margin_right = 4.0
-content_margin_bottom = 4.0
-bg_color = Color(0.1, 0.1, 0.1, 0.3)
-corner_radius_top_left = 3
-corner_radius_top_right = 3
-corner_radius_bottom_right = 3
-corner_radius_bottom_left = 3
-corner_detail = 5
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_2jg6l"]
-texture = ExtResource("1_2jg6l")
-region_rect = Rect2(96, 0, 48, 16)
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_qox7x"]
-texture = ExtResource("1_2jg6l")
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ylu7e"]
+texture = ExtResource("2_mw0qu")
 region_rect = Rect2(48, 0, 48, 16)
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_5m1sk"]
-texture = ExtResource("1_2jg6l")
+texture = ExtResource("2_mw0qu")
 region_rect = Rect2(0, 0, 48, 16)
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_mw0qu"]
-texture = ExtResource("1_2jg6l")
+texture = ExtResource("2_mw0qu")
 region_rect = Rect2(96, 0, 48, 16)
 
 [resource]
@@ -51,8 +35,6 @@ Button/constants/icon_max_width = 0
 Button/constants/outline_size = 0
 Button/font_sizes/font_size = 80
 Button/fonts/font = ExtResource("1_mw0qu")
-Button/styles/disabled = SubResource("StyleBoxFlat_rdr5y")
-Button/styles/focus = SubResource("StyleBoxTexture_2jg6l")
-Button/styles/hover = SubResource("StyleBoxTexture_qox7x")
+Button/styles/hover = SubResource("StyleBoxTexture_ylu7e")
 Button/styles/normal = SubResource("StyleBoxTexture_5m1sk")
 Button/styles/pressed = SubResource("StyleBoxTexture_mw0qu")

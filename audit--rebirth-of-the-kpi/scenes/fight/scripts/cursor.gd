@@ -49,14 +49,14 @@ var _is_action_running := false
 ## Initialisation du curseur (callback Godot)
 func _ready() -> void:
 	randomize()
-	position.x = 55
+	position.x = 2
 
 ## Mise à jour de la position du curseur (callback Godot)
 ## _delta:float - Temps écoulé depuis la dernière frame
 func _process(_delta: float) -> void:
 	if not visible:
 		return
-	position.y = 430 + (43 * _slot)
+	position.y = 489 + (43 * _slot)
 
 ## Réinitialise le curseur et affiche le menu principal
 func initialisation():
@@ -130,11 +130,8 @@ func _show_defenses():
 	var defenses = []
 	if fight.get_player() and fight.get_player().has_method("get_defenses"):
 		defenses = fight.get_player().get_defenses()
-	for defense in defenses:
-		if defense and defense.has_method("get_aname"):
-			_menu_options[2].append(defense.get_aname())
-		else:
-			_menu_options[2].append(str(defense))
+	for d in defenses:
+		_menu_options[2].append(d.get_aname())
 	while _menu_options[2].size() < 5:
 		_menu_options[2].append(" ")
 	_current_menu = "Défense"
@@ -251,7 +248,7 @@ func _input(event: InputEvent) -> void:
 		_menu_input(5)
 		_update_description()
 
-	if event.is_action_pressed("accept"):
+	if event.is_action_pressed("validate"):
 		match _slot:
 			0:
 				_on_menu_option_1_pressed()

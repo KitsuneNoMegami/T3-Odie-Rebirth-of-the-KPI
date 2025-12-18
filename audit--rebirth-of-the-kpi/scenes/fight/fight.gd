@@ -40,7 +40,7 @@ var _spawned_enemies: Array = []
 ## Initialisation du système de combat (callback Godot)
 func _ready() -> void:
 	_log.clearLog()
-	_log.addLog("Début de l'audit, bonne chance à vous !")
+	_log.addLog("Début de l'audit, bonne chance à vous !\n")
 	randomize()
 
 ## Retourne la liste des combattants ennemis
@@ -59,14 +59,14 @@ func animation_initialisation():
 	var fighter_node = get_node_or_null("Fighter")
 	fighter_node._play()
 	fighter_node.set_positions(100,200)
-	fighter_node.set_size(10)
+	#fighter_node.set_size(10)
 
 	var i=2
 	for fighter in _fighters:
 		var enemy_node = get_node_or_null("Fighter"+str(i))
 		enemy_node._play()
 		enemy_node.set_positions(380+i*150,150)
-		enemy_node.set_size(10)
+		#enemy_node.set_size(10)
 		i+=1
 	return
 
@@ -81,6 +81,7 @@ func end_fight(win):
 			_player.add_credibility(-10)
 			_player.add_skill(-20)
 			print("perdu")
+	del_all_defense()
 	fight_unfight(null, null,null)
 	return
 
@@ -175,24 +176,33 @@ func attack(target, _attack):
 		await message.show_message_blocking(target.get_fname() + " est mort")
 		return false
 	# Récupération nom/dégâts
-	var aname := _attack_name(_attack)
-	var dmg := _attack_damage(_attack)
+	var aname = _attack_name(_attack)
+	var dmg = _attack_damage(_attack)
 	_log.addLog(aname+" ("+str(dmg)+" dégats)\n")
-	_log.addLog(target.get_fname()+"("+str(target.get_pv())+"/"+str(target.get_pvmax())+")->(")
+	if target.get_pts_defenses()>0:
+		_log.addLog(target.get_fname()+"("+str(target.get_pv())+"/"+str(target.get_pvmax())+"+"+str(target.get_pts_defenses())+")->(")
+	else:
+		_log.addLog(target.get_fname()+"("+str(target.get_pv())+"/"+str(target.get_pvmax())+")->(")
 	# Appliquer la défense avant les dégâts
-	var reduced = target.del_defense(dmg)
+	var reduced=0
+	reduced = target.del_defense(dmg)
 	if reduced <= 0:
 		await message.show_message_blocking(target.get_fname() + " se défend et ne prend aucun dégat")
-		_log.addLog(str(target.get_pv())+"/"+str(target.get_pvmax())+")")
+		_log.addLog(str(target.get_pv())+"/"+str(target.get_pvmax())+"+"+str(target.get_pts_defenses())+")\n")
 		return false
 	# Séquence BLOQUANTE d'attaque
 	if target.get_fname()==_player.get_fname():
 		await message.show_message_blocking(aname + " est lancé sur " + target.get_fname() + " et lui inflige " + str(reduced) + " dégats")
 	await message.show_message_blocking(aname + " est lancé sur " + target.get_fname() + " et lui inflige " + str(reduced) + " dégats")
 	target.delete_pv(reduced)
-	_log.addLog(str(target.get_pv())+"/"+str(target.get_pvmax())+")\n")
+	if target.get_pts_defenses()>0:
+		_log.addLog(str(target.get_pv())+"/"+str(target.get_pvmax())+"+"+str(target.get_pts_defenses())+")\n")
+	else:
+		_log.addLog(str(target.get_pv())+"/"+str(target.get_pvmax())+")\n")
 	if target.get_pv() <= 0:
 		await message.show_message_blocking(target.get_fname() + " est mort")
+		# SUPPRESSION DU SPRITE DE L'ENNEMI MORT
+		del_sprite_fighter(target)
 		return true
 	return false
 
@@ -209,6 +219,8 @@ func defenses(target, _defense):
 	target.add_pts_defense(pts_defense)
 	if target.get_pv() <= 0:
 		await message.show_message_blocking(target.get_fname() + " est mort")
+		# SUPPRESSION DU SPRITE SI LA DEFENSE ABOUTIT À LA MORT (cas extrême)
+		del_sprite_fighter(target)
 		return true
 	return false
 
@@ -220,6 +232,32 @@ func _find_fighter(name_fighter):
 		if fighter.get_fname() == name_fighter:
 			return fighter
 	return null
+
+## Supprime de la scène les sprites (nodes) des ennemis morts
+## dead_fighter:Fighter (optionnel) - si fourni, supprime uniquement ce combattant
+func del_sprite_fighter(dead_fighter = null) -> void:
+	if dead_fighter != null and is_instance_valid(dead_fighter):
+		# Retire des listes internes
+		var idx := _spawned_enemies.find(dead_fighter)
+		if idx != -1:
+			_spawned_enemies.remove_at(idx)
+		var fidx = _fighters.find(dead_fighter)
+		if fidx != -1:
+			_fighters.remove_at(fidx)
+		# Supprime le node de la scène
+		if dead_fighter.get_parent() == self:
+			dead_fighter.queue_free()
+		return
+	# Sinon, supprime tous les ennemis morts
+	for child in get_children():
+		if child != null and child.has_method("get_pv") and child.get_pv() <= 0:
+			var eidx := _spawned_enemies.find(child)
+			if eidx != -1:
+				_spawned_enemies.remove_at(eidx)
+			var efidx = _fighters.find(child)
+			if efidx != -1:
+				_fighters.remove_at(efidx)
+			child.queue_free()
 
 # Tour de l'ennemi: attaque aléatoire sur le joueur
 ## Exécute automatiquement l'attaque d'un ennemi aléatoire vivant
@@ -242,8 +280,6 @@ func end_player_turn() -> void:
 		return
 	_turn = "enemy"
 	await enemy_auto_reply()
-	if _continue():
-		del_all_defense()
 	_turn = "player"
 	if is_instance_valid(cursor):
 		cursor._menu_input(5)
@@ -268,7 +304,8 @@ func do_action(fname, action_menu, action_use = null):
 					await message.show_message_blocking("Vous avez débloqué une nouvelle compétence de défense grâce à votre crédibilité")
 				if _player.add_skill(20):
 					await message.show_message_blocking("Vous avez débloqué une nouvelle compétence d'attaque grâce à votre niveau de compétence")
-				_fighters.erase(target)
+				# Retire l'ennemi de la scène (sprite) et des listes
+				del_sprite_fighter(target)
 			#qui attaqui qui, les degats, les pv
 		"Défense":
 			if _player == null:

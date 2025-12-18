@@ -1,8 +1,12 @@
 [gd_scene load_steps=11 format=4 uid="uid://c554wiam448rr"]
 
 [ext_resource type="Script" uid="uid://b4ow1apiqci4c" path="res://scenes/menu/exit.gd" id="3_e0arn"]
+<<<<<<< HEAD
 [ext_resource type="Texture2D" uid="uid://dva28e865s86p" path="res://assets/start_menu.png" id="4_037ec"]
 [ext_resource type="Texture2D" uid="uid://dq0q14kh56jwm" path="res://scenes/menu/flamme.png" id="4_r8yej"]
+=======
+[ext_resource type="Texture2D" uid="uid://br24rxsb6s5dk" path="res://assets/start_menu.png" id="4_037ec"]
+>>>>>>> e85842549e39ca3c2d814da7ab95d6329dabd0b7
 [ext_resource type="Script" uid="uid://bbmgxy7esjvw" path="res://scenes/menu/setting.gd" id="4_y1o0p"]
 [ext_resource type="Theme" uid="uid://d1pqsukdxg0s4" path="res://assets/button.tres" id="5_y1o0p"]
 [ext_resource type="Script" uid="uid://bwftdxvbqa4c7" path="res://scenes/menu/start.gd" id="6_r8yej"]

@@ -16,7 +16,7 @@ func _process(_delta: float) -> void:
 
 ## Gère le clic sur le bouton pour entrer dans le bureau IT (callback Godot)
 func _on_pressed() -> void:
-	const office_scene=preload("res://scenes/exploration/board/offices/itOffice.tscn")
+	const office_scene=preload("res://scenes/exploration/board/offices/it_office.tscn")
 	get_tree().change_scene_to_packed(office_scene)
 
 func _on_mouse_entered() -> void:

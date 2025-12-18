@@ -1,11 +1,10 @@
 ~ start
-Nathan: [[Hi|Hello|Howdy]], this is some dialogue.
-Nathan: Here are some choices.
-- First one
-	Nathan: You picked the first one.
-- Second one
-	Nathan: You picked the second one.
-- Start again => start
-- End the conversation => END
-Nathan: For more information see the online documentation.
+Wessler: Bon. Vous êtes l’équipe d’audit ?
+	J’espère que vous avez l’habitude de travailler sous pression.
+	Parce que moi, j’ai géré trois crises ce matin. Et il n’est que 9h.
+- On va essayer d’être rapides pour ne pas aggraver votre matinée.(Lance la rencontre)
+	Wessler: Trop tard. Vous êtes déjà là. Alors allons-y
+	do GameState.start_fight("res://scenes/fight/scripts/creation_fighter.gd","communication")
+- On repassera après la pause déjeuner.(Fuite)
+do GameState.set_pause(false)
 => END

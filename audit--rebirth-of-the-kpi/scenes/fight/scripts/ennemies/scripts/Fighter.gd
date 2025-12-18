@@ -38,12 +38,15 @@ func refill_pv():
 	
 func add_credibility(nb):
 	_levelCredibility+=nb
+	if _levelCredibility<=0:
+		_levelCredibility=0
 	return add_random_attack()
 	
 func add_skill(nb):
 	_levelSkill+=nb
-	var add=add_random_defense()
-	return add
+	if _levelSkill<=0:
+		_levelSkill=0
+	return add_random_defense()
 
 func add_pts_defense(nb):
 	_pts_defense+=nb

@@ -29,7 +29,7 @@ Supports professionnels et structurés.
 
 [color=green]Niveau de risque : très faible.[/color]\n\n\n"
 	else :
-		comm.text="Alors euh… le Pôle Communication, donc… ils communiquent. Je crois. Enfin, parfois. Il y a beaucoup de messages, beaucoup de mails, certains commencent par “quoi” et là… réflexe, FEUR. Oui FEUR. Désolé, mauvais réflexe de ma part.
+		comm.text="[b]COMMUNICATION[/b]\nAlors euh… le Pôle Communication, donc… ils communiquent. Je crois. Enfin, parfois. Il y a beaucoup de messages, beaucoup de mails, certains commencent par “quoi” et là… réflexe, FEUR. Oui FEUR. Désolé, mauvais réflexe de ma part.
 
 [i]Observations :[/i]
 

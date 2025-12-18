@@ -1,8 +1,9 @@
-[gd_scene load_steps=10 format=4 uid="uid://c471nisdimx32"]
+[gd_scene load_steps=11 format=4 uid="uid://c471nisdimx32"]
 
-[ext_resource type="Texture2D" uid="uid://ct6f2inqkql0w" path="res://assets/map/offices/z_office.png" id="1_o2rcr"]
+[ext_resource type="Texture2D" uid="uid://cgtkjxl3bnsic" path="res://assets/map/offices/z_office.png" id="1_o2rcr"]
 [ext_resource type="Script" uid="uid://df5rx7s24v6ce" path="res://scenes/exploration/board/offices/rh_office.gd" id="2_nt3w4"]
 [ext_resource type="PackedScene" uid="uid://bmegaasqhjghc" path="res://scenes/exploration/pnj/pnj.tscn" id="2_t3yd0"]
+[ext_resource type="AudioStream" uid="uid://cga2c7vxt4bug" path="res://scenes/exploration/board/offices/rh_song.mp3" id="3_nt3w4"]
 [ext_resource type="PackedScene" uid="uid://ce7gk84oa0efc" path="res://scenes/exploration/player/player.tscn" id="3_o2rcr"]
 [ext_resource type="PackedScene" uid="uid://c1l537l6qsm3u" path="res://scenes/exploration/board/pause/pause_menu.tscn" id="5_4aelf"]
 [ext_resource type="PackedScene" uid="uid://h1db0cc8k0i3" path="res://scenes/exploration/board/offices/office_zone.tscn" id="6_t3yd0"]
@@ -810,13 +811,13 @@ texture = ExtResource("1_o2rcr")
 35:19/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 35:20/0 = 0
 35:21/0 = 0
-35:21/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, -5.3957624, -8, -5.3957624, 8, -8, 8)
+35:21/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, -5.39576, -8, -5.39576, 8, -8, 8)
 35:22/0 = 0
-35:22/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, -5.3957624, -8, -5.3957624, 8, -8, 8)
+35:22/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, -5.39576, -8, -5.39576, 8, -8, 8)
 35:23/0 = 0
-35:23/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, -5.3957624, -8, -5.3957624, 8, -8, 8)
+35:23/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, -5.39576, -8, -5.39576, 8, -8, 8)
 35:24/0 = 0
-35:24/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, -5.3957624, -8, -5.3957624, 8, -8, 8)
+35:24/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, -5.39576, -8, -5.39576, 8, -8, 8)
 35:25/0 = 0
 35:26/0 = 0
 35:27/0 = 0
@@ -1508,19 +1509,24 @@ tile_map_data = PackedByteArray("AAD//wAAAQAGAA0AAAD//wEAAQAGAA4AAAD//wIAAQAGAA8
 tile_set = SubResource("TileSet_awgst")
 script = ExtResource("2_nt3w4")
 
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_nt3w4")
+volume_db = 3.0
+autoplay = true
+
 [node name="pnj" parent="." instance=ExtResource("2_t3yd0")]
 light_mask = 2
 visibility_layer = 2
-position = Vector2(307, 172.00002)
+position = Vector2(307, 172)
 scale = Vector2(0.75, 0.75)
 
 [node name="player" parent="." instance=ExtResource("3_o2rcr")]
-position = Vector2(273.33334, 265.6667)
+position = Vector2(273.333, 265.667)
 scale = Vector2(2.2, 2.2)
 
 [node name="office_zone" parent="." instance=ExtResource("6_t3yd0")]
-position = Vector2(0.666687, 1.3333282)
-scale = Vector2(1.7939332, 2.4292715)
+position = Vector2(0.666687, 1.33333)
+scale = Vector2(1.79393, 2.42927)
 
 [node name="fight" parent="." instance=ExtResource("8_4aelf")]
 process_mode = 2

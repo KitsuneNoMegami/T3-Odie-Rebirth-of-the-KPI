@@ -1,8 +1,9 @@
-[gd_scene load_steps=13 format=4 uid="uid://c7wh7gjcu1bks"]
+[gd_scene load_steps=14 format=4 uid="uid://c7wh7gjcu1bks"]
 
-[ext_resource type="Texture2D" uid="uid://c3ugublm720v8" path="res://assets/map/offices/communication_office.png" id="1_qvj6k"]
+[ext_resource type="Texture2D" uid="uid://bmmj4o3y70xed" path="res://assets/map/offices/communication_office.png" id="1_qvj6k"]
 [ext_resource type="PackedScene" uid="uid://bmegaasqhjghc" path="res://scenes/exploration/pnj/pnj.tscn" id="2_81v5q"]
 [ext_resource type="Script" uid="uid://dve3m51g61flk" path="res://scenes/exploration/board/offices/comm_office.gd" id="2_qvj6k"]
+[ext_resource type="AudioStream" uid="uid://cm37ob66ydx1m" path="res://scenes/exploration/board/offices/niveau_1_song.mp3" id="3_0hwlo"]
 [ext_resource type="PackedScene" uid="uid://ce7gk84oa0efc" path="res://scenes/exploration/player/player.tscn" id="3_qvj6k"]
 [ext_resource type="Script" uid="uid://dmw6p2rvf7uj7" path="res://scenes/exploration/pnj/communication.gd" id="4_qvj6k"]
 [ext_resource type="PackedScene" uid="uid://c1l537l6qsm3u" path="res://scenes/exploration/board/pause/pause_menu.tscn" id="5_0kjh7"]
@@ -1153,6 +1154,11 @@ tile_map_data = PackedByteArray("AAD///7/AgACAAEAAAD/////AgACAAIAAAD//wAAAgACAAM
 tile_set = SubResource("TileSet_awgst")
 script = ExtResource("2_qvj6k")
 
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_0hwlo")
+volume_db = 3.0
+autoplay = true
+
 [node name="pnj" parent="." instance=ExtResource("2_81v5q")]
 light_mask = 2
 visibility_layer = 2
@@ -1169,7 +1175,7 @@ scale = Vector2(3, 3)
 
 [node name="office_zone" parent="." instance=ExtResource("6_q1r4v")]
 position = Vector2(28, -7)
-scale = Vector2(1.1192487, 1.5660738)
+scale = Vector2(1.11925, 1.56607)
 
 [node name="fight" parent="." instance=ExtResource("7_81v5q")]
 process_mode = 2

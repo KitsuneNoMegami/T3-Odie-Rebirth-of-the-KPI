@@ -1012,6 +1012,7 @@ offset_right = 258.18182
 offset_bottom = 621.8182
 theme = ExtResource("21_pjyna")
 bbcode_enabled = true
+text = "[s] Si vous voyez ca c'est de la faute de Maman [/s]"
 script = ExtResource("22_rlmv1")
 
 [connection signal="mouse_entered" from="home" to="home" method="_on_mouse_entered"]

@@ -3,11 +3,10 @@ extends RichTextLabel
 func _process(_delta: float) -> void:
 	clear()
 	var poles=["communication","it","commercial","finance","rh"]
-	var txt
+	append_text("TODO List [b]:[/b]\n")
 	for p in poles:
 		if GameState.get_win(p)!=null:
-			txt="[s] - "+p+"[/s]\n"
-			add_text(txt)
-			return
-		add_text("- "+p+"\n")
+			append_text("[s][b]--[/b] "+p+"[/s]\n")
+		else:
+			append_text("[b]--[/b] "+p+"\n")
 	await get_tree().create_timer(2).timeout 

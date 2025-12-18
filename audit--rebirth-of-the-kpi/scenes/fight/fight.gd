@@ -81,6 +81,7 @@ func end_fight(win):
 			_player.add_credibility(-10)
 			_player.add_skill(-20)
 			print("perdu")
+	del_all_defense()
 	fight_unfight(null, null,null)
 	return
 
@@ -243,8 +244,6 @@ func end_player_turn() -> void:
 		return
 	_turn = "enemy"
 	await enemy_auto_reply()
-	if _continue():
-		del_all_defense()
 	_turn = "player"
 	if is_instance_valid(cursor):
 		cursor._menu_input(5)

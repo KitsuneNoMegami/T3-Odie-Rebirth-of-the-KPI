@@ -2,8 +2,8 @@
 
 [ext_resource type="Texture2D" uid="uid://br24rxsb6s5dk" path="res://assets/start_menu.png" id="1_0flxi"]
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_61r7y"]
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_0flxi"]
 texture = ExtResource("1_0flxi")
 
 [resource]
-Panel/styles/panel = SubResource("StyleBoxTexture_61r7y")
+Panel/styles/panel = SubResource("StyleBoxTexture_0flxi")

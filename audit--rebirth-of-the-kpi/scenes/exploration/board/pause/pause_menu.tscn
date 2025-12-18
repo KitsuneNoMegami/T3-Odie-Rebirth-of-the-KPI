@@ -27,13 +27,14 @@ script = ExtResource("1_hdmo1")
 
 [node name="son" type="HScrollBar" parent="."]
 process_mode = 3
-modulate = Color(0.67058825, 0.5882353, 0.49019608, 1)
-self_modulate = Color(0.7640127, 0.6865355, 0.5948364, 1)
+modulate = Color(1, 0.59039766, 0.3900592, 1)
+self_modulate = Color(1, 0.55601203, 0.49303383, 1)
 texture_filter = 2
 offset_left = 665.0
 offset_top = 246.0
 offset_right = 1275.0
 offset_bottom = 293.0
+accessibility_name = "Souns"
 max_value = 1.0
 step = 0.01
 value = 1.0

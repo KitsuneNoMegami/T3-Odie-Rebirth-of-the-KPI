@@ -14,7 +14,7 @@ func _ready():
 ## Crée et retourne une instance du joueur avec ses compétences
 ## Retourne:Fighter - Instance du joueur de combat
 func get_player():
-	var attacks=[Attack.new("Entretien avec les parties prenantes")]
+	var attacks=[Attack.new("Entretien")]
 	var defenses=[Attack.new("Posture neutre")]
 	var player = FighterScene.instantiate()
 	player._pv = 50

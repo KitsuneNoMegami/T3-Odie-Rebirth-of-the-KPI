@@ -1,11 +1,11 @@
 [gd_scene load_steps=30 format=3 uid="uid://bmegaasqhjghc"]
 
 [ext_resource type="Script" uid="uid://bjfngxo28q0dm" path="res://scenes/exploration/pnj/pnj.gd" id="1_tpmle"]
-[ext_resource type="Texture2D" uid="uid://dvm3bd4p64uge" path="res://assets/sprites/pnj_animations/maman.png" id="3_kq0vh"]
-[ext_resource type="Texture2D" uid="uid://2rl2l4gw6p4s" path="res://assets/sprites/pnj_animations/roy_isabelle.png" id="5_kq0vh"]
-[ext_resource type="Texture2D" uid="uid://n2yi74gvpykv" path="res://assets/sprites/pnj_animations/wemmert_cedric.png" id="6_6afk0"]
-[ext_resource type="Texture2D" uid="uid://bj87kuankagh8" path="res://assets/sprites/pnj_animations/wessler_eric.png" id="6_kpv4r"]
-[ext_resource type="Texture2D" uid="uid://clbq1ixpxryhs" path="res://assets/sprites/pnj_animations/z-sheet.png" id="6_kq0vh"]
+[ext_resource type="Texture2D" uid="uid://bepbopii2ttv8" path="res://assets/sprites/pnj_animations/maman.png" id="3_kq0vh"]
+[ext_resource type="Texture2D" uid="uid://cjwiln6lxht85" path="res://assets/sprites/pnj_animations/roy_isabelle.png" id="5_kq0vh"]
+[ext_resource type="Texture2D" uid="uid://0jwx2pautp84" path="res://assets/sprites/pnj_animations/wemmert_cedric.png" id="6_6afk0"]
+[ext_resource type="Texture2D" uid="uid://x2c0x47vjvyo" path="res://assets/sprites/pnj_animations/wessler_eric.png" id="6_kpv4r"]
+[ext_resource type="Texture2D" uid="uid://d31qhobsupi75" path="res://assets/sprites/pnj_animations/z-sheet.png" id="6_kq0vh"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ug0y5"]
 atlas = ExtResource("3_kq0vh")

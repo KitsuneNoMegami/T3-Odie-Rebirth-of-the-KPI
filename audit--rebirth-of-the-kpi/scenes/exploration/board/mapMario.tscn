@@ -1,9 +1,9 @@
-[gd_scene load_steps=38 format=4 uid="uid://d1ina3ja7hqpa"]
+[gd_scene load_steps=40 format=4 uid="uid://bgbdvelc85ag1"]
 
 [ext_resource type="Texture2D" uid="uid://bo4bcdbhblcbh" path="res://assets/map/tilemap.png" id="1_lrwju"]
 [ext_resource type="Texture2D" uid="uid://kl5eyss4skgu" path="res://assets/map/RH.png" id="4_lb0w3"]
-[ext_resource type="Texture2D" uid="uid://d4c5tie42ao5c" path="res://assets/map/audit_house.png" id="4_mians"]
-[ext_resource type="Script" uid="uid://i31wxmpxxkf5" path="res://scenes/exploration/board/HomeBuilding.gd" id="5_mians"]
+[ext_resource type="Texture2D" uid="uid://bs6usojukvwqd" path="res://assets/map/audit_house.png" id="4_mians"]
+[ext_resource type="Script" path="res://scenes/exploration/board/HomeBuilding.gd" id="5_mians"]
 [ext_resource type="Script" uid="uid://clwkghmw28sq6" path="res://scenes/exploration/board/rhBuilding.gd" id="6_yh65k"]
 [ext_resource type="Texture2D" uid="uid://bol1xxo8vw1vh" path="res://assets/map/Finance.png" id="7_mians"]
 [ext_resource type="Texture2D" uid="uid://blm8t2dewvbif" path="res://assets/map/It.png" id="9_pjyna"]
@@ -11,15 +11,17 @@
 [ext_resource type="Texture2D" uid="uid://doc3j8n2jict7" path="res://assets/map/Commercial.png" id="11_v4jje"]
 [ext_resource type="Script" uid="uid://tn7g6lpobc1f" path="res://scenes/exploration/board/itBuilding.gd" id="12_yh65k"]
 [ext_resource type="Texture2D" uid="uid://b617qla2ddrym" path="res://assets/map/Communication.png" id="13_hflr0"]
-[ext_resource type="Script" path="res://scenes/exploration/board/player_lvl.gd" id="15_cydq1"]
+[ext_resource type="Script" uid="uid://ddrm53ai7ssc7" path="res://scenes/exploration/board/player_lvl.gd" id="15_cydq1"]
 [ext_resource type="Script" uid="uid://cnp663hbiqlp6" path="res://scenes/exploration/board/commercialBuilding.gd" id="15_mians"]
 [ext_resource type="Script" uid="uid://co3usloo00wub" path="res://scenes/exploration/player/GameState.gd" id="16_burnk"]
-[ext_resource type="Texture2D" uid="uid://booimevc1gimc" path="res://assets/sprites/tuto_speech.png" id="17_lb0w3"]
+[ext_resource type="Texture2D" uid="uid://2v3kqovvstvn" path="res://assets/sprites/tuto_speech.png" id="17_lb0w3"]
 [ext_resource type="Script" uid="uid://dvrbbeab3smtt" path="res://scenes/exploration/board/Tuto.gd" id="17_yh65k"]
 [ext_resource type="Script" uid="uid://doxvy8ki16jsk" path="res://scenes/exploration/board/communicationBuilding.gd" id="18_3ir1f"]
-[ext_resource type="Texture2D" uid="uid://dvsyseigl4th7" path="res://assets/sprites/pnj_animations/z.png" id="18_mians"]
+[ext_resource type="Texture2D" uid="uid://c3rxxl7l0eaf5" path="res://assets/sprites/pnj_animations/z.png" id="18_mians"]
 [ext_resource type="Texture2D" uid="uid://cxs35iqcds7g2" path="res://assets/sprites/fight_menu_background.png" id="19_mians"]
 [ext_resource type="PackedScene" uid="uid://c1l537l6qsm3u" path="res://scenes/exploration/board/pause/pause_menu.tscn" id="19_yh65k"]
+[ext_resource type="Theme" uid="uid://d1pqsukdxg0s4" path="res://assets/button.tres" id="21_pjyna"]
+[ext_resource type="Script" uid="uid://udv5gnf8qgfq" path="res://scenes/exploration/board/todo.gd" id="22_rlmv1"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_vs5oo"]
 texture = ExtResource("1_lrwju")
@@ -989,9 +991,9 @@ offset_bottom = 19.2909
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_shadow_color = Color(0.694118, 0.694118, 0.694118, 1)
-theme_override_constants/shadow_offset_y = 0
-theme_override_constants/shadow_offset_x = 0
 theme_override_constants/shadow_outline_size = 5
+theme_override_constants/shadow_offset_x = 0
+theme_override_constants/shadow_offset_y = 0
 theme_override_font_sizes/normal_font_size = 48
 theme_override_styles/focus = SubResource("StyleBoxEmpty_lb0w3")
 bbcode_enabled = true
@@ -1001,6 +1003,16 @@ fit_content = true
 [node name="pause" parent="." instance=ExtResource("19_yh65k")]
 process_mode = 3
 visible = false
+
+[node name="TODO" type="RichTextLabel" parent="."]
+texture_filter = 1
+offset_left = 21.81818
+offset_top = 213.63635
+offset_right = 258.18182
+offset_bottom = 621.8182
+theme = ExtResource("21_pjyna")
+bbcode_enabled = true
+script = ExtResource("22_rlmv1")
 
 [connection signal="mouse_entered" from="home" to="home" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="home" to="home" method="_on_mouse_exited"]

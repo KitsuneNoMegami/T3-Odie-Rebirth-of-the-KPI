@@ -37,7 +37,7 @@ func _init(aname = null,buff=1):
 			_damage=10
 			_description="Analyse des procédures, politiques et modes opératoires formalisés par l’entité."
 
-		"Entretien avec les parties prenantes":
+		"Entretien":
 			_damage=10
 			_description="Collecte d’informations par échanges structurés avec les responsables concernés."
 

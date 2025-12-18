@@ -21,6 +21,7 @@ func create_fighter(pv: int, fname: String, attacks: Array, defenses: Array = []
 	fighter._name = fname
 	fighter._attacks = attacks
 	fighter._defenses = defenses
+	fighter._description=description
 	return fighter
 
 func generate_buff(pole_skill,pole_credibility,player_skill,player_credibility):
@@ -56,7 +57,7 @@ func get_fighters(pole,lvl_skill,lvl_credibility):
 			fighter3=create_fighter(100*buff, "Batman",attacks,[],"Il apparaît uniquement lorsqu’on l’appelle avec un Bat-signal.\n Quand nous avons besoin de lui, tel un sauveur, il jaillit et aide l’entreprise à résoudre ses problèmes.")
 		"communication":
 			buff=generate_buff(0,0,lvl_skill,lvl_credibility)
-			attacks=[Attack.new("Abscence de preuve disponible",buff),Attack.new("Dépendance à une personne clé",buff),Attack.new("Méconnaissance de la procédure",buff)]
+			attacks=[Attack.new("Absence de preuve disponible",buff),Attack.new("Dépendance à une personne clé",buff),Attack.new("Méconnaissance de la procédure",buff)]
 			fighter1=create_fighter(20*buff,"Wessler",attacks,[],"Il vous apprend à parler un bon français dans un milieu professionnel.")
 			attacks=[Attack.new("Justificatif partiel",buff),Attack.new("Production tardive des documents",buff)]
 			fighter2=create_fighter(20*buff,"Core",attacks,[],"Créé par des gens géniaux, il donne des informations sur les événements à venir. Venez y adhérer !")

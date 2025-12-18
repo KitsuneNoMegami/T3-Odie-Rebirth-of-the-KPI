@@ -130,11 +130,8 @@ func _show_defenses():
 	var defenses = []
 	if fight.get_player() and fight.get_player().has_method("get_defenses"):
 		defenses = fight.get_player().get_defenses()
-	for defense in defenses:
-		if defense and defense.has_method("get_aname"):
-			_menu_options[2].append(defense.get_aname())
-		else:
-			_menu_options[2].append(str(defense))
+	for d in defenses:
+		_menu_options[2].append(d.get_aname())
 	while _menu_options[2].size() < 5:
 		_menu_options[2].append(" ")
 	_current_menu = "Défense"
@@ -198,17 +195,14 @@ func _update_description():
 			var aname = _menu_options[1][1 + _slot]
 			if aname != " ":
 				var atk = _resolve_attack_name_to_object(aname)
-				txt = "Dégats : "+atk.get_damage()+"\n"+atk.get_description()
+				txt = "Dégats : "+str(atk.get_damage())+"\n"+atk.get_description()
 			else:
 				txt = "Choix de l'attaque"
 		"Défense":
 			var aname = _menu_options[2][1 + _slot]
 			if aname != " ":
 				var def = _resolve_defense_name_to_object(aname)
-				if def and def.has_method("get_description"):
-					txt = "Points de défense: "+def.get_damage()+"\n"+def.get_description()
-				else:
-					txt = "Défense: " + aname
+				txt = "Points de défense: "+str(def.get_damage())+"\n"+def.get_description()
 			else:
 				txt = "Choix de la défense"
 		"Ennemis":

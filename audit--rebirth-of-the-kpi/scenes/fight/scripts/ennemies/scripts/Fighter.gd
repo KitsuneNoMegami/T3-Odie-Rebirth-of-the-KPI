@@ -15,7 +15,7 @@ var _pts_defense =0
 func _ready():
 	pass
 
-func _init(pv=null,fname=null,attacks=null,defenses=null,description="Si vous voyez ceci, c'est de la faute de jonathan"):
+func _init(pv=null,fname=null,attacks=null,defenses=null,description=null):
 	_pv=pv
 	_pv_max=pv
 	_description=description
@@ -38,69 +38,71 @@ func refill_pv():
 	
 func add_credibility(nb):
 	_levelCredibility+=nb
-	return add_random_defense()
+	return add_random_attack()
 	
 func add_skill(nb):
 	_levelSkill+=nb
-	return add_random_attack()
+	var add=add_random_defense()
+	return add
 
 func add_pts_defense(nb):
 	_pts_defense+=nb
 	pass
 	
 func del_defense(nb=null):
-	if nb==null:
-		_pts_defense=0
-	else:
+	var dmg = _pts_defense
+	if nb!=null:
 		_pts_defense-=nb
-	return 0-_pts_defense
+		dmg=_pts_defense
+		if _pts_defense<0:
+			_pts_defense=0
+	return 0-dmg
 	
 func add_random_attack():
 	var skills
-	if _levelCredibility > 20 :
+	if _levelCredibility >= 20 :
 		_pv_max=75
 		
-	if _levelCredibility>30 and _attacks.size()==1:
+	if _levelCredibility>=30 and _attacks.size()==1:
 		#15
 		skills=["Cartographie des processus","Analyse de conformité réglementaire","Matrice des risques"]
 		pass
 		
-	if _levelCredibility > 60 :
+	if _levelCredibility >= 60 :
 		_pv_max=90
 		
-	if _levelCredibility>90 and _attacks.size()==2:
+	if _levelCredibility>=90 and _attacks.size()==2:
 		#20
 		skills=["Test de conception des contrôles","Test d’efficacité opérationnelle","Échantillonnage des transactions","Analyse des écarts"]
 		pass
 		
-	if _levelCredibility > 100 :
+	if _levelCredibility >= 100 :
 		_pv_max=120
 		
-	if _levelCredibility > 130 :
+	if _levelCredibility >= 130 :
 		_pv_max=150
 		
-	if _levelCredibility>140 and _attacks.size()==3:
+	if _levelCredibility>=140 and _attacks.size()==3:
 		#28
 		skills=["Traçabilité des opérations","Séparation des tâches","Revue des habilitations","Analyse des contrôles automatisés"]
 		pass
 	if skills!=null:
-		_attacks.append(skills[randi() % skills.size()])
+		_attacks.append(Attack.new(skills[randi() % skills.size()]))
 		return true
 	return false
 func add_random_defense():
 	var defense
-	if _levelSkill > 20 and _defenses.size()==1:
+	if _levelSkill >= 20 and _defenses.size()==1:
 		defense=["Clarification"]
 		
-	if _levelSkill > 140 and _defenses.size()==2:
+	if _levelSkill >= 140 and _defenses.size()==2:
 		defense=["Reformulation protectrice"]
 		
-	if _levelSkill > 240 and _defenses.size()==3:
+	if _levelSkill >= 240 and _defenses.size()==3:
 		defense=["Cadre de l'entretien"]
 	
 	if defense!=null:
-		#_defenses.append(defense[randi() % 4])
-		_defenses.append(defense[0])
+		_defenses.append(Attack.new(defense[0]))
 		return true
 	return false
 		

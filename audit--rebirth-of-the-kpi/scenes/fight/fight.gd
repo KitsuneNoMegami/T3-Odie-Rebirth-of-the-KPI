@@ -59,14 +59,14 @@ func animation_initialisation():
 	var fighter_node = get_node_or_null("Fighter")
 	fighter_node._play()
 	fighter_node.set_positions(100,200)
-	fighter_node.set_size(10)
+	#fighter_node.set_size(10)
 
 	var i=2
 	for fighter in _fighters:
 		var enemy_node = get_node_or_null("Fighter"+str(i))
 		enemy_node._play()
 		enemy_node.set_positions(380+i*150,150)
-		enemy_node.set_size(10)
+		#enemy_node.set_size(10)
 		i+=1
 	return
 
@@ -175,18 +175,19 @@ func attack(target, _attack):
 		await message.show_message_blocking(target.get_fname() + " est mort")
 		return false
 	# Récupération nom/dégâts
-	var aname := _attack_name(_attack)
-	var dmg := _attack_damage(_attack)
+	var aname = _attack_name(_attack)
+	var dmg = _attack_damage(_attack)
 	_log.addLog(aname+" ("+str(dmg)+" dégats)\n")
 	_log.addLog(target.get_fname()+"("+str(target.get_pv())+"/"+str(target.get_pvmax())+")->(")
 	# Appliquer la défense avant les dégâts
-	var reduced = target.del_defense(dmg)
+	var reduced=0
+	reduced = target.del_defense(dmg)
 	if reduced <= 0:
 		await message.show_message_blocking(target.get_fname() + " se défend et ne prend aucun dégat")
 		_log.addLog(str(target.get_pv())+"/"+str(target.get_pvmax())+")")
 		return false
 	# Séquence BLOQUANTE d'attaque
-	if target==_player.get_fname():
+	if target.get_fname()==_player.get_fname():
 		await message.show_message_blocking(aname + " est lancé sur " + target.get_fname() + " et lui inflige " + str(reduced) + " dégats")
 	await message.show_message_blocking(aname + " est lancé sur " + target.get_fname() + " et lui inflige " + str(reduced) + " dégats")
 	target.delete_pv(reduced)

@@ -59,7 +59,7 @@ func get_player():
 ## pole:String - Nom du pôle à combattre
 func start_fight(path, pole):
 	_pole=pole
-	print(pole)
+	set_pause(true)
 	if get_win(pole)==null:
 		fight_scene.fight_unfight(path,pole,_player)
 

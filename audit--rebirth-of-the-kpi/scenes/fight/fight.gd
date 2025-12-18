@@ -61,15 +61,15 @@ func is_player_turn() -> bool:
 func animation_initialisation():
 	var fighter_node = get_node_or_null("Fighter")
 	fighter_node._play()
-	fighter_node.set_positions(100,200)
-	#fighter_node.set_size(10)
+	fighter_node.set_positions(100,250)
+	fighter_node.set_size(10)
 
 	var i=2
 	for fighter in _fighters:
 		var enemy_node = get_node_or_null("Fighter"+str(i))
 		enemy_node._play()
-		enemy_node.set_positions(380+i*150,150)
-		#enemy_node.set_size(10)
+		enemy_node.set_positions(i*150+300,150)
+		enemy_node.set_size(2)
 		i+=1
 	return
 

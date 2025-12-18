@@ -1,6 +1,6 @@
 [gd_scene load_steps=13 format=4 uid="uid://c7wh7gjcu1bks"]
 
-[ext_resource type="Texture2D" uid="uid://cr8nm1sqfk1uo" path="res://assets/map/offices/communication_office.png" id="1_qvj6k"]
+[ext_resource type="Texture2D" uid="uid://c3ugublm720v8" path="res://assets/map/offices/communication_office.png" id="1_qvj6k"]
 [ext_resource type="PackedScene" uid="uid://bmegaasqhjghc" path="res://scenes/exploration/pnj/pnj.tscn" id="2_81v5q"]
 [ext_resource type="Script" uid="uid://dve3m51g61flk" path="res://scenes/exploration/board/offices/comm_office.gd" id="2_qvj6k"]
 [ext_resource type="PackedScene" uid="uid://ce7gk84oa0efc" path="res://scenes/exploration/player/player.tscn" id="3_qvj6k"]

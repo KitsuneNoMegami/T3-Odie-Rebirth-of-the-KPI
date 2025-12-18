@@ -1,6 +1,6 @@
 [gd_scene load_steps=10 format=4 uid="uid://c471nisdimx32"]
 
-[ext_resource type="Texture2D" uid="uid://d4g87tg0yas8a" path="res://assets/map/offices/z_office.png" id="1_o2rcr"]
+[ext_resource type="Texture2D" uid="uid://ct6f2inqkql0w" path="res://assets/map/offices/z_office.png" id="1_o2rcr"]
 [ext_resource type="Script" uid="uid://df5rx7s24v6ce" path="res://scenes/exploration/board/offices/rh_office.gd" id="2_nt3w4"]
 [ext_resource type="PackedScene" uid="uid://bmegaasqhjghc" path="res://scenes/exploration/pnj/pnj.tscn" id="2_t3yd0"]
 [ext_resource type="PackedScene" uid="uid://ce7gk84oa0efc" path="res://scenes/exploration/player/player.tscn" id="3_o2rcr"]
@@ -1521,9 +1521,6 @@ scale = Vector2(2.2, 2.2)
 [node name="office_zone" parent="." instance=ExtResource("6_t3yd0")]
 position = Vector2(0.666687, 1.3333282)
 scale = Vector2(1.7939332, 2.4292715)
-
-[node name="CanvasLayer" parent="." instance=ExtResource("5_4aelf")]
-visible = false
 
 [node name="fight" parent="." instance=ExtResource("8_4aelf")]
 process_mode = 2

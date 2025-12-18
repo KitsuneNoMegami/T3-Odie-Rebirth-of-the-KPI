@@ -18,7 +18,7 @@ func _ready():
 		get_tree().call_group("Tuto", "hide")
 	pass
 	
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	if(speech_part==0):
 		tuto_txt.append_text(txt1.left(1))
 		txt1 = txt1.erase(0,1)

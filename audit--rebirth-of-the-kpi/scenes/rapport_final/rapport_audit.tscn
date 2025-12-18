@@ -76,6 +76,8 @@ layout_mode = 2
 theme = ExtResource("3_yetux")
 text = "rejouer une nouvelle partie "
 script = ExtResource("2_vo4vq")
+custom_minimum_size = Vector2(300, 50)
+size_flags_horizontal = 4
 
 [node name="quitter" type="Button" parent="ScrollContainer/VBoxContainer"]
 texture_filter = 1
@@ -83,6 +85,8 @@ layout_mode = 2
 theme = ExtResource("3_yetux")
 text = "quitter le jeu "
 script = ExtResource("2_w6ff1")
+custom_minimum_size = Vector2(300, 50)
+size_flags_horizontal = 4
 
 [connection signal="pressed" from="ScrollContainer/VBoxContainer/rejouer" to="ScrollContainer/VBoxContainer/rejouer" method="_on_pressed"]
 [connection signal="pressed" from="ScrollContainer/VBoxContainer/quitter" to="ScrollContainer/VBoxContainer/quitter" method="_on_pressed"]

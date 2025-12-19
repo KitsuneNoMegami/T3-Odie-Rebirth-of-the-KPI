@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>README</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
+            line-height: 1.6;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+            color: #333;
+        }
+        h1, h2, h3, h4, h5, h6 {
+            margin-top: 24px;
+            margin-bottom: 16px;
+            font-weight: 600;
+            line-height: 1.25;
+        }
+        h1 { font-size: 2em; border-bottom: 1px solid #eaecef; padding-bottom: 0.3em; }
+        h2 { font-size: 1.5em; border-bottom: 1px solid #eaecef; padding-bottom: 0.3em; }
+        code {
+            background-color: #f6f8fa;
+            padding: 0.2em 0.4em;
+            border-radius: 3px;
+            font-family: 'Courier New', Courier, monospace;
+        }
+        pre {
+            background-color: #f6f8fa;
+            padding: 16px;
+            overflow: auto;
+            border-radius: 6px;
+        }
+        pre code {
+            background-color: transparent;
+            padding: 0;
+        }
+        a {
+            color: #0366d6;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        blockquote {
+            padding: 0 1em;
+            color: #6a737d;
+            border-left: 0.25em solid #dfe2e5;
+            margin: 0;
+        }
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            margin: 16px 0;
+        }
+        table th, table td {
+            padding: 6px 13px;
+            border: 1px solid #dfe2e5;
+        }
+        table tr:nth-child(2n) {
+            background-color: #f6f8fa;
+        }
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+        ul, ol {
+            padding-left: 2em;
+        }
+    </style>
+</head>
+<body>
+<h1>T3 — Odie : Rebirth of the KPI</h1>
+<p>Jeu pédagogique sur l&#39;audit interne, développé avec Godot Engine (GDScript).<br>Le jeu mêle exploration top-down et combats pédagogiques au tour par tour qui symbolisent la collecte d&#39;informations auprès des services d&#39;une grande entreprise.</p>
+<h2>Cahier des charges</h2>
+<p><strong>Le <a href="./Cahier%20des%20charges.md">Cahier des charges</a> est inspiré de celui du projet T4 de l&#39;année dernière</strong></p>
+<h2>Table des matières</h2>
+<ol>
+<li><a href="#objectif-du-projet">Objectif du projet</a></li>
+<li><a href="#aper%C3%A7u-rapide">Aperçu rapide</a></li>
+<li><a href="#comment-jouer-r%C3%A9sum%C3%A9">Comment jouer (résumé)</a></li>
+<li><a href="#indicateurs">Indicateurs</a></li>
+<li><a href="#objectifs-p%C3%A9dagogiques-principaux">Objectifs pédagogiques principaux</a></li>
+<li><a href="#sc%C3%A9narios-de-gameplay-exemples">Scénarios de gameplay (exemples)</a></li>
+<li><a href="#actions-disponibles-pour-le-joueur">Actions disponibles pour le joueur</a></li>
+<li><a href="#contraintes-techniques">Contraintes techniques</a></li>
+<li><a href="#cr%C3%A9dits">Crédits</a></li>
+</ol>
+<h2>Objectif du projet</h2>
+<p>Permettre à des apprenants de comprendre et pratiquer, de façon ludique, les étapes clés d&#39;un audit interne : planification, posture professionnelle, collecte d&#39;informations fiables et synthèse finale dans un rapport.</p>
+<h2>Aperçu rapide</h2>
+<ul>
+<li>Genre : JRPG pédagogique (exploration + combats tour par tour)</li>
+<li>Moteur : Godot Engine (GDScript majoritaire, scripts C# possibles)</li>
+<li>Public : étudiants en audit, qualité, gestion ou novices intéressés par l&#39;audit interne</li>
+<li>Durée d&#39;une partie : courte (20–40 minutes)</li>
+</ul>
+<h2>Comment jouer (résumé)</h2>
+<ol>
+<li>Lancer une partie.</li>
+<li>Se déplacer sur la carte et atteindre les services à auditer.</li>
+<li>Interagir avec le chef de service pour lancer un &quot;combat de compétences d&#39;audit&quot;.</li>
+<li>Choisir le membre de l&#39;équipe le plus adapté et sélectionner une compétence.</li>
+<li>Combattre en tour par tour : gagner donne des points et des informations exploitables ; perdre donne des informations erronées et pénalise le joueur.</li>
+<li>Retour au bureau pour générer le rapport final : les sections liées aux audits réussis sont lisibles ; celles liées aux échecs sont confuses.</li>
+</ol>
+<h2>Indicateurs</h2>
+<ul>
+<li>Points de compétence (XP) : permettent de débloquer des compétences d&#39;audit.</li>
+<li>Points de crédibilité : influent sur la difficulté et l&#39;accueil des services suivants.</li>
+<li>PV (points de vie) : de l&#39;équipe et des chefs de service.</li>
+<li>Qualité des informations collectées : affecte la lisibilité des passages du rapport final.</li>
+<li>Écrans : écran d&#39;accueil, carte, combat, inventaire, écran de fin (rapport).</li>
+</ul>
+<h2>Objectifs pédagogiques principaux</h2>
+<ul>
+<li>Planifier un audit : organiser un ordre de passage logique entre services.</li>
+<li>Adopter une posture professionnelle : comprendre l&#39;impact de la crédibilité sur la coopération.</li>
+<li>Rédiger une synthèse : produire des paragraphes structurés dans le rapport final.</li>
+</ul>
+<h2>Scénarios de gameplay (exemples)</h2>
+<ul>
+<li>Map composée de 5 services + bureau.</li>
+<li>Combat tour par tour : le joueur choisit compétences qu&#39;il connait; le chef de service répond aléatoirement.</li>
+<li>À la fin, génération automatique du rapport : chaque service possède un paragraphe évalué (fiable / partiellement fiable / erroné).</li>
+</ul>
+<h2>Actions disponibles pour le joueur</h2>
+<ul>
+<li>Naviguer sur la carte et interagir avec les PNJ.</li>
+<li>Lancer un combat d&#39;audit.</li>
+<li>Choisir le membre de l&#39;équipe et la compétence à utiliser.</li>
+<li>Consulter les statistiques du joueur.</li>
+<li>Finaliser la partie en générant le rapport d&#39;audit.</li>
+</ul>
+<h2>Contraintes techniques</h2>
+<ul>
+<li>Développement sous contrainte de temps.</li>
+<li>Moteur : Godot Engine.</li>
+<li>Langage principal : GDScript</li>
+</ul>
+<h2>Crédits</h2>
+<p>   Développement<br>   Jeu créé avec Godot Engine<br>   © Godot Engine — sous licence MIT<br>   godotengine.org/license</p>
+<p>   Code source<br>   Sous licence Apache 2.0<br>   Utilisation, modification et distribution autorisées avec mention du copyright d’origine.</p>
+<p>   Graphismes<br>   Personnages — @ErisEsra (utilisation libre, crédit apprécié)<br>   Bâtiments — @nyk_nck (attribution requise)<br>   Sol / textures — KenneyNL (CC0 1.0 Universal)</p>
+<p>   Musique<br>   Compositions par Floraphonic, via Pixabay<br>   Licence Pixabay Content License (usage libre, attribution recommandée)<br>   pixabay.com/service/license-summary/</p>
+
+</body>
+</html>

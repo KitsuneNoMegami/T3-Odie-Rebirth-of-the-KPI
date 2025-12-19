@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cahier Des Charges</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
+            line-height: 1.6;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+            color: #333;
+        }
+        h1, h2, h3, h4, h5, h6 {
+            margin-top: 24px;
+            margin-bottom: 16px;
+            font-weight: 600;
+            line-height: 1.25;
+        }
+        h1 { font-size: 2em; border-bottom: 1px solid #eaecef; padding-bottom: 0.3em; }
+        h2 { font-size: 1.5em; border-bottom: 1px solid #eaecef; padding-bottom: 0.3em; }
+        code {
+            background-color: #f6f8fa;
+            padding: 0.2em 0.4em;
+            border-radius: 3px;
+            font-family: 'Courier New', Courier, monospace;
+        }
+        pre {
+            background-color: #f6f8fa;
+            padding: 16px;
+            overflow: auto;
+            border-radius: 6px;
+        }
+        pre code {
+            background-color: transparent;
+            padding: 0;
+        }
+        a {
+            color: #0366d6;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        blockquote {
+            padding: 0 1em;
+            color: #6a737d;
+            border-left: 0.25em solid #dfe2e5;
+            margin: 0;
+        }
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            margin: 16px 0;
+        }
+        table th, table td {
+            padding: 6px 13px;
+            border: 1px solid #dfe2e5;
+        }
+        table tr:nth-child(2n) {
+            background-color: #f6f8fa;
+        }
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+        ul, ol {
+            padding-left: 2em;
+        }
+    </style>
+</head>
+<body>
+<h2>Cahier des charges</h2>
+<p><strong>Ce cahier des charges n&#39;est pas rigide. Laissez parler votre créativité et ajustez/ajoutez des choses si l&#39;envi vous viens.</strong></p>
+<h3>Objectifs pédagogiques</h3>
+<p>Ce projet a pour objectif de permettre au joueur d’acquérir une compréhension claire des notions suivantes :</p>
+<ul>
+<li><strong>La planification d’un audit</strong><br>Le joueur apprend à organiser méthodiquement l’ordre de passage dans les différents pôles de l’entreprise, afin de garantir l’exhaustivité et la qualité du rapport d’audit final.</li>
+</ul>
+<h4>Objectifs pédagogiques avancés</h4>
+<ul>
+<li><strong>Comprendre l’importance de l’image de l’auditeur au sein d’une entreprise</strong></li>
+</ul>
+<p>Lors d’un audit dans une grande organisation, un nouvel auditeur ne peut pas se permettre de solliciter des informations de manière désordonnée ou auprès de n’importe quel interlocuteur, au risque d’obtenir des données erronées et de compromettre la qualité du rapport final.<br>Il est donc essentiel de construire une image professionnelle, inspirant confiance et compétence, afin de faciliter les échanges avec les collaborateurs des différents pôles. Cette posture favorise un climat de coopération, permettant d’obtenir des informations fiables et pertinentes pour produire un rapport d’audit de qualité.</p>
+<h4>Références</h4>
+<ul>
+<li>Monsieur Romain Boully, responsable du service audit interne de l&#39;Unistra</li>
+</ul>
+<h3>Description des fonctionnalités</h3>
+<h4>Concept du jeu</h4>
+<p>Le joueur incarne un <strong>auditeur débutant</strong> au sein d’une grande organisation. Sa mission est de réaliser un audit complet de l’entreprise, tout en gérant sa progression personnelle.</p>
+<p>Deux indicateurs majeurs définissent sa progression :</p>
+<ul>
+<li><strong>Points de compétence</strong></li>
+<li><strong>Points de crédibilité</strong> au sein de l’organisation</li>
+</ul>
+<h5>Objectif principal</h5>
+<p>Atteindre les meilleurs scores possibles en compétences et en crédibilité, tout en ayant audité l’ensemble des pôles de l’entreprise.</p>
+<p>Chaque pôle audité peut :</p>
+<ul>
+<li><strong>Récompenser</strong> le joueur (gain de points) si l’audit est réussi</li>
+<li><strong>Pénaliser</strong> le joueur (perte de points) si l’audit est échoué</li>
+</ul>
+<h5>Réussir un audit</h5>
+<p>Un audit est considéré comme réussi si les statistiques du joueur atteignent le niveau requis pour &quot;attaquer&quot; un pôle.<br>Plus la <strong>santé</strong> d’un pôle est faible, plus les prérequis sont élevés… mais plus la récompense est importante.</p>
+<blockquote>
+<p><strong>Remarque</strong> : La santé d’un pôle n’est pas visible directement. Le joueur devra se fier à son intuition, à des indices fournis dans le jeu, ou tenter sa chance.</p>
+</blockquote>
+<h5>Échouer un audit</h5>
+<p>Si les statistiques du joueur sont insuffisantes face aux exigences d’un pôle, l’audit échoue. Le joueur subit alors une ou plusieurs pénalités sur ses points de compétence et/ou de crédibilité.</p>
+<h5>Mécanique d’exploration stratégique</h5>
+<p>Auditer un pôle permet, selon son état, de révéler des <strong>indices</strong> sur l’état de santé des pôles adjacents.<br>Le joueur peut ainsi déduire quelles zones sont critiques… mais devra s’assurer d’avoir accumulé suffisamment de points pour y accéder.<br>Ce systèsme fonctionne comme une mécanique de type “boss fight” où il faut monter en niveau pour débloquer certaines zones.</p>
+<h5>Interface</h5>
+<ul>
+<li>Un écran de fin de jeu et un écran de début de jeu</li>
+</ul>
+<hr>
+<h3>Scénarios de gameplay</h3>
+<p>Voici quelques situations types prévues dans le jeu :</p>
+<ol>
+<li><p><strong>Organisation saine</strong><br>L’entreprise générée possède un bon état général (santé élevée des pôles). Le joueur peine à faire monter ses stats car les récompenses sont faibles. Il termine alors avec peu de compétences et de crédibilité, incarnant un auditeur peu performant.</p>
+</li>
+<li><p><strong>Organisation en crise</strong><br>L’entreprise générée est en mauvais état (santé faible partout). Le joueur, incapable d’auditer les pôles sans perdre des points, est contraint de falsifier des rapports. Il finit par être sanctionné ou renvoyé.</p>
+</li>
+</ol>
+<blockquote>
+<p>Vous êtes libres d’imaginer d’autres scénarios originaux afin d’enrichir l’expérience de jeu.</p>
+</blockquote>
+<hr>
+<h3>Actions du joueur</h3>
+<blockquote>
+<p><strong>À définir librement par l’équipe de développement.</strong></p>
+</blockquote>
+<p>Cependant, voici des idées que nous pouvons vous fournir :</p>
+<ul>
+<li>Déplacement (dans un jeu en 3D ou 2D)</li>
+<li>Intéraction avec des PNJ/objets</li>
+</ul>
+<hr>
+<h3>Contraintes de développement</h3>
+<blockquote>
+<p><strong>À définir librement par l’équipe de développement.</strong></p>
+</blockquote>
+<p>Cependant, si vous souhaitez poursuivre notre projet, il est fait en Web avec React et Typescript.</p>
+<hr>
+<h3>Fonctionnalités et scénarios avancés</h3>
+<p><strong>Fonctionnalités prévues :</strong></p>
+<ul>
+<li><strong>Compétence spéciale “Pré-audit”</strong> : permet au joueur de connaître à l’avance la santé d’un pôle</li>
+<li><strong>Système de difficulté</strong> : plusieurs niveaux (Facile, Moyen, Difficile)</li>
+<li><strong>Interface de statistiques</strong> : affichage des points de compétence et de crédibilité à l’aide de jauges visuelles</li>
+<li>Possibilité de choix du nombre de service à la génération de l&#39;entreprise dans laquelle nous allons opérer</li>
+</ul>
+
+</body>
+</html>

@@ -3,6 +3,10 @@
 Jeu pédagogique sur l'audit interne, développé avec Godot Engine (GDScript). 
 Le jeu mêle exploration top-down et combats pédagogiques au tour par tour qui symbolisent la collecte d'informations auprès des services d'une grande entreprise.
 
+## Documentation HTML
+
+📄 Pour convertir la documentation Markdown en HTML, voir [CONVERSION.md](./CONVERSION.md)
+
  
  ## Cahier des charges
 

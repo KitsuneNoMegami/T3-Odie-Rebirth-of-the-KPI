@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CONVERSION</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
+            line-height: 1.6;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+            color: #333;
+        }
+        h1, h2, h3, h4, h5, h6 {
+            margin-top: 24px;
+            margin-bottom: 16px;
+            font-weight: 600;
+            line-height: 1.25;
+        }
+        h1 { font-size: 2em; border-bottom: 1px solid #eaecef; padding-bottom: 0.3em; }
+        h2 { font-size: 1.5em; border-bottom: 1px solid #eaecef; padding-bottom: 0.3em; }
+        code {
+            background-color: #f6f8fa;
+            padding: 0.2em 0.4em;
+            border-radius: 3px;
+            font-family: 'Courier New', Courier, monospace;
+        }
+        pre {
+            background-color: #f6f8fa;
+            padding: 16px;
+            overflow: auto;
+            border-radius: 6px;
+        }
+        pre code {
+            background-color: transparent;
+            padding: 0;
+        }
+        a {
+            color: #0366d6;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        blockquote {
+            padding: 0 1em;
+            color: #6a737d;
+            border-left: 0.25em solid #dfe2e5;
+            margin: 0;
+        }
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            margin: 16px 0;
+        }
+        table th, table td {
+            padding: 6px 13px;
+            border: 1px solid #dfe2e5;
+        }
+        table tr:nth-child(2n) {
+            background-color: #f6f8fa;
+        }
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+        ul, ol {
+            padding-left: 2em;
+        }
+    </style>
+</head>
+<body>
+<h1>Markdown to HTML Conversion</h1>
+<p>This repository includes a tool to convert Markdown (.md) documentation files to HTML (.html) format.</p>
+<h2>Prerequisites</h2>
+<ul>
+<li>Node.js (v14 or higher)</li>
+<li>npm (comes with Node.js)</li>
+</ul>
+<h2>Installation</h2>
+<p>Install the required dependencies:</p>
+<pre><code class="language-bash">npm install
+</code></pre>
+<h2>Usage</h2>
+<p>To convert all Markdown files in the repository to HTML:</p>
+<pre><code class="language-bash">npm run convert
+</code></pre>
+<p>This will:</p>
+<ol>
+<li>Find all <code>.md</code> files in the root directory</li>
+<li>Convert each file to <code>.html</code> with the same name</li>
+<li>Apply a clean, GitHub-style CSS to the generated HTML</li>
+</ol>
+<h2>Example</h2>
+<p>Running the conversion:</p>
+<pre><code class="language-bash">$ npm run convert
+
+🔄 Converting Markdown files to HTML...
+
+Found 3 markdown file(s):
+
+✓ Converted: Cahier des charges.md → Cahier des charges.html
+✓ Converted: README.md → README.html
+✓ Converted: WIKI.md → WIKI.html
+
+✅ Conversion complete! 3 file(s) converted.
+</code></pre>
+<h2>Output</h2>
+<p>The generated HTML files include:</p>
+<ul>
+<li>Clean, responsive design</li>
+<li>GitHub-flavored Markdown styling</li>
+<li>Syntax highlighting support</li>
+<li>Mobile-friendly viewport</li>
+<li>Proper heading hierarchies and navigation</li>
+</ul>
+<h2>Files Generated</h2>
+<ul>
+<li><code>README.html</code> - Converted README documentation</li>
+<li><code>WIKI.html</code> - Converted WIKI documentation</li>
+<li><code>Cahier des charges.html</code> - Converted specifications document</li>
+</ul>
+<h2>Customization</h2>
+<p>To customize the HTML styling, edit the CSS in the <code>htmlTemplate</code> function in <code>convert-md-to-html.js</code>.</p>
+<h2>Technical Details</h2>
+<ul>
+<li>Uses the <code>marked</code> library for Markdown parsing</li>
+<li>Supports GitHub Flavored Markdown (GFM)</li>
+<li>Generates standalone HTML files with embedded CSS</li>
+<li>Each HTML file is self-contained and can be viewed in any browser</li>
+</ul>
+
+</body>
+</html>

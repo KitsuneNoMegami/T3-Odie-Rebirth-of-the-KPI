@@ -84,7 +84,3 @@ Voir [CONVERSION.md](./CONVERSION.md) pour plus de détails.
 ## 🎮 Projet Godot
 
 Le code source du jeu se trouve dans le dossier `audit--rebirth-of-the-kpi/`.
-
----
-
-*Dernière mise à jour : 2025-12-19*

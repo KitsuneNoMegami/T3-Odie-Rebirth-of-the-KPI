@@ -1,12 +1,13 @@
  # T3 — Odie : Rebirth of the KPI
 
+C'est un projet universitaire
 Jeu pédagogique sur l'audit interne, développé avec Godot Engine (GDScript). 
 Le jeu mêle exploration top-down et combats pédagogiques au tour par tour qui symbolisent la collecte d'informations auprès des services d'une grande entreprise.
 
  
  ## Cahier des charges
 
-**Le [Cahier des charges](./Cahier%20des%20charges.md) est inspiré de celui du projet T4 de l'année dernière**
+**Le [Cahier des charges](./Cahier%20des%20charges.md) est inspiré de celui d'un projet qu'on nous a donner comme base/ inspiration**
 
 ## Table des matières
 1. [Objectif du projet](#objectif-du-projet)

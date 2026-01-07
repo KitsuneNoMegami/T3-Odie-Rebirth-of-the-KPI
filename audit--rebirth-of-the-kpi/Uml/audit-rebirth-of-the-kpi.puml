@@ -11,26 +11,38 @@ hide enum methods
 package exploration{
     class Player{
         -_speed: Integer
+        -pnj_in_range: Boolean
+        +gameState: Script
         +<<create>>_ready()
+        +_process(delta: float)
         +move()
+        +sprite_modification()
+        +_on_talknode_body_entered(body: Node2D)
+        +_on_talknode_body_exited(body: Node2D)
+        +_unhandled_input(event: InputEvent)
     }
 
 
     package pnj{
         class Dialogue{
-            -_texts* : String
+            +next_action: StringName
+            +skip_action: StringName
+            -resource: DialogueResource
+            -temporary_game_states: Array
+            -is_waiting_for_input: Boolean
+            -will_hide_balloon: Boolean
+            -locals: Dictionary
+            -dialogue_line: DialogueLine
             +<<create>>_ready()
-            +start_dialogue()
-            -show_line()
-            +next_line()
-            -end_dialogue()
+            +start(dialogue_resource: DialogueResource, title: String, extra_game_states: Array)
+            -apply_dialogue_line()
+            +next(next_id: String)
+            +_unhandled_input(event: InputEvent)
+            +_notification(what: int)
         }
         class Pnj{
-            -_player_in_range: Boolean
             +<<create>>_ready()
-            +_input_event(event:InputEvent)
-            +_on_talknode_body_entered(body: Node2D)
-            +_on_talknode_body_exited(body: Node2D)
+            +_process(delta: float)
         }
     }
 
@@ -41,25 +53,57 @@ package exploration{
 
     Board *-->"1\n_player" Player
     Board *-->"*\n_pnj" Pnj
+    Player ..> Dialogue : uses
 }
 
 package fight{
-    abstract class Fighter <<abstract>>{
-        -_life: Integer
+    class Fighter{
+        -_name: String
+        -_pv: Integer
+        -_pv_max: Integer
+        -_description: String
+        -_levelCredibility: Integer
+        -_levelSkill: Integer
+        -_attacks: Array
+        -_defenses: Array
+        -_pts_defense: Integer
         +<<create>>_ready()
-    }
-
-    class Enemy implements Fighter{
-        +<<create>>_ready()
-    }
-
-    class Player implements Fighter{
-        +<<create>>_ready()
+        +_init(pv, fname, attacks, defenses, description)
+        +set_positions(x, y)
+        +set_size(size)
+        +delete_pv(pv)
+        +refill_pv()
+        +add_credibility(nb): Boolean
+        +add_skill(nb): Boolean
+        +add_pts_defense(nb)
+        +del_all_defense()
+        +del_defense(nb): Integer
+        +add_random_attack(): Boolean
+        +add_random_defense(): Boolean
+        +_play()
+        +get_fname(): String
+        +get_defenses(): Array
+        +get_pts_defenses(): Integer
+        +get_attacks(): Array
+        +get_description(): String
+        +get_pv(): Integer
+        +get_pvmax(): Integer
+        +get_skill(): Integer
+        +get_credibility(): Integer
     }
 
     class Attack{
+        -_name: String
+        -_damage: Integer
+        -_description: String
+        +_init(aname: String, buff: Integer)
+        +get_damage(): Integer
+        +get_aname(): String
+        +get_description(): String
     }
 
+    Fighter *-->"*\n_attacks" Attack
+    Fighter *-->"*\n_defenses" Attack
 }
 
 

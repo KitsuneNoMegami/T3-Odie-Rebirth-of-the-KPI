@@ -11,8 +11,8 @@ hide enum methods
 package exploration{
     class Player{
         -_speed: Integer
-        -pnj_in_range: Boolean
-        +gameState: Script
+        +pnj_in_range: Boolean
+        +<<export>>gameState: Script
         +<<create>>_ready()
         +_process(delta: float)
         +move()
@@ -68,7 +68,7 @@ package fight{
         -_defenses: Array
         -_pts_defense: Integer
         +<<create>>_ready()
-        +_init(pv, fname, attacks, defenses, description)
+        +_init(pv=null, fname=null, attacks=null, defenses=null, description=null)
         +set_positions(x, y)
         +set_size(size)
         +delete_pv(pv)

@@ -96,7 +96,7 @@ package fight{
         -_name: String
         -_damage: Integer
         -_description: String
-        +_init(aname: String, buff: Integer)
+        +_init(aname=null, buff=1)
         +get_damage(): Integer
         +get_aname(): String
         +get_description(): String
